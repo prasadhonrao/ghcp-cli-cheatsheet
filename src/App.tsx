@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import Fuse from 'fuse.js';
+import Fuse, { type FuseResult } from 'fuse.js';
 import commandsData from './data/commands.json';
 import { CATEGORIES, type Command, type Theme } from './types';
 import { TopBar } from './components/layout/TopBar';
@@ -10,6 +10,70 @@ import { CategorySection } from './components/command/CategorySection';
 import './App.css';
 
 const COMMANDS: Command[] = commandsData as Command[];
+
+const normalizeSearchText = (value: string) => value.trim().toLowerCase();
+
+const stripLeadingSlash = (value: string) => value.replace(/^\/+/, '');
+
+const COMMAND_ALIAS_PATTERN = /\/[a-z0-9][a-z0-9-]*/gi;
+
+const getSearchVariants = (value: string) => {
+  const normalized = normalizeSearchText(value);
+  if (!normalized) return [];
+
+  const withoutSlash = stripLeadingSlash(normalized);
+  const variants = new Set<string>([normalized, withoutSlash]);
+
+  if (withoutSlash) {
+    variants.add(`/${withoutSlash}`);
+  }
+
+  return Array.from(variants).filter(Boolean);
+};
+
+const normalizeCommandValue = (value: string) => stripLeadingSlash(normalizeSearchText(value));
+
+const extractCommandAliases = (command: Command) => {
+  const aliasSet = new Set<string>();
+
+  const addMatches = (value?: string) => {
+    if (!value) return;
+
+    const matches = value.match(COMMAND_ALIAS_PATTERN) ?? [];
+    for (const match of matches) {
+      aliasSet.add(normalizeCommandValue(match));
+    }
+  };
+
+  addMatches(command.title);
+  addMatches(command.syntax);
+  addMatches(command.note);
+  command.examples.forEach(addMatches);
+
+  return Array.from(aliasSet).filter(Boolean);
+};
+
+const getCommandMatchPriority = (command: Command, rawQuery: string) => {
+  const query = normalizeCommandValue(rawQuery);
+  if (!query) return Number.MAX_SAFE_INTEGER;
+
+  const title = normalizeCommandValue(command.title);
+  const syntax = normalizeCommandValue(command.syntax);
+  const aliases = extractCommandAliases(command);
+
+  if (aliases.some((alias) => alias === query)) return 0;
+  if (aliases.some((alias) => alias.startsWith(query))) return 1;
+  if (aliases.some((alias) => alias.includes(query))) return 2;
+
+  if (title === query) return 0;
+  if (title.startsWith(query)) return 1;
+  if (title.includes(query)) return 2;
+  if (syntax === query) return 3;
+  if (syntax.startsWith(query)) return 4;
+  if (syntax.includes(query)) return 5;
+
+  return 6;
+};
 
 function App() {
   const [theme, setTheme] = useState<Theme>(
@@ -76,7 +140,14 @@ function App() {
   const fuse = useMemo(
     () =>
       new Fuse(COMMANDS, {
-        keys: ['title', 'syntax', 'description', 'analogy'],
+        keys: [
+          { name: 'title', weight: 0.5 },
+          { name: 'syntax', weight: 0.25 },
+          { name: 'description', weight: 0.12 },
+          { name: 'examples', weight: 0.08 },
+          { name: 'analogy', weight: 0.03 },
+          { name: 'note', weight: 0.02 },
+        ],
         threshold: 0.35,
         includeScore: true,
       }),
@@ -85,7 +156,35 @@ function App() {
 
   const filteredCommands = useMemo<Command[]>(() => {
     if (!searchQuery.trim()) return COMMANDS;
-    return fuse.search(searchQuery).map((r) => r.item);
+
+    const resultsById = new Map<string, FuseResult<Command>>();
+
+    for (const queryVariant of getSearchVariants(searchQuery)) {
+      for (const result of fuse.search(queryVariant)) {
+        const existing = resultsById.get(result.item.id);
+        if (!existing || (result.score ?? Number.MAX_SAFE_INTEGER) < (existing.score ?? Number.MAX_SAFE_INTEGER)) {
+          resultsById.set(result.item.id, result);
+        }
+      }
+    }
+
+    const rankedResults = Array.from(resultsById.values()).sort((a, b) => {
+      const priorityDiff = getCommandMatchPriority(a.item, searchQuery) - getCommandMatchPriority(b.item, searchQuery);
+      if (priorityDiff !== 0) return priorityDiff;
+
+      const scoreA = a.score ?? Number.MAX_SAFE_INTEGER;
+      const scoreB = b.score ?? Number.MAX_SAFE_INTEGER;
+      if (scoreA !== scoreB) return scoreA - scoreB;
+
+      return a.item.title.localeCompare(b.item.title);
+    });
+
+    const strongCommandMatches = rankedResults.filter(
+      (result) => getCommandMatchPriority(result.item, searchQuery) < 6,
+    );
+    const visibleResults = strongCommandMatches.length > 0 ? strongCommandMatches : rankedResults;
+
+    return visibleResults.map((r) => r.item);
   }, [searchQuery, fuse]);
 
   const commandsByCategory = useMemo(() => {

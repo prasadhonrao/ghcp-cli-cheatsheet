@@ -16,19 +16,19 @@ Built with React, Vite, and TypeScript. Data-driven — all 64 commands live in 
 
 The 64 commands are organized into 11 categories:
 
-| Category | Commands | Description |
-|---|---|---|
-| 🚀 Getting Started | 8 | Install, update, help, version, feedback |
-| 🔐 Authentication | 3 | Login, logout, account switching |
-| 💬 Chat | 6 | Ask, clear, copy, search, undo |
-| 🧬 Models | 3 | Model selection, experimental features, themes |
-| ⚙️ Configuration | 14 | Directories, permissions, environment, voice, streaming |
-| 💻 Code | 4 | Diff, plan, PR management, code review |
-| 🤖 Agents | 8 | Agent picker, fleet, delegate, research, tasks |
-| 🔌 MCP | 2 | MCP and LSP server management |
-| 🧠 Memory | 6 | Sessions, context, compaction, sharing |
-| 📝 Instructions | 3 | Custom instructions, skills, plugins |
-| 🔧 Troubleshooting | 7 | Diagnostics, restart, downgrade, remote control |
+| Category           | Commands | Description                                             |
+| ------------------ | -------- | ------------------------------------------------------- |
+| 🚀 Getting Started | 8        | Install, update, help, version, feedback                |
+| 🔐 Authentication  | 3        | Login, logout, account switching                        |
+| 💬 Chat            | 6        | Ask, clear, copy, search, undo                          |
+| 🧬 Models          | 3        | Model selection, experimental features, themes          |
+| ⚙️ Configuration   | 14       | Directories, permissions, environment, voice, streaming |
+| 💻 Code            | 4        | Diff, plan, PR management, code review                  |
+| 🤖 Agents          | 8        | Agent picker, fleet, delegate, research, tasks          |
+| 🔌 MCP             | 2        | MCP and LSP server management                           |
+| 🧠 Memory          | 6        | Sessions, context, compaction, sharing                  |
+| 📝 Instructions    | 3        | Custom instructions, skills, plugins                    |
+| 🔧 Troubleshooting | 7        | Diagnostics, restart, downgrade, remote control         |
 
 ## Tech stack
 
@@ -67,10 +67,7 @@ interface Command {
   "syntax": "/version",
   "description": "Display version information for the installed Copilot CLI and check whether an update is available.",
   "analogy": "Like checking the label on a medicine bottle — always know which version you are running before troubleshooting.",
-  "examples": [
-    "/version  # print installed version",
-    "/update  # update if an upgrade is available"
-  ],
+  "examples": ["/version  # print installed version", "/update  # update if an upgrade is available"],
   "category": "getting-started"
 }
 ```
@@ -109,14 +106,14 @@ ghcp-cli-cheatsheet/
 
 ## Components
 
-| Component | Path | Purpose |
-|---|---|---|
-| TopBar | `layout/TopBar.tsx` | Sticky header with brand, GitHub link, and theme toggle |
-| SearchBar | `search/SearchBar.tsx` | Fuzzy search input with Fuse.js |
-| CategoryPills | `ui/CategoryPills.tsx` | Horizontal category filter buttons |
-| TipBanner | `ui/TipBanner.tsx` | Rotating tips banner |
-| CategorySection | `command/CategorySection.tsx` | Groups commands under a category heading |
-| CommandCard | `command/CommandCard.tsx` | Individual command card with syntax, analogy, examples |
+| Component       | Path                          | Purpose                                                 |
+| --------------- | ----------------------------- | ------------------------------------------------------- |
+| TopBar          | `layout/TopBar.tsx`           | Sticky header with brand, GitHub link, and theme toggle |
+| SearchBar       | `search/SearchBar.tsx`        | Fuzzy search input with Fuse.js                         |
+| CategoryPills   | `ui/CategoryPills.tsx`        | Horizontal category filter buttons                      |
+| TipBanner       | `ui/TipBanner.tsx`            | Rotating tips banner                                    |
+| CategorySection | `command/CategorySection.tsx` | Groups commands under a category heading                |
+| CommandCard     | `command/CommandCard.tsx`     | Individual command card with syntax, analogy, examples  |
 
 ## Run locally
 
@@ -141,12 +138,43 @@ npm run preview
 
 ## Available scripts
 
-| Script | Description |
-|---|---|
-| `npm run dev` | Start the Vite development server |
-| `npm run build` | Type-check and create a production build |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint across the project |
+| Script            | Description                                        |
+| ----------------- | -------------------------------------------------- |
+| `npm run dev`     | Start the Vite development server                  |
+| `npm run build`   | Type-check and create a production build           |
+| `npm run preview` | Preview the production build locally               |
+| `npm run lint`    | Run ESLint across the project                      |
+| `npm run deploy`  | Build and publish `dist/` to the `gh-pages` branch |
+
+## Deploy to GitHub Pages
+
+This project is configured for GitHub Pages deployment **without GitHub Actions**.
+
+### One-time GitHub setup
+
+In your repository settings:
+
+- Go to **Settings** → **Pages**
+- Under **Build and deployment**, choose **Deploy from a branch**
+- Select the `gh-pages` branch
+- Select the `/ (root)` folder
+
+### Publish a new version
+
+Run:
+
+```bash
+npm install
+npm run deploy
+```
+
+The deploy script builds the app and publishes the contents of `dist/` to the `gh-pages` branch.
+
+### Site URL
+
+Once published, the site will be available at:
+
+`https://prasadhonrao.github.io/ghcp-cli-cheatsheet/`
 
 ## Contributing
 
