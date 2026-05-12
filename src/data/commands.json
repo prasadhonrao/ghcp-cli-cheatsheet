@@ -1,0 +1,702 @@
+[
+  {
+    "id": "gs-1",
+    "title": "/help",
+    "syntax": "/help [TOPIC]",
+    "description": "Show help for all interactive slash commands. Optional topic filters: config, commands, environment, logging, permissions, or providers.",
+    "analogy": "Like the index of a cookbook — scan it to know what is possible, then jump to what you need.",
+    "examples": [
+      "/help  # list all commands",
+      "/help permissions  # filter to permission-related commands",
+      "/help environment  # show environment variable docs"
+    ],
+    "category": "getting-started"
+  },
+  {
+    "id": "gs-2",
+    "title": "/version",
+    "syntax": "/version",
+    "description": "Display version information for the installed Copilot CLI and check whether an update is available.",
+    "analogy": "Like checking the label on a medicine bottle — always know which version you are running before troubleshooting.",
+    "examples": [
+      "/version  # print installed version",
+      "/update  # update if an upgrade is available"
+    ],
+    "category": "getting-started"
+  },
+  {
+    "id": "gs-3",
+    "title": "/init",
+    "syntax": "/init [suppress]",
+    "description": "Initialize Copilot custom instructions and agentic features for the current repository. Creates or updates .github/copilot-instructions.md.",
+    "analogy": "Like briefing a new hire on your project — give Copilot your codebase context once so every future session starts informed.",
+    "examples": [
+      "/init  # analyze repo and write .github/copilot-instructions.md",
+      "/init suppress  # hide the startup warning without creating the file"
+    ],
+    "category": "getting-started"
+  },
+  {
+    "id": "gs-4",
+    "title": "/update",
+    "syntax": "/update",
+    "description": "Update the Copilot CLI to the latest version from within an active session. Also available as /upgrade.",
+    "analogy": "Like tapping the update button in an app store — stay on the latest features without leaving your workflow.",
+    "examples": [
+      "/update  # update from inside a session",
+      "/upgrade  # alias for /update"
+    ],
+    "category": "getting-started"
+  },
+  {
+    "id": "gs-5",
+    "title": "/usage",
+    "syntax": "/usage",
+    "description": "Display session usage metrics: token counts, model calls, costs, and AI units consumed so far.",
+    "analogy": "Like checking your data usage on a phone plan — know how much quota you have used before hitting a limit.",
+    "examples": [
+      "/usage  # show full stats for the current session"
+    ],
+    "category": "getting-started"
+  },
+  {
+    "id": "gs-6",
+    "title": "/feedback",
+    "syntax": "/feedback",
+    "description": "Provide feedback about Copilot CLI to GitHub. Also available as /bug to report specific issues.",
+    "analogy": "Like a feedback form at a restaurant — quick way to tell the team what is working and what is not.",
+    "examples": [
+      "/feedback  # open the feedback flow",
+      "/bug  # alias for /feedback"
+    ],
+    "category": "getting-started"
+  },
+  {
+    "id": "gs-7",
+    "title": "/changelog",
+    "syntax": "/changelog [summarize] [VERSION|last N|since VERSION]",
+    "description": "Display the CLI changelog. Add the keyword \"summarize\" for an AI-generated summary. Also available as /release-notes.",
+    "analogy": "Like reading the \"What is New\" page after an app update — find out exactly what changed and which commands are new.",
+    "examples": [
+      "/changelog  # show recent release notes",
+      "/changelog last 3  # show the last 3 releases",
+      "/changelog summarize  # AI-generated summary of recent changes",
+      "/release-notes  # alias for /changelog"
+    ],
+    "category": "getting-started"
+  },
+  {
+    "id": "auth-1",
+    "title": "/login",
+    "syntax": "/login",
+    "description": "Authenticate with GitHub Copilot from within an active session.",
+    "analogy": "Like showing your badge at the office entrance — without it nothing works, but you only do it once.",
+    "examples": [
+      "/login  # start OAuth flow inside the session"
+    ],
+    "category": "authentication"
+  },
+  {
+    "id": "auth-2",
+    "title": "/logout",
+    "syntax": "/logout",
+    "description": "Log out of GitHub Copilot and clear stored credentials.",
+    "analogy": "Like signing out of your bank website on a shared computer — good hygiene when switching accounts.",
+    "examples": [
+      "/logout  # clear credentials from the current session"
+    ],
+    "category": "authentication"
+  },
+  {
+    "id": "auth-3",
+    "title": "/user",
+    "syntax": "/user [show|list|switch]",
+    "description": "Manage the current GitHub user. Show the active account, list available accounts, or switch between them.",
+    "analogy": "Like the account switcher in a mobile app — move between work and personal accounts without re-authenticating from scratch.",
+    "examples": [
+      "/user show  # display the currently active GitHub account",
+      "/user list  # list all authenticated accounts",
+      "/user switch  # interactively switch to a different account"
+    ],
+    "category": "authentication"
+  },
+  {
+    "id": "chat-1",
+    "title": "/clear",
+    "syntax": "/clear [PROMPT]",
+    "description": "Start a new conversation, wiping the current history. Also available as /new or /reset. Optionally pass an opening prompt for the fresh session.",
+    "analogy": "Like opening a new browser tab — start clean without the baggage of prior exchanges.",
+    "examples": [
+      "/clear  # wipe history and start fresh",
+      "/new  # alias for /clear",
+      "/reset \"help me refactor the auth module\"  # clear and immediately prompt"
+    ],
+    "category": "chat"
+  },
+  {
+    "id": "chat-2",
+    "title": "/ask",
+    "syntax": "/ask <QUESTION>",
+    "description": "Ask a quick side question without adding it to the main conversation history. Only available in experimental mode.",
+    "analogy": "Like a private aside to a colleague mid-meeting — you get an answer without it becoming part of the official record.",
+    "examples": [
+      "/ask what does --no-ff mean in git merge?",
+      "/ask what is the difference between CMD and ENTRYPOINT in Docker?"
+    ],
+    "category": "chat"
+  },
+  {
+    "id": "chat-3",
+    "title": "/copy",
+    "syntax": "/copy",
+    "description": "Copy the last Copilot response to the clipboard.",
+    "analogy": "Like a \"copy response\" button in a chat app — grab the output without selecting text manually.",
+    "examples": [
+      "/copy  # copies the most recent response to clipboard"
+    ],
+    "category": "chat"
+  },
+  {
+    "id": "chat-4",
+    "title": "/search",
+    "syntax": "/search [QUERY]",
+    "description": "Search the current conversation timeline for past messages. Also available as /find. Only available in experimental mode.",
+    "analogy": "Like Ctrl+F inside a long chat thread — jump to any past message by keyword.",
+    "examples": [
+      "/search authentication  # find messages mentioning authentication",
+      "/find JWT  # alias for /search"
+    ],
+    "category": "chat"
+  },
+  {
+    "id": "chat-5",
+    "title": "/undo",
+    "syntax": "/undo",
+    "description": "Rewind the last turn and revert any file changes Copilot made. Also available as /rewind.",
+    "analogy": "Like Ctrl+Z for a Copilot action — undo the last step if the result was not what you wanted.",
+    "examples": [
+      "/undo  # revert the last turn and its file changes",
+      "/rewind  # alias for /undo"
+    ],
+    "category": "chat"
+  },
+  {
+    "id": "models-1",
+    "title": "/model",
+    "syntax": "/model [MODEL]",
+    "description": "Select or switch the AI model mid-session. Run without arguments for an interactive picker. Also available as /models.",
+    "analogy": "Like switching between AI tiers in a chat app — pick the right power level for the task at hand.",
+    "examples": [
+      "/model  # open interactive model picker",
+      "/models  # alias for /model",
+      "/model claude-sonnet-4-5  # switch to a specific model by name"
+    ],
+    "category": "models"
+  },
+  {
+    "id": "models-2",
+    "title": "/experimental",
+    "syntax": "/experimental [on|off|show]",
+    "description": "Toggle or inspect experimental features. Use \"show\" to list which features are currently enabled.",
+    "analogy": "Like enabling beta features in a browser — access new capabilities before they are fully released.",
+    "examples": [
+      "/experimental show  # list which experimental features are active",
+      "/experimental on  # enable all experimental features",
+      "/experimental off  # disable experimental features"
+    ],
+    "category": "models"
+  },
+  {
+    "id": "models-3",
+    "title": "/theme",
+    "syntax": "/theme [default|dim|high-contrast|colorblind]",
+    "description": "View or change the color mode for the Copilot CLI interface.",
+    "analogy": "Like switching between dark and light mode in your editor — adjust to your environment and preference.",
+    "examples": [
+      "/theme  # show current theme",
+      "/theme dim  # switch to dimmed color scheme",
+      "/theme high-contrast  # maximum accessibility contrast"
+    ],
+    "category": "models"
+  },
+  {
+    "id": "config-1",
+    "title": "/cwd",
+    "syntax": "/cwd [PATH]",
+    "description": "Display the current working directory without changing it.",
+    "analogy": "Like pwd and cd combined — check where you are or move to a new directory without leaving Copilot.",
+    "examples": [
+      "/cwd  # show the current working directory"
+    ],
+    "category": "configuration",
+    "note": "See also: /cd — a separate alias command that changes the directory."
+  },
+  {
+    "id": "config-11",
+    "title": "/cd",
+    "syntax": "/cd [PATH]",
+    "description": "Change the current working directory to the specified path.",
+    "analogy": "Like the cd shell command — navigate to a different folder without leaving the Copilot session.",
+    "examples": [
+      "/cd ~/projects/my-app  # change to a specific directory",
+      "/cd ..  # go up one directory level",
+      "/cwd  # check your current directory afterward"
+    ],
+    "category": "configuration",
+    "note": "See also: /cwd — a separate alias command that shows the current directory."
+  },
+  {
+    "id": "config-2",
+    "title": "/add-dir",
+    "syntax": "/add-dir <PATH>",
+    "description": "Add a directory to the allowed file access list so Copilot can read and modify files in it.",
+    "analogy": "Like granting an app access to a specific folder — you stay in control of what Copilot can touch.",
+    "examples": [
+      "/add-dir ./src  # allow Copilot read/write access in src/",
+      "/add-dir /tmp/scratch  # allow a scratch directory",
+      "/list-dirs  # see all currently allowed directories"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "config-3",
+    "title": "/list-dirs",
+    "syntax": "/list-dirs",
+    "description": "Display all directories currently in the allowed file access list.",
+    "analogy": "Like viewing the file permissions panel for an app — see exactly which folders have been granted access.",
+    "examples": [
+      "/list-dirs  # show all allowed directories",
+      "/add-dir ./src  # add a directory to the list"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "config-4",
+    "title": "/env",
+    "syntax": "/env",
+    "description": "Show all loaded environment details: custom instructions, MCP servers, skills, agents, plugins, LSPs, and extensions.",
+    "analogy": "Like printenv but for Copilot's full runtime configuration — everything it loaded when this session started.",
+    "examples": [
+      "/env  # inspect the full Copilot runtime environment"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "config-5",
+    "title": "/allow-all",
+    "syntax": "/allow-all [on|off|show]",
+    "description": "Enable all permissions — tools, file paths, and URLs — without being prompted for each. Also available as /yolo.",
+    "analogy": "Like pressing \"trust all\" in a security dialog — faster iteration, but use it only in environments you control.",
+    "examples": [
+      "/allow-all on  # enable all permissions for this session",
+      "/allow-all show  # check current permission status",
+      "/yolo  # alias for /allow-all on"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "config-6",
+    "title": "/reset-allowed-tools",
+    "syntax": "/reset-allowed-tools",
+    "description": "Clear the list of tools and permissions approved for this session, returning to the default prompt-per-action state.",
+    "analogy": "Like revoking all app permissions at once — Copilot will prompt again the next time it needs each tool.",
+    "examples": [
+      "/reset-allowed-tools  # revoke all approved tools and permissions"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "config-7",
+    "title": "/keep-alive",
+    "syntax": "/keep-alive [on|off|busy|DURATION]",
+    "description": "Prevent the machine from sleeping. Options: always on, only while agent is busy, or for a duration like 30m or 2h. Also available as /caffeinate.",
+    "analogy": "Like the macOS caffeinate command — keeps the machine awake so a long task does not get interrupted.",
+    "examples": [
+      "/keep-alive on  # prevent sleep for the whole session",
+      "/keep-alive busy  # only prevent sleep while the agent is running",
+      "/keep-alive 2h  # prevent sleep for two hours",
+      "/caffeinate  # alias for /keep-alive on"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "config-8",
+    "title": "/terminal-setup",
+    "syntax": "/terminal-setup",
+    "description": "Run the interactive setup wizard to configure multiline input support (Shift+Enter and Ctrl+Enter) in the current terminal.",
+    "analogy": "Like a first-run setup wizard — configures the terminal keybindings you want before you start.",
+    "examples": [
+      "/terminal-setup  # launch the interactive setup wizard"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "config-9",
+    "title": "/statusline",
+    "syntax": "/statusline",
+    "description": "Configure which items appear in the status line at the bottom of the interactive interface. Also available as /footer.",
+    "analogy": "Like customizing the status bar in your IDE — choose exactly which metrics and indicators to keep visible.",
+    "examples": [
+      "/statusline  # open the status line configuration menu",
+      "/footer  # alias for /statusline"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "config-10",
+    "title": "/clikit",
+    "syntax": "/clikit [COMPONENT]",
+    "description": "Preview CLI interface components such as quota info. Primarily used for development and debugging of CLI UI elements.",
+    "analogy": "Like a component storybook for the CLI — view individual UI building blocks in isolation.",
+    "examples": [
+      "/clikit  # list available components",
+      "/clikit quota  # preview the quota info component"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "code-1",
+    "title": "/diff",
+    "syntax": "/diff",
+    "description": "Review the changes made in the current directory — Copilot summarizes and explains the git diff.",
+    "analogy": "Like asking a senior dev to walk you through what changed before a code review — fast orientation without reading raw diffs.",
+    "examples": [
+      "/diff  # review and explain changes in the working directory"
+    ],
+    "category": "code"
+  },
+  {
+    "id": "code-2",
+    "title": "/review",
+    "syntax": "/review [PROMPT]",
+    "description": "Run the built-in code review agent to analyze the current diff for bugs, security issues, and logic errors.",
+    "analogy": "Like submitting your changes for an automated expert review — get focused feedback before pushing.",
+    "examples": [
+      "/review  # analyze the current working directory diff",
+      "/review focus on security issues only"
+    ],
+    "category": "code",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/requesting-a-code-review-with-github-copilot-cli"
+  },
+  {
+    "id": "code-3",
+    "title": "/pr",
+    "syntax": "/pr [view|create|fix|auto]",
+    "description": "Manage pull requests for the current branch: view existing PRs, create one with an AI-generated description, auto-fix review comments, or use auto mode.",
+    "analogy": "Like a PR dashboard inside your terminal — create, inspect, and respond to review feedback without switching context.",
+    "examples": [
+      "/pr view  # show the open PR for the current branch",
+      "/pr create  # create a PR with an AI-generated description",
+      "/pr fix  # let Copilot automatically address review comments",
+      "/pr auto  # create PR and fix review comments automatically"
+    ],
+    "category": "code",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/managing-pull-requests-with-the-pr-command"
+  },
+  {
+    "id": "code-4",
+    "title": "/plan",
+    "syntax": "/plan [PROMPT]",
+    "description": "Create a step-by-step implementation plan before Copilot starts making changes. Copilot outlines the steps and waits for your approval.",
+    "analogy": "Like asking a contractor for a quote before starting the build — see the full plan before any files are touched.",
+    "examples": [
+      "/plan add pagination to the users API endpoint",
+      "/plan refactor the authentication module to use JWT"
+    ],
+    "category": "code"
+  },
+  {
+    "id": "agents-1",
+    "title": "/agent",
+    "syntax": "/agent",
+    "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task.",
+    "analogy": "Like an app drawer for specialized AI workers — each agent is tuned for a specific type of job.",
+    "examples": [
+      "/agent  # open the interactive agent picker"
+    ],
+    "category": "agents"
+  },
+  {
+    "id": "agents-2",
+    "title": "/fleet",
+    "syntax": "/fleet [PROMPT]",
+    "description": "Enable parallel subagent execution — Copilot breaks a task into parts and runs them simultaneously for faster results.",
+    "analogy": "Like splitting a group project among teammates instead of doing it solo — work happens in parallel and gets done faster.",
+    "examples": [
+      "/fleet run all test suites in parallel",
+      "/fleet analyze all files in src/ for security issues simultaneously"
+    ],
+    "category": "agents",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/running-tasks-in-parallel-with-the-fleet-command"
+  },
+  {
+    "id": "agents-3",
+    "title": "/research",
+    "syntax": "/research <TOPIC>",
+    "description": "Run a deep research investigation using GitHub search and web sources. Returns a structured report with citations.",
+    "analogy": "Like sending a research assistant to compile a report — Copilot searches broadly and returns a synthesized summary.",
+    "examples": [
+      "/research best practices for JWT refresh token rotation",
+      "/research how does the GitHub Actions cache action work?"
+    ],
+    "category": "agents",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/researching-with-github-copilot-cli"
+  },
+  {
+    "id": "agents-4",
+    "title": "/delegate",
+    "syntax": "/delegate [PROMPT]",
+    "description": "Delegate changes to a remote repository with an AI-generated pull request. Copilot implements the task and opens a PR for your review.",
+    "analogy": "Like sending a task to a remote contractor — Copilot does the work and submits it for approval without blocking your local machine.",
+    "examples": [
+      "/delegate add input validation to the registration form",
+      "/delegate write unit tests for the payment service"
+    ],
+    "category": "agents",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/delegating-tasks-to-copilot"
+  },
+  {
+    "id": "agents-5",
+    "title": "/tasks",
+    "syntax": "/tasks",
+    "description": "View and manage active background tasks — subagents and shell commands currently running in the session.",
+    "analogy": "Like a task manager or the shell jobs command — see what is running in the background and manage it from one place.",
+    "examples": [
+      "/tasks  # list all active subagents and background shell commands"
+    ],
+    "category": "agents"
+  },
+  {
+    "id": "agents-6",
+    "title": "/ide",
+    "syntax": "/ide",
+    "description": "Connect Copilot CLI to your IDE workspace so the model can see your open files, diagnostics, and editor state.",
+    "analogy": "Like plugging two monitors into the same computer — Copilot and your IDE share the same view of your project.",
+    "examples": [
+      "/ide  # connect to the IDE workspace from an active session"
+    ],
+    "category": "agents",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/connecting-github-copilot-cli-to-vs-code"
+  },
+  {
+    "id": "agents-7",
+    "title": "/chronicle",
+    "syntax": "/chronicle <standup|tips|improve|reindex>",
+    "description": "Session history tools and insights. Subcommands: standup (generate a standup report), tips (get workflow tips), improve (suggestions to work more effectively), reindex (rebuild the history index). Only available in experimental mode.",
+    "analogy": "Like a smart journal for your coding sessions — chronicle turns your work history into actionable summaries and advice.",
+    "examples": [
+      "/chronicle standup  # generate a standup report from recent sessions",
+      "/chronicle tips  # get workflow tips based on your usage patterns",
+      "/chronicle improve  # suggestions to work more effectively with Copilot"
+    ],
+    "category": "agents"
+  },
+  {
+    "id": "mcp-1",
+    "title": "/mcp",
+    "syntax": "/mcp [show|add|edit|delete|disable|enable|auth|reload] [SERVER]",
+    "description": "Manage MCP (Model Context Protocol) server configurations — add, remove, enable, disable, or reload servers from within a session.",
+    "analogy": "Like a plugin manager in an IDE — /mcp is the control panel for every external tool extension connected to Copilot.",
+    "examples": [
+      "/mcp show  # list all configured MCP servers and their status",
+      "/mcp disable my-server  # temporarily disable a server without removing it",
+      "/mcp reload  # reload all MCP server configs without restarting",
+      "/mcp auth my-server  # trigger a fresh OAuth flow for a remote server"
+    ],
+    "category": "mcp",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/adding-mcp-servers-for-github-copilot-cli"
+  },
+  {
+    "id": "mcp-2",
+    "title": "/lsp",
+    "syntax": "/lsp [show|test|reload|help] [SERVER-NAME]",
+    "description": "Manage language server (LSP) configurations that give Copilot live diagnostics, type information, and symbol references from your codebase.",
+    "analogy": "Like plugging a code-aware lens into Copilot — the LSP feeds it real-time type errors and definitions from your actual project.",
+    "examples": [
+      "/lsp show  # list all configured language servers",
+      "/lsp test typescript  # test the TypeScript language server connection",
+      "/lsp reload  # reload LSP configs after making changes"
+    ],
+    "category": "mcp"
+  },
+  {
+    "id": "mem-1",
+    "title": "/session",
+    "syntax": "/session [info|checkpoints|files|plan|rename|cleanup|prune|delete|delete-all]",
+    "description": "Show session information and manage sessions. Subcommands: info, checkpoints, files, plan, rename, cleanup, prune, delete, delete-all. Also available as /sessions.",
+    "analogy": "Like a save-game manager — see your history, inspect a past state, or clean up old saves.",
+    "examples": [
+      "/session info  # show current session ID, age, and token usage",
+      "/session files  # list files modified in this session",
+      "/session rename my-auth-refactor  # give the session a descriptive name",
+      "/session cleanup  # remove old session data to free space"
+    ],
+    "category": "memory"
+  },
+  {
+    "id": "mem-2",
+    "title": "/resume",
+    "syntax": "/resume [SESSION-ID]",
+    "description": "Switch to a previous session chosen from an interactive list. Also available as /continue. Optionally pass a session ID or name to jump directly.",
+    "analogy": "Like reopening a browser tab from history — pick up exactly where you left off in a past conversation.",
+    "examples": [
+      "/resume  # open the interactive session picker",
+      "/continue  # alias for /resume",
+      "/resume my-auth-refactor  # resume a session by name"
+    ],
+    "category": "memory"
+  },
+  {
+    "id": "mem-3",
+    "title": "/rename",
+    "syntax": "/rename [NAME]",
+    "description": "Rename the current session. If no name is given, Copilot auto-generates a descriptive name based on the conversation.",
+    "analogy": "Like naming a browser bookmark instead of leaving it as the page title — much easier to find later.",
+    "examples": [
+      "/rename  # auto-generate a descriptive session name",
+      "/rename payment-refactor-may  # give it a specific name"
+    ],
+    "category": "memory"
+  },
+  {
+    "id": "mem-4",
+    "title": "/compact",
+    "syntax": "/compact",
+    "description": "Summarize the conversation history to reduce context window usage while preserving key context.",
+    "analogy": "Like condensing meeting notes into a summary — keep the key decisions without the full transcript, freeing space for more work.",
+    "examples": [
+      "/context  # check token usage before compacting",
+      "/compact  # summarize history and free up context window space"
+    ],
+    "category": "memory",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/managing-context-in-github-copilot-cli"
+  },
+  {
+    "id": "mem-5",
+    "title": "/context",
+    "syntax": "/context",
+    "description": "Show the current context window token usage and a visualization of how much space is remaining.",
+    "analogy": "Like checking how much storage is left on your phone — useful before starting a big task.",
+    "examples": [
+      "/context  # show token usage and remaining capacity",
+      "/compact  # run this if context is nearly full"
+    ],
+    "category": "memory",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/managing-context-in-github-copilot-cli"
+  },
+  {
+    "id": "mem-6",
+    "title": "/share",
+    "syntax": "/share [file|html|gist] [session|research] [PATH]",
+    "description": "Export the current session to a Markdown file, interactive HTML file, or a secret GitHub Gist. Also available as /export.",
+    "analogy": "Like exporting a chat transcript — capture the full session log and share it with teammates or save it for reference.",
+    "examples": [
+      "/share file  # save session as a Markdown file in the current directory",
+      "/share gist  # publish to a secret GitHub Gist",
+      "/share html session ./my-session.html  # save as interactive HTML",
+      "/export  # alias for /share"
+    ],
+    "category": "memory"
+  },
+  {
+    "id": "instr-1",
+    "title": "/instructions",
+    "syntax": "/instructions",
+    "description": "View and toggle the custom instruction files currently loaded into Copilot's context — AGENTS.md, copilot-instructions.md, and others.",
+    "analogy": "Like checking which style guides are active in your linter — see exactly what rules are shaping Copilot's behavior.",
+    "examples": [
+      "/instructions  # show loaded instruction files and their status"
+    ],
+    "category": "instructions"
+  },
+  {
+    "id": "instr-2",
+    "title": "/skills",
+    "syntax": "/skills [list|info|add|remove|reload] [ARGS...]",
+    "description": "Manage custom skills — Markdown files that extend Copilot's capabilities. Skills live in .github/skills/, ~/.copilot/skills/, or plugin directories.",
+    "analogy": "Like a library of custom macros in your editor — each skill adds a reusable capability you can invoke by name.",
+    "examples": [
+      "/skills list  # show all loaded skills and their sources",
+      "/skills info my-skill  # show details about a specific skill",
+      "/skills reload  # reload skills after adding or editing files"
+    ],
+    "category": "instructions",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/adding-agent-skills-for-github-copilot-cli"
+  },
+  {
+    "id": "instr-3",
+    "title": "/plugin",
+    "syntax": "/plugin [marketplace|install|uninstall|update|list] [ARGS...]",
+    "description": "Manage Copilot CLI plugins — packages that bundle agents, skills, and MCP servers in a single install.",
+    "analogy": "Like an extension marketplace for your IDE — browse, install, and manage add-ons that extend what Copilot can do.",
+    "examples": [
+      "/plugin list  # show all installed plugins",
+      "/plugin marketplace  # browse available plugins",
+      "/plugin install my-org/my-plugin  # install a plugin",
+      "/plugin update  # update all installed plugins"
+    ],
+    "category": "instructions",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/about-plugins-for-github-copilot-cli"
+  },
+  {
+    "id": "ts-1",
+    "title": "/restart",
+    "syntax": "/restart",
+    "description": "Restart the Copilot CLI process while preserving the current session. Use when the session is unresponsive or behaving unexpectedly.",
+    "analogy": "Like restarting your browser without losing your tabs — the process reloads fresh but your session state is preserved.",
+    "examples": [
+      "/restart  # restart the CLI, preserving the current session"
+    ],
+    "category": "troubleshooting"
+  },
+  {
+    "id": "ts-2",
+    "title": "/downgrade",
+    "syntax": "/downgrade <VERSION>",
+    "description": "Download and restart into a specific older CLI version. Useful when a recent update introduces a regression. Available for team accounts.",
+    "analogy": "Like rolling back a deploy — if the latest version broke something, pin to a known-good version while it is investigated.",
+    "examples": [
+      "/version  # check the current installed version first",
+      "/downgrade 1.5.0  # restart into a specific older version"
+    ],
+    "category": "troubleshooting"
+  },
+  {
+    "id": "ts-3",
+    "title": "/exit",
+    "syntax": "/exit",
+    "description": "Exit the Copilot CLI interactive session cleanly.",
+    "analogy": "Like closing a terminal tab cleanly — exits gracefully rather than force-killing the process.",
+    "examples": [
+      "/exit  # close the interactive session"
+    ],
+    "category": "troubleshooting",
+    "note": "See also: /quit — a separate alias command that does the same thing."
+  },
+  {
+    "id": "ts-5",
+    "title": "/quit",
+    "syntax": "/quit",
+    "description": "Exit the Copilot CLI interactive session cleanly.",
+    "analogy": "Like typing \"quit\" or \"exit\" in a REPL — both mean the same thing, use whichever feels natural.",
+    "examples": [
+      "/quit  # close the interactive session"
+    ],
+    "category": "troubleshooting",
+    "note": "See also: /exit — a separate alias command that does the same thing."
+  },
+  {
+    "id": "ts-4",
+    "title": "/remote",
+    "syntax": "/remote [on|off]",
+    "description": "Show remote control status (no argument), enable remote steering from another device (on), or end the remote connection (off).",
+    "analogy": "Like a screenshare with remote control — a trusted collaborator can drive your Copilot session for pair programming.",
+    "examples": [
+      "/remote  # show current remote control status",
+      "/remote on  # enable remote steering from another device",
+      "/remote off  # end the remote connection"
+    ],
+    "category": "troubleshooting",
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/steering-a-github-copilot-cli-session-from-another-device"
+  }
+]

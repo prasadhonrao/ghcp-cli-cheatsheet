@@ -344,6 +344,197 @@
   font-style: italic;
 }
 
+/* ── No-results message ── */
+.no-results {
+  padding: 32px 0;
+  font-size: 15px;
+  color: var(--color-fg-muted);
+  text-align: center;
+}
+
+/* ── Command grid ── */
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 1100px) {
+  .command-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .command-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Command card ── */
+.command-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  background-color: var(--color-canvas-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.command-card:hover {
+  border-color: var(--color-fg-muted);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.command-card--expanded {
+  border-color: #8957e5;
+  box-shadow:
+    0 0 0 1px #8957e5,
+    0 4px 12px rgba(137, 87, 229, 0.2);
+}
+
+.command-card--expanded:hover {
+  border-color: #8957e5;
+}
+
+.command-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.command-card-toggle {
+  font-size: 9px;
+  color: var(--color-fg-subtle);
+  flex-shrink: 0;
+  transition: color 0.12s ease;
+}
+
+.command-card:hover .command-card-toggle {
+  color: var(--color-fg-muted);
+}
+
+.command-syntax {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: var(--color-command-syntax-bg);
+  color: var(--color-command-syntax);
+  border: 1px solid var(--color-border-default);
+  word-break: break-all;
+}
+
+.command-description {
+  font-size: 13px;
+  color: var(--color-fg-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Expanded card sections ── */
+.command-section-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-fg-subtle);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.command-analogy {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.command-analogy-text {
+  font-size: 13px;
+  color: var(--color-fg-default);
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 12px;
+  border-left: 3px solid #8957e5;
+}
+
+.command-note {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: var(--color-neutral-muted);
+  border-left: 3px solid var(--color-fg-muted);
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--color-fg-muted);
+  font-style: italic;
+}
+
+.command-note .command-section-label {
+  margin-bottom: 4px;
+  font-style: normal;
+}
+
+.command-docs-link {
+  margin-top: 10px;
+}
+
+.command-docs-link a {
+  font-size: 12px;
+  color: var(--color-accent-fg);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.command-docs-link a:hover {
+  text-decoration: underline;
+}
+
+.command-examples {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.command-code-block {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #e6edf3;
+  overflow-x: hidden;
+  margin: 0;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.code-line-command {
+  /* code block is always dark — use the light purple regardless of page theme */
+  color: #d2a8ff;
+  display: block;
+}
+
+.code-line-comment {
+  color: #768390;
+  display: block;
+}
+
+.code-inline-comment {
+  color: #768390;
+}
+
 @media (max-width: 768px) {
   .topbar {
     flex-direction: column;
