@@ -129,6 +129,7 @@
   gap: 8px;
   padding: 12px 0 16px;
   border-bottom: 1px solid var(--color-border-default);
+  justify-content: center;
 }
 
 /* Default pill — clean GitHub-style outline */
@@ -207,7 +208,7 @@
 
 .search-bar-input {
   width: 100%;
-  padding: 10px 40px 10px 40px;
+  padding: 10px 110px 10px 40px;
   background-color: transparent;
   border: 1px solid var(--color-border-default);
   border-radius: 8px;
@@ -218,6 +219,13 @@
   transition:
     border-color 0.15s ease,
     box-shadow 0.15s ease;
+}
+
+/* Hide native browser clear button on search inputs */
+.search-bar-input::-webkit-search-cancel-button,
+.search-bar-input::-webkit-search-decoration {
+  appearance: none;
+  display: none;
 }
 
 .search-bar-input:focus,
@@ -535,9 +543,36 @@
   color: #768390;
 }
 
+/* ── Site footer ── */
+.site-footer {
+  margin-top: 48px;
+  border-top: 1px solid var(--color-border-default);
+  padding: 20px 24px;
+}
+
+.site-footer-inner {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.site-footer-inner a {
+  color: var(--color-accent-fg);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-footer-inner a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .topbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .site-footer-inner {
+    justify-content: center;
   }
 }

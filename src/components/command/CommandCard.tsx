@@ -35,13 +35,6 @@ export function CommandCard({ cmd, isExpanded, onToggle }: Props) {
               <span>{cmd.note}</span>
             </div>
           )}
-          {cmd.docUrl && (
-            <div className="command-docs-link">
-              <a href={cmd.docUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                Official docs ↗
-              </a>
-            </div>
-          )}
           {cmd.examples && cmd.examples.length > 0 && (
             <div className="command-examples">
               <span className="command-section-label">EXAMPLE</span>

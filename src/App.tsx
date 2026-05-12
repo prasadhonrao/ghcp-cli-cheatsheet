@@ -41,6 +41,7 @@ function App() {
 
   useEffect(() => {
     const onScroll = () => {
+      if (isClickScrolling.current) return;
       if (window.scrollY < 80) setActiveCategory('getting-started');
     };
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -75,7 +76,7 @@ function App() {
   const fuse = useMemo(
     () =>
       new Fuse(COMMANDS, {
-        keys: ['title', 'syntax', 'description', 'analogy', 'examples'],
+        keys: ['title', 'syntax', 'description', 'analogy'],
         threshold: 0.35,
         includeScore: true,
       }),
@@ -137,6 +138,17 @@ function App() {
           />
         ))}
       </main>
+      <footer className="site-footer">
+        <div className="site-footer-inner">
+          <a
+            href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Official GitHub Copilot CLI Docs
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
