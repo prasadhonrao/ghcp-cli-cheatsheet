@@ -8,7 +8,6 @@ export interface Command {
   analogy: string;
   examples: string[];
   category: string;
-  docUrl?: string;
   note?: string;
 }
 

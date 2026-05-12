@@ -31,11 +31,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
 .topbar-brand-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .topbar-title {
@@ -62,6 +64,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 /* ── GitHub repo link ── */
@@ -183,7 +186,7 @@
 /* ── Main content ── */
 .main-layout {
   flex: 1;
-  padding: 32px 0;
+  padding: 16px 0 32px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -281,6 +284,12 @@
   white-space: nowrap;
 }
 
+/* ── Search / category / tip group — scrolls with content ── */
+.search-controls {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ── Tip banner ── */
 .tip-banner {
   display: flex;
@@ -308,7 +317,7 @@
   padding-bottom: 32px;
   min-height: 160px; /* ensures observer detects section even when empty */
   border-bottom: 1px solid var(--color-border-muted);
-  scroll-margin-top: 250px; /* topbar + search + category-bar + tip + buffer */
+  scroll-margin-top: 72px; /* topbar only */
 }
 
 .category-section:last-child {
@@ -442,7 +451,7 @@
 
 .command-description {
   font-size: 13px;
-  color: var(--color-fg-muted);
+  color: var(--color-fg-default);
   line-height: 1.5;
   margin: 0;
 }
@@ -453,7 +462,7 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--color-fg-subtle);
+  color: var(--color-fg-muted);
   margin-bottom: 6px;
   text-transform: uppercase;
 }
@@ -568,8 +577,20 @@
 
 @media (max-width: 768px) {
   .topbar {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .topbar-title {
+    font-size: 14px;
+  }
+
+  .topbar-tagline {
+    font-size: 11px;
+  }
+
+  .topbar-brand svg {
+    width: 20px;
+    height: 20px;
   }
 
   .site-footer-inner {

@@ -113,16 +113,18 @@ function App() {
     <div className="app-shell">
       <div className="sticky-header" ref={stickyRef}>
         <TopBar theme={theme} onToggleTheme={toggleTheme} />
-        <SearchBar value={searchQuery} onChange={setSearchQuery} resultCount={filteredCommands.length} />
-        <CategoryPills
-          categories={CATEGORIES}
-          activeCategory={activeCategory}
-          onSelect={handleCategorySelect}
-          getStickyHeight={getStickyHeight}
-        />
-        <TipBanner />
       </div>
       <main className="main-layout">
+        <div className="search-controls">
+          <SearchBar value={searchQuery} onChange={setSearchQuery} resultCount={filteredCommands.length} />
+          <CategoryPills
+            categories={CATEGORIES}
+            activeCategory={activeCategory}
+            onSelect={handleCategorySelect}
+            getStickyHeight={getStickyHeight}
+          />
+          <TipBanner />
+        </div>
         {searchQuery.trim() && visibleCategories.length === 0 && (
           <p className="no-results">
             No commands match "<strong>{searchQuery}</strong>"
