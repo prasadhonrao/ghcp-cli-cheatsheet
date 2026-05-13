@@ -1,10 +1,15 @@
+import { forwardRef } from 'react';
+
 interface Props {
   value: string;
   onChange: (query: string) => void;
   resultCount: number;
 }
 
-export function SearchBar({ value, onChange, resultCount }: Props) {
+export const SearchBar = forwardRef<HTMLInputElement, Props>(function SearchBar(
+  { value, onChange, resultCount },
+  ref,
+) {
   return (
     <div className="search-wrapper">
       <div className="search-bar">
@@ -25,10 +30,11 @@ export function SearchBar({ value, onChange, resultCount }: Props) {
           </svg>
         </span>
         <input
+          ref={ref}
           className="search-bar-input"
           type="search"
-          placeholder="Search commands, shortcuts, or topics…"
-          aria-label="Search"
+          placeholder="Search commands, shortcuts, or topics… (Press / to focus)"
+          aria-label="Search commands. Press / to focus, Escape to clear."
           value={value}
           onChange={(e) => onChange(e.target.value)}
         />
@@ -45,4 +51,4 @@ export function SearchBar({ value, onChange, resultCount }: Props) {
       </div>
     </div>
   );
-}
+});

@@ -218,13 +218,13 @@ html[data-color-mode='light'] .cat-pill--active:hover {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 560px;
+  max-width: 760px;
 }
 
 .search-bar-input {
   width: 100%;
-  padding: 10px 110px 10px 40px;
-  background-color: transparent;
+  padding: 10px 130px 10px 40px;
+  background-color: var(--color-canvas-subtle);
   border: 1px solid var(--color-border-default);
   border-radius: 8px;
   color: var(--color-fg-default);
@@ -339,7 +339,7 @@ html[data-color-mode='light'] .search-bar-input:focus-visible {
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  background-color: var(--color-canvas-subtle);
+  background-color: transparent;
   border: 1px solid var(--color-border-default);
   border-left: 3px solid var(--color-accent-emphasis);
   border-radius: 6px;

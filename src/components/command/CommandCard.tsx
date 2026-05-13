@@ -32,12 +32,22 @@ function CopyButton({ text }: { text: string }) {
 }
 
 export function CommandCard({ cmd, isExpanded, onToggle }: Props) {
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      onToggle();
+    }
+  }
+
   return (
     <div
       className={`command-card${isExpanded ? ' command-card--expanded' : ''}`}
       onClick={onToggle}
+      onKeyDown={handleKeyDown}
       role="button"
+      tabIndex={0}
       aria-expanded={isExpanded}
+      aria-label={`${cmd.title} — ${cmd.description}`}
     >
       <div className="command-card-header">
         <code className="command-syntax">{cmd.title}</code>

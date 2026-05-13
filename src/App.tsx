@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Fuse, { type FuseResult } from 'fuse.js';
 import commandsData from './data/commands.json';
 import { CATEGORIES, type Command, type Theme } from './types';
@@ -83,6 +83,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
   const stickyRef = React.useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const isClickScrolling = React.useRef(false);
 
   const getStickyHeight = () => stickyRef.current?.offsetHeight ?? 0;
@@ -102,6 +103,26 @@ function App() {
     document.documentElement.setAttribute('data-color-mode', theme);
     localStorage.setItem('ghcp-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      const tag = (e.target as HTMLElement).tagName;
+      const isEditable =
+        tag === 'INPUT' || tag === 'TEXTAREA' || (e.target as HTMLElement).isContentEditable;
+
+      if (e.key === '/' && !isEditable) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+        searchInputRef.current?.select();
+      }
+
+      if (e.key === 'Escape' && document.activeElement === searchInputRef.current) {
+        searchInputRef.current?.blur();
+      }
+    }
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -200,6 +221,14 @@ function App() {
     return CATEGORIES.filter((cat) => (commandsByCategory[cat.id]?.length ?? 0) > 0);
   }, [searchQuery, commandsByCategory]);
 
+  useEffect(() => {
+    if (!searchQuery.trim()) {
+      setActiveCategory('getting-started');
+    } else if (visibleCategories.length > 0) {
+      setActiveCategory(visibleCategories[0].id);
+    }
+  }, [searchQuery, visibleCategories]);
+
   const handleCategorySelect = (id: string) => {
     setActiveCategory(id);
     isClickScrolling.current = true;
@@ -215,7 +244,7 @@ function App() {
       </div>
       <main className="main-layout">
         <div className="search-controls">
-          <SearchBar value={searchQuery} onChange={setSearchQuery} resultCount={filteredCommands.length} />
+          <SearchBar ref={searchInputRef} value={searchQuery} onChange={setSearchQuery} resultCount={filteredCommands.length} />
           <CategoryPills
             categories={CATEGORIES}
             activeCategory={activeCategory}
