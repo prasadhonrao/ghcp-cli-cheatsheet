@@ -9,36 +9,36 @@ html[data-color-mode='dark'] {
   color-scheme: dark;
 
   /* surfaces */
-  --color-canvas-default: #0d1117;
-  --color-canvas-subtle: #161b22;
-  --color-canvas-inset: #010409;
+  --color-canvas-default: #0a0a0f;
+  --color-canvas-subtle: #12121a;
+  --color-canvas-inset: #08080f;
 
   /* borders */
-  --color-border-default: #30363d;
-  --color-border-muted: #21262d;
+  --color-border-default: #2a2a3a;
+  --color-border-muted: #1e1e2a;
 
   /* text */
-  --color-fg-default: #e6edf3;
-  --color-fg-muted: #8b949e;
-  --color-fg-subtle: #6e7681;
+  --color-fg-default: #ffffff;
+  --color-fg-muted: #a0a0b0;
+  --color-fg-subtle: #6e6e80;
   --color-fg-on-emphasis: #ffffff;
 
   /* accent */
-  --color-accent-fg: #58a6ff;
-  --color-accent-emphasis: #1f6feb;
-  --color-accent-subtle: rgba(56, 139, 253, 0.1);
+  --color-accent-fg: #00f5ff;
+  --color-accent-emphasis: #b366ff;
+  --color-accent-subtle: rgba(0, 245, 255, 0.1);
 
   /* neutral */
   --color-neutral-muted: rgba(110, 118, 129, 0.4);
 
-  /* Copilot brand — purple in dark */
-  --color-copilot-icon: #d2a8ff;
-  --color-command-syntax: #d2a8ff;
-  --color-command-syntax-bg: rgba(210, 168, 255, 0.1);
+  /* Copilot brand — neon cyan in dark */
+  --color-copilot-icon: #00f5ff;
+  --color-command-syntax: #00f5ff;
+  --color-command-syntax-bg: rgba(0, 245, 255, 0.1);
 
   /* gradient stops */
-  --gradient-primary: rgba(137, 87, 229, 0.18);
-  --gradient-secondary: rgba(31, 111, 235, 0.15);
+  --gradient-primary: rgba(0, 245, 255, 0.15);
+  --gradient-secondary: rgba(179, 102, 255, 0.12);
 }
 
 /* ── Light theme ── */
@@ -46,46 +46,69 @@ html[data-color-mode='light'] {
   color-scheme: light;
 
   /* surfaces */
-  --color-canvas-default: #ffffff;
-  --color-canvas-subtle: #f6f8fa;
-  --color-canvas-inset: #eaeef2;
+  --color-canvas-default: #f5f5f7;
+  --color-canvas-subtle: #ffffff;
+  --color-canvas-inset: #ebebef;
 
   /* borders */
-  --color-border-default: #d0d7de;
-  --color-border-muted: #d8dee4;
+  --color-border-default: #d0d0dd;
+  --color-border-muted: #e0e0ea;
 
   /* text */
-  --color-fg-default: #1f2328;
-  --color-fg-muted: #656d76;
-  --color-fg-subtle: #6e7781;
+  --color-fg-default: #1a1a2e;
+  --color-fg-muted: #555570;
+  --color-fg-subtle: #7070a0;
   --color-fg-on-emphasis: #ffffff;
 
   /* accent */
-  --color-accent-fg: #0969da;
-  --color-accent-emphasis: #0969da;
-  --color-accent-subtle: rgba(84, 174, 255, 0.1);
+  --color-accent-fg: #0077b6;
+  --color-accent-emphasis: #7b1fa2;
+  --color-accent-subtle: rgba(0, 119, 182, 0.1);
 
   /* neutral */
   --color-neutral-muted: rgba(175, 184, 193, 0.2);
 
-  /* Copilot brand — purple in light */
-  --color-copilot-icon: #8250df;
-  --color-command-syntax: #6f42c1;
-  --color-command-syntax-bg: rgba(111, 66, 193, 0.08);
+  /* Copilot brand — deep cyan in light */
+  --color-copilot-icon: #0077b6;
+  --color-command-syntax: #0077b6;
+  --color-command-syntax-bg: rgba(0, 119, 182, 0.08);
 
   /* gradient stops — subtle in light */
-  --gradient-primary: rgba(130, 80, 223, 0.07);
-  --gradient-secondary: rgba(9, 105, 218, 0.06);
+  --gradient-primary: rgba(0, 119, 182, 0.09);
+  --gradient-secondary: rgba(194, 24, 91, 0.05);
 }
 
 /* ── Shared typography ── */
 :root {
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* ── Neon grid overlay (dark mode) ── */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, rgba(0, 245, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(0, 245, 255, 0.025) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+html[data-color-mode='light'] body::before {
+  background:
+    linear-gradient(90deg, rgba(0, 119, 182, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(0, 119, 182, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
 html {

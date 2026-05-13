@@ -168,18 +168,30 @@
   text-decoration: none;
 }
 
-/* Active pill — Copilot gradient, white text */
+/* Active pill — neon cyan to purple */
 .cat-pill--active {
-  background: linear-gradient(135deg, #8957e5, #1f6feb);
+  background: linear-gradient(135deg, #00f5ff, #b366ff);
   border-color: transparent;
-  color: #ffffff;
+  color: #0a0a0f;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(137, 87, 229, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 245, 255, 0.45);
 }
 
 .cat-pill--active:hover {
-  background: linear-gradient(135deg, #9a6df0, #3078f0);
+  background: linear-gradient(135deg, #b366ff, #00f5ff);
   border-color: transparent;
+  color: #0a0a0f;
+}
+
+/* Light mode pill — deep blue to purple */
+html[data-color-mode='light'] .cat-pill--active {
+  background: linear-gradient(135deg, #0077b6, #7b1fa2);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 119, 182, 0.4);
+}
+
+html[data-color-mode='light'] .cat-pill--active:hover {
+  background: linear-gradient(135deg, #7b1fa2, #0077b6);
   color: #ffffff;
 }
 
@@ -234,10 +246,15 @@
 .search-bar-input:focus,
 .search-bar-input:focus-visible {
   background-color: var(--color-canvas-default);
-  border-color: var(--color-accent-emphasis);
-  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.3);
+  border-color: var(--color-accent-fg);
+  box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.2);
   color: var(--color-fg-default);
   outline: none;
+}
+
+html[data-color-mode='light'] .search-bar-input:focus,
+html[data-color-mode='light'] .search-bar-input:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.25);
 }
 
 .search-bar-icon {
@@ -298,7 +315,7 @@
   padding: 12px 16px;
   background-color: var(--color-canvas-subtle);
   border: 1px solid var(--color-border-default);
-  border-left: 3px solid #8957e5;
+  border-left: 3px solid var(--color-accent-emphasis);
   border-radius: 6px;
   font-size: 14px;
   color: var(--color-fg-muted);
@@ -410,14 +427,21 @@
 }
 
 .command-card--expanded {
-  border-color: #8957e5;
+  border-color: var(--color-accent-fg);
   box-shadow:
-    0 0 0 1px #8957e5,
-    0 4px 12px rgba(137, 87, 229, 0.2);
+    0 0 0 1px var(--color-accent-fg),
+    0 4px 12px rgba(0, 245, 255, 0.18);
+}
+
+html[data-color-mode='light'] .command-card--expanded {
+  border-color: var(--color-accent-fg);
+  box-shadow:
+    0 0 0 1px var(--color-accent-fg),
+    0 4px 12px rgba(0, 119, 182, 0.15);
 }
 
 .command-card--expanded:hover {
-  border-color: #8957e5;
+  border-color: var(--color-accent-emphasis);
 }
 
 .command-card-header {
@@ -479,7 +503,7 @@
   line-height: 1.6;
   margin: 0;
   padding-left: 12px;
-  border-left: 3px solid #8957e5;
+  border-left: 3px solid var(--color-accent-emphasis);
 }
 
 .command-note {
