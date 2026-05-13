@@ -46,6 +46,11 @@ The 64 commands are organized into 11 categories:
 Command data is split into per-category JSON files under `src/data/categories/`. They are merged in `src/data/index.ts` and imported by `App.tsx`. Categories and their metadata are defined in `src/types/index.ts`.
 
 ```ts
+interface TerminalDemo {
+  prompt: string;
+  output: string[];
+}
+
 interface Command {
   id: string;
   title: string;
@@ -55,6 +60,7 @@ interface Command {
   examples: string[];
   category: string;
   note?: string;
+  terminalDemo?: TerminalDemo;
 }
 ```
 
