@@ -317,7 +317,9 @@ html[data-color-mode='light'] .search-bar-input:focus-visible {
   color: var(--color-fg-muted);
   cursor: pointer;
   flex-shrink: 0;
-  transition: color 0.15s, background-color 0.15s;
+  transition:
+    color 0.15s,
+    background-color 0.15s;
 }
 
 .search-clear-btn:hover {
@@ -585,10 +587,6 @@ html[data-color-mode='light'] .command-card--expanded {
   color: var(--color-fg-muted);
   font-style: italic;
 }
-  margin-top: 10px;
-  padding-top: 12px;
-  border-top: 1px solid var(--color-border-muted);
-}
 
 .command-syntax-full {
   display: block;
@@ -672,7 +670,9 @@ html[data-color-mode='light'] .command-card--expanded {
   text-transform: uppercase;
   color: var(--color-fg-muted);
   cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
   margin-bottom: -1px;
 }
 
