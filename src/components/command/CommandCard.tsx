@@ -22,55 +22,49 @@ export function CommandCard({ cmd, isExpanded, onToggle }: Props) {
       </div>
       <p className="command-description">{cmd.description}</p>
       {isExpanded && (
-        <>
+        <div className="command-card-body">
           {cmd.analogy && (
-            <div className="command-analogy">
+            <div className="command-section">
               <span className="command-section-label">ANALOGY</span>
               <p className="command-analogy-text">{cmd.analogy}</p>
             </div>
           )}
-          {cmd.note && (
-            <div className="command-note">
-              <span className="command-section-label">NOTE</span>
-              <span>{cmd.note}</span>
+          {cmd.syntax && (
+            <div className="command-section">
+              <span className="command-section-label">SYNTAX</span>
+              <p className="command-inline-text command-inline-mono">{cmd.syntax}</p>
             </div>
           )}
           {cmd.examples && cmd.examples.length > 0 && (
-            <div className="command-examples">
-              <span className="command-section-label">EXAMPLE</span>
-              <pre className="command-code-block">
-                {cmd.examples.flatMap((ex, i) => [
-                  ...ex.split('\n').map((line, j) => {
-                    const isFullComment = line.trimStart().startsWith('#');
-                    if (isFullComment) {
-                      return (
-                        <span key={`${i}-${j}`} className="code-line-comment">
-                          {line + '\n'}
-                        </span>
-                      );
-                    }
-                    // Split inline trailing comment: "cmd arg  # explanation"
-                    const commentIdx = line.indexOf('  #');
-                    if (commentIdx !== -1) {
-                      return (
-                        <span key={`${i}-${j}`} className="code-line-command">
-                          {line.slice(0, commentIdx)}
-                          <span className="code-inline-comment">{line.slice(commentIdx) + '\n'}</span>
-                        </span>
-                      );
-                    }
+            <div className="command-section">
+              <span className="command-section-label">EXAMPLES</span>
+              <ul className="command-examples-list">
+                {cmd.examples.map((ex, i) => {
+                  const commentIdx = ex.indexOf('  #');
+                  if (commentIdx !== -1) {
                     return (
-                      <span key={`${i}-${j}`} className="code-line-command">
-                        {line + '\n'}
-                      </span>
+                      <li key={i} className="command-example-item">
+                        <span className="command-example-cmd">{ex.slice(0, commentIdx)}</span>
+                        <span className="command-example-comment">{ex.slice(commentIdx + 2)}</span>
+                      </li>
                     );
-                  }),
-                  i < cmd.examples.length - 1 ? <span key={`sep-${i}`}>{'\n'}</span> : null,
-                ])}
-              </pre>
+                  }
+                  return (
+                    <li key={i} className="command-example-item">
+                      <span className="command-example-cmd">{ex}</span>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           )}
-        </>
+          {cmd.note && (
+            <div className="command-section">
+              <span className="command-section-label">NOTE</span>
+              <p className="command-inline-text command-note-text">{cmd.note}</p>
+            </div>
+          )}
+        </div>
       )}
     </div>
   );

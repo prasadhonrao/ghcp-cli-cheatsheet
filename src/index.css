@@ -36,6 +36,12 @@ html[data-color-mode='dark'] {
   --color-command-syntax: #00f5ff;
   --color-command-syntax-bg: rgba(0, 245, 255, 0.1);
 
+  /* section accent bars */
+  --color-section-analogy: #b366ff;
+  --color-section-syntax: #00f5ff;
+  --color-section-examples: #39d353;
+  --color-section-note: #f0a03a;
+
   /* gradient stops */
   --gradient-primary: rgba(0, 245, 255, 0.15);
   --gradient-secondary: rgba(179, 102, 255, 0.12);
@@ -72,6 +78,12 @@ html[data-color-mode='light'] {
   --color-copilot-icon: #0077b6;
   --color-command-syntax: #0077b6;
   --color-command-syntax-bg: rgba(0, 119, 182, 0.08);
+
+  /* section accent bars */
+  --color-section-analogy: #7b1fa2;
+  --color-section-syntax: #0077b6;
+  --color-section-examples: #2da44e;
+  --color-section-note: #9a6700;
 
   /* gradient stops — subtle in light */
   --gradient-primary: rgba(0, 119, 182, 0.09);

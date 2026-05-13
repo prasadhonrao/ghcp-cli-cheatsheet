@@ -35,6 +35,13 @@ export function SearchBar({ value, onChange, resultCount }: Props) {
         <span className="search-count" aria-hidden="true">
           {resultCount} {resultCount === 1 ? 'command' : 'commands'}
         </span>
+        {value && (
+          <button className="search-clear-btn" aria-label="Clear search" onClick={() => onChange('')}>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            </svg>
+          </button>
+        )}
       </div>
     </div>
   );

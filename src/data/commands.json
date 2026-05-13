@@ -5,9 +5,7 @@
     "syntax": "/bug",
     "description": "Report a specific bug or issue with Copilot CLI to GitHub. Alias for /feedback.",
     "analogy": "Like clicking 'Report a problem' in an app — a direct line to the team for filing specific bug reports.",
-    "examples": [
-      "/bug  # open the bug report flow"
-    ],
+    "examples": ["/bug  # open the bug report flow"],
     "category": "getting-started",
     "note": "See also: /feedback — a separate alias command that does the same thing."
   },
@@ -31,23 +29,17 @@
     "syntax": "/feedback",
     "description": "Provide feedback about Copilot CLI to GitHub.",
     "analogy": "Like a feedback form at a restaurant — quick way to tell the team what is working and what is not.",
-    "examples": [
-      "/feedback  # open the feedback flow"
-    ],
+    "examples": ["/feedback  # open the feedback flow"],
     "category": "getting-started",
     "note": "See also: /bug — a separate alias command that does the same thing."
   },
   {
     "id": "gs-4",
     "title": "/help",
-    "syntax": "/help [TOPIC]",
-    "description": "Show help for all interactive slash commands. Optional topic filters: config, commands, environment, logging, permissions, or providers.",
+    "syntax": "/help",
+    "description": "Show help for all interactive slash commands inside a Copilot CLI session. Takes no arguments. For topic-specific help outside a session, use 'copilot help [TOPIC]' at the terminal.",
     "analogy": "Like the index of a cookbook — scan it to know what is possible, then jump to what you need.",
-    "examples": [
-      "/help  # list all commands",
-      "/help permissions  # filter to permission-related commands",
-      "/help environment  # show environment variable docs"
-    ],
+    "examples": ["/help  # list all slash commands"],
     "category": "getting-started"
   },
   {
@@ -68,10 +60,7 @@
     "syntax": "/update",
     "description": "Update the Copilot CLI to the latest version from within an active session. Also available as /upgrade.",
     "analogy": "Like tapping the update button in an app store — stay on the latest features without leaving your workflow.",
-    "examples": [
-      "/update  # update from inside a session",
-      "/upgrade  # alias for /update"
-    ],
+    "examples": ["/update  # update from inside a session", "/upgrade  # alias for /update"],
     "category": "getting-started"
   },
   {
@@ -80,9 +69,7 @@
     "syntax": "/usage",
     "description": "Display session usage metrics: token counts, model calls, costs, and AI units consumed so far.",
     "analogy": "Like checking your data usage on a phone plan — know how much quota you have used before hitting a limit.",
-    "examples": [
-      "/usage  # show full stats for the current session"
-    ],
+    "examples": ["/usage  # show full stats for the current session"],
     "category": "getting-started"
   },
   {
@@ -91,10 +78,7 @@
     "syntax": "/version",
     "description": "Display version information for the installed Copilot CLI and check whether an update is available.",
     "analogy": "Like checking the label on a medicine bottle — always know which version you are running before troubleshooting.",
-    "examples": [
-      "/version  # print installed version",
-      "/update  # update if an upgrade is available"
-    ],
+    "examples": ["/version  # print installed version", "/update  # update if an upgrade is available"],
     "category": "getting-started"
   },
   {
@@ -103,9 +87,7 @@
     "syntax": "/login",
     "description": "Authenticate with GitHub Copilot from within an active session.",
     "analogy": "Like showing your badge at the office entrance — without it nothing works, but you only do it once.",
-    "examples": [
-      "/login  # start OAuth flow inside the session"
-    ],
+    "examples": ["/login  # start OAuth flow inside the session"],
     "category": "authentication"
   },
   {
@@ -114,9 +96,7 @@
     "syntax": "/logout",
     "description": "Log out of GitHub Copilot and clear stored credentials.",
     "analogy": "Like signing out of your bank website on a shared computer — good hygiene when switching accounts.",
-    "examples": [
-      "/logout  # clear credentials from the current session"
-    ],
+    "examples": ["/logout  # clear credentials from the current session"],
     "category": "authentication"
   },
   {
@@ -163,9 +143,7 @@
     "syntax": "/copy",
     "description": "Copy the last Copilot response to the clipboard.",
     "analogy": "Like a \"copy response\" button in a chat app — grab the output without selecting text manually.",
-    "examples": [
-      "/copy  # copies the most recent response to clipboard"
-    ],
+    "examples": ["/copy  # copies the most recent response to clipboard"],
     "category": "chat"
   },
   {
@@ -188,10 +166,7 @@
     "syntax": "/search [QUERY]",
     "description": "Search the current conversation timeline for past messages. Also available as /find. Only available in experimental mode.",
     "analogy": "Like Ctrl+F inside a long chat thread — jump to any past message by keyword.",
-    "examples": [
-      "/search authentication  # find messages mentioning authentication",
-      "/find JWT  # alias for /search"
-    ],
+    "examples": ["/search authentication  # find messages mentioning authentication", "/find JWT  # alias for /search"],
     "category": "chat"
   },
   {
@@ -200,10 +175,7 @@
     "syntax": "/undo",
     "description": "Rewind the last turn and revert any file changes Copilot made. Also available as /rewind.",
     "analogy": "Like Ctrl+Z for a Copilot action — undo the last step if the result was not what you wanted.",
-    "examples": [
-      "/undo  # revert the last turn and its file changes",
-      "/rewind  # alias for /undo"
-    ],
+    "examples": ["/undo  # revert the last turn and its file changes", "/rewind  # alias for /undo"],
     "category": "chat"
   },
   {
@@ -275,15 +247,15 @@
     "id": "config-3",
     "title": "/cd",
     "syntax": "/cd [PATH]",
-    "description": "Change the current working directory to the specified path.",
+    "description": "Co-equal alias for /cwd. With a path, changes the working directory. Without a path, displays the current directory.",
     "analogy": "Like the cd shell command — navigate to a different folder without leaving the Copilot session.",
     "examples": [
       "/cd ~/projects/my-app  # change to a specific directory",
       "/cd ..  # go up one directory level",
-      "/cwd  # check your current directory afterward"
+      "/cd  # display the current working directory"
     ],
     "category": "configuration",
-    "note": "See also: /cwd — a separate alias command that shows the current directory."
+    "note": "See also: /cwd — co-equal alias for the same command."
   },
   {
     "id": "config-4",
@@ -291,23 +263,21 @@
     "syntax": "/clikit [COMPONENT]",
     "description": "Preview CLI interface components such as quota info. Primarily used for development and debugging of CLI UI elements.",
     "analogy": "Like a component storybook for the CLI — view individual UI building blocks in isolation.",
-    "examples": [
-      "/clikit  # list available components",
-      "/clikit quota  # preview the quota info component"
-    ],
+    "examples": ["/clikit  # list available components", "/clikit quota  # preview the quota info component"],
     "category": "configuration"
   },
   {
     "id": "config-5",
     "title": "/cwd",
     "syntax": "/cwd [PATH]",
-    "description": "Display the current working directory without changing it.",
+    "description": "Display the current working directory. With a path argument, changes to that directory. Also available as /cd.",
     "analogy": "Like pwd and cd combined — check where you are or move to a new directory without leaving Copilot.",
     "examples": [
-      "/cwd  # show the current working directory"
+      "/cwd  # show the current working directory",
+      "/cwd ~/projects/my-app  # change to a specific directory"
     ],
     "category": "configuration",
-    "note": "See also: /cd — a separate alias command that changes the directory."
+    "note": "See also: /cd — co-equal alias for the same command."
   },
   {
     "id": "config-6",
@@ -315,9 +285,7 @@
     "syntax": "/env",
     "description": "Show all loaded environment details: custom instructions, MCP servers, skills, agents, plugins, LSPs, and extensions.",
     "analogy": "Like printenv but for Copilot's full runtime configuration — everything it loaded when this session started.",
-    "examples": [
-      "/env  # inspect the full Copilot runtime environment"
-    ],
+    "examples": ["/env  # inspect the full Copilot runtime environment"],
     "category": "configuration"
   },
   {
@@ -352,10 +320,7 @@
     "syntax": "/list-dirs",
     "description": "Display all directories currently in the allowed file access list.",
     "analogy": "Like viewing the file permissions panel for an app — see exactly which folders have been granted access.",
-    "examples": [
-      "/list-dirs  # show all allowed directories",
-      "/add-dir ./src  # add a directory to the list"
-    ],
+    "examples": ["/list-dirs  # show all allowed directories", "/add-dir ./src  # add a directory to the list"],
     "category": "configuration"
   },
   {
@@ -364,9 +329,7 @@
     "syntax": "/reset-allowed-tools",
     "description": "Clear the list of tools and permissions approved for this session, returning to the default prompt-per-action state.",
     "analogy": "Like revoking all app permissions at once — Copilot will prompt again the next time it needs each tool.",
-    "examples": [
-      "/reset-allowed-tools  # revoke all approved tools and permissions"
-    ],
+    "examples": ["/reset-allowed-tools  # revoke all approved tools and permissions"],
     "category": "configuration"
   },
   {
@@ -375,10 +338,7 @@
     "syntax": "/statusline",
     "description": "Configure which items appear in the status line at the bottom of the interactive interface. Also available as /footer.",
     "analogy": "Like customizing the status bar in your IDE — choose exactly which metrics and indicators to keep visible.",
-    "examples": [
-      "/statusline  # open the status line configuration menu",
-      "/footer  # alias for /statusline"
-    ],
+    "examples": ["/statusline  # open the status line configuration menu", "/footer  # alias for /statusline"],
     "category": "configuration"
   },
   {
@@ -400,9 +360,7 @@
     "syntax": "/terminal-setup",
     "description": "Run the interactive setup wizard to configure multiline input support (Shift+Enter and Ctrl+Enter) in the current terminal.",
     "analogy": "Like a first-run setup wizard — configures the terminal keybindings you want before you start.",
-    "examples": [
-      "/terminal-setup  # launch the interactive setup wizard"
-    ],
+    "examples": ["/terminal-setup  # launch the interactive setup wizard"],
     "category": "configuration"
   },
   {
@@ -424,9 +382,7 @@
     "syntax": "/diff",
     "description": "Review the changes made in the current directory — Copilot summarizes and explains the git diff.",
     "analogy": "Like asking a senior dev to walk you through what changed before a code review — fast orientation without reading raw diffs.",
-    "examples": [
-      "/diff  # review and explain changes in the working directory"
-    ],
+    "examples": ["/diff  # review and explain changes in the working directory"],
     "category": "code"
   },
   {
@@ -462,10 +418,7 @@
     "syntax": "/review [PROMPT]",
     "description": "Run the built-in code review agent to analyze the current diff for bugs, security issues, and logic errors.",
     "analogy": "Like submitting your changes for an automated expert review — get focused feedback before pushing.",
-    "examples": [
-      "/review  # analyze the current working directory diff",
-      "/review focus on security issues only"
-    ],
+    "examples": ["/review  # analyze the current working directory diff", "/review focus on security issues only"],
     "category": "code",
     "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/requesting-a-code-review-with-github-copilot-cli"
   },
@@ -475,9 +428,7 @@
     "syntax": "/agent",
     "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task.",
     "analogy": "Like an app drawer for specialized AI workers — each agent is tuned for a specific type of job.",
-    "examples": [
-      "/agent  # open the interactive agent picker"
-    ],
+    "examples": ["/agent  # open the interactive agent picker"],
     "category": "agents"
   },
   {
@@ -525,9 +476,7 @@
     "syntax": "/ide",
     "description": "Connect Copilot CLI to your IDE workspace so the model can see your open files, diagnostics, and editor state.",
     "analogy": "Like plugging two monitors into the same computer — Copilot and your IDE share the same view of your project.",
-    "examples": [
-      "/ide  # connect to the IDE workspace from an active session"
-    ],
+    "examples": ["/ide  # connect to the IDE workspace from an active session"],
     "category": "agents",
     "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/connecting-github-copilot-cli-to-vs-code"
   },
@@ -563,9 +512,7 @@
     "syntax": "/tasks",
     "description": "View and manage active background tasks — subagents and shell commands currently running in the session.",
     "analogy": "Like a task manager or the shell jobs command — see what is running in the background and manage it from one place.",
-    "examples": [
-      "/tasks  # list all active subagents and background shell commands"
-    ],
+    "examples": ["/tasks  # list all active subagents and background shell commands"],
     "category": "agents"
   },
   {
@@ -681,9 +628,7 @@
     "syntax": "/instructions",
     "description": "View and toggle the custom instruction files currently loaded into Copilot's context — AGENTS.md, copilot-instructions.md, and others.",
     "analogy": "Like checking which style guides are active in your linter — see exactly what rules are shaping Copilot's behavior.",
-    "examples": [
-      "/instructions  # show loaded instruction files and their status"
-    ],
+    "examples": ["/instructions  # show loaded instruction files and their status"],
     "category": "instructions"
   },
   {
@@ -733,10 +678,7 @@
     "syntax": "/diagnosis",
     "description": "Run a set of diagnostic checks on the Copilot CLI environment — verifies authentication, connectivity, model availability, and configuration.",
     "analogy": "Like running a system health check — one command tells you exactly what is working and what isn't.",
-    "examples": [
-      "/diagnosis  # run all diagnostic checks",
-      "/restart  # try this first if /diagnosis reports issues"
-    ],
+    "examples": ["/diagnosis  # run all diagnostic checks", "/restart  # try this first if /diagnosis reports issues"],
     "category": "troubleshooting"
   },
   {
@@ -757,9 +699,7 @@
     "syntax": "/exit",
     "description": "Exit the Copilot CLI interactive session cleanly.",
     "analogy": "Like closing a terminal tab cleanly — exits gracefully rather than force-killing the process.",
-    "examples": [
-      "/exit  # close the interactive session"
-    ],
+    "examples": ["/exit  # close the interactive session"],
     "category": "troubleshooting",
     "note": "See also: /quit — a separate alias command that does the same thing."
   },
@@ -769,9 +709,7 @@
     "syntax": "/quit",
     "description": "Exit the Copilot CLI interactive session cleanly.",
     "analogy": "Like typing \"quit\" or \"exit\" in a REPL — both mean the same thing, use whichever feels natural.",
-    "examples": [
-      "/quit  # close the interactive session"
-    ],
+    "examples": ["/quit  # close the interactive session"],
     "category": "troubleshooting",
     "note": "See also: /exit — a separate alias command that does the same thing."
   },
@@ -795,9 +733,7 @@
     "syntax": "/restart",
     "description": "Restart the Copilot CLI process while preserving the current session. Use when the session is unresponsive or behaving unexpectedly.",
     "analogy": "Like restarting your browser without losing your tabs — the process reloads fresh but your session state is preserved.",
-    "examples": [
-      "/restart  # restart the CLI, preserving the current session"
-    ],
+    "examples": ["/restart  # restart the CLI, preserving the current session"],
     "category": "troubleshooting"
   }
 ]

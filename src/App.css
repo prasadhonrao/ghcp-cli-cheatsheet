@@ -294,11 +294,35 @@ html[data-color-mode='light'] .search-bar-input:focus-visible {
 /* ── Search command count badge ── */
 .search-count {
   position: absolute;
-  right: 12px;
+  right: 36px;
   font-size: 12px;
   color: var(--color-fg-muted);
   pointer-events: none;
   white-space: nowrap;
+}
+
+/* ── Search clear button ── */
+.search-clear-btn {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.search-clear-btn:hover {
+  color: var(--color-fg-default);
+  background-color: var(--color-neutral-muted);
 }
 
 /* ── Search / category / tip group — scrolls with content ── */
@@ -503,7 +527,80 @@ html[data-color-mode='light'] .command-card--expanded {
   line-height: 1.6;
   margin: 0;
   padding-left: 12px;
-  border-left: 3px solid var(--color-accent-emphasis);
+  border-left: 3px solid var(--color-section-analogy);
+}
+
+.command-section {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.command-inline-text {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.command-inline-mono {
+  font-family: var(--font-mono);
+  color: var(--color-command-syntax);
+  padding-left: 12px;
+  border-left: 3px solid var(--color-section-syntax);
+}
+
+.command-note-text {
+  color: var(--color-fg-muted);
+  font-style: italic;
+  padding-left: 12px;
+  border-left: 3px solid var(--color-section-note);
+}
+
+.command-examples-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.command-example-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  padding-left: 12px;
+  border-left: 3px solid var(--color-section-examples);
+}
+
+.command-example-cmd {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--color-command-syntax);
+}
+
+.command-example-comment {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  font-style: italic;
+}
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.command-syntax-full {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: var(--color-canvas-inset);
+  color: var(--color-command-syntax);
+  border: 1px solid var(--color-border-default);
+  word-break: break-all;
+  line-height: 1.6;
 }
 
 .command-note {
@@ -537,6 +634,69 @@ html[data-color-mode='light'] .command-card--expanded {
 
 .command-docs-link a:hover {
   text-decoration: underline;
+}
+
+@keyframes card-body-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.command-card-body {
+  animation: card-body-in 0.15s ease-out both;
+  display: flex;
+  flex-direction: column;
+}
+
+.command-tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid var(--color-border-muted);
+  margin-bottom: 12px;
+}
+
+.command-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 6px 10px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -1px;
+}
+
+.command-tab:hover {
+  color: var(--color-fg-default);
+}
+
+.command-tab--active {
+  color: var(--color-accent-fg);
+  border-bottom-color: var(--color-accent-fg);
+}
+
+.command-tab-content {
+  min-height: 40px;
+}
+
+.command-note-content {
+  font-size: 13px;
+  color: var(--color-fg-muted);
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 12px;
+  border-left: 3px solid var(--color-fg-muted);
 }
 
 .command-examples {
