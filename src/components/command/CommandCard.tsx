@@ -14,10 +14,15 @@ function CopyButton({ text }: { text: string }) {
 
   function handleCopy(e: React.MouseEvent) {
     e.stopPropagation();
-    navigator.clipboard.writeText(text).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    });
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
+      })
+      .catch(() => {
+        // clipboard write failed (e.g. non-secure context or permission denied)
+      });
   }
 
   return (

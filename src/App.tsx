@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import Fuse, { type FuseResult } from 'fuse.js';
 import commandsData from './data/index';
 import { CATEGORIES, type Command, type Theme } from './types';
@@ -82,9 +82,9 @@ function App() {
   const [activeCategory, setActiveCategory] = useState('getting-started');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
-  const stickyRef = React.useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const isClickScrolling = React.useRef(false);
+  const isClickScrolling = useRef(false);
 
   const getStickyHeight = () => stickyRef.current?.offsetHeight ?? 0;
 

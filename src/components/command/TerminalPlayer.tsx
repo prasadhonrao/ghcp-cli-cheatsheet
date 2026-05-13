@@ -16,7 +16,12 @@ export function TerminalPlayer({ demo, commandTitle }: Props) {
   const cancelRef = useRef(false);
   const outputRef = useRef<HTMLDivElement>(null);
 
-  // Blinking cursor
+  // Cancel animation on unmount
+  useEffect(() => {
+    return () => {
+      cancelRef.current = true;
+    };
+  }, []);
   useEffect(() => {
     const id = setInterval(() => setShowCursor((v) => !v), 530);
     return () => clearInterval(id);
@@ -97,7 +102,9 @@ export function TerminalPlayer({ demo, commandTitle }: Props) {
 
   return (
     <div className="terminal-section">
-      <span className="command-section-label"><span className="card-section-icon">🎬</span> SEE IT IN ACTION</span>
+      <span className="command-section-label">
+        <span className="card-section-icon">🎬</span> SEE IT IN ACTION
+      </span>
       <div className="terminal-window">
         {/* Header bar */}
         <div className="terminal-header">
@@ -113,7 +120,11 @@ export function TerminalPlayer({ demo, commandTitle }: Props) {
                 ↺ Replay
               </button>
             ) : (
-              <button className="terminal-btn" onClick={handlePlay} aria-label={state === 'running' ? 'Stop demo' : 'Play demo'}>
+              <button
+                className="terminal-btn"
+                onClick={handlePlay}
+                aria-label={state === 'running' ? 'Stop demo' : 'Play demo'}
+              >
                 {state === 'running' ? '■ Stop' : '▶ Play'}
               </button>
             )}

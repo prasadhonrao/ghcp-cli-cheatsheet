@@ -528,19 +528,6 @@ html[data-color-mode='light'] .command-card--expanded {
   left: -8px;
 }
 
-.command-analogy {
-  margin-top: 10px;
-  padding-top: 12px;
-  border-top: 1px solid var(--color-border-muted);
-}
-
-.command-analogy-text {
-  font-size: 13px;
-  color: var(--color-fg-default);
-  line-height: 1.6;
-  margin: 0;
-}
-
 .command-section {
   margin-top: 10px;
   padding-top: 12px;
@@ -558,10 +545,6 @@ html[data-color-mode='light'] .command-card--expanded {
 
 .command-inline-mono {
   font-family: var(--font-mono);
-}
-
-.command-section-block {
-  /* removed - no longer used */
 }
 
 .command-section-description {
@@ -582,10 +565,6 @@ html[data-color-mode='light'] .command-card--expanded {
 
 .command-section-note {
   color: var(--color-section-note);
-}
-
-.command-note-text {
-  color: var(--color-fg-default);
 }
 
 .command-examples-list {
@@ -886,9 +865,15 @@ html[data-color-mode='light'] .command-card--expanded {
   display: inline-block;
 }
 
-.terminal-dot--red    { background-color: #ff5f57; }
-.terminal-dot--yellow { background-color: #ffbd2e; }
-.terminal-dot--green  { background-color: #28c840; }
+.terminal-dot--red {
+  background-color: #ff5f57;
+}
+.terminal-dot--yellow {
+  background-color: #ffbd2e;
+}
+.terminal-dot--green {
+  background-color: #28c840;
+}
 
 .terminal-title {
   flex: 1;
@@ -912,7 +897,9 @@ html[data-color-mode='light'] .command-card--expanded {
   background-color: #21262d;
   color: #c9d1d9;
   cursor: pointer;
-  transition: background-color 0.15s, border-color 0.15s;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
 }
 
 .terminal-btn:hover {
