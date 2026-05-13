@@ -576,6 +576,38 @@ html[data-color-mode='light'] .command-card--expanded {
   border-left: 3px solid var(--color-section-examples);
 }
 
+.command-example-item:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--color-border-default);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+  line-height: 1.6;
+}
+
+.copy-btn:hover {
+  color: var(--color-accent-fg);
+  border-color: var(--color-accent-fg);
+}
+
+.copy-btn--copied {
+  opacity: 1;
+  color: var(--color-success-fg, #3fb950);
+  border-color: var(--color-success-fg, #3fb950);
+}
+
 .command-example-cmd {
   font-family: var(--font-mono);
   font-size: 12.5px;

@@ -1,9 +1,34 @@
+import { useState } from 'react';
+import { CopyIcon, CheckIcon } from '@primer/octicons-react';
 import type { Command } from '../../types';
 
 interface Props {
   cmd: Command;
   isExpanded: boolean;
   onToggle: () => void;
+}
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy(e: React.MouseEvent) {
+    e.stopPropagation();
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    });
+  }
+
+  return (
+    <button
+      className={`copy-btn${copied ? ' copy-btn--copied' : ''}`}
+      onClick={handleCopy}
+      aria-label="Copy command"
+      title="Copy"
+    >
+      {copied ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
+    </button>
+  );
 }
 
 export function CommandCard({ cmd, isExpanded, onToggle }: Props) {
@@ -41,17 +66,20 @@ export function CommandCard({ cmd, isExpanded, onToggle }: Props) {
               <ul className="command-examples-list">
                 {cmd.examples.map((ex, i) => {
                   const commentIdx = ex.indexOf('  #');
+                  const cmdText = commentIdx !== -1 ? ex.slice(0, commentIdx) : ex;
                   if (commentIdx !== -1) {
                     return (
                       <li key={i} className="command-example-item">
-                        <span className="command-example-cmd">{ex.slice(0, commentIdx)}</span>
+                        <span className="command-example-cmd">{cmdText}</span>
                         <span className="command-example-comment">{ex.slice(commentIdx + 2)}</span>
+                        <CopyButton text={cmdText} />
                       </li>
                     );
                   }
                   return (
                     <li key={i} className="command-example-item">
                       <span className="command-example-cmd">{ex}</span>
+                      <CopyButton text={ex} />
                     </li>
                   );
                 })}
