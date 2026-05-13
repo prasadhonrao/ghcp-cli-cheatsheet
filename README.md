@@ -2,13 +2,13 @@
 
 A searchable reference site for GitHub Copilot CLI commands, workflows, and examples.
 
-Built with React, Vite, and TypeScript. Data-driven — all 64 commands live in a single JSON file so the UI stays easy to maintain, extend, and search.
+Built with React, Vite, and TypeScript. Data-driven — all 64 commands are split into per-category JSON files so the UI stays easy to maintain, extend, and search.
 
 ## Features
 
 - Instant fuzzy search across titles, descriptions, syntax, and examples (powered by Fuse.js)
 - Category-based browsing with sticky top bar and horizontal category pills
-- Command cards with syntax, descriptions, analogies, copyable examples, and notes
+- Command cards with syntax, descriptions, analogies, examples with one-click copy buttons, and notes
 - Dark and light theme toggle
 - Responsive layout — works on desktop and mobile
 
@@ -43,7 +43,7 @@ The 64 commands are organized into 11 categories:
 
 ### Data model
 
-All command data lives in `src/data/commands.json`. Categories and their metadata are defined in `src/types/index.ts`.
+Command data is split into per-category JSON files under `src/data/categories/`. They are merged in `src/data/index.ts` and imported by `App.tsx`. Categories and their metadata are defined in `src/types/index.ts`.
 
 ```ts
 interface Command {
@@ -58,17 +58,38 @@ interface Command {
 }
 ```
 
+Each `examples` entry is a plain string. Comments after `  #` are rendered separately; the copy button copies only the command portion.
+
 ### Example command entry
 
 ```json
 {
-  "id": "gs-8",
-  "title": "/version",
-  "syntax": "/version",
-  "description": "Display version information for the installed Copilot CLI and check whether an update is available.",
-  "analogy": "Like checking the label on a medicine bottle — always know which version you are running before troubleshooting.",
-  "examples": ["/version  # print installed version", "/update  # update if an upgrade is available"],
-  "category": "getting-started"
+  "id": "gs-2",
+  "title": "/changelog",
+  "syntax": "/changelog [summarize] [VERSION|last N|since VERSION]",
+  "description": "Display the CLI changelog. Add the keyword \"summarize\" for an AI-generated summary. Also available as /release-notes.",
+  "analogy": "Like reading the \"What is New\" page after an app update — find out exactly what changed and which commands are new.",
+  "examples": [
+    "/changelog  # show recent release notes",
+    "/changelog last 3  # show the last 3 releases",
+    "/changelog summarize  # AI-generated summary of recent changes",
+    "/release-notes  # alias for /changelog"
+  ],
+  "category": "getting-started",
+  "terminalDemo": {
+    "prompt": "$ /changelog last 2",
+    "output": [
+      "",
+      "## v1.4.0  (2025-04-28)",
+      "  • /fleet now supports parallel subagent execution",
+      "  • /delegate creates pull requests automatically",
+      "  • Improved context window visualization in /context",
+      "",
+      "## v1.3.2  (2025-04-10)",
+      "  • /mcp reload no longer requires session restart",
+      "  • Fixed /undo edge case with binary files"
+    ]
+  }
 }
 ```
 
@@ -90,7 +111,19 @@ ghcp-cli-cheatsheet/
 │   │       ├── CategoryPills.tsx
 │   │       └── TipBanner.tsx
 │   ├── data/
-│   │   └── commands.json
+│   │   ├── index.ts              ← merges all category files
+│   │   └── categories/
+│   │       ├── getting-started.json
+│   │       ├── authentication.json
+│   │       ├── chat.json
+│   │       ├── models.json
+│   │       ├── configuration.json
+│   │       ├── code.json
+│   │       ├── agents.json
+│   │       ├── mcp.json
+│   │       ├── memory.json
+│   │       ├── instructions.json
+│   │       └── troubleshooting.json
 │   ├── types/
 │   │   └── index.ts
 │   ├── App.css
@@ -180,7 +213,7 @@ Once published, the site will be available at:
 
 Contributions are welcome. Useful areas:
 
-- Adding or updating command data in `src/data/commands.json`
+- Adding or updating command data in the relevant file under `src/data/categories/`
 - Improving categorization and examples
 - Improving accessibility and mobile UX
 
