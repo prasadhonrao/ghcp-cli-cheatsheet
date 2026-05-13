@@ -7,7 +7,19 @@
     "analogy": "Like clicking 'Report a problem' in an app — a direct line to the team for filing specific bug reports.",
     "examples": ["/bug  # open the bug report flow"],
     "category": "getting-started",
-    "note": "See also: /feedback — a separate alias command that does the same thing."
+    "note": "See also: /feedback — a separate alias command that does the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /bug",
+      "output": [
+        "",
+        "→ Opening bug report form in your browser…",
+        "",
+        "Please describe the issue you encountered.",
+        "Your report will be sent to the GitHub Copilot team.",
+        "",
+        "Tip: Run /collect-debug-logs first to attach diagnostic info."
+      ]
+    }
   },
   {
     "id": "gs-2",
@@ -21,7 +33,21 @@
       "/changelog summarize  # AI-generated summary of recent changes",
       "/release-notes  # alias for /changelog"
     ],
-    "category": "getting-started"
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /changelog last 2",
+      "output": [
+        "",
+        "## v1.4.0  (2025-04-28)",
+        "  • /fleet now supports parallel subagent execution",
+        "  • /delegate creates pull requests automatically",
+        "  • Improved context window visualization in /context",
+        "",
+        "## v1.3.2  (2025-04-10)",
+        "  • /mcp reload no longer requires session restart",
+        "  • Fixed /undo edge case with binary files"
+      ]
+    }
   },
   {
     "id": "gs-3",
@@ -31,7 +57,17 @@
     "analogy": "Like a feedback form at a restaurant — quick way to tell the team what is working and what is not.",
     "examples": ["/feedback  # open the feedback flow"],
     "category": "getting-started",
-    "note": "See also: /bug — a separate alias command that does the same thing."
+    "note": "See also: /bug — a separate alias command that does the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /feedback",
+      "output": [
+        "",
+        "→ Opening feedback form in your browser…",
+        "",
+        "Thank you for helping improve GitHub Copilot CLI!",
+        "Share what is working, what is not, or suggest new features."
+      ]
+    }
   },
   {
     "id": "gs-4",
@@ -40,7 +76,27 @@
     "description": "Show help for all interactive slash commands inside a Copilot CLI session. Takes no arguments. For topic-specific help outside a session, use 'copilot help [TOPIC]' at the terminal.",
     "analogy": "Like the index of a cookbook — scan it to know what is possible, then jump to what you need.",
     "examples": ["/help  # list all slash commands"],
-    "category": "getting-started"
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /help",
+      "output": [
+        "",
+        "Available slash commands:",
+        "",
+        "  /ask           Ask Copilot anything",
+        "  /bug           Report a bug to GitHub",
+        "  /changelog     View recent release notes",
+        "  /clear         Clear the current session",
+        "  /exit          Exit the session",
+        "  /feedback      Send feedback to GitHub",
+        "  /help          Show this help message",
+        "  /init          Initialise Copilot for this repo",
+        "  /update        Update to the latest version",
+        "  /version       Show installed version",
+        "",
+        "Tip: Press Tab inside a session to autocomplete commands."
+      ]
+    }
   },
   {
     "id": "gs-5",
@@ -52,7 +108,22 @@
       "/init  # analyze repo and write .github/copilot-instructions.md",
       "/init suppress  # hide the startup warning without creating the file"
     ],
-    "category": "getting-started"
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /init",
+      "output": [
+        "",
+        "Analysing repository structure…",
+        "",
+        "  Detected:  Node.js · TypeScript · React · Vite",
+        "  Found:     src/, tests/, .github/",
+        "",
+        "Writing .github/copilot-instructions.md…  ✓",
+        "",
+        "Copilot is now primed with your repo context.",
+        "Every future session starts with this knowledge loaded."
+      ]
+    }
   },
   {
     "id": "gs-6",
@@ -61,7 +132,21 @@
     "description": "Update the Copilot CLI to the latest version from within an active session. Also available as /upgrade.",
     "analogy": "Like tapping the update button in an app store — stay on the latest features without leaving your workflow.",
     "examples": ["/update  # update from inside a session", "/upgrade  # alias for /update"],
-    "category": "getting-started"
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /update",
+      "output": [
+        "",
+        "Checking for updates…",
+        "",
+        "  Current version:  1.3.2",
+        "  Latest version:   1.4.0",
+        "",
+        "Downloading v1.4.0…  ████████████████  100%",
+        "",
+        "✓ Update complete. Restarting into v1.4.0…"
+      ]
+    }
   },
   {
     "id": "gs-7",
@@ -70,7 +155,22 @@
     "description": "Display session usage metrics: token counts, model calls, costs, and AI units consumed so far.",
     "analogy": "Like checking your data usage on a phone plan — know how much quota you have used before hitting a limit.",
     "examples": ["/usage  # show full stats for the current session"],
-    "category": "getting-started"
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /usage",
+      "output": [
+        "",
+        "Session Usage Summary",
+        "─────────────────────────────",
+        "  Input tokens:     12,480",
+        "  Output tokens:      3,920",
+        "  Model calls:            8",
+        "  AI units used:       0.42",
+        "  Estimated cost:     $0.07",
+        "─────────────────────────────",
+        "  Session started:  14 min ago"
+      ]
+    }
   },
   {
     "id": "gs-8",
@@ -79,7 +179,20 @@
     "description": "Display version information for the installed Copilot CLI and check whether an update is available.",
     "analogy": "Like checking the label on a medicine bottle — always know which version you are running before troubleshooting.",
     "examples": ["/version  # print installed version", "/update  # update if an upgrade is available"],
-    "category": "getting-started"
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /version",
+      "output": [
+        "",
+        "GitHub Copilot CLI  v1.4.0",
+        "",
+        "  Node.js:   v20.11.0",
+        "  Platform:  darwin arm64",
+        "  Install:   /usr/local/bin/copilot",
+        "",
+        "✓ You are on the latest version."
+      ]
+    }
   },
   {
     "id": "auth-1",
@@ -88,7 +201,19 @@
     "description": "Authenticate with GitHub Copilot from within an active session.",
     "analogy": "Like showing your badge at the office entrance — without it nothing works, but you only do it once.",
     "examples": ["/login  # start OAuth flow inside the session"],
-    "category": "authentication"
+    "category": "authentication",
+    "terminalDemo": {
+      "prompt": "$ /login",
+      "output": [
+        "",
+        "→ Opening GitHub authentication in your browser…",
+        "",
+        "Waiting for authorisation…",
+        "",
+        "✓ Authenticated as prasadhonrao",
+        "✓ GitHub Copilot access confirmed"
+      ]
+    }
   },
   {
     "id": "auth-2",
@@ -97,7 +222,19 @@
     "description": "Log out of GitHub Copilot and clear stored credentials.",
     "analogy": "Like signing out of your bank website on a shared computer — good hygiene when switching accounts.",
     "examples": ["/logout  # clear credentials from the current session"],
-    "category": "authentication"
+    "category": "authentication",
+    "terminalDemo": {
+      "prompt": "$ /logout",
+      "output": [
+        "",
+        "Clearing stored credentials…",
+        "",
+        "✓ Logged out of github.com (prasadhonrao)",
+        "✓ Session credentials removed",
+        "",
+        "Run /login to re-authenticate."
+      ]
+    }
   },
   {
     "id": "auth-3",
@@ -110,7 +247,19 @@
       "/user list  # list all authenticated accounts",
       "/user switch  # interactively switch to a different account"
     ],
-    "category": "authentication"
+    "category": "authentication",
+    "terminalDemo": {
+      "prompt": "$ /user list",
+      "output": [
+        "",
+        "Authenticated accounts:",
+        "",
+        "  * prasadhonrao  (github.com)  ← active",
+        "    work-user     (github.com)",
+        "",
+        "Use /user switch to change the active account."
+      ]
+    }
   },
   {
     "id": "chat-1",
@@ -122,7 +271,22 @@
       "/ask what does --no-ff mean in git merge?",
       "/ask what is the difference between CMD and ENTRYPOINT in Docker?"
     ],
-    "category": "chat"
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /ask what does --no-ff mean in git merge?",
+      "output": [
+        "",
+        "The --no-ff flag stands for 'no fast-forward'.",
+        "",
+        "By default, if the branch you're merging is directly",
+        "ahead, Git fast-forwards — just moves the pointer.",
+        "",
+        "--no-ff forces a merge commit even in that case,",
+        "preserving the history that a feature branch existed.",
+        "",
+        "Use it when you want branch structure visible in git log."
+      ]
+    }
   },
   {
     "id": "chat-2",
@@ -135,7 +299,19 @@
       "/new  # alias for /clear",
       "/reset \"help me refactor the auth module\"  # clear and immediately prompt"
     ],
-    "category": "chat"
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /clear",
+      "output": [
+        "",
+        "Conversation history cleared.",
+        "",
+        "Starting a new session…",
+        "",
+        "Tip: Pass an opening prompt to jump straight in:",
+        "  /clear help me refactor the auth module"
+      ]
+    }
   },
   {
     "id": "chat-3",
@@ -144,7 +320,16 @@
     "description": "Copy the last Copilot response to the clipboard.",
     "analogy": "Like a \"copy response\" button in a chat app — grab the output without selecting text manually.",
     "examples": ["/copy  # copies the most recent response to clipboard"],
-    "category": "chat"
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /copy",
+      "output": [
+        "",
+        "✓ Last response copied to clipboard.",
+        "",
+        "Tip: Paste it anywhere with Ctrl+V (or Cmd+V on macOS)."
+      ]
+    }
   },
   {
     "id": "chat-4",
@@ -158,7 +343,19 @@
       "/clear  # alias for /new"
     ],
     "category": "chat",
-    "note": "See also: /clear and /reset — all three do the same thing."
+    "note": "See also: /clear and /reset — all three do the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /new help me refactor the auth module",
+      "output": [
+        "",
+        "Conversation history cleared.",
+        "",
+        "Starting fresh session with your prompt…",
+        "",
+        "Sure! Let's refactor the auth module. First, could you",
+        "share the file path or run /add-dir to grant me access?"
+      ]
+    }
   },
   {
     "id": "chat-5",
@@ -167,7 +364,20 @@
     "description": "Search the current conversation timeline for past messages. Also available as /find. Only available in experimental mode.",
     "analogy": "Like Ctrl+F inside a long chat thread — jump to any past message by keyword.",
     "examples": ["/search authentication  # find messages mentioning authentication", "/find JWT  # alias for /search"],
-    "category": "chat"
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /search JWT",
+      "output": [
+        "",
+        "Searching conversation history for 'JWT'…",
+        "",
+        "  [Turn  3]  'Explain JWT refresh token rotation'",
+        "  [Turn  7]  'Here is the updated verifyToken function…'",
+        "  [Turn 12]  'The /auth/refresh endpoint now uses…'",
+        "",
+        "3 matches found."
+      ]
+    }
   },
   {
     "id": "chat-6",
@@ -176,7 +386,20 @@
     "description": "Rewind the last turn and revert any file changes Copilot made. Also available as /rewind.",
     "analogy": "Like Ctrl+Z for a Copilot action — undo the last step if the result was not what you wanted.",
     "examples": ["/undo  # revert the last turn and its file changes", "/rewind  # alias for /undo"],
-    "category": "chat"
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /undo",
+      "output": [
+        "",
+        "Rewinding last turn…",
+        "",
+        "  Reverting:  src/auth/token.ts  (3 lines changed)",
+        "  Reverting:  src/auth/middleware.ts  (1 line changed)",
+        "",
+        "✓ Files restored to state before last turn.",
+        "✓ Conversation rewound to Turn 6."
+      ]
+    }
   },
   {
     "id": "models-1",
@@ -189,7 +412,21 @@
       "/experimental on  # enable all experimental features",
       "/experimental off  # disable experimental features"
     ],
-    "category": "models"
+    "category": "models",
+    "terminalDemo": {
+      "prompt": "$ /experimental show",
+      "output": [
+        "",
+        "Experimental features:",
+        "",
+        "  /ask     ✓  enabled",
+        "  /search  ✓  enabled",
+        "  /voice   ✗  disabled",
+        "",
+        "Use /experimental on to enable all features.",
+        "Use /experimental off to disable them."
+      ]
+    }
   },
   {
     "id": "models-2",
@@ -202,7 +439,21 @@
       "/models  # alias for /model",
       "/model claude-sonnet-4-5  # switch to a specific model by name"
     ],
-    "category": "models"
+    "category": "models",
+    "terminalDemo": {
+      "prompt": "$ /model",
+      "output": [
+        "",
+        "Select a model:",
+        "",
+        "  ❯ claude-sonnet-4-5     ← current",
+        "    claude-opus-4-5",
+        "    gpt-4.1",
+        "    gpt-4.1-mini",
+        "",
+        "Use arrow keys to select, Enter to confirm."
+      ]
+    }
   },
   {
     "id": "models-3",
@@ -215,7 +466,20 @@
       "/theme dim  # switch to dimmed color scheme",
       "/theme high-contrast  # maximum accessibility contrast"
     ],
-    "category": "models"
+    "category": "models",
+    "terminalDemo": {
+      "prompt": "$ /theme dim",
+      "output": [
+        "",
+        "Theme changed to: dim",
+        "",
+        "Available themes:",
+        "  default       standard colors",
+        "  dim         ← active",
+        "  high-contrast maximum accessibility",
+        "  colorblind    deuteranopia-friendly"
+      ]
+    }
   },
   {
     "id": "config-1",
@@ -228,7 +492,19 @@
       "/add-dir /tmp/scratch  # allow a scratch directory",
       "/list-dirs  # see all currently allowed directories"
     ],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /add-dir ./src",
+      "output": [
+        "",
+        "✓ Added to allowed directories: ./src",
+        "",
+        "Copilot can now read and modify files in:",
+        "  /Users/prasad/projects/my-app/src",
+        "",
+        "Run /list-dirs to see all allowed directories."
+      ]
+    }
   },
   {
     "id": "config-2",
@@ -241,7 +517,21 @@
       "/allow-all show  # check current permission status",
       "/yolo  # alias for /allow-all on"
     ],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /allow-all show",
+      "output": [
+        "",
+        "Permission status:",
+        "",
+        "  File access:   ✗  restricted (2 dirs allowed)",
+        "  Tool use:      ✗  prompt per action",
+        "  URL fetching:  ✗  prompt per request",
+        "",
+        "Run /allow-all on to enable all permissions.",
+        "Run /yolo as a shorthand alias."
+      ]
+    }
   },
   {
     "id": "config-3",
@@ -255,7 +545,18 @@
       "/cd  # display the current working directory"
     ],
     "category": "configuration",
-    "note": "See also: /cwd — co-equal alias for the same command."
+    "note": "See also: /cwd — co-equal alias for the same command.",
+    "terminalDemo": {
+      "prompt": "$ /cd ~/projects/my-app",
+      "output": [
+        "",
+        "✓ Working directory changed to:",
+        "  /Users/prasad/projects/my-app",
+        "",
+        "Run /cd without arguments to show current directory.",
+        "Run /list-dirs to see allowed file access paths."
+      ]
+    }
   },
   {
     "id": "config-4",
@@ -264,7 +565,20 @@
     "description": "Preview CLI interface components such as quota info. Primarily used for development and debugging of CLI UI elements.",
     "analogy": "Like a component storybook for the CLI — view individual UI building blocks in isolation.",
     "examples": ["/clikit  # list available components", "/clikit quota  # preview the quota info component"],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /clikit quota",
+      "output": [
+        "",
+        "── Quota Info Component Preview ──",
+        "",
+        "  Copilot Chat requests:  840 / 1000  used",
+        "  Resets in:              12 days",
+        "  Plan:                   Copilot Individual",
+        "",
+        "──────────────────────────────────"
+      ]
+    }
   },
   {
     "id": "config-5",
@@ -277,7 +591,18 @@
       "/cwd ~/projects/my-app  # change to a specific directory"
     ],
     "category": "configuration",
-    "note": "See also: /cd — co-equal alias for the same command."
+    "note": "See also: /cd — co-equal alias for the same command.",
+    "terminalDemo": {
+      "prompt": "$ /cwd",
+      "output": [
+        "",
+        "Current working directory:",
+        "  /Users/prasad/projects/my-app",
+        "",
+        "Run /cwd <path> to change directories.",
+        "Run /add-dir to grant file access to a new path."
+      ]
+    }
   },
   {
     "id": "config-6",
@@ -286,7 +611,21 @@
     "description": "Show all loaded environment details: custom instructions, MCP servers, skills, agents, plugins, LSPs, and extensions.",
     "analogy": "Like printenv but for Copilot's full runtime configuration — everything it loaded when this session started.",
     "examples": ["/env  # inspect the full Copilot runtime environment"],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /env",
+      "output": [
+        "",
+        "Copilot Runtime Environment",
+        "────────────────────────────────────",
+        "  Instructions:  .github/copilot-instructions.md",
+        "  MCP servers:   github (connected), filesystem (connected)",
+        "  Skills:        3 loaded  (.github/skills/)",
+        "  Agents:        code-review, explore, research, task",
+        "  LSP:           typescript-language-server (running)",
+        "────────────────────────────────────"
+      ]
+    }
   },
   {
     "id": "config-7",
@@ -298,7 +637,23 @@
       "/every 5 git status  # run git status every 5 seconds",
       "/every 10 npm test  # re-run tests every 10 seconds"
     ],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /every 5 git status",
+      "output": [
+        "",
+        "Running 'git status' every 5 seconds…  (Ctrl+C to stop)",
+        "",
+        "── Run #1 ──────────────────────",
+        "On branch main",
+        "Changes not staged for commit:",
+        "  modified:   src/auth/token.ts",
+        "",
+        "── Run #2 ──────────────────────",
+        "On branch main",
+        "nothing to commit, working tree clean"
+      ]
+    }
   },
   {
     "id": "config-8",
@@ -312,7 +667,22 @@
       "/keep-alive 2h  # prevent sleep for two hours",
       "/caffeinate  # alias for /keep-alive on"
     ],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /keep-alive busy",
+      "output": [
+        "",
+        "Keep-alive mode set to: busy",
+        "",
+        "  System sleep is prevented only while",
+        "  the Copilot agent is actively running.",
+        "",
+        "  idle → sleep allowed",
+        "  busy → sleep blocked",
+        "",
+        "Run /keep-alive off to disable."
+      ]
+    }
   },
   {
     "id": "config-9",
@@ -321,7 +691,20 @@
     "description": "Display all directories currently in the allowed file access list.",
     "analogy": "Like viewing the file permissions panel for an app — see exactly which folders have been granted access.",
     "examples": ["/list-dirs  # show all allowed directories", "/add-dir ./src  # add a directory to the list"],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /list-dirs",
+      "output": [
+        "",
+        "Allowed directories:",
+        "",
+        "  1.  /Users/prasad/projects/my-app/src",
+        "  2.  /Users/prasad/projects/my-app/tests",
+        "  3.  /tmp/scratch",
+        "",
+        "Run /add-dir <path> to add a new directory."
+      ]
+    }
   },
   {
     "id": "config-10",
@@ -330,7 +713,20 @@
     "description": "Clear the list of tools and permissions approved for this session, returning to the default prompt-per-action state.",
     "analogy": "Like revoking all app permissions at once — Copilot will prompt again the next time it needs each tool.",
     "examples": ["/reset-allowed-tools  # revoke all approved tools and permissions"],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /reset-allowed-tools",
+      "output": [
+        "",
+        "Resetting allowed tools and permissions…",
+        "",
+        "  Revoked: bash, read_file, write_file, fetch_url",
+        "",
+        "✓ All session permissions cleared.",
+        "",
+        "Copilot will prompt before using each tool again."
+      ]
+    }
   },
   {
     "id": "config-11",
@@ -339,7 +735,22 @@
     "description": "Configure which items appear in the status line at the bottom of the interactive interface. Also available as /footer.",
     "analogy": "Like customizing the status bar in your IDE — choose exactly which metrics and indicators to keep visible.",
     "examples": ["/statusline  # open the status line configuration menu", "/footer  # alias for /statusline"],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /statusline",
+      "output": [
+        "",
+        "→ Opening status line configuration menu…",
+        "",
+        "Toggle items visible in the status bar:",
+        "",
+        "  [✓] Model name",
+        "  [✓] Token usage",
+        "  [✓] Session name",
+        "  [ ] Cost estimate",
+        "  [ ] Active agent"
+      ]
+    }
   },
   {
     "id": "config-12",
@@ -352,7 +763,21 @@
       "/streamer-mode off  # disable redaction",
       "/streamer-mode  # check current status"
     ],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /streamer-mode on",
+      "output": [
+        "",
+        "✓ Streamer mode enabled.",
+        "",
+        "Sensitive values will be automatically redacted:",
+        "  API keys  →  [API_KEY]",
+        "  Tokens    →  [TOKEN]",
+        "  Passwords →  [PASSWORD]",
+        "",
+        "Safe to share your screen or start recording."
+      ]
+    }
   },
   {
     "id": "config-13",
@@ -361,7 +786,21 @@
     "description": "Run the interactive setup wizard to configure multiline input support (Shift+Enter and Ctrl+Enter) in the current terminal.",
     "analogy": "Like a first-run setup wizard — configures the terminal keybindings you want before you start.",
     "examples": ["/terminal-setup  # launch the interactive setup wizard"],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /terminal-setup",
+      "output": [
+        "",
+        "→ Launching interactive terminal setup wizard…",
+        "",
+        "This wizard configures multiline input support.",
+        "",
+        "Select your preferred keybinding:",
+        "  ❯ Shift+Enter  — insert newline (recommended)",
+        "    Ctrl+Enter   — insert newline",
+        "    Neither"
+      ]
+    }
   },
   {
     "id": "config-14",
@@ -374,7 +813,19 @@
       "/voice off  # switch back to keyboard input",
       "/voice  # check current voice input status"
     ],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": {
+      "prompt": "$ /voice on",
+      "output": [
+        "",
+        "✓ Voice input enabled.",
+        "",
+        "  🎤  Microphone active — speak your prompt",
+        "",
+        "Tip: Speak clearly and pause at the end.",
+        "Run /voice off to switch back to keyboard."
+      ]
+    }
   },
   {
     "id": "code-1",
@@ -383,7 +834,23 @@
     "description": "Review the changes made in the current directory — Copilot summarizes and explains the git diff.",
     "analogy": "Like asking a senior dev to walk you through what changed before a code review — fast orientation without reading raw diffs.",
     "examples": ["/diff  # review and explain changes in the working directory"],
-    "category": "code"
+    "category": "code",
+    "terminalDemo": {
+      "prompt": "$ /diff",
+      "output": [
+        "",
+        "Analysing changes in working directory…",
+        "",
+        "  Modified:  src/auth/token.ts        (+18, -4)",
+        "  Modified:  src/auth/middleware.ts   (+6,  -1)",
+        "  Added:     tests/auth/token.test.ts (+42)",
+        "",
+        "Summary:",
+        "  Added JWT expiry validation in verifyToken().",
+        "  Middleware now returns 401 on expired tokens.",
+        "  New tests cover expiry edge cases."
+      ]
+    }
   },
   {
     "id": "code-2",
@@ -395,7 +862,23 @@
       "/plan add pagination to the users API endpoint",
       "/plan refactor the authentication module to use JWT"
     ],
-    "category": "code"
+    "category": "code",
+    "terminalDemo": {
+      "prompt": "$ /plan add pagination to the users API",
+      "output": [
+        "",
+        "Planning: add pagination to the users API",
+        "──────────────────────────────────────────",
+        "",
+        "Step 1  Add page and limit query params to GET /users",
+        "Step 2  Update UserService.findAll() to accept offset/limit",
+        "Step 3  Return total count + page metadata in response",
+        "Step 4  Add input validation (max limit: 100)",
+        "Step 5  Write integration tests for paginated endpoint",
+        "",
+        "Proceed with this plan? (yes / edit / cancel)"
+      ]
+    }
   },
   {
     "id": "code-3",
@@ -410,7 +893,22 @@
       "/pr auto  # create PR and fix review comments automatically"
     ],
     "category": "code",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/managing-pull-requests-with-the-pr-command"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/managing-pull-requests-with-the-pr-command",
+    "terminalDemo": {
+      "prompt": "$ /pr create",
+      "output": [
+        "",
+        "Generating PR description from diff…",
+        "",
+        "  Branch:  feat/jwt-expiry-validation → main",
+        "  Commits: 3",
+        "",
+        "Title:   Add JWT expiry validation to auth middleware",
+        "",
+        "✓ Pull request #47 created.",
+        "  https://github.com/user/repo/pull/47"
+      ]
+    }
   },
   {
     "id": "code-4",
@@ -420,7 +918,24 @@
     "analogy": "Like submitting your changes for an automated expert review — get focused feedback before pushing.",
     "examples": ["/review  # analyze the current working directory diff", "/review focus on security issues only"],
     "category": "code",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/requesting-a-code-review-with-github-copilot-cli"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/requesting-a-code-review-with-github-copilot-cli",
+    "terminalDemo": {
+      "prompt": "$ /review",
+      "output": [
+        "",
+        "Running code review on current diff…",
+        "",
+        "src/auth/token.ts",
+        "  ⚠  Line 34: Secret read from env at call time —",
+        "     consider caching at module load.",
+        "",
+        "src/auth/middleware.ts",
+        "  ✓  Error handling correct.",
+        "  ✓  401 includes WWW-Authenticate header.",
+        "",
+        "1 warning · 2 passed"
+      ]
+    }
   },
   {
     "id": "agents-1",
@@ -429,7 +944,23 @@
     "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task.",
     "analogy": "Like an app drawer for specialized AI workers — each agent is tuned for a specific type of job.",
     "examples": ["/agent  # open the interactive agent picker"],
-    "category": "agents"
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /agent",
+      "output": [
+        "",
+        "Select an agent:",
+        "",
+        "  ❯ general-purpose   Full-capability coding agent",
+        "    code-review        Review diffs for bugs & issues",
+        "    explore            Research & codebase exploration",
+        "    research           Deep research with citations",
+        "    rubber-duck        Critique plans & implementations",
+        "    task               Run commands & report results",
+        "",
+        "Use arrow keys to select, Enter to launch."
+      ]
+    }
   },
   {
     "id": "agents-2",
@@ -442,7 +973,25 @@
       "/chronicle tips  # get workflow tips based on your usage patterns",
       "/chronicle improve  # suggestions to work more effectively with Copilot"
     ],
-    "category": "agents"
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /chronicle standup",
+      "output": [
+        "",
+        "Generating standup from recent sessions…",
+        "",
+        "── Yesterday ──────────────────────────────",
+        "  • Refactored auth module to use JWT",
+        "  • Added pagination to GET /users",
+        "  • Fixed race condition in WebSocket handler",
+        "",
+        "── Today (planned) ────────────────────────",
+        "  • Write tests for /users pagination",
+        "  • Open PR for JWT expiry validation",
+        "",
+        "Blockers: none"
+      ]
+    }
   },
   {
     "id": "agents-3",
@@ -455,7 +1004,22 @@
       "/delegate write unit tests for the payment service"
     ],
     "category": "agents",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/delegating-tasks-to-copilot"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/delegating-tasks-to-copilot",
+    "terminalDemo": {
+      "prompt": "$ /delegate write unit tests for the payment service",
+      "output": [
+        "",
+        "Delegating task to remote agent…",
+        "",
+        "  Task:    Write unit tests for the payment service",
+        "  Branch:  copilot/payment-service-tests",
+        "",
+        "Agent is working remotely…",
+        "",
+        "✓ Pull request #52 opened for your review.",
+        "  https://github.com/user/repo/pull/52"
+      ]
+    }
   },
   {
     "id": "agents-4",
@@ -468,7 +1032,24 @@
       "/fleet analyze all files in src/ for security issues simultaneously"
     ],
     "category": "agents",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/running-tasks-in-parallel-with-the-fleet-command"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/running-tasks-in-parallel-with-the-fleet-command",
+    "terminalDemo": {
+      "prompt": "$ /fleet run all test suites in parallel",
+      "output": [
+        "",
+        "Spawning parallel subagents…",
+        "",
+        "  Agent 1  →  npm test            (unit tests)",
+        "  Agent 2  →  npm run test:e2e",
+        "  Agent 3  →  npm run test:integration",
+        "",
+        "  Agent 1  ✓  142 passed  (8.2s)",
+        "  Agent 2  ✓   27 passed  (14.1s)",
+        "  Agent 3  ✓   38 passed  (11.6s)",
+        "",
+        "All suites passed.  Total time: 14.1s (vs ~34s serial)"
+      ]
+    }
   },
   {
     "id": "agents-5",
@@ -478,7 +1059,22 @@
     "analogy": "Like plugging two monitors into the same computer — Copilot and your IDE share the same view of your project.",
     "examples": ["/ide  # connect to the IDE workspace from an active session"],
     "category": "agents",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/connecting-github-copilot-cli-to-vs-code"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/connecting-github-copilot-cli-to-vs-code",
+    "terminalDemo": {
+      "prompt": "$ /ide",
+      "output": [
+        "",
+        "Connecting to IDE workspace…",
+        "",
+        "  Detected:   VS Code (port 3000)",
+        "  Open files: src/auth/token.ts, App.tsx",
+        "  Diagnostics: 2 warnings, 0 errors",
+        "",
+        "✓ IDE workspace connected.",
+        "",
+        "Copilot can now see your open files and diagnostics."
+      ]
+    }
   },
   {
     "id": "agents-6",
@@ -491,7 +1087,26 @@
       "/research how does the GitHub Actions cache action work?"
     ],
     "category": "agents",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/researching-with-github-copilot-cli"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/researching-with-github-copilot-cli",
+    "terminalDemo": {
+      "prompt": "$ /research JWT refresh token rotation best practices",
+      "output": [
+        "",
+        "Running deep research…",
+        "",
+        "  Searching GitHub repositories…",
+        "  Fetching OWASP guidelines…",
+        "  Reading auth0.com docs…",
+        "",
+        "── Report: JWT Refresh Token Rotation ───────",
+        "  1. Rotate refresh tokens on every use (RTR)",
+        "  2. Store tokens hashed in the database",
+        "  3. Set short access token TTLs (15 min)",
+        "  4. Implement token family invalidation",
+        "",
+        "Sources: OWASP, RFC 6749, auth0.com, ory.sh"
+      ]
+    }
   },
   {
     "id": "agents-7",
@@ -504,7 +1119,21 @@
       "/sidekicks add linter  # activate the linter sidekick",
       "/sidekicks info linter  # show details about a specific sidekick"
     ],
-    "category": "agents"
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /sidekicks list",
+      "output": [
+        "",
+        "Available sidekicks:",
+        "",
+        "  linter       Runs ESLint on modified files  (inactive)",
+        "  test-runner  Runs relevant tests on save    (inactive)",
+        "  doc-writer   Generates JSDoc for new code   (inactive)",
+        "",
+        "Run /sidekicks add <name> to activate one.",
+        "Run /sidekicks info <name> for details."
+      ]
+    }
   },
   {
     "id": "agents-8",
@@ -513,7 +1142,20 @@
     "description": "View and manage active background tasks — subagents and shell commands currently running in the session.",
     "analogy": "Like a task manager or the shell jobs command — see what is running in the background and manage it from one place.",
     "examples": ["/tasks  # list all active subagents and background shell commands"],
-    "category": "agents"
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /tasks",
+      "output": [
+        "",
+        "Active background tasks:",
+        "",
+        "  #1  subagent  explore  →  analysing src/  (running)",
+        "  #2  shell     npm test  →  142 tests       (done ✓)",
+        "  #3  shell     git push  →                  (running)",
+        "",
+        "3 tasks · 1 running subagent · 1 running shell"
+      ]
+    }
   },
   {
     "id": "mcp-1",
@@ -526,7 +1168,21 @@
       "/lsp test typescript  # test the TypeScript language server connection",
       "/lsp reload  # reload LSP configs after making changes"
     ],
-    "category": "mcp"
+    "category": "mcp",
+    "terminalDemo": {
+      "prompt": "$ /lsp show",
+      "output": [
+        "",
+        "Configured language servers:",
+        "",
+        "  typescript-language-server  ✓  running  (port 4589)",
+        "  pylsp                       ✗  not running",
+        "  gopls                       ✗  not configured",
+        "",
+        "Run /lsp test typescript to verify the connection.",
+        "Run /lsp reload after editing LSP config files."
+      ]
+    }
   },
   {
     "id": "mcp-2",
@@ -541,7 +1197,21 @@
       "/mcp auth my-server  # trigger a fresh OAuth flow for a remote server"
     ],
     "category": "mcp",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/adding-mcp-servers-for-github-copilot-cli"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/adding-mcp-servers-for-github-copilot-cli",
+    "terminalDemo": {
+      "prompt": "$ /mcp show",
+      "output": [
+        "",
+        "Configured MCP servers:",
+        "",
+        "  github      ✓  connected  (SSE · github.com)",
+        "  filesystem  ✓  connected  (stdio · local)",
+        "  my-server   ✗  disabled",
+        "",
+        "Run /mcp enable my-server to re-enable.",
+        "Run /mcp reload to apply config changes."
+      ]
+    }
   },
   {
     "id": "mem-1",
@@ -554,7 +1224,21 @@
       "/compact  # summarize history and free up context window space"
     ],
     "category": "memory",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/managing-context-in-github-copilot-cli"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/managing-context-in-github-copilot-cli",
+    "terminalDemo": {
+      "prompt": "$ /compact",
+      "output": [
+        "",
+        "Summarising conversation history…",
+        "",
+        "  Before:  18,240 tokens used",
+        "  Summary: auth refactor, pagination, JWT validation",
+        "  After:    2,100 tokens used",
+        "",
+        "✓ Context compacted. Freed ~16,000 tokens.",
+        "Run /context to verify remaining capacity."
+      ]
+    }
   },
   {
     "id": "mem-2",
@@ -567,7 +1251,21 @@
       "/compact  # run this if context is nearly full"
     ],
     "category": "memory",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/managing-context-in-github-copilot-cli"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/managing-context-in-github-copilot-cli",
+    "terminalDemo": {
+      "prompt": "$ /context",
+      "output": [
+        "",
+        "Context Window Usage",
+        "─────────────────────────────────────",
+        "  Used:       18,240 tokens  ████████░░  72%",
+        "  Remaining:   7,000 tokens",
+        "  Limit:      25,600 tokens",
+        "─────────────────────────────────────",
+        "",
+        "Tip: Run /compact to free up space."
+      ]
+    }
   },
   {
     "id": "mem-3",
@@ -579,7 +1277,17 @@
       "/rename  # auto-generate a descriptive session name",
       "/rename payment-refactor-may  # give it a specific name"
     ],
-    "category": "memory"
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /rename payment-refactor-may",
+      "output": [
+        "",
+        "✓ Session renamed to: payment-refactor-may",
+        "",
+        "Resume this session later with:",
+        "  /resume payment-refactor-may"
+      ]
+    }
   },
   {
     "id": "mem-4",
@@ -592,7 +1300,21 @@
       "/continue  # alias for /resume",
       "/resume my-auth-refactor  # resume a session by name"
     ],
-    "category": "memory"
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /resume",
+      "output": [
+        "",
+        "Recent sessions:",
+        "",
+        "  ❯ payment-refactor-may      (2 hours ago)",
+        "    jwt-expiry-validation      (yesterday)",
+        "    users-pagination-api       (3 days ago)",
+        "    auth-module-cleanup        (last week)",
+        "",
+        "Use arrow keys to select, Enter to resume."
+      ]
+    }
   },
   {
     "id": "mem-5",
@@ -606,7 +1328,22 @@
       "/session rename my-auth-refactor  # give the session a descriptive name",
       "/session cleanup  # remove old session data to free space"
     ],
-    "category": "memory"
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /session info",
+      "output": [
+        "",
+        "Session Information",
+        "────────────────────────────────",
+        "  ID:       sess_a8f3c291",
+        "  Name:     payment-refactor-may",
+        "  Started:  47 minutes ago",
+        "  Turns:    12",
+        "  Tokens:   18,240 used",
+        "  Files:    4 modified",
+        "────────────────────────────────"
+      ]
+    }
   },
   {
     "id": "mem-6",
@@ -620,7 +1357,21 @@
       "/share html session ./my-session.html  # save as interactive HTML",
       "/export  # alias for /share"
     ],
-    "category": "memory"
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /share gist",
+      "output": [
+        "",
+        "Exporting session to GitHub Gist…",
+        "",
+        "  Format:     Markdown",
+        "  Visibility: Secret",
+        "  Turns:      12",
+        "",
+        "✓ Gist created:",
+        "  https://gist.github.com/prasadhonrao/a8f3c291"
+      ]
+    }
   },
   {
     "id": "instr-1",
@@ -629,7 +1380,20 @@
     "description": "View and toggle the custom instruction files currently loaded into Copilot's context — AGENTS.md, copilot-instructions.md, and others.",
     "analogy": "Like checking which style guides are active in your linter — see exactly what rules are shaping Copilot's behavior.",
     "examples": ["/instructions  # show loaded instruction files and their status"],
-    "category": "instructions"
+    "category": "instructions",
+    "terminalDemo": {
+      "prompt": "$ /instructions",
+      "output": [
+        "",
+        "Loaded instruction files:",
+        "",
+        "  ✓  .github/copilot-instructions.md   (repo-level)",
+        "  ✓  ~/.copilot/instructions.md        (user-level)",
+        "  ✗  .github/AGENTS.md                 (not found)",
+        "",
+        "Run /init to create .github/copilot-instructions.md."
+      ]
+    }
   },
   {
     "id": "instr-2",
@@ -644,7 +1408,20 @@
       "/plugin update  # update all installed plugins"
     ],
     "category": "instructions",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/about-plugins-for-github-copilot-cli"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/about-plugins-for-github-copilot-cli",
+    "terminalDemo": {
+      "prompt": "$ /plugin list",
+      "output": [
+        "",
+        "Installed plugins:",
+        "",
+        "  my-org/devtools-plugin   v1.2.0  (3 skills, 1 agent, 1 MCP)",
+        "  my-org/docs-plugin       v0.8.1  (1 skill)",
+        "",
+        "Run /plugin marketplace to browse more plugins.",
+        "Run /plugin update to update all installed plugins."
+      ]
+    }
   },
   {
     "id": "instr-3",
@@ -658,7 +1435,21 @@
       "/skills reload  # reload skills after adding or editing files"
     ],
     "category": "instructions",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/adding-agent-skills-for-github-copilot-cli"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/adding-agent-skills-for-github-copilot-cli",
+    "terminalDemo": {
+      "prompt": "$ /skills list",
+      "output": [
+        "",
+        "Loaded skills:",
+        "",
+        "  code-reviewer    .github/skills/code-reviewer.md",
+        "  api-docs-writer  .github/skills/api-docs-writer.md",
+        "  test-generator   ~/.copilot/skills/test-generator.md",
+        "",
+        "3 skills active · 2 sources",
+        "Run /skills info <name> to see what a skill does."
+      ]
+    }
   },
   {
     "id": "ts-1",
@@ -670,7 +1461,24 @@
       "/collect-debug-logs  # save debug logs for the current session",
       "/feedback  # then attach the log file when filing a bug"
     ],
-    "category": "troubleshooting"
+    "category": "troubleshooting",
+    "terminalDemo": {
+      "prompt": "$ /collect-debug-logs",
+      "output": [
+        "",
+        "Collecting diagnostic information…",
+        "",
+        "  ✓  Session logs",
+        "  ✓  MCP server logs",
+        "  ✓  LSP logs",
+        "  ✓  Environment snapshot",
+        "",
+        "✓ Debug bundle saved to:",
+        "  /tmp/copilot-debug-2025-05-13.tar.gz",
+        "",
+        "Attach this file when filing a bug report."
+      ]
+    }
   },
   {
     "id": "ts-2",
@@ -679,7 +1487,23 @@
     "description": "Run a set of diagnostic checks on the Copilot CLI environment — verifies authentication, connectivity, model availability, and configuration.",
     "analogy": "Like running a system health check — one command tells you exactly what is working and what isn't.",
     "examples": ["/diagnosis  # run all diagnostic checks", "/restart  # try this first if /diagnosis reports issues"],
-    "category": "troubleshooting"
+    "category": "troubleshooting",
+    "terminalDemo": {
+      "prompt": "$ /diagnosis",
+      "output": [
+        "",
+        "Running diagnostic checks…",
+        "",
+        "  Authentication       ✓  prasadhonrao (github.com)",
+        "  Network connectivity ✓  api.githubcopilot.com reachable",
+        "  Model availability   ✓  claude-sonnet-4-5 available",
+        "  MCP servers          ✓  2 connected, 1 disabled",
+        "  LSP servers          ⚠  pylsp not running",
+        "  Config files         ✓  all valid",
+        "",
+        "1 warning — LSP: pylsp is configured but not running."
+      ]
+    }
   },
   {
     "id": "ts-3",
@@ -691,7 +1515,21 @@
       "/version  # check the current installed version first",
       "/downgrade 1.5.0  # restart into a specific older version"
     ],
-    "category": "troubleshooting"
+    "category": "troubleshooting",
+    "terminalDemo": {
+      "prompt": "$ /downgrade 1.3.2",
+      "output": [
+        "",
+        "Downgrading to v1.3.2…",
+        "",
+        "  Current version:  1.4.0",
+        "  Target version:   1.3.2",
+        "",
+        "Downloading v1.3.2…  ████████████████  100%",
+        "",
+        "✓ Downgrade complete. Restarting into v1.3.2…"
+      ]
+    }
   },
   {
     "id": "ts-4",
@@ -701,7 +1539,19 @@
     "analogy": "Like closing a terminal tab cleanly — exits gracefully rather than force-killing the process.",
     "examples": ["/exit  # close the interactive session"],
     "category": "troubleshooting",
-    "note": "See also: /quit — a separate alias command that does the same thing."
+    "note": "See also: /quit — a separate alias command that does the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /exit",
+      "output": [
+        "",
+        "Saving session state…  ✓",
+        "",
+        "Goodbye! Session 'payment-refactor-may' saved.",
+        "Resume it later with: /resume payment-refactor-may",
+        "",
+        "Exiting GitHub Copilot CLI."
+      ]
+    }
   },
   {
     "id": "ts-5",
@@ -711,7 +1561,19 @@
     "analogy": "Like typing \"quit\" or \"exit\" in a REPL — both mean the same thing, use whichever feels natural.",
     "examples": ["/quit  # close the interactive session"],
     "category": "troubleshooting",
-    "note": "See also: /exit — a separate alias command that does the same thing."
+    "note": "See also: /exit — a separate alias command that does the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /quit",
+      "output": [
+        "",
+        "Saving session state…  ✓",
+        "",
+        "Goodbye! Session saved.",
+        "Resume it later with: /resume",
+        "",
+        "Exiting GitHub Copilot CLI."
+      ]
+    }
   },
   {
     "id": "ts-6",
@@ -725,7 +1587,20 @@
       "/remote off  # end the remote connection"
     ],
     "category": "troubleshooting",
-    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/steering-a-github-copilot-cli-session-from-another-device"
+    "docUrl": "https://docs.github.com/en/copilot/how-tos/copilot-cli/steering-a-github-copilot-cli-session-from-another-device",
+    "terminalDemo": {
+      "prompt": "$ /remote on",
+      "output": [
+        "",
+        "Remote steering enabled.",
+        "",
+        "Share this link with your collaborator:",
+        "  https://copilot.github.com/remote/sess_a8f3c291",
+        "",
+        "They can now send prompts to your session.",
+        "Run /remote off to end the connection."
+      ]
+    }
   },
   {
     "id": "ts-7",
@@ -734,6 +1609,21 @@
     "description": "Restart the Copilot CLI process while preserving the current session. Use when the session is unresponsive or behaving unexpectedly.",
     "analogy": "Like restarting your browser without losing your tabs — the process reloads fresh but your session state is preserved.",
     "examples": ["/restart  # restart the CLI, preserving the current session"],
-    "category": "troubleshooting"
+    "category": "troubleshooting",
+    "terminalDemo": {
+      "prompt": "$ /restart",
+      "output": [
+        "",
+        "Saving session state…  ✓",
+        "Restarting Copilot CLI process…",
+        "",
+        "─────────────────────────────────────",
+        "  GitHub Copilot CLI  v1.4.0",
+        "  Session restored: payment-refactor-may",
+        "─────────────────────────────────────",
+        "",
+        "✓ Ready."
+      ]
+    }
   }
 ]

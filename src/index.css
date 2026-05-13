@@ -37,10 +37,10 @@ html[data-color-mode='dark'] {
   --color-command-syntax-bg: rgba(0, 245, 255, 0.1);
 
   /* section accent bars */
-  --color-section-analogy: #b366ff;
-  --color-section-syntax: #00f5ff;
-  --color-section-examples: #39d353;
-  --color-section-note: #f0a03a;
+  --color-section-analogy: #8b7ec8;
+  --color-section-syntax: #5a94b8;
+  --color-section-examples: #5a9e70;
+  --color-section-note: #b89450;
 
   /* gradient stops */
   --gradient-primary: rgba(0, 245, 255, 0.15);
@@ -80,10 +80,10 @@ html[data-color-mode='light'] {
   --color-command-syntax-bg: rgba(0, 119, 182, 0.08);
 
   /* section accent bars */
-  --color-section-analogy: #7b1fa2;
-  --color-section-syntax: #0077b6;
-  --color-section-examples: #2da44e;
-  --color-section-note: #9a6700;
+  --color-section-analogy: #6b5da8;
+  --color-section-syntax: #2a6fa8;
+  --color-section-examples: #2d7a48;
+  --color-section-note: #8a6820;
 
   /* gradient stops — subtle in light */
   --gradient-primary: rgba(0, 119, 182, 0.09);

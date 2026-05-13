@@ -1,5 +1,10 @@
 export type Theme = 'dark' | 'light';
 
+export interface TerminalDemo {
+  prompt: string;
+  output: string[];
+}
+
 export interface Command {
   id: string;
   title: string;
@@ -9,6 +14,7 @@ export interface Command {
   examples: string[];
   category: string;
   note?: string;
+  terminalDemo?: TerminalDemo;
 }
 
 export interface Category {

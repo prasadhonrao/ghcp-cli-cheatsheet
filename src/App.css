@@ -517,6 +517,17 @@ html[data-color-mode='light'] .command-card--expanded {
   text-transform: uppercase;
 }
 
+.card-section-icon {
+  font-size: 12px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.card-section-icon--bar {
+  position: relative;
+  left: -8px;
+}
+
 .command-analogy {
   margin-top: 10px;
   padding-top: 12px;
@@ -528,8 +539,6 @@ html[data-color-mode='light'] .command-card--expanded {
   color: var(--color-fg-default);
   line-height: 1.6;
   margin: 0;
-  padding-left: 12px;
-  border-left: 3px solid var(--color-section-analogy);
 }
 
 .command-section {
@@ -540,22 +549,43 @@ html[data-color-mode='light'] .command-card--expanded {
 
 .command-inline-text {
   font-size: 13px;
+  color: inherit;
   line-height: 1.6;
   margin: 0;
+  border-left: 3px solid currentColor;
+  padding-left: 12px;
 }
 
 .command-inline-mono {
   font-family: var(--font-mono);
-  color: var(--color-command-syntax);
-  padding-left: 12px;
-  border-left: 3px solid var(--color-section-syntax);
+}
+
+.command-section-block {
+  /* removed - no longer used */
+}
+
+.command-section-description {
+  color: var(--color-fg-muted);
+}
+
+.command-section-analogy {
+  color: var(--color-section-analogy);
+}
+
+.command-section-syntax {
+  color: var(--color-section-syntax);
+}
+
+.command-section-examples {
+  color: var(--color-section-examples);
+}
+
+.command-section-note {
+  color: var(--color-section-note);
 }
 
 .command-note-text {
-  color: var(--color-fg-muted);
-  font-style: italic;
-  padding-left: 12px;
-  border-left: 3px solid var(--color-section-note);
+  color: var(--color-fg-default);
 }
 
 .command-examples-list {
@@ -572,8 +602,12 @@ html[data-color-mode='light'] .command-card--expanded {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 6px;
-  padding-left: 12px;
   border-left: 3px solid var(--color-section-examples);
+  padding-left: 12px;
+}
+
+.command-example-item .command-example-cmd {
+  color: var(--color-section-examples);
 }
 
 .command-example-item:hover .copy-btn {
@@ -812,4 +846,141 @@ html[data-color-mode='light'] .command-card--expanded {
   .site-footer-inner {
     justify-content: center;
   }
+}
+
+/* ── Terminal Player ── */
+.terminal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terminal-window {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #30363d;
+  background-color: #0d1117;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.terminal-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.terminal-dot--red    { background-color: #ff5f57; }
+.terminal-dot--yellow { background-color: #ffbd2e; }
+.terminal-dot--green  { background-color: #28c840; }
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  color: #768390;
+  font-family: var(--font-mono);
+}
+
+.terminal-controls {
+  flex-shrink: 0;
+}
+
+.terminal-btn {
+  padding: 3px 10px;
+  font-size: 11px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+  background-color: #21262d;
+  color: #c9d1d9;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.terminal-btn:hover {
+  background-color: #30363d;
+  border-color: #6e7681;
+}
+
+.terminal-body {
+  padding: 12px 14px;
+  min-height: 60px;
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #30363d transparent;
+}
+
+.terminal-idle-hint {
+  color: #4d5566;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  font-style: italic;
+}
+
+.terminal-pre {
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.terminal-prompt-line {
+  display: block;
+  color: #e6edf3;
+  line-height: 1.7;
+}
+
+.terminal-prompt-char {
+  color: #28c840;
+  font-weight: 700;
+}
+
+.terminal-prompt-text {
+  color: #d2a8ff;
+}
+
+.terminal-output-line {
+  display: block;
+  color: #c9d1d9;
+  line-height: 1.7;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  color: #c9d1d9;
+  opacity: 1;
+  transition: opacity 0.1s;
+}
+
+.terminal-cursor--hidden {
+  opacity: 0;
+}
+
+.terminal-disclaimer {
+  font-size: 11px;
+  color: var(--color-fg-subtle);
+  margin: 0;
+  font-style: italic;
 }

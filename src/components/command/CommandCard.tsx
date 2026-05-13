@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CopyIcon, CheckIcon } from '@primer/octicons-react';
 import type { Command } from '../../types';
+import { TerminalPlayer } from './TerminalPlayer';
 
 interface Props {
   cmd: Command;
@@ -55,19 +56,23 @@ export function CommandCard({ cmd, isExpanded, onToggle }: Props) {
           {isExpanded ? '▲' : '▼'}
         </span>
       </div>
-      <p className="command-description">{cmd.description}</p>
+      {!isExpanded && <p className="command-description">{cmd.description}</p>}
       {isExpanded && (
         <div className="command-card-body">
+          <div className="command-section">
+            <span className="command-section-label">DESCRIPTION</span>
+            <p className="command-inline-text command-section-description">{cmd.description}</p>
+          </div>
           {cmd.analogy && (
             <div className="command-section">
               <span className="command-section-label">ANALOGY</span>
-              <p className="command-analogy-text">{cmd.analogy}</p>
+              <p className="command-inline-text command-section-analogy">{cmd.analogy}</p>
             </div>
           )}
           {cmd.syntax && (
             <div className="command-section">
               <span className="command-section-label">SYNTAX</span>
-              <p className="command-inline-text command-inline-mono">{cmd.syntax}</p>
+              <p className="command-inline-text command-inline-mono command-section-syntax">{cmd.syntax}</p>
             </div>
           )}
           {cmd.examples && cmd.examples.length > 0 && (
@@ -99,7 +104,12 @@ export function CommandCard({ cmd, isExpanded, onToggle }: Props) {
           {cmd.note && (
             <div className="command-section">
               <span className="command-section-label">NOTE</span>
-              <p className="command-inline-text command-note-text">{cmd.note}</p>
+              <p className="command-inline-text command-section-note">{cmd.note}</p>
+            </div>
+          )}
+          {cmd.terminalDemo && (
+            <div className="command-section">
+              <TerminalPlayer demo={cmd.terminalDemo} commandTitle={cmd.title} />
             </div>
           )}
         </div>
