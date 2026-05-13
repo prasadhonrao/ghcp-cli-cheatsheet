@@ -1,0 +1,80 @@
+[
+  {
+    "id": "instr-1",
+    "title": "/instructions",
+    "syntax": "/instructions",
+    "description": "View and toggle the custom instruction files currently loaded into Copilot's context — AGENTS.md, copilot-instructions.md, and others.",
+    "analogy": "Like checking which style guides are active in your linter — see exactly what rules are shaping Copilot's behavior.",
+    "examples": [
+      "/instructions  # show loaded instruction files and their status"
+    ],
+    "category": "instructions",
+    "terminalDemo": {
+      "prompt": "$ /instructions",
+      "output": [
+        "",
+        "Loaded instruction files:",
+        "",
+        "  ✓  .github/copilot-instructions.md   (repo-level)",
+        "  ✓  ~/.copilot/instructions.md        (user-level)",
+        "  ✗  .github/AGENTS.md                 (not found)",
+        "",
+        "Run /init to create .github/copilot-instructions.md."
+      ]
+    }
+  },
+  {
+    "id": "instr-2",
+    "title": "/plugin",
+    "syntax": "/plugin [marketplace|install|uninstall|update|list] [ARGS...]",
+    "description": "Manage Copilot CLI plugins — packages that bundle agents, skills, and MCP servers in a single install.",
+    "analogy": "Like an extension marketplace for your IDE — browse, install, and manage add-ons that extend what Copilot can do.",
+    "examples": [
+      "/plugin list  # show all installed plugins",
+      "/plugin marketplace  # browse available plugins",
+      "/plugin install my-org/my-plugin  # install a plugin",
+      "/plugin update  # update all installed plugins"
+    ],
+    "category": "instructions",
+    "terminalDemo": {
+      "prompt": "$ /plugin list",
+      "output": [
+        "",
+        "Installed plugins:",
+        "",
+        "  my-org/devtools-plugin   v1.2.0  (3 skills, 1 agent, 1 MCP)",
+        "  my-org/docs-plugin       v0.8.1  (1 skill)",
+        "",
+        "Run /plugin marketplace to browse more plugins.",
+        "Run /plugin update to update all installed plugins."
+      ]
+    }
+  },
+  {
+    "id": "instr-3",
+    "title": "/skills",
+    "syntax": "/skills [list|info|add|remove|reload] [ARGS...]",
+    "description": "Manage custom skills — Markdown files that extend Copilot's capabilities. Skills live in .github/skills/, ~/.copilot/skills/, or plugin directories.",
+    "analogy": "Like a library of custom macros in your editor — each skill adds a reusable capability you can invoke by name.",
+    "examples": [
+      "/skills list  # show all loaded skills and their sources",
+      "/skills info my-skill  # show details about a specific skill",
+      "/skills reload  # reload skills after adding or editing files"
+    ],
+    "category": "instructions",
+    "terminalDemo": {
+      "prompt": "$ /skills list",
+      "output": [
+        "",
+        "Loaded skills:",
+        "",
+        "  code-reviewer    .github/skills/code-reviewer.md",
+        "  api-docs-writer  .github/skills/api-docs-writer.md",
+        "  test-generator   ~/.copilot/skills/test-generator.md",
+        "",
+        "3 skills active · 2 sources",
+        "Run /skills info <name> to see what a skill does."
+      ]
+    }
+  }
+]

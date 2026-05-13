@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Fuse, { type FuseResult } from 'fuse.js';
-import commandsData from './data/commands.json';
+import commandsData from './data/index';
 import { CATEGORIES, type Command, type Theme } from './types';
 import { TopBar } from './components/layout/TopBar';
 import { SearchBar } from './components/search/SearchBar';
@@ -9,7 +9,7 @@ import { TipBanner } from './components/ui/TipBanner';
 import { CategorySection } from './components/command/CategorySection';
 import './App.css';
 
-const COMMANDS: Command[] = commandsData as Command[];
+const COMMANDS: Command[] = commandsData;
 
 const normalizeSearchText = (value: string) => value.trim().toLowerCase();
 
@@ -107,8 +107,7 @@ function App() {
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       const tag = (e.target as HTMLElement).tagName;
-      const isEditable =
-        tag === 'INPUT' || tag === 'TEXTAREA' || (e.target as HTMLElement).isContentEditable;
+      const isEditable = tag === 'INPUT' || tag === 'TEXTAREA' || (e.target as HTMLElement).isContentEditable;
 
       if (e.key === '/' && !isEditable) {
         e.preventDefault();
@@ -244,7 +243,12 @@ function App() {
       </div>
       <main className="main-layout">
         <div className="search-controls">
-          <SearchBar ref={searchInputRef} value={searchQuery} onChange={setSearchQuery} resultCount={filteredCommands.length} />
+          <SearchBar
+            ref={searchInputRef}
+            value={searchQuery}
+            onChange={setSearchQuery}
+            resultCount={filteredCommands.length}
+          />
           <CategoryPills
             categories={CATEGORIES}
             activeCategory={activeCategory}

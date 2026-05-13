@@ -1,0 +1,211 @@
+[
+  {
+    "id": "gs-1",
+    "title": "/bug",
+    "syntax": "/bug",
+    "description": "Report a specific bug or issue with Copilot CLI to GitHub. Alias for /feedback.",
+    "analogy": "Like clicking 'Report a problem' in an app — a direct line to the team for filing specific bug reports.",
+    "examples": [
+      "/bug  # open the bug report flow"
+    ],
+    "category": "getting-started",
+    "note": "See also: /feedback — a separate alias command that does the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /bug",
+      "output": [
+        "",
+        "→ Opening bug report form in your browser…",
+        "",
+        "Please describe the issue you encountered.",
+        "Your report will be sent to the GitHub Copilot team.",
+        "",
+        "Tip: Run /collect-debug-logs first to attach diagnostic info."
+      ]
+    }
+  },
+  {
+    "id": "gs-2",
+    "title": "/changelog",
+    "syntax": "/changelog [summarize] [VERSION|last N|since VERSION]",
+    "description": "Display the CLI changelog. Add the keyword \"summarize\" for an AI-generated summary. Also available as /release-notes.",
+    "analogy": "Like reading the \"What is New\" page after an app update — find out exactly what changed and which commands are new.",
+    "examples": [
+      "/changelog  # show recent release notes",
+      "/changelog last 3  # show the last 3 releases",
+      "/changelog summarize  # AI-generated summary of recent changes",
+      "/release-notes  # alias for /changelog"
+    ],
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /changelog last 2",
+      "output": [
+        "",
+        "## v1.4.0  (2025-04-28)",
+        "  • /fleet now supports parallel subagent execution",
+        "  • /delegate creates pull requests automatically",
+        "  • Improved context window visualization in /context",
+        "",
+        "## v1.3.2  (2025-04-10)",
+        "  • /mcp reload no longer requires session restart",
+        "  • Fixed /undo edge case with binary files"
+      ]
+    }
+  },
+  {
+    "id": "gs-3",
+    "title": "/feedback",
+    "syntax": "/feedback",
+    "description": "Provide feedback about Copilot CLI to GitHub.",
+    "analogy": "Like a feedback form at a restaurant — quick way to tell the team what is working and what is not.",
+    "examples": [
+      "/feedback  # open the feedback flow"
+    ],
+    "category": "getting-started",
+    "note": "See also: /bug — a separate alias command that does the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /feedback",
+      "output": [
+        "",
+        "→ Opening feedback form in your browser…",
+        "",
+        "Thank you for helping improve GitHub Copilot CLI!",
+        "Share what is working, what is not, or suggest new features."
+      ]
+    }
+  },
+  {
+    "id": "gs-4",
+    "title": "/help",
+    "syntax": "/help",
+    "description": "Show help for all interactive slash commands inside a Copilot CLI session. Takes no arguments. For topic-specific help outside a session, use 'copilot help [TOPIC]' at the terminal.",
+    "analogy": "Like the index of a cookbook — scan it to know what is possible, then jump to what you need.",
+    "examples": [
+      "/help  # list all slash commands"
+    ],
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /help",
+      "output": [
+        "",
+        "Available slash commands:",
+        "",
+        "  /ask           Ask Copilot anything",
+        "  /bug           Report a bug to GitHub",
+        "  /changelog     View recent release notes",
+        "  /clear         Clear the current session",
+        "  /exit          Exit the session",
+        "  /feedback      Send feedback to GitHub",
+        "  /help          Show this help message",
+        "  /init          Initialise Copilot for this repo",
+        "  /update        Update to the latest version",
+        "  /version       Show installed version",
+        "",
+        "Tip: Press Tab inside a session to autocomplete commands."
+      ]
+    }
+  },
+  {
+    "id": "gs-5",
+    "title": "/init",
+    "syntax": "/init [suppress]",
+    "description": "Initialize Copilot custom instructions and agentic features for the current repository. Creates or updates .github/copilot-instructions.md.",
+    "analogy": "Like briefing a new hire on your project — give Copilot your codebase context once so every future session starts informed.",
+    "examples": [
+      "/init  # analyze repo and write .github/copilot-instructions.md",
+      "/init suppress  # hide the startup warning without creating the file"
+    ],
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /init",
+      "output": [
+        "",
+        "Analysing repository structure…",
+        "",
+        "  Detected:  Node.js · TypeScript · React · Vite",
+        "  Found:     src/, tests/, .github/",
+        "",
+        "Writing .github/copilot-instructions.md…  ✓",
+        "",
+        "Copilot is now primed with your repo context.",
+        "Every future session starts with this knowledge loaded."
+      ]
+    }
+  },
+  {
+    "id": "gs-6",
+    "title": "/update",
+    "syntax": "/update",
+    "description": "Update the Copilot CLI to the latest version from within an active session. Also available as /upgrade.",
+    "analogy": "Like tapping the update button in an app store — stay on the latest features without leaving your workflow.",
+    "examples": [
+      "/update  # update from inside a session",
+      "/upgrade  # alias for /update"
+    ],
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /update",
+      "output": [
+        "",
+        "Checking for updates…",
+        "",
+        "  Current version:  1.3.2",
+        "  Latest version:   1.4.0",
+        "",
+        "Downloading v1.4.0…  ████████████████  100%",
+        "",
+        "✓ Update complete. Restarting into v1.4.0…"
+      ]
+    }
+  },
+  {
+    "id": "gs-7",
+    "title": "/usage",
+    "syntax": "/usage",
+    "description": "Display session usage metrics: token counts, model calls, costs, and AI units consumed so far.",
+    "analogy": "Like checking your data usage on a phone plan — know how much quota you have used before hitting a limit.",
+    "examples": [
+      "/usage  # show full stats for the current session"
+    ],
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /usage",
+      "output": [
+        "",
+        "Session Usage Summary",
+        "─────────────────────────────",
+        "  Input tokens:     12,480",
+        "  Output tokens:      3,920",
+        "  Model calls:            8",
+        "  AI units used:       0.42",
+        "  Estimated cost:     $0.07",
+        "─────────────────────────────",
+        "  Session started:  14 min ago"
+      ]
+    }
+  },
+  {
+    "id": "gs-8",
+    "title": "/version",
+    "syntax": "/version",
+    "description": "Display version information for the installed Copilot CLI and check whether an update is available.",
+    "analogy": "Like checking the label on a medicine bottle — always know which version you are running before troubleshooting.",
+    "examples": [
+      "/version  # print installed version",
+      "/update  # update if an upgrade is available"
+    ],
+    "category": "getting-started",
+    "terminalDemo": {
+      "prompt": "$ /version",
+      "output": [
+        "",
+        "GitHub Copilot CLI  v1.4.0",
+        "",
+        "  Node.js:   v20.11.0",
+        "  Platform:  darwin arm64",
+        "  Install:   /usr/local/bin/copilot",
+        "",
+        "✓ You are on the latest version."
+      ]
+    }
+  }
+]

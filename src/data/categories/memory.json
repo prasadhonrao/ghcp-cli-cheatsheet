@@ -1,0 +1,160 @@
+[
+  {
+    "id": "mem-1",
+    "title": "/compact",
+    "syntax": "/compact",
+    "description": "Summarize the conversation history to reduce context window usage while preserving key context.",
+    "analogy": "Like condensing meeting notes into a summary — keep the key decisions without the full transcript, freeing space for more work.",
+    "examples": [
+      "/context  # check token usage before compacting",
+      "/compact  # summarize history and free up context window space"
+    ],
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /compact",
+      "output": [
+        "",
+        "Summarising conversation history…",
+        "",
+        "  Before:  18,240 tokens used",
+        "  Summary: auth refactor, pagination, JWT validation",
+        "  After:    2,100 tokens used",
+        "",
+        "✓ Context compacted. Freed ~16,000 tokens.",
+        "Run /context to verify remaining capacity."
+      ]
+    }
+  },
+  {
+    "id": "mem-2",
+    "title": "/context",
+    "syntax": "/context",
+    "description": "Show the current context window token usage and a visualization of how much space is remaining.",
+    "analogy": "Like checking how much storage is left on your phone — useful before starting a big task.",
+    "examples": [
+      "/context  # show token usage and remaining capacity",
+      "/compact  # run this if context is nearly full"
+    ],
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /context",
+      "output": [
+        "",
+        "Context Window Usage",
+        "─────────────────────────────────────",
+        "  Used:       18,240 tokens  ████████░░  72%",
+        "  Remaining:   7,000 tokens",
+        "  Limit:      25,600 tokens",
+        "─────────────────────────────────────",
+        "",
+        "Tip: Run /compact to free up space."
+      ]
+    }
+  },
+  {
+    "id": "mem-3",
+    "title": "/rename",
+    "syntax": "/rename [NAME]",
+    "description": "Rename the current session. If no name is given, Copilot auto-generates a descriptive name based on the conversation.",
+    "analogy": "Like naming a browser bookmark instead of leaving it as the page title — much easier to find later.",
+    "examples": [
+      "/rename  # auto-generate a descriptive session name",
+      "/rename payment-refactor-may  # give it a specific name"
+    ],
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /rename payment-refactor-may",
+      "output": [
+        "",
+        "✓ Session renamed to: payment-refactor-may",
+        "",
+        "Resume this session later with:",
+        "  /resume payment-refactor-may"
+      ]
+    }
+  },
+  {
+    "id": "mem-4",
+    "title": "/resume",
+    "syntax": "/resume [SESSION-ID]",
+    "description": "Switch to a previous session chosen from an interactive list. Also available as /continue. Optionally pass a session ID or name to jump directly.",
+    "analogy": "Like reopening a browser tab from history — pick up exactly where you left off in a past conversation.",
+    "examples": [
+      "/resume  # open the interactive session picker",
+      "/continue  # alias for /resume",
+      "/resume my-auth-refactor  # resume a session by name"
+    ],
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /resume",
+      "output": [
+        "",
+        "Recent sessions:",
+        "",
+        "  ❯ payment-refactor-may      (2 hours ago)",
+        "    jwt-expiry-validation      (yesterday)",
+        "    users-pagination-api       (3 days ago)",
+        "    auth-module-cleanup        (last week)",
+        "",
+        "Use arrow keys to select, Enter to resume."
+      ]
+    }
+  },
+  {
+    "id": "mem-5",
+    "title": "/session",
+    "syntax": "/session [info|checkpoints|files|plan|rename|cleanup|prune|delete|delete-all]",
+    "description": "Show session information and manage sessions. Subcommands: info, checkpoints, files, plan, rename, cleanup, prune, delete, delete-all. Also available as /sessions.",
+    "analogy": "Like a save-game manager — see your history, inspect a past state, or clean up old saves.",
+    "examples": [
+      "/session info  # show current session ID, age, and token usage",
+      "/session files  # list files modified in this session",
+      "/session rename my-auth-refactor  # give the session a descriptive name",
+      "/session cleanup  # remove old session data to free space"
+    ],
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /session info",
+      "output": [
+        "",
+        "Session Information",
+        "────────────────────────────────",
+        "  ID:       sess_a8f3c291",
+        "  Name:     payment-refactor-may",
+        "  Started:  47 minutes ago",
+        "  Turns:    12",
+        "  Tokens:   18,240 used",
+        "  Files:    4 modified",
+        "────────────────────────────────"
+      ]
+    }
+  },
+  {
+    "id": "mem-6",
+    "title": "/share",
+    "syntax": "/share [file|html|gist] [session|research] [PATH]",
+    "description": "Export the current session to a Markdown file, interactive HTML file, or a secret GitHub Gist. Also available as /export.",
+    "analogy": "Like exporting a chat transcript — capture the full session log and share it with teammates or save it for reference.",
+    "examples": [
+      "/share file  # save session as a Markdown file in the current directory",
+      "/share gist  # publish to a secret GitHub Gist",
+      "/share html session ./my-session.html  # save as interactive HTML",
+      "/export  # alias for /share"
+    ],
+    "category": "memory",
+    "terminalDemo": {
+      "prompt": "$ /share gist",
+      "output": [
+        "",
+        "Exporting session to GitHub Gist…",
+        "",
+        "  Format:     Markdown",
+        "  Visibility: Secret",
+        "  Turns:      12",
+        "",
+        "✓ Gist created:",
+        "  https://gist.github.com/prasadhonrao/a8f3c291"
+      ]
+    }
+  }
+]

@@ -1,0 +1,150 @@
+[
+  {
+    "id": "chat-1",
+    "title": "/ask",
+    "syntax": "/ask <QUESTION>",
+    "description": "Ask a quick side question without adding it to the main conversation history. Only available in experimental mode.",
+    "analogy": "Like a private aside to a colleague mid-meeting — you get an answer without it becoming part of the official record.",
+    "examples": [
+      "/ask what does --no-ff mean in git merge?",
+      "/ask what is the difference between CMD and ENTRYPOINT in Docker?"
+    ],
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /ask what does --no-ff mean in git merge?",
+      "output": [
+        "",
+        "The --no-ff flag stands for 'no fast-forward'.",
+        "",
+        "By default, if the branch you're merging is directly",
+        "ahead, Git fast-forwards — just moves the pointer.",
+        "",
+        "--no-ff forces a merge commit even in that case,",
+        "preserving the history that a feature branch existed.",
+        "",
+        "Use it when you want branch structure visible in git log."
+      ]
+    }
+  },
+  {
+    "id": "chat-2",
+    "title": "/clear",
+    "syntax": "/clear [PROMPT]",
+    "description": "Start a new conversation, wiping the current history. Also available as /new or /reset. Optionally pass an opening prompt for the fresh session.",
+    "analogy": "Like opening a new browser tab — start clean without the baggage of prior exchanges.",
+    "examples": [
+      "/clear  # wipe history and start fresh",
+      "/new  # alias for /clear",
+      "/reset \"help me refactor the auth module\"  # clear and immediately prompt"
+    ],
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /clear",
+      "output": [
+        "",
+        "Conversation history cleared.",
+        "",
+        "Starting a new session…",
+        "",
+        "Tip: Pass an opening prompt to jump straight in:",
+        "  /clear help me refactor the auth module"
+      ]
+    }
+  },
+  {
+    "id": "chat-3",
+    "title": "/copy",
+    "syntax": "/copy",
+    "description": "Copy the last Copilot response to the clipboard.",
+    "analogy": "Like a \"copy response\" button in a chat app — grab the output without selecting text manually.",
+    "examples": [
+      "/copy  # copies the most recent response to clipboard"
+    ],
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /copy",
+      "output": [
+        "",
+        "✓ Last response copied to clipboard.",
+        "",
+        "Tip: Paste it anywhere with Ctrl+V (or Cmd+V on macOS)."
+      ]
+    }
+  },
+  {
+    "id": "chat-4",
+    "title": "/new",
+    "syntax": "/new [PROMPT]",
+    "description": "Start a new conversation, clearing the current history. Alias for /clear and /reset. Optionally pass an opening prompt for the new session.",
+    "analogy": "Like opening a fresh browser tab — start clean without the baggage of prior exchanges.",
+    "examples": [
+      "/new  # clear history and start fresh",
+      "/new help me refactor the auth module  # clear and immediately prompt",
+      "/clear  # alias for /new"
+    ],
+    "category": "chat",
+    "note": "See also: /clear and /reset — all three do the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /new help me refactor the auth module",
+      "output": [
+        "",
+        "Conversation history cleared.",
+        "",
+        "Starting fresh session with your prompt…",
+        "",
+        "Sure! Let's refactor the auth module. First, could you",
+        "share the file path or run /add-dir to grant me access?"
+      ]
+    }
+  },
+  {
+    "id": "chat-5",
+    "title": "/search",
+    "syntax": "/search [QUERY]",
+    "description": "Search the current conversation timeline for past messages. Also available as /find. Only available in experimental mode.",
+    "analogy": "Like Ctrl+F inside a long chat thread — jump to any past message by keyword.",
+    "examples": [
+      "/search authentication  # find messages mentioning authentication",
+      "/find JWT  # alias for /search"
+    ],
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /search JWT",
+      "output": [
+        "",
+        "Searching conversation history for 'JWT'…",
+        "",
+        "  [Turn  3]  'Explain JWT refresh token rotation'",
+        "  [Turn  7]  'Here is the updated verifyToken function…'",
+        "  [Turn 12]  'The /auth/refresh endpoint now uses…'",
+        "",
+        "3 matches found."
+      ]
+    }
+  },
+  {
+    "id": "chat-6",
+    "title": "/undo",
+    "syntax": "/undo",
+    "description": "Rewind the last turn and revert any file changes Copilot made. Also available as /rewind.",
+    "analogy": "Like Ctrl+Z for a Copilot action — undo the last step if the result was not what you wanted.",
+    "examples": [
+      "/undo  # revert the last turn and its file changes",
+      "/rewind  # alias for /undo"
+    ],
+    "category": "chat",
+    "terminalDemo": {
+      "prompt": "$ /undo",
+      "output": [
+        "",
+        "Rewinding last turn…",
+        "",
+        "  Reverting:  src/auth/token.ts  (3 lines changed)",
+        "  Reverting:  src/auth/middleware.ts  (1 line changed)",
+        "",
+        "✓ Files restored to state before last turn.",
+        "✓ Conversation rewound to Turn 6."
+      ]
+    }
+  }
+]

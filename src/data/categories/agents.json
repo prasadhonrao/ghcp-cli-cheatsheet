@@ -1,0 +1,224 @@
+[
+  {
+    "id": "agents-1",
+    "title": "/agent",
+    "syntax": "/agent",
+    "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task.",
+    "analogy": "Like an app drawer for specialized AI workers — each agent is tuned for a specific type of job.",
+    "examples": [
+      "/agent  # open the interactive agent picker"
+    ],
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /agent",
+      "output": [
+        "",
+        "Select an agent:",
+        "",
+        "  ❯ general-purpose   Full-capability coding agent",
+        "    code-review        Review diffs for bugs & issues",
+        "    explore            Research & codebase exploration",
+        "    research           Deep research with citations",
+        "    rubber-duck        Critique plans & implementations",
+        "    task               Run commands & report results",
+        "",
+        "Use arrow keys to select, Enter to launch."
+      ]
+    }
+  },
+  {
+    "id": "agents-2",
+    "title": "/chronicle",
+    "syntax": "/chronicle <standup|tips|improve|reindex>",
+    "description": "Session history tools and insights. Subcommands: standup (generate a standup report), tips (get workflow tips), improve (suggestions to work more effectively), reindex (rebuild the history index). Only available in experimental mode.",
+    "analogy": "Like a smart journal for your coding sessions — chronicle turns your work history into actionable summaries and advice.",
+    "examples": [
+      "/chronicle standup  # generate a standup report from recent sessions",
+      "/chronicle tips  # get workflow tips based on your usage patterns",
+      "/chronicle improve  # suggestions to work more effectively with Copilot"
+    ],
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /chronicle standup",
+      "output": [
+        "",
+        "Generating standup from recent sessions…",
+        "",
+        "── Yesterday ──────────────────────────────",
+        "  • Refactored auth module to use JWT",
+        "  • Added pagination to GET /users",
+        "  • Fixed race condition in WebSocket handler",
+        "",
+        "── Today (planned) ────────────────────────",
+        "  • Write tests for /users pagination",
+        "  • Open PR for JWT expiry validation",
+        "",
+        "Blockers: none"
+      ]
+    }
+  },
+  {
+    "id": "agents-3",
+    "title": "/delegate",
+    "syntax": "/delegate [PROMPT]",
+    "description": "Delegate changes to a remote repository with an AI-generated pull request. Copilot implements the task and opens a PR for your review.",
+    "analogy": "Like sending a task to a remote contractor — Copilot does the work and submits it for approval without blocking your local machine.",
+    "examples": [
+      "/delegate add input validation to the registration form",
+      "/delegate write unit tests for the payment service"
+    ],
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /delegate write unit tests for the payment service",
+      "output": [
+        "",
+        "Delegating task to remote agent…",
+        "",
+        "  Task:    Write unit tests for the payment service",
+        "  Branch:  copilot/payment-service-tests",
+        "",
+        "Agent is working remotely…",
+        "",
+        "✓ Pull request #52 opened for your review.",
+        "  https://github.com/user/repo/pull/52"
+      ]
+    }
+  },
+  {
+    "id": "agents-4",
+    "title": "/fleet",
+    "syntax": "/fleet [PROMPT]",
+    "description": "Enable parallel subagent execution — Copilot breaks a task into parts and runs them simultaneously for faster results.",
+    "analogy": "Like splitting a group project among teammates instead of doing it solo — work happens in parallel and gets done faster.",
+    "examples": [
+      "/fleet run all test suites in parallel",
+      "/fleet analyze all files in src/ for security issues simultaneously"
+    ],
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /fleet run all test suites in parallel",
+      "output": [
+        "",
+        "Spawning parallel subagents…",
+        "",
+        "  Agent 1  →  npm test            (unit tests)",
+        "  Agent 2  →  npm run test:e2e",
+        "  Agent 3  →  npm run test:integration",
+        "",
+        "  Agent 1  ✓  142 passed  (8.2s)",
+        "  Agent 2  ✓   27 passed  (14.1s)",
+        "  Agent 3  ✓   38 passed  (11.6s)",
+        "",
+        "All suites passed.  Total time: 14.1s (vs ~34s serial)"
+      ]
+    }
+  },
+  {
+    "id": "agents-5",
+    "title": "/ide",
+    "syntax": "/ide",
+    "description": "Connect Copilot CLI to your IDE workspace so the model can see your open files, diagnostics, and editor state.",
+    "analogy": "Like plugging two monitors into the same computer — Copilot and your IDE share the same view of your project.",
+    "examples": [
+      "/ide  # connect to the IDE workspace from an active session"
+    ],
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /ide",
+      "output": [
+        "",
+        "Connecting to IDE workspace…",
+        "",
+        "  Detected:   VS Code (port 3000)",
+        "  Open files: src/auth/token.ts, App.tsx",
+        "  Diagnostics: 2 warnings, 0 errors",
+        "",
+        "✓ IDE workspace connected.",
+        "",
+        "Copilot can now see your open files and diagnostics."
+      ]
+    }
+  },
+  {
+    "id": "agents-6",
+    "title": "/research",
+    "syntax": "/research <TOPIC>",
+    "description": "Run a deep research investigation using GitHub search and web sources. Returns a structured report with citations.",
+    "analogy": "Like sending a research assistant to compile a report — Copilot searches broadly and returns a synthesized summary.",
+    "examples": [
+      "/research best practices for JWT refresh token rotation",
+      "/research how does the GitHub Actions cache action work?"
+    ],
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /research JWT refresh token rotation best practices",
+      "output": [
+        "",
+        "Running deep research…",
+        "",
+        "  Searching GitHub repositories…",
+        "  Fetching OWASP guidelines…",
+        "  Reading auth0.com docs…",
+        "",
+        "── Report: JWT Refresh Token Rotation ───────",
+        "  1. Rotate refresh tokens on every use (RTR)",
+        "  2. Store tokens hashed in the database",
+        "  3. Set short access token TTLs (15 min)",
+        "  4. Implement token family invalidation",
+        "",
+        "Sources: OWASP, RFC 6749, auth0.com, ory.sh"
+      ]
+    }
+  },
+  {
+    "id": "agents-7",
+    "title": "/sidekicks",
+    "syntax": "/sidekicks [list|add|remove|info] [NAME]",
+    "description": "Manage AI sidekick agents — lightweight specialized agents that run alongside the main conversation to assist with specific tasks.",
+    "analogy": "Like having a co-pilot next to the pilot — sidekicks handle specific subtasks in the background while the main agent stays focused.",
+    "examples": [
+      "/sidekicks list  # show all available sidekicks",
+      "/sidekicks add linter  # activate the linter sidekick",
+      "/sidekicks info linter  # show details about a specific sidekick"
+    ],
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /sidekicks list",
+      "output": [
+        "",
+        "Available sidekicks:",
+        "",
+        "  linter       Runs ESLint on modified files  (inactive)",
+        "  test-runner  Runs relevant tests on save    (inactive)",
+        "  doc-writer   Generates JSDoc for new code   (inactive)",
+        "",
+        "Run /sidekicks add <name> to activate one.",
+        "Run /sidekicks info <name> for details."
+      ]
+    }
+  },
+  {
+    "id": "agents-8",
+    "title": "/tasks",
+    "syntax": "/tasks",
+    "description": "View and manage active background tasks — subagents and shell commands currently running in the session.",
+    "analogy": "Like a task manager or the shell jobs command — see what is running in the background and manage it from one place.",
+    "examples": [
+      "/tasks  # list all active subagents and background shell commands"
+    ],
+    "category": "agents",
+    "terminalDemo": {
+      "prompt": "$ /tasks",
+      "output": [
+        "",
+        "Active background tasks:",
+        "",
+        "  #1  subagent  explore  →  analysing src/  (running)",
+        "  #2  shell     npm test  →  142 tests       (done ✓)",
+        "  #3  shell     git push  →                  (running)",
+        "",
+        "3 tasks · 1 running subagent · 1 running shell"
+      ]
+    }
+  }
+]

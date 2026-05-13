@@ -1,0 +1,82 @@
+[
+  {
+    "id": "models-1",
+    "title": "/experimental",
+    "syntax": "/experimental [on|off|show]",
+    "description": "Toggle or inspect experimental features. Use \"show\" to list which features are currently enabled.",
+    "analogy": "Like enabling beta features in a browser — access new capabilities before they are fully released.",
+    "examples": [
+      "/experimental show  # list which experimental features are active",
+      "/experimental on  # enable all experimental features",
+      "/experimental off  # disable experimental features"
+    ],
+    "category": "models",
+    "terminalDemo": {
+      "prompt": "$ /experimental show",
+      "output": [
+        "",
+        "Experimental features:",
+        "",
+        "  /ask     ✓  enabled",
+        "  /search  ✓  enabled",
+        "  /voice   ✗  disabled",
+        "",
+        "Use /experimental on to enable all features.",
+        "Use /experimental off to disable them."
+      ]
+    }
+  },
+  {
+    "id": "models-2",
+    "title": "/model",
+    "syntax": "/model [MODEL]",
+    "description": "Select or switch the AI model mid-session. Run without arguments for an interactive picker. Also available as /models.",
+    "analogy": "Like switching between AI tiers in a chat app — pick the right power level for the task at hand.",
+    "examples": [
+      "/model  # open interactive model picker",
+      "/models  # alias for /model",
+      "/model claude-sonnet-4-5  # switch to a specific model by name"
+    ],
+    "category": "models",
+    "terminalDemo": {
+      "prompt": "$ /model",
+      "output": [
+        "",
+        "Select a model:",
+        "",
+        "  ❯ claude-sonnet-4-5     ← current",
+        "    claude-opus-4-5",
+        "    gpt-4.1",
+        "    gpt-4.1-mini",
+        "",
+        "Use arrow keys to select, Enter to confirm."
+      ]
+    }
+  },
+  {
+    "id": "models-3",
+    "title": "/theme",
+    "syntax": "/theme [default|dim|high-contrast|colorblind]",
+    "description": "View or change the color mode for the Copilot CLI interface.",
+    "analogy": "Like switching between dark and light mode in your editor — adjust to your environment and preference.",
+    "examples": [
+      "/theme  # show current theme",
+      "/theme dim  # switch to dimmed color scheme",
+      "/theme high-contrast  # maximum accessibility contrast"
+    ],
+    "category": "models",
+    "terminalDemo": {
+      "prompt": "$ /theme dim",
+      "output": [
+        "",
+        "Theme changed to: dim",
+        "",
+        "Available themes:",
+        "  default       standard colors",
+        "  dim         ← active",
+        "  high-contrast maximum accessibility",
+        "  colorblind    deuteranopia-friendly"
+      ]
+    }
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "auth-1",
+    "title": "/login",
+    "syntax": "/login",
+    "description": "Authenticate with GitHub Copilot from within an active session.",
+    "analogy": "Like showing your badge at the office entrance — without it nothing works, but you only do it once.",
+    "examples": [
+      "/login  # start OAuth flow inside the session"
+    ],
+    "category": "authentication",
+    "terminalDemo": {
+      "prompt": "$ /login",
+      "output": [
+        "",
+        "→ Opening GitHub authentication in your browser…",
+        "",
+        "Waiting for authorisation…",
+        "",
+        "✓ Authenticated as prasadhonrao",
+        "✓ GitHub Copilot access confirmed"
+      ]
+    }
+  },
+  {
+    "id": "auth-2",
+    "title": "/logout",
+    "syntax": "/logout",
+    "description": "Log out of GitHub Copilot and clear stored credentials.",
+    "analogy": "Like signing out of your bank website on a shared computer — good hygiene when switching accounts.",
+    "examples": [
+      "/logout  # clear credentials from the current session"
+    ],
+    "category": "authentication",
+    "terminalDemo": {
+      "prompt": "$ /logout",
+      "output": [
+        "",
+        "Clearing stored credentials…",
+        "",
+        "✓ Logged out of github.com (prasadhonrao)",
+        "✓ Session credentials removed",
+        "",
+        "Run /login to re-authenticate."
+      ]
+    }
+  },
+  {
+    "id": "auth-3",
+    "title": "/user",
+    "syntax": "/user [show|list|switch]",
+    "description": "Manage the current GitHub user. Show the active account, list available accounts, or switch between them.",
+    "analogy": "Like the account switcher in a mobile app — move between work and personal accounts without re-authenticating from scratch.",
+    "examples": [
+      "/user show  # display the currently active GitHub account",
+      "/user list  # list all authenticated accounts",
+      "/user switch  # interactively switch to a different account"
+    ],
+    "category": "authentication",
+    "terminalDemo": {
+      "prompt": "$ /user list",
+      "output": [
+        "",
+        "Authenticated accounts:",
+        "",
+        "  * prasadhonrao  (github.com)  ← active",
+        "    work-user     (github.com)",
+        "",
+        "Use /user switch to change the active account."
+      ]
+    }
+  }
+]

@@ -1,0 +1,185 @@
+[
+  {
+    "id": "ts-1",
+    "title": "/collect-debug-logs",
+    "syntax": "/collect-debug-logs",
+    "description": "Collect debug logs and diagnostic information from the current session and save them to a file. Use when submitting a bug report.",
+    "analogy": "Like clicking 'Export logs' in a crashed app — bundles everything the support team needs into one file.",
+    "examples": [
+      "/collect-debug-logs  # save debug logs for the current session",
+      "/feedback  # then attach the log file when filing a bug"
+    ],
+    "category": "troubleshooting",
+    "terminalDemo": {
+      "prompt": "$ /collect-debug-logs",
+      "output": [
+        "",
+        "Collecting diagnostic information…",
+        "",
+        "  ✓  Session logs",
+        "  ✓  MCP server logs",
+        "  ✓  LSP logs",
+        "  ✓  Environment snapshot",
+        "",
+        "✓ Debug bundle saved to:",
+        "  /tmp/copilot-debug-2025-05-13.tar.gz",
+        "",
+        "Attach this file when filing a bug report."
+      ]
+    }
+  },
+  {
+    "id": "ts-2",
+    "title": "/diagnosis",
+    "syntax": "/diagnosis",
+    "description": "Run a set of diagnostic checks on the Copilot CLI environment — verifies authentication, connectivity, model availability, and configuration.",
+    "analogy": "Like running a system health check — one command tells you exactly what is working and what isn't.",
+    "examples": [
+      "/diagnosis  # run all diagnostic checks",
+      "/restart  # try this first if /diagnosis reports issues"
+    ],
+    "category": "troubleshooting",
+    "terminalDemo": {
+      "prompt": "$ /diagnosis",
+      "output": [
+        "",
+        "Running diagnostic checks…",
+        "",
+        "  Authentication       ✓  prasadhonrao (github.com)",
+        "  Network connectivity ✓  api.githubcopilot.com reachable",
+        "  Model availability   ✓  claude-sonnet-4-5 available",
+        "  MCP servers          ✓  2 connected, 1 disabled",
+        "  LSP servers          ⚠  pylsp not running",
+        "  Config files         ✓  all valid",
+        "",
+        "1 warning — LSP: pylsp is configured but not running."
+      ]
+    }
+  },
+  {
+    "id": "ts-3",
+    "title": "/downgrade",
+    "syntax": "/downgrade <VERSION>",
+    "description": "Download and restart into a specific older CLI version. Useful when a recent update introduces a regression. Available for team accounts.",
+    "analogy": "Like rolling back a deploy — if the latest version broke something, pin to a known-good version while it is investigated.",
+    "examples": [
+      "/version  # check the current installed version first",
+      "/downgrade 1.5.0  # restart into a specific older version"
+    ],
+    "category": "troubleshooting",
+    "terminalDemo": {
+      "prompt": "$ /downgrade 1.3.2",
+      "output": [
+        "",
+        "Downgrading to v1.3.2…",
+        "",
+        "  Current version:  1.4.0",
+        "  Target version:   1.3.2",
+        "",
+        "Downloading v1.3.2…  ████████████████  100%",
+        "",
+        "✓ Downgrade complete. Restarting into v1.3.2…"
+      ]
+    }
+  },
+  {
+    "id": "ts-4",
+    "title": "/exit",
+    "syntax": "/exit",
+    "description": "Exit the Copilot CLI interactive session cleanly.",
+    "analogy": "Like closing a terminal tab cleanly — exits gracefully rather than force-killing the process.",
+    "examples": [
+      "/exit  # close the interactive session"
+    ],
+    "category": "troubleshooting",
+    "note": "See also: /quit — a separate alias command that does the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /exit",
+      "output": [
+        "",
+        "Saving session state…  ✓",
+        "",
+        "Goodbye! Session 'payment-refactor-may' saved.",
+        "Resume it later with: /resume payment-refactor-may",
+        "",
+        "Exiting GitHub Copilot CLI."
+      ]
+    }
+  },
+  {
+    "id": "ts-5",
+    "title": "/quit",
+    "syntax": "/quit",
+    "description": "Exit the Copilot CLI interactive session cleanly.",
+    "analogy": "Like typing \"quit\" or \"exit\" in a REPL — both mean the same thing, use whichever feels natural.",
+    "examples": [
+      "/quit  # close the interactive session"
+    ],
+    "category": "troubleshooting",
+    "note": "See also: /exit — a separate alias command that does the same thing.",
+    "terminalDemo": {
+      "prompt": "$ /quit",
+      "output": [
+        "",
+        "Saving session state…  ✓",
+        "",
+        "Goodbye! Session saved.",
+        "Resume it later with: /resume",
+        "",
+        "Exiting GitHub Copilot CLI."
+      ]
+    }
+  },
+  {
+    "id": "ts-6",
+    "title": "/remote",
+    "syntax": "/remote [on|off]",
+    "description": "Show remote control status (no argument), enable remote steering from another device (on), or end the remote connection (off).",
+    "analogy": "Like a screenshare with remote control — a trusted collaborator can drive your Copilot session for pair programming.",
+    "examples": [
+      "/remote  # show current remote control status",
+      "/remote on  # enable remote steering from another device",
+      "/remote off  # end the remote connection"
+    ],
+    "category": "troubleshooting",
+    "terminalDemo": {
+      "prompt": "$ /remote on",
+      "output": [
+        "",
+        "Remote steering enabled.",
+        "",
+        "Share this link with your collaborator:",
+        "  https://copilot.github.com/remote/sess_a8f3c291",
+        "",
+        "They can now send prompts to your session.",
+        "Run /remote off to end the connection."
+      ]
+    }
+  },
+  {
+    "id": "ts-7",
+    "title": "/restart",
+    "syntax": "/restart",
+    "description": "Restart the Copilot CLI process while preserving the current session. Use when the session is unresponsive or behaving unexpectedly.",
+    "analogy": "Like restarting your browser without losing your tabs — the process reloads fresh but your session state is preserved.",
+    "examples": [
+      "/restart  # restart the CLI, preserving the current session"
+    ],
+    "category": "troubleshooting",
+    "terminalDemo": {
+      "prompt": "$ /restart",
+      "output": [
+        "",
+        "Saving session state…  ✓",
+        "Restarting Copilot CLI process…",
+        "",
+        "─────────────────────────────────────",
+        "  GitHub Copilot CLI  v1.4.0",
+        "  Session restored: payment-refactor-may",
+        "─────────────────────────────────────",
+        "",
+        "✓ Ready."
+      ]
+    }
+  }
+]
