@@ -74,6 +74,14 @@ jobs:
           printf '#!/bin/bash\nexec gh copilot "$@"\n' | sudo tee /usr/local/bin/copilot
           sudo chmod +x /usr/local/bin/copilot
 
+      - name: Pre-trust working directory for Copilot CLI
+        run: |
+          # Start copilot, send "2" to select "Trust and remember", then exit.
+          # This ensures the folder trust dialog never appears during VHS recordings.
+          printf "2\n/exit\n" | timeout 30 copilot 2>/dev/null || true
+        env:
+          GH_TOKEN: ${{ secrets.GH_COPILOT_TOKEN }}
+
       - name: Generate .tape files
         run: npm run create:tape
 
