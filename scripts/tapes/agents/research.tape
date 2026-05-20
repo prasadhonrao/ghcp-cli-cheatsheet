@@ -20,8 +20,8 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /research JWT refresh token rotation best practices
-Type "/research JWT refresh token rotation best practices"
+# Run: /research NEXTJS app deployment option pros and cons
+Type "/research NEXTJS app deployment option pros and cons"
 Sleep 3s
 Enter
 Sleep 0.8s
@@ -29,6 +29,5 @@ Sleep 0.8s
 # Wait for the real response
 Sleep 30s
 
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s

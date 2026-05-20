@@ -76,7 +76,7 @@
       "id": "delegate",
       "category": "agents",
       "description": "Delegate task to remote agent",
-      "command": "/delegate write unit tests for the payment service",
+      "command": "/delegate write unit tests for the app",
       "responseWait": 30
     },
     {
@@ -97,7 +97,7 @@
       "id": "research",
       "category": "agents",
       "description": "Deep research with citations",
-      "command": "/research JWT refresh token rotation best practices",
+      "command": "/research NEXTJS app deployment option pros and cons",
       "responseWait": 30
     },
     {

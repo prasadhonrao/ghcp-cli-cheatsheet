@@ -37,6 +37,5 @@ Sleep 0.5s
 Enter
 Sleep 8s
 
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s
