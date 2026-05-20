@@ -522,9 +522,21 @@
     {
       "id": "model",
       "category": "models",
-      "description": "Open model picker",
-      "command": "/model",
-      "responseWait": 10
+      "description": "Open model picker and select a different model",
+      "steps": [
+        { "type": "/model" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 3 },
+        { "key": "Down" },
+        { "wait": 0.5 },
+        { "key": "Down" },
+        { "wait": 0.5 },
+        { "key": "Down" },
+        { "wait": 0.5 },
+        { "key": "Enter" },
+        { "wait": 5 }
+      ]
     },
     {
       "id": "theme",

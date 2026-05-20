@@ -1,4 +1,4 @@
-# Open model picker
+# Open model picker and select a different model
 # Auto-generated from scripts/demos.json — edit that file, then re-run npm run create:tape
 
 Output public/images/models/model.gif
@@ -20,15 +20,18 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /model
 Type "/model"
 Sleep 3s
 Enter
-Sleep 0.8s
+Sleep 3s
+Down
+Sleep 0.5s
+Down
+Sleep 0.5s
+Down
+Sleep 0.5s
+Enter
+Sleep 5s
 
-# Wait for the real response
-Sleep 10s
-
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s
