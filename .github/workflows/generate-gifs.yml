@@ -23,12 +23,23 @@ on:
 jobs:
   record:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
+    concurrency:
+      group: generate-gifs-${{ github.ref }}
+      cancel-in-progress: true
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Check out the PR branch (not the detached merge ref) so we can push back.
+          ref: ${{ github.head_ref || github.ref_name }}
+          # Use a PAT so that pushes made by this workflow trigger downstream
+          # workflows (e.g. deploy-to-gh-pages). The default GITHUB_TOKEN does
+          # not trigger other workflows on push.
+          token: ${{ secrets.GH_COPILOT_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -62,7 +73,6 @@ jobs:
         run: |
           printf '#!/bin/bash\nexec gh copilot "$@"\n' | sudo tee /usr/local/bin/copilot
           sudo chmod +x /usr/local/bin/copilot
-          copilot --version
 
       - name: Verify Copilot CLI auth
         run: gh copilot --version
@@ -96,6 +106,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No GIF changes to commit."
           else
-            git commit -m "chore: update terminal demo GIFs [skip ci]"
+            git commit -m "chore: update terminal demo GIFs"
             git push
           fi
