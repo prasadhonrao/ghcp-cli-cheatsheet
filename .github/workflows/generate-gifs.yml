@@ -2,6 +2,11 @@ name: Generate GIFs
 
 on:
   push:
+    branches:
+      - main
+    paths:
+      - 'scripts/demos.json'
+  pull_request:
     paths:
       - 'scripts/demos.json'
   workflow_dispatch:
