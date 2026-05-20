@@ -12,7 +12,7 @@ export function TopBar({ theme, onToggleTheme }: Props) {
       <div className="topbar-brand">
         <CopilotIcon size={24} />
         <div className="topbar-brand-text">
-          <span className="topbar-title">GHCP CLI Cheatsheet</span>
+          <span className="topbar-title">GitHub Copilot CLI Cheatsheet</span>
           <span className="topbar-tagline">Your quick reference for GitHub Copilot CLI commands</span>
         </div>
       </div>
