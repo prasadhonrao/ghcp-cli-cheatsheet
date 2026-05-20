@@ -25,19 +25,7 @@
     "category": "troubleshooting",
     "terminalDemo": "images/troubleshooting/diagnosis.gif"
   },
-  {
-    "id": "downgrade",
-    "title": "/downgrade",
-    "syntax": "/downgrade <VERSION>",
-    "description": "Download and restart into a specific older CLI version. Useful when a recent update introduces a regression. Available for team accounts.",
-    "analogy": "Like rolling back a deploy — if the latest version broke something, pin to a known-good version while it is investigated.",
-    "examples": [
-      "/version  # check the current installed version first",
-      "/downgrade 1.5.0  # restart into a specific older version"
-    ],
-    "category": "troubleshooting",
-    "terminalDemo": "images/troubleshooting/downgrade.gif"
-  },
+
   {
     "id": "exit",
     "title": "/exit",

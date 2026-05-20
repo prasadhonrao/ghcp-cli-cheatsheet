@@ -555,17 +555,19 @@
     {
       "id": "diagnosis",
       "category": "troubleshooting",
-      "description": "Run diagnostic checks",
-      "command": "/diagnosis",
-      "responseWait": 15
+      "description": "Send a prompt then run diagnostic checks",
+      "steps": [
+        { "type": "what is the latest LTS version of Node.js?" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 12 },
+        { "type": "/diagnosis" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 15 }
+      ]
     },
-    {
-      "id": "downgrade",
-      "category": "troubleshooting",
-      "description": "Downgrade to a specific version",
-      "command": "/downgrade 1.3.2",
-      "responseWait": 15
-    },
+
     {
       "id": "exit",
       "category": "troubleshooting",
