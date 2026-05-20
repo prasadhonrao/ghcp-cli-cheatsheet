@@ -1,0 +1,96 @@
+name: Record Terminal Demos
+
+on:
+  push:
+    paths:
+      - 'scripts/demos.json'
+      - 'public/demos/**/*.tape'
+  workflow_dispatch:
+    inputs:
+      category:
+        description: 'Category to record (leave empty for all)'
+        required: false
+        default: ''
+      concurrency:
+        description: 'Number of tapes to record in parallel'
+        required: false
+        default: '2'
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Install VHS (Charmbracelet apt repo)
+        run: |
+          sudo mkdir -p /etc/apt/keyrings
+          curl -fsSL https://repo.charm.sh/apt/gpg.key \
+            | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+          echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" \
+            | sudo tee /etc/apt/sources.list.d/charm.list
+          sudo apt-get update -q
+          sudo apt-get install -y vhs
+
+      - name: Install ffmpeg and ttyd
+        run: sudo apt-get install -y ffmpeg ttyd
+
+      - name: Verify VHS toolchain
+        run: |
+          vhs --version
+          ffmpeg -version | head -1
+          ttyd --version
+
+      - name: Install gh CLI Copilot extension
+        run: gh extension install github/gh-copilot
+        env:
+          GH_TOKEN: ${{ secrets.GH_COPILOT_TOKEN }}
+
+      - name: Verify Copilot CLI auth
+        run: gh copilot --version
+        env:
+          GH_TOKEN: ${{ secrets.GH_COPILOT_TOKEN }}
+
+      - name: Generate .tape files
+        run: npm run create:tape
+
+      - name: Record GIFs
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.category }}" ]; then
+            ARGS="--category ${{ inputs.category }}"
+          fi
+          CONCURRENCY="${{ inputs.concurrency || '2' }}"
+          npm run create:gif -- $ARGS --concurrency "$CONCURRENCY"
+        env:
+          GH_TOKEN: ${{ secrets.GH_COPILOT_TOKEN }}
+          # Prevent interactive prompts inside recorded sessions
+          GH_PROMPT_DISABLED: 1
+
+      - name: Verify all GIFs produced
+        run: npm run verify:gif
+
+      - name: Commit GIFs back to repo
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add "public/demos/**/*.gif"
+          if git diff --staged --quiet; then
+            echo "No GIF changes to commit."
+          else
+            git commit -m "chore: update terminal demo GIFs [skip ci]"
+            git push
+          fi
