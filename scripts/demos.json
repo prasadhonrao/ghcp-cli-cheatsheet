@@ -237,14 +237,20 @@
       "id": "diff",
       "category": "code",
       "description": "Review and explain git diff",
-      "command": "/diff",
-      "responseWait": 20
+      "steps": [
+        { "type": "/diff" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 5 },
+        { "key": "Escape" },
+        { "wait": 2 }
+      ]
     },
     {
       "id": "plan",
       "category": "code",
       "description": "Create step-by-step plan",
-      "command": "/plan add pagination to the users API",
+      "command": "/plan add a favorites feature to bookmark commands in the cheatsheet app",
       "responseWait": 20
     },
     {

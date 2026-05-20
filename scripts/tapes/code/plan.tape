@@ -20,8 +20,8 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /plan add pagination to the users API
-Type "/plan add pagination to the users API"
+# Run: /plan add a favorites feature to bookmark commands in the cheatsheet app
+Type "/plan add a favorites feature to bookmark commands in the cheatsheet app"
 Sleep 3s
 Enter
 Sleep 0.8s
@@ -29,6 +29,5 @@ Sleep 0.8s
 # Wait for the real response
 Sleep 20s
 
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s

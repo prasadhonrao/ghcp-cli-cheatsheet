@@ -20,15 +20,12 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /diff
 Type "/diff"
 Sleep 3s
 Enter
-Sleep 0.8s
+Sleep 5s
+Escape
+Sleep 2s
 
-# Wait for the real response
-Sleep 20s
-
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s
