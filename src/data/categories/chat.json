@@ -35,8 +35,7 @@
     "examples": [
       "/copy  # copies the most recent response to clipboard"
     ],
-    "category": "chat",
-    "terminalDemo": "images/chat/copy.gif"
+    "category": "chat"
   },
   {
     "id": "new",

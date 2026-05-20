@@ -76,8 +76,15 @@
       "id": "delegate",
       "category": "agents",
       "description": "Delegate task to remote agent",
-      "command": "/delegate write unit tests for the app",
-      "responseWait": 30
+      "steps": [
+        { "wait": 2 },
+        { "type": "/delegate write unit tests for the app" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 8 },
+        { "key": "Escape" },
+        { "wait": 3 }
+      ]
     },
     {
       "id": "fleet",
@@ -197,13 +204,7 @@
       "command": "/clear",
       "responseWait": 6
     },
-    {
-      "id": "copy",
-      "category": "chat",
-      "description": "Copy last response to clipboard",
-      "command": "/copy",
-      "responseWait": 6
-    },
+
     {
       "id": "new",
       "category": "chat",
@@ -299,7 +300,7 @@
       "id": "cd",
       "category": "configuration",
       "description": "Change working directory",
-      "command": "/cd ~/c/gh",
+      "command": "/cd /mnt/c/gh",
       "responseWait": 6
     },
 

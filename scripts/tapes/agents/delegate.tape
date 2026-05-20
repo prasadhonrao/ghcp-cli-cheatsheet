@@ -20,14 +20,13 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /delegate write unit tests for the app
+Sleep 2s
 Type "/delegate write unit tests for the app"
 Sleep 3s
 Enter
-Sleep 0.8s
-
-# Wait for the real response
-Sleep 30s
+Sleep 8s
+Escape
+Sleep 3s
 
 # End of recording
 Sleep 2s

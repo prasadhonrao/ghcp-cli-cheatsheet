@@ -20,8 +20,8 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /cd ~/c/gh
-Type "/cd ~/c/gh"
+# Run: /cd /mnt/c/gh
+Type "/cd /mnt/c/gh"
 Sleep 3s
 Enter
 Sleep 0.8s
