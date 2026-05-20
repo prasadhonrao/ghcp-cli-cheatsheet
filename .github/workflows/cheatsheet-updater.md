@@ -104,7 +104,13 @@ Do not modify any `.tsx`, `.css`, or non-data files unless a new category requir
 
 - **Removed command** — delete the matching entry from `scripts/demos.json`.
 
-The `generate-gifs.yml` workflow will automatically detect the change to `scripts/demos.json` on this PR branch and generate the GIF, committing it back to the branch. The PR should not be merged until that workflow completes successfully and the GIF is committed.
+Do NOT add `terminalDemo` fields to the category JSON files. GIF recordings require a local authenticated Copilot CLI session and must be generated manually after the PR is merged using:
+```bash
+npm run create:tape
+npm run create:gif -- --category <category>
+```
+
+Apply the label `needs-gifs` to the PR so the maintainer knows to record demos locally after merge.
 
 ## Step 5 — Open a pull request
 
