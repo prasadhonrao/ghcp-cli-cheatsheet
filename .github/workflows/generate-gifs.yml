@@ -58,6 +58,12 @@ jobs:
           ffmpeg -version | head -1
           ttyd --version
 
+      - name: Create copilot wrapper
+        run: |
+          printf '#!/bin/bash\nexec gh copilot "$@"\n' | sudo tee /usr/local/bin/copilot
+          sudo chmod +x /usr/local/bin/copilot
+          copilot --version
+
       - name: Verify Copilot CLI auth
         run: gh copilot --version
         env:
