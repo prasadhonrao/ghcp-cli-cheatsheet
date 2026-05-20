@@ -27,6 +27,5 @@ Sleep 5s
 Type "/logout"
 Sleep 3s
 
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s

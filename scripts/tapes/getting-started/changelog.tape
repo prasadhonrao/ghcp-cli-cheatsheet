@@ -29,6 +29,5 @@ Sleep 0.8s
 # Wait for the real response
 Sleep 8s
 
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s
