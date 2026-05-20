@@ -42,19 +42,7 @@
     "note": "See also: /cwd — co-equal alias for the same command.",
     "terminalDemo": "images/configuration/cd.gif"
   },
-  {
-    "id": "clikit",
-    "title": "/clikit",
-    "syntax": "/clikit [COMPONENT]",
-    "description": "Preview CLI interface components such as quota info. Primarily used for development and debugging of CLI UI elements.",
-    "analogy": "Like a component storybook for the CLI — view individual UI building blocks in isolation.",
-    "examples": [
-      "/clikit  # list available components",
-      "/clikit quota  # preview the quota info component"
-    ],
-    "category": "configuration",
-    "terminalDemo": "images/configuration/clikit.gif"
-  },
+
   {
     "id": "cwd",
     "title": "/cwd",
@@ -80,19 +68,6 @@
     ],
     "category": "configuration",
     "terminalDemo": "images/configuration/env.gif"
-  },
-  {
-    "id": "every",
-    "title": "/every",
-    "syntax": "/every <SECONDS> <COMMAND>",
-    "description": "Run a shell command repeatedly at a fixed interval — like a built-in watch mode inside the Copilot session.",
-    "analogy": "Like the Unix watch command — run any command on a timer without leaving the Copilot interface.",
-    "examples": [
-      "/every 5 git status  # run git status every 5 seconds",
-      "/every 10 npm test  # re-run tests every 10 seconds"
-    ],
-    "category": "configuration",
-    "terminalDemo": "images/configuration/every.gif"
   },
   {
     "id": "keep-alive",

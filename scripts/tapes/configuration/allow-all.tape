@@ -1,4 +1,4 @@
-# Show permission status
+# Enable all permissions then verify status
 # Auto-generated from scripts/demos.json — edit that file, then re-run npm run create:tape
 
 Output public/images/configuration/allow-all.gif
@@ -20,15 +20,15 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /allow-all show
+Sleep 2s
+Type "/allow-all on"
+Sleep 3s
+Enter
+Sleep 6s
 Type "/allow-all show"
 Sleep 3s
 Enter
-Sleep 0.8s
-
-# Wait for the real response
 Sleep 6s
 
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s

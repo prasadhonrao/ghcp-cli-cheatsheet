@@ -1,4 +1,4 @@
-# Add directory to allowed list
+# Add src directory to the allowed list
 # Auto-generated from scripts/demos.json — edit that file, then re-run npm run create:tape
 
 Output public/images/configuration/add-dir.gif
@@ -20,15 +20,11 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /add-dir ./src
+Sleep 2s
 Type "/add-dir ./src"
 Sleep 3s
 Enter
-Sleep 0.8s
+Sleep 8s
 
-# Wait for the real response
-Sleep 6s
-
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s

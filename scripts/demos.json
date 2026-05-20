@@ -270,31 +270,39 @@
     {
       "id": "add-dir",
       "category": "configuration",
-      "description": "Add directory to allowed list",
-      "command": "/add-dir ./src",
-      "responseWait": 6
+      "description": "Add src directory to the allowed list",
+      "steps": [
+        { "wait": 2 },
+        { "type": "/add-dir ./src" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 8 }
+      ]
     },
     {
       "id": "allow-all",
       "category": "configuration",
-      "description": "Show permission status",
-      "command": "/allow-all show",
-      "responseWait": 6
+      "description": "Enable all permissions then verify status",
+      "steps": [
+        { "wait": 2 },
+        { "type": "/allow-all on" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 6 },
+        { "type": "/allow-all show" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 6 }
+      ]
     },
     {
       "id": "cd",
       "category": "configuration",
       "description": "Change working directory",
-      "command": "/cd ~/projects/my-app",
+      "command": "/cd ~/c/gh",
       "responseWait": 6
     },
-    {
-      "id": "clikit",
-      "category": "configuration",
-      "description": "Preview quota component",
-      "command": "/clikit quota",
-      "responseWait": 6
-    },
+
     {
       "id": "cwd",
       "category": "configuration",
@@ -309,13 +317,7 @@
       "command": "/env",
       "responseWait": 6
     },
-    {
-      "id": "every",
-      "category": "configuration",
-      "description": "Run command on interval",
-      "command": "/every 5 git status",
-      "responseWait": 15
-    },
+
     {
       "id": "keep-alive",
       "category": "configuration",
