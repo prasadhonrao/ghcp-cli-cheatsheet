@@ -1,6 +1,6 @@
 [
   {
-    "id": "agents-1",
+    "id": "agent",
     "title": "/agent",
     "syntax": "/agent",
     "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task.",
@@ -9,25 +9,10 @@
       "/agent  # open the interactive agent picker"
     ],
     "category": "agents",
-    "terminalDemo": {
-      "prompt": "$ /agent",
-      "output": [
-        "",
-        "Select an agent:",
-        "",
-        "  ❯ general-purpose   Full-capability coding agent",
-        "    code-review        Review diffs for bugs & issues",
-        "    explore            Research & codebase exploration",
-        "    research           Deep research with citations",
-        "    rubber-duck        Critique plans & implementations",
-        "    task               Run commands & report results",
-        "",
-        "Use arrow keys to select, Enter to launch."
-      ]
-    }
+    "terminalDemo": "images/agents/agent.gif"
   },
   {
-    "id": "agents-2",
+    "id": "chronicle",
     "title": "/chronicle",
     "syntax": "/chronicle <standup|tips|improve|reindex>",
     "description": "Session history tools and insights. Subcommands: standup (generate a standup report), tips (get workflow tips), improve (suggestions to work more effectively), reindex (rebuild the history index). Only available in experimental mode.",
@@ -38,27 +23,10 @@
       "/chronicle improve  # suggestions to work more effectively with Copilot"
     ],
     "category": "agents",
-    "terminalDemo": {
-      "prompt": "$ /chronicle standup",
-      "output": [
-        "",
-        "Generating standup from recent sessions…",
-        "",
-        "── Yesterday ──────────────────────────────",
-        "  • Refactored auth module to use JWT",
-        "  • Added pagination to GET /users",
-        "  • Fixed race condition in WebSocket handler",
-        "",
-        "── Today (planned) ────────────────────────",
-        "  • Write tests for /users pagination",
-        "  • Open PR for JWT expiry validation",
-        "",
-        "Blockers: none"
-      ]
-    }
+    "terminalDemo": "images/agents/chronicle.gif"
   },
   {
-    "id": "agents-3",
+    "id": "delegate",
     "title": "/delegate",
     "syntax": "/delegate [PROMPT]",
     "description": "Delegate changes to a remote repository with an AI-generated pull request. Copilot implements the task and opens a PR for your review.",
@@ -68,24 +36,10 @@
       "/delegate write unit tests for the payment service"
     ],
     "category": "agents",
-    "terminalDemo": {
-      "prompt": "$ /delegate write unit tests for the payment service",
-      "output": [
-        "",
-        "Delegating task to remote agent…",
-        "",
-        "  Task:    Write unit tests for the payment service",
-        "  Branch:  copilot/payment-service-tests",
-        "",
-        "Agent is working remotely…",
-        "",
-        "✓ Pull request #52 opened for your review.",
-        "  https://github.com/user/repo/pull/52"
-      ]
-    }
+    "terminalDemo": "images/agents/delegate.gif"
   },
   {
-    "id": "agents-4",
+    "id": "fleet",
     "title": "/fleet",
     "syntax": "/fleet [PROMPT]",
     "description": "Enable parallel subagent execution — Copilot breaks a task into parts and runs them simultaneously for faster results.",
@@ -95,26 +49,10 @@
       "/fleet analyze all files in src/ for security issues simultaneously"
     ],
     "category": "agents",
-    "terminalDemo": {
-      "prompt": "$ /fleet run all test suites in parallel",
-      "output": [
-        "",
-        "Spawning parallel subagents…",
-        "",
-        "  Agent 1  →  npm test            (unit tests)",
-        "  Agent 2  →  npm run test:e2e",
-        "  Agent 3  →  npm run test:integration",
-        "",
-        "  Agent 1  ✓  142 passed  (8.2s)",
-        "  Agent 2  ✓   27 passed  (14.1s)",
-        "  Agent 3  ✓   38 passed  (11.6s)",
-        "",
-        "All suites passed.  Total time: 14.1s (vs ~34s serial)"
-      ]
-    }
+    "terminalDemo": "images/agents/fleet.gif"
   },
   {
-    "id": "agents-5",
+    "id": "ide",
     "title": "/ide",
     "syntax": "/ide",
     "description": "Connect Copilot CLI to your IDE workspace so the model can see your open files, diagnostics, and editor state.",
@@ -123,24 +61,10 @@
       "/ide  # connect to the IDE workspace from an active session"
     ],
     "category": "agents",
-    "terminalDemo": {
-      "prompt": "$ /ide",
-      "output": [
-        "",
-        "Connecting to IDE workspace…",
-        "",
-        "  Detected:   VS Code (port 3000)",
-        "  Open files: src/auth/token.ts, App.tsx",
-        "  Diagnostics: 2 warnings, 0 errors",
-        "",
-        "✓ IDE workspace connected.",
-        "",
-        "Copilot can now see your open files and diagnostics."
-      ]
-    }
+    "terminalDemo": "images/agents/ide.gif"
   },
   {
-    "id": "agents-6",
+    "id": "research",
     "title": "/research",
     "syntax": "/research <TOPIC>",
     "description": "Run a deep research investigation using GitHub search and web sources. Returns a structured report with citations.",
@@ -150,28 +74,10 @@
       "/research how does the GitHub Actions cache action work?"
     ],
     "category": "agents",
-    "terminalDemo": {
-      "prompt": "$ /research JWT refresh token rotation best practices",
-      "output": [
-        "",
-        "Running deep research…",
-        "",
-        "  Searching GitHub repositories…",
-        "  Fetching OWASP guidelines…",
-        "  Reading auth0.com docs…",
-        "",
-        "── Report: JWT Refresh Token Rotation ───────",
-        "  1. Rotate refresh tokens on every use (RTR)",
-        "  2. Store tokens hashed in the database",
-        "  3. Set short access token TTLs (15 min)",
-        "  4. Implement token family invalidation",
-        "",
-        "Sources: OWASP, RFC 6749, auth0.com, ory.sh"
-      ]
-    }
+    "terminalDemo": "images/agents/research.gif"
   },
   {
-    "id": "agents-7",
+    "id": "sidekicks",
     "title": "/sidekicks",
     "syntax": "/sidekicks [list|add|remove|info] [NAME]",
     "description": "Manage AI sidekick agents — lightweight specialized agents that run alongside the main conversation to assist with specific tasks.",
@@ -182,23 +88,10 @@
       "/sidekicks info linter  # show details about a specific sidekick"
     ],
     "category": "agents",
-    "terminalDemo": {
-      "prompt": "$ /sidekicks list",
-      "output": [
-        "",
-        "Available sidekicks:",
-        "",
-        "  linter       Runs ESLint on modified files  (inactive)",
-        "  test-runner  Runs relevant tests on save    (inactive)",
-        "  doc-writer   Generates JSDoc for new code   (inactive)",
-        "",
-        "Run /sidekicks add <name> to activate one.",
-        "Run /sidekicks info <name> for details."
-      ]
-    }
+    "terminalDemo": "images/agents/sidekicks.gif"
   },
   {
-    "id": "agents-8",
+    "id": "tasks",
     "title": "/tasks",
     "syntax": "/tasks",
     "description": "View and manage active background tasks — subagents and shell commands currently running in the session.",
@@ -207,18 +100,6 @@
       "/tasks  # list all active subagents and background shell commands"
     ],
     "category": "agents",
-    "terminalDemo": {
-      "prompt": "$ /tasks",
-      "output": [
-        "",
-        "Active background tasks:",
-        "",
-        "  #1  subagent  explore  →  analysing src/  (running)",
-        "  #2  shell     npm test  →  142 tests       (done ✓)",
-        "  #3  shell     git push  →                  (running)",
-        "",
-        "3 tasks · 1 running subagent · 1 running shell"
-      ]
-    }
+    "terminalDemo": "images/agents/tasks.gif"
   }
 ]

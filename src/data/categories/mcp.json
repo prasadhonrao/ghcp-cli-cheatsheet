@@ -1,6 +1,6 @@
 [
   {
-    "id": "mcp-1",
+    "id": "lsp",
     "title": "/lsp",
     "syntax": "/lsp [show|test|reload|help] [SERVER-NAME]",
     "description": "Manage language server (LSP) configurations that give Copilot live diagnostics, type information, and symbol references from your codebase.",
@@ -11,23 +11,10 @@
       "/lsp reload  # reload LSP configs after making changes"
     ],
     "category": "mcp",
-    "terminalDemo": {
-      "prompt": "$ /lsp show",
-      "output": [
-        "",
-        "Configured language servers:",
-        "",
-        "  typescript-language-server  ✓  running  (port 4589)",
-        "  pylsp                       ✗  not running",
-        "  gopls                       ✗  not configured",
-        "",
-        "Run /lsp test typescript to verify the connection.",
-        "Run /lsp reload after editing LSP config files."
-      ]
-    }
+    "terminalDemo": "images/mcp/lsp.gif"
   },
   {
-    "id": "mcp-2",
+    "id": "mcp",
     "title": "/mcp",
     "syntax": "/mcp [show|add|edit|delete|disable|enable|auth|reload] [SERVER]",
     "description": "Manage MCP (Model Context Protocol) server configurations — add, remove, enable, disable, or reload servers from within a session.",
@@ -39,19 +26,6 @@
       "/mcp auth my-server  # trigger a fresh OAuth flow for a remote server"
     ],
     "category": "mcp",
-    "terminalDemo": {
-      "prompt": "$ /mcp show",
-      "output": [
-        "",
-        "Configured MCP servers:",
-        "",
-        "  github      ✓  connected  (SSE · github.com)",
-        "  filesystem  ✓  connected  (stdio · local)",
-        "  my-server   ✗  disabled",
-        "",
-        "Run /mcp enable my-server to re-enable.",
-        "Run /mcp reload to apply config changes."
-      ]
-    }
+    "terminalDemo": "images/mcp/mcp.gif"
   }
 ]

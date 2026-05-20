@@ -1,0 +1,562 @@
+{
+  "settings": {
+    "fontSize": 15,
+    "width": 800,
+    "height": 500,
+    "theme": "Dracula",
+    "typingSpeed": "150ms",
+    "framerate": 15,
+    "startupWait": 5,
+    "exitWait": 2
+  },
+  "demos": [
+    {
+      "id": "agent",
+      "category": "agents",
+      "description": "Agent picker — browse and activate a built-in agent",
+      "steps": [
+        {
+          "type": "/agent"
+        },
+        {
+          "wait": 3
+        },
+        {
+          "key": "Enter"
+        },
+        {
+          "wait": 3
+        },
+        {
+          "key": "Down"
+        },
+        {
+          "wait": 0.5
+        },
+        {
+          "key": "Down"
+        },
+        {
+          "wait": 0.5
+        },
+        {
+          "key": "Down"
+        },
+        {
+          "wait": 0.5
+        },
+        {
+          "key": "Up"
+        },
+        {
+          "wait": 0.5
+        },
+        {
+          "key": "Up"
+        },
+        {
+          "wait": 0.5
+        },
+        {
+          "key": "Enter"
+        },
+        {
+          "wait": 8
+        }
+      ]
+    },
+    {
+      "id": "chronicle",
+      "category": "agents",
+      "description": "Chronicle standup",
+      "command": "/chronicle standup",
+      "responseWait": 25
+    },
+    {
+      "id": "delegate",
+      "category": "agents",
+      "description": "Delegate task to remote agent",
+      "command": "/delegate write unit tests for the payment service",
+      "responseWait": 30
+    },
+    {
+      "id": "fleet",
+      "category": "agents",
+      "description": "Fleet parallel subagents",
+      "command": "/fleet run all test suites in parallel",
+      "responseWait": 30
+    },
+    {
+      "id": "ide",
+      "category": "agents",
+      "description": "Connect IDE workspace",
+      "command": "/ide",
+      "responseWait": 8
+    },
+    {
+      "id": "research",
+      "category": "agents",
+      "description": "Deep research with citations",
+      "command": "/research JWT refresh token rotation best practices",
+      "responseWait": 30
+    },
+    {
+      "id": "sidekicks",
+      "category": "agents",
+      "description": "List available sidekicks",
+      "command": "/sidekicks list",
+      "responseWait": 8
+    },
+    {
+      "id": "tasks",
+      "category": "agents",
+      "description": "View active background tasks",
+      "command": "/tasks",
+      "responseWait": 8
+    },
+    {
+      "id": "login",
+      "category": "authentication",
+      "description": "Authenticate — select GitHub.com, then show device code",
+      "steps": [
+        { "type": "/login" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 8 }
+      ]
+    },
+    {
+      "id": "logout",
+      "category": "authentication",
+      "description": "Show current user, then preview /logout (cancelled safely)",
+      "steps": [
+        {
+          "type": "/user show"
+        },
+        {
+          "wait": 3
+        },
+        {
+          "key": "Enter"
+        },
+        {
+          "wait": 5
+        },
+        {
+          "type": "/logout"
+        },
+        {
+          "wait": 3
+        }
+      ]
+    },
+    {
+      "id": "user",
+      "category": "authentication",
+      "description": "Show current user then list all authenticated accounts",
+      "steps": [
+        {
+          "type": "/user show"
+        },
+        {
+          "wait": 3
+        },
+        {
+          "key": "Enter"
+        },
+        {
+          "wait": 5
+        },
+        {
+          "type": "/user list"
+        },
+        {
+          "wait": 3
+        },
+        {
+          "key": "Enter"
+        },
+        {
+          "wait": 5
+        }
+      ]
+    },
+    {
+      "id": "ask",
+      "category": "chat",
+      "description": "Ask a side question",
+      "command": "/ask what does --no-ff mean in git merge?",
+      "responseWait": 20
+    },
+    {
+      "id": "clear",
+      "category": "chat",
+      "description": "Clear conversation history",
+      "command": "/clear",
+      "responseWait": 6
+    },
+    {
+      "id": "copy",
+      "category": "chat",
+      "description": "Copy last response to clipboard",
+      "command": "/copy",
+      "responseWait": 6
+    },
+    {
+      "id": "new",
+      "category": "chat",
+      "description": "Start new session with prompt",
+      "command": "/new help me refactor the auth module",
+      "responseWait": 20
+    },
+    {
+      "id": "search",
+      "category": "chat",
+      "description": "Search conversation history",
+      "command": "/search JWT",
+      "responseWait": 8
+    },
+    {
+      "id": "undo",
+      "category": "chat",
+      "description": "Undo last turn",
+      "command": "/undo",
+      "responseWait": 8
+    },
+    {
+      "id": "diff",
+      "category": "code",
+      "description": "Review and explain git diff",
+      "command": "/diff",
+      "responseWait": 20
+    },
+    {
+      "id": "plan",
+      "category": "code",
+      "description": "Create step-by-step plan",
+      "command": "/plan add pagination to the users API",
+      "responseWait": 20
+    },
+    {
+      "id": "pr",
+      "category": "code",
+      "description": "Create pull request",
+      "command": "/pr create",
+      "responseWait": 20
+    },
+    {
+      "id": "review",
+      "category": "code",
+      "description": "Run code review agent",
+      "command": "/review",
+      "responseWait": 20
+    },
+    {
+      "id": "add-dir",
+      "category": "configuration",
+      "description": "Add directory to allowed list",
+      "command": "/add-dir ./src",
+      "responseWait": 6
+    },
+    {
+      "id": "allow-all",
+      "category": "configuration",
+      "description": "Show permission status",
+      "command": "/allow-all show",
+      "responseWait": 6
+    },
+    {
+      "id": "cd",
+      "category": "configuration",
+      "description": "Change working directory",
+      "command": "/cd ~/projects/my-app",
+      "responseWait": 6
+    },
+    {
+      "id": "clikit",
+      "category": "configuration",
+      "description": "Preview quota component",
+      "command": "/clikit quota",
+      "responseWait": 6
+    },
+    {
+      "id": "cwd",
+      "category": "configuration",
+      "description": "Show current working directory",
+      "command": "/cwd",
+      "responseWait": 6
+    },
+    {
+      "id": "env",
+      "category": "configuration",
+      "description": "Show runtime environment",
+      "command": "/env",
+      "responseWait": 6
+    },
+    {
+      "id": "every",
+      "category": "configuration",
+      "description": "Run command on interval",
+      "command": "/every 5 git status",
+      "responseWait": 15
+    },
+    {
+      "id": "keep-alive",
+      "category": "configuration",
+      "description": "Prevent machine sleep while busy",
+      "command": "/keep-alive busy",
+      "responseWait": 6
+    },
+    {
+      "id": "list-dirs",
+      "category": "configuration",
+      "description": "List allowed directories",
+      "command": "/list-dirs",
+      "responseWait": 6
+    },
+    {
+      "id": "reset-allowed-tools",
+      "category": "configuration",
+      "description": "Reset all tool permissions",
+      "command": "/reset-allowed-tools",
+      "responseWait": 6
+    },
+    {
+      "id": "statusline",
+      "category": "configuration",
+      "description": "Configure status line items",
+      "command": "/statusline",
+      "responseWait": 6
+    },
+    {
+      "id": "streamer-mode",
+      "category": "configuration",
+      "description": "Enable streamer mode",
+      "command": "/streamer-mode on",
+      "responseWait": 6
+    },
+    {
+      "id": "terminal-setup",
+      "category": "configuration",
+      "description": "Run terminal setup wizard",
+      "command": "/terminal-setup",
+      "responseWait": 6
+    },
+    {
+      "id": "voice",
+      "category": "configuration",
+      "description": "Enable voice input",
+      "command": "/voice on",
+      "responseWait": 6
+    },
+    {
+      "id": "bug",
+      "category": "getting-started",
+      "description": "Report a bug",
+      "steps": [
+        { "type": "/bug" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 8 }
+      ]
+    },
+    {
+      "id": "changelog",
+      "category": "getting-started",
+      "description": "Show last 2 changelog entries",
+      "command": "/changelog last 2",
+      "responseWait": 8
+    },
+    {
+      "id": "feedback",
+      "category": "getting-started",
+      "description": "Submit feedback",
+      "command": "/feedback",
+      "responseWait": 6
+    },
+    {
+      "id": "help",
+      "category": "getting-started",
+      "description": "Show help for all slash commands",
+      "command": "/help",
+      "responseWait": 6
+    },
+    {
+      "id": "init",
+      "category": "getting-started",
+      "description": "Initialize Copilot for the repo",
+      "command": "/init",
+      "responseWait": 25
+    },
+    {
+      "id": "update",
+      "category": "getting-started",
+      "description": "Update to latest version",
+      "command": "/update",
+      "responseWait": 10
+    },
+    {
+      "id": "usage",
+      "category": "getting-started",
+      "description": "Show session usage metrics",
+      "command": "/usage",
+      "responseWait": 6
+    },
+    {
+      "id": "version",
+      "category": "getting-started",
+      "description": "Show installed version",
+      "command": "/version",
+      "responseWait": 6
+    },
+    {
+      "id": "instructions",
+      "category": "instructions",
+      "description": "Show loaded instruction files",
+      "command": "/instructions",
+      "responseWait": 6
+    },
+    {
+      "id": "plugin",
+      "category": "instructions",
+      "description": "List installed plugins",
+      "command": "/plugin list",
+      "responseWait": 6
+    },
+    {
+      "id": "skills",
+      "category": "instructions",
+      "description": "List loaded skills",
+      "command": "/skills list",
+      "responseWait": 6
+    },
+    {
+      "id": "lsp",
+      "category": "mcp",
+      "description": "Show configured LSP servers",
+      "command": "/lsp show",
+      "responseWait": 6
+    },
+    {
+      "id": "mcp",
+      "category": "mcp",
+      "description": "Show configured MCP servers",
+      "command": "/mcp show",
+      "responseWait": 6
+    },
+    {
+      "id": "compact",
+      "category": "memory",
+      "description": "Compact conversation history",
+      "command": "/compact",
+      "responseWait": 10
+    },
+    {
+      "id": "context",
+      "category": "memory",
+      "description": "Show context window usage",
+      "command": "/context",
+      "responseWait": 6
+    },
+    {
+      "id": "rename",
+      "category": "memory",
+      "description": "Rename current session",
+      "command": "/rename payment-refactor-may",
+      "responseWait": 6
+    },
+    {
+      "id": "resume",
+      "category": "memory",
+      "description": "Resume a previous session",
+      "command": "/resume",
+      "responseWait": 10
+    },
+    {
+      "id": "session",
+      "category": "memory",
+      "description": "Show session information",
+      "command": "/session info",
+      "responseWait": 6
+    },
+    {
+      "id": "share",
+      "category": "memory",
+      "description": "Export session to GitHub Gist",
+      "command": "/share gist",
+      "responseWait": 10
+    },
+    {
+      "id": "experimental",
+      "category": "models",
+      "description": "Show experimental feature status",
+      "command": "/experimental show",
+      "responseWait": 6
+    },
+    {
+      "id": "model",
+      "category": "models",
+      "description": "Open model picker",
+      "command": "/model",
+      "responseWait": 10
+    },
+    {
+      "id": "theme",
+      "category": "models",
+      "description": "Switch to dim theme",
+      "command": "/theme dim",
+      "responseWait": 6
+    },
+    {
+      "id": "collect-debug-logs",
+      "category": "troubleshooting",
+      "description": "Collect debug logs",
+      "command": "/collect-debug-logs",
+      "responseWait": 10
+    },
+    {
+      "id": "diagnosis",
+      "category": "troubleshooting",
+      "description": "Run diagnostic checks",
+      "command": "/diagnosis",
+      "responseWait": 15
+    },
+    {
+      "id": "downgrade",
+      "category": "troubleshooting",
+      "description": "Downgrade to a specific version",
+      "command": "/downgrade 1.3.2",
+      "responseWait": 15
+    },
+    {
+      "id": "exit",
+      "category": "troubleshooting",
+      "description": "Exit the session cleanly",
+      "command": "/exit",
+      "responseWait": 6
+    },
+    {
+      "id": "quit",
+      "category": "troubleshooting",
+      "description": "Quit the session cleanly",
+      "command": "/quit",
+      "responseWait": 6
+    },
+    {
+      "id": "remote",
+      "category": "troubleshooting",
+      "description": "Enable remote steering",
+      "command": "/remote on",
+      "responseWait": 6
+    },
+    {
+      "id": "restart",
+      "category": "troubleshooting",
+      "description": "Restart the CLI process",
+      "command": "/restart",
+      "responseWait": 10
+    }
+  ]
+}

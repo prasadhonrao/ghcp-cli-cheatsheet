@@ -834,6 +834,54 @@ html[data-color-mode='light'] .command-card--expanded {
   gap: 8px;
 }
 
+/* Action buttons in the terminal header (Play / Stop / Replay / Zoom / Close) */
+.terminal-header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.terminal-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #e6edf3;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.terminal-action-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.terminal-play-hint {
+  display: block;
+  padding: 20px;
+  color: #4d5566;
+  font-size: 12px;
+  font-style: italic;
+  font-family: var(--font-mono);
+  text-align: center;
+}
+
+.terminal-disclaimer {
+  font-size: 11px;
+  color: var(--color-fg-subtle);
+  font-style: italic;
+}
+
 .terminal-window {
   border-radius: 8px;
   overflow: hidden;
@@ -879,7 +927,7 @@ html[data-color-mode='light'] .command-card--expanded {
   flex: 1;
   text-align: center;
   font-size: 11px;
-  color: #768390;
+  color: #cdd9e5;
   font-family: var(--font-mono);
 }
 
@@ -914,6 +962,75 @@ html[data-color-mode='light'] .command-card--expanded {
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #30363d transparent;
+}
+
+/* GIF variant — no fixed height, the image dictates the size */
+.terminal-body--gif {
+  padding: 0;
+  max-height: none;
+  min-height: 0;
+}
+
+.terminal-gif {
+  display: block;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  cursor: zoom-in;
+}
+
+
+
+/* Fullscreen overlay */
+.terminal-gif-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+/* Dialog — same terminal window chrome, maximized */
+.terminal-gif-dialog {
+  cursor: default;
+  background: #0d1117;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  width: min(800px, 92vw);
+  height: min(560px, 90vh);
+  display: flex;
+  flex-direction: column;
+  /* Fixed size — never grows or shrinks when GIF loads */
+  flex-shrink: 0;
+}
+
+.terminal-gif-dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #161b22;
+  flex-shrink: 0;
+}
+
+.terminal-gif-fullscreen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Lightbox body fills remaining space so GIF/placeholder stays centred */
+.terminal-gif-dialog .terminal-body--gif {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .terminal-idle-hint {

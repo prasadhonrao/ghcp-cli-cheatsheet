@@ -1,6 +1,6 @@
 [
   {
-    "id": "config-1",
+    "id": "add-dir",
     "title": "/add-dir",
     "syntax": "/add-dir <PATH>",
     "description": "Add a directory to the allowed file access list so Copilot can read and modify files in it.",
@@ -11,21 +11,10 @@
       "/list-dirs  # see all currently allowed directories"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /add-dir ./src",
-      "output": [
-        "",
-        "✓ Added to allowed directories: ./src",
-        "",
-        "Copilot can now read and modify files in:",
-        "  /Users/prasad/projects/my-app/src",
-        "",
-        "Run /list-dirs to see all allowed directories."
-      ]
-    }
+    "terminalDemo": "images/configuration/add-dir.gif"
   },
   {
-    "id": "config-2",
+    "id": "allow-all",
     "title": "/allow-all",
     "syntax": "/allow-all [on|off|show]",
     "description": "Enable all permissions — tools, file paths, and URLs — without being prompted for each. Also available as /yolo.",
@@ -36,23 +25,10 @@
       "/yolo  # alias for /allow-all on"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /allow-all show",
-      "output": [
-        "",
-        "Permission status:",
-        "",
-        "  File access:   ✗  restricted (2 dirs allowed)",
-        "  Tool use:      ✗  prompt per action",
-        "  URL fetching:  ✗  prompt per request",
-        "",
-        "Run /allow-all on to enable all permissions.",
-        "Run /yolo as a shorthand alias."
-      ]
-    }
+    "terminalDemo": "images/configuration/allow-all.gif"
   },
   {
-    "id": "config-3",
+    "id": "cd",
     "title": "/cd",
     "syntax": "/cd [PATH]",
     "description": "Co-equal alias for /cwd. With a path, changes the working directory. Without a path, displays the current directory.",
@@ -64,20 +40,10 @@
     ],
     "category": "configuration",
     "note": "See also: /cwd — co-equal alias for the same command.",
-    "terminalDemo": {
-      "prompt": "$ /cd ~/projects/my-app",
-      "output": [
-        "",
-        "✓ Working directory changed to:",
-        "  /Users/prasad/projects/my-app",
-        "",
-        "Run /cd without arguments to show current directory.",
-        "Run /list-dirs to see allowed file access paths."
-      ]
-    }
+    "terminalDemo": "images/configuration/cd.gif"
   },
   {
-    "id": "config-4",
+    "id": "clikit",
     "title": "/clikit",
     "syntax": "/clikit [COMPONENT]",
     "description": "Preview CLI interface components such as quota info. Primarily used for development and debugging of CLI UI elements.",
@@ -87,22 +53,10 @@
       "/clikit quota  # preview the quota info component"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /clikit quota",
-      "output": [
-        "",
-        "── Quota Info Component Preview ──",
-        "",
-        "  Copilot Chat requests:  840 / 1000  used",
-        "  Resets in:              12 days",
-        "  Plan:                   Copilot Individual",
-        "",
-        "──────────────────────────────────"
-      ]
-    }
+    "terminalDemo": "images/configuration/clikit.gif"
   },
   {
-    "id": "config-5",
+    "id": "cwd",
     "title": "/cwd",
     "syntax": "/cwd [PATH]",
     "description": "Display the current working directory. With a path argument, changes to that directory. Also available as /cd.",
@@ -113,20 +67,10 @@
     ],
     "category": "configuration",
     "note": "See also: /cd — co-equal alias for the same command.",
-    "terminalDemo": {
-      "prompt": "$ /cwd",
-      "output": [
-        "",
-        "Current working directory:",
-        "  /Users/prasad/projects/my-app",
-        "",
-        "Run /cwd <path> to change directories.",
-        "Run /add-dir to grant file access to a new path."
-      ]
-    }
+    "terminalDemo": "images/configuration/cwd.gif"
   },
   {
-    "id": "config-6",
+    "id": "env",
     "title": "/env",
     "syntax": "/env",
     "description": "Show all loaded environment details: custom instructions, MCP servers, skills, agents, plugins, LSPs, and extensions.",
@@ -135,23 +79,10 @@
       "/env  # inspect the full Copilot runtime environment"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /env",
-      "output": [
-        "",
-        "Copilot Runtime Environment",
-        "────────────────────────────────────",
-        "  Instructions:  .github/copilot-instructions.md",
-        "  MCP servers:   github (connected), filesystem (connected)",
-        "  Skills:        3 loaded  (.github/skills/)",
-        "  Agents:        code-review, explore, research, task",
-        "  LSP:           typescript-language-server (running)",
-        "────────────────────────────────────"
-      ]
-    }
+    "terminalDemo": "images/configuration/env.gif"
   },
   {
-    "id": "config-7",
+    "id": "every",
     "title": "/every",
     "syntax": "/every <SECONDS> <COMMAND>",
     "description": "Run a shell command repeatedly at a fixed interval — like a built-in watch mode inside the Copilot session.",
@@ -161,25 +92,10 @@
       "/every 10 npm test  # re-run tests every 10 seconds"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /every 5 git status",
-      "output": [
-        "",
-        "Running 'git status' every 5 seconds…  (Ctrl+C to stop)",
-        "",
-        "── Run #1 ──────────────────────",
-        "On branch main",
-        "Changes not staged for commit:",
-        "  modified:   src/auth/token.ts",
-        "",
-        "── Run #2 ──────────────────────",
-        "On branch main",
-        "nothing to commit, working tree clean"
-      ]
-    }
+    "terminalDemo": "images/configuration/every.gif"
   },
   {
-    "id": "config-8",
+    "id": "keep-alive",
     "title": "/keep-alive",
     "syntax": "/keep-alive [on|off|busy|DURATION]",
     "description": "Prevent the machine from sleeping. Options: always on, only while agent is busy, or for a duration like 30m or 2h. Also available as /caffeinate.",
@@ -191,24 +107,10 @@
       "/caffeinate  # alias for /keep-alive on"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /keep-alive busy",
-      "output": [
-        "",
-        "Keep-alive mode set to: busy",
-        "",
-        "  System sleep is prevented only while",
-        "  the Copilot agent is actively running.",
-        "",
-        "  idle → sleep allowed",
-        "  busy → sleep blocked",
-        "",
-        "Run /keep-alive off to disable."
-      ]
-    }
+    "terminalDemo": "images/configuration/keep-alive.gif"
   },
   {
-    "id": "config-9",
+    "id": "list-dirs",
     "title": "/list-dirs",
     "syntax": "/list-dirs",
     "description": "Display all directories currently in the allowed file access list.",
@@ -218,22 +120,10 @@
       "/add-dir ./src  # add a directory to the list"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /list-dirs",
-      "output": [
-        "",
-        "Allowed directories:",
-        "",
-        "  1.  /Users/prasad/projects/my-app/src",
-        "  2.  /Users/prasad/projects/my-app/tests",
-        "  3.  /tmp/scratch",
-        "",
-        "Run /add-dir <path> to add a new directory."
-      ]
-    }
+    "terminalDemo": "images/configuration/list-dirs.gif"
   },
   {
-    "id": "config-10",
+    "id": "reset-allowed-tools",
     "title": "/reset-allowed-tools",
     "syntax": "/reset-allowed-tools",
     "description": "Clear the list of tools and permissions approved for this session, returning to the default prompt-per-action state.",
@@ -242,22 +132,10 @@
       "/reset-allowed-tools  # revoke all approved tools and permissions"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /reset-allowed-tools",
-      "output": [
-        "",
-        "Resetting allowed tools and permissions…",
-        "",
-        "  Revoked: bash, read_file, write_file, fetch_url",
-        "",
-        "✓ All session permissions cleared.",
-        "",
-        "Copilot will prompt before using each tool again."
-      ]
-    }
+    "terminalDemo": "images/configuration/reset-allowed-tools.gif"
   },
   {
-    "id": "config-11",
+    "id": "statusline",
     "title": "/statusline",
     "syntax": "/statusline",
     "description": "Configure which items appear in the status line at the bottom of the interactive interface. Also available as /footer.",
@@ -267,24 +145,10 @@
       "/footer  # alias for /statusline"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /statusline",
-      "output": [
-        "",
-        "→ Opening status line configuration menu…",
-        "",
-        "Toggle items visible in the status bar:",
-        "",
-        "  [✓] Model name",
-        "  [✓] Token usage",
-        "  [✓] Session name",
-        "  [ ] Cost estimate",
-        "  [ ] Active agent"
-      ]
-    }
+    "terminalDemo": "images/configuration/statusline.gif"
   },
   {
-    "id": "config-12",
+    "id": "streamer-mode",
     "title": "/streamer-mode",
     "syntax": "/streamer-mode [on|off]",
     "description": "Toggle streamer mode to automatically redact sensitive values such as API keys, tokens, and credentials from the terminal output.",
@@ -295,23 +159,10 @@
       "/streamer-mode  # check current status"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /streamer-mode on",
-      "output": [
-        "",
-        "✓ Streamer mode enabled.",
-        "",
-        "Sensitive values will be automatically redacted:",
-        "  API keys  →  [API_KEY]",
-        "  Tokens    →  [TOKEN]",
-        "  Passwords →  [PASSWORD]",
-        "",
-        "Safe to share your screen or start recording."
-      ]
-    }
+    "terminalDemo": "images/configuration/streamer-mode.gif"
   },
   {
-    "id": "config-13",
+    "id": "terminal-setup",
     "title": "/terminal-setup",
     "syntax": "/terminal-setup",
     "description": "Run the interactive setup wizard to configure multiline input support (Shift+Enter and Ctrl+Enter) in the current terminal.",
@@ -320,23 +171,10 @@
       "/terminal-setup  # launch the interactive setup wizard"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /terminal-setup",
-      "output": [
-        "",
-        "→ Launching interactive terminal setup wizard…",
-        "",
-        "This wizard configures multiline input support.",
-        "",
-        "Select your preferred keybinding:",
-        "  ❯ Shift+Enter  — insert newline (recommended)",
-        "    Ctrl+Enter   — insert newline",
-        "    Neither"
-      ]
-    }
+    "terminalDemo": "images/configuration/terminal-setup.gif"
   },
   {
-    "id": "config-14",
+    "id": "voice",
     "title": "/voice",
     "syntax": "/voice [on|off]",
     "description": "Enable or disable voice input for the Copilot CLI session. When on, you can speak prompts instead of typing them.",
@@ -347,17 +185,6 @@
       "/voice  # check current voice input status"
     ],
     "category": "configuration",
-    "terminalDemo": {
-      "prompt": "$ /voice on",
-      "output": [
-        "",
-        "✓ Voice input enabled.",
-        "",
-        "  🎤  Microphone active — speak your prompt",
-        "",
-        "Tip: Speak clearly and pause at the end.",
-        "Run /voice off to switch back to keyboard."
-      ]
-    }
+    "terminalDemo": "images/configuration/voice.gif"
   }
 ]

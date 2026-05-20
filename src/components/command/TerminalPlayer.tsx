@@ -1,103 +1,65 @@
-import { useState, useEffect, useRef } from 'react';
-import type { TerminalDemo } from '../../types';
+import { useState, useEffect } from 'react';
+import type { MouseEvent } from 'react';
+import { createPortal } from 'react-dom';
 
 interface Props {
-  demo: TerminalDemo;
+  demo: string;
   commandTitle: string;
 }
 
-type State = 'idle' | 'running' | 'done';
-
 export function TerminalPlayer({ demo, commandTitle }: Props) {
-  const [state, setState] = useState<State>('idle');
-  const [displayedPrompt, setDisplayedPrompt] = useState('');
-  const [displayedLines, setDisplayedLines] = useState<string[]>([]);
-  const [showCursor, setShowCursor] = useState(true);
-  const cancelRef = useRef(false);
-  const outputRef = useRef<HTMLDivElement>(null);
+  const [imgError, setImgError] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [playKey, setPlayKey] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  // Cancel animation on unmount
-  useEffect(() => {
-    return () => {
-      cancelRef.current = true;
-    };
-  }, []);
-  useEffect(() => {
-    const id = setInterval(() => setShowCursor((v) => !v), 530);
-    return () => clearInterval(id);
-  }, []);
+  const gifSrc = `${import.meta.env.BASE_URL}${demo}`;
 
-  // Auto-scroll output
   useEffect(() => {
-    if (outputRef.current) {
-      outputRef.current.scrollTop = outputRef.current.scrollHeight;
-    }
-  }, [displayedLines, displayedPrompt]);
+    if (!lightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightboxOpen(false); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [lightboxOpen]);
 
-  function reset() {
-    cancelRef.current = true;
-    setDisplayedPrompt('');
-    setDisplayedLines([]);
-    setState('idle');
+  // Play always restarts the GIF from the beginning
+  const handlePlay = (e: MouseEvent) => { e.stopPropagation(); setPlayKey(k => k + 1); setPlaying(true); };
+  const handleStop = (e: MouseEvent) => { e.stopPropagation(); setPlaying(false); };
+  const handleOpenLightbox = (e: MouseEvent) => { e.stopPropagation(); setLightboxOpen(true); };
+  const handleCloseLightbox = (e: MouseEvent) => { e.stopPropagation(); setLightboxOpen(false); };
+
+  function ActionButton() {
+    return playing
+      ? <button className="terminal-action-btn" onClick={handleStop}>■ Stop</button>
+      : <button className="terminal-action-btn" onClick={handlePlay}>▶ Play</button>;
   }
 
-  async function play() {
-    cancelRef.current = false;
-    setState('running');
-    setDisplayedPrompt('');
-    setDisplayedLines([]);
-
-    // Type the prompt
-    for (let i = 0; i <= demo.prompt.length; i++) {
-      if (cancelRef.current) return;
-      setDisplayedPrompt(demo.prompt.slice(0, i));
-      await sleep(38);
+  function GifBody({ fullscreen = false }: { fullscreen?: boolean }) {
+    if (imgError) {
+      return (
+        <span className="terminal-play-hint">
+          Recording not yet available — run <code>npm run generate:demos</code> to produce GIFs.
+        </span>
+      );
     }
-
-    await sleep(450);
-
-    // Stream output lines
-    for (let li = 0; li < demo.output.length; li++) {
-      if (cancelRef.current) return;
-      const line = demo.output[li];
-      if (line === '') {
-        setDisplayedLines((prev) => [...prev, '']);
-        await sleep(80);
-      } else {
-        let built = '';
-        for (let ci = 0; ci <= line.length; ci++) {
-          if (cancelRef.current) return;
-          built = line.slice(0, ci);
-          setDisplayedLines((prev) => {
-            const next = [...prev];
-            next[li] = built;
-            return next;
-          });
-          await sleep(22);
-        }
-        await sleep(60);
-      }
+    if (!playing) {
+      return (
+        <span className="terminal-play-hint">
+          <strong>▶ Play</strong> to see this command in action
+        </span>
+      );
     }
-
-    if (!cancelRef.current) setState('done');
-  }
-
-  function handlePlay(e: React.MouseEvent) {
-    e.stopPropagation();
-    if (state === 'running') {
-      reset();
-    } else {
-      play();
-    }
-  }
-
-  function handleReplay(e: React.MouseEvent) {
-    e.stopPropagation();
-    reset();
-    setTimeout(() => {
-      cancelRef.current = false;
-      play();
-    }, 50);
+    return (
+      <img
+        key={playKey}
+        src={gifSrc}
+        alt={`${commandTitle} terminal demo`}
+        className={fullscreen ? 'terminal-gif-fullscreen' : 'terminal-gif'}
+        loading="lazy"
+        onClick={fullscreen ? undefined : handleOpenLightbox}
+        onError={() => setImgError(true)}
+      />
+    );
   }
 
   return (
@@ -105,8 +67,8 @@ export function TerminalPlayer({ demo, commandTitle }: Props) {
       <span className="command-section-label">
         <span className="card-section-icon">🎬</span> SEE IT IN ACTION
       </span>
+
       <div className="terminal-window">
-        {/* Header bar */}
         <div className="terminal-header">
           <div className="terminal-dots">
             <span className="terminal-dot terminal-dot--red" />
@@ -114,61 +76,48 @@ export function TerminalPlayer({ demo, commandTitle }: Props) {
             <span className="terminal-dot terminal-dot--green" />
           </div>
           <span className="terminal-title">{commandTitle}</span>
-          <div className="terminal-controls">
-            {state === 'done' ? (
-              <button className="terminal-btn" onClick={handleReplay} aria-label="Replay demo">
-                ↺ Replay
-              </button>
-            ) : (
-              <button
-                className="terminal-btn"
-                onClick={handlePlay}
-                aria-label={state === 'running' ? 'Stop demo' : 'Play demo'}
-              >
-                {state === 'running' ? '■ Stop' : '▶ Play'}
-              </button>
+          <div className="terminal-header-actions">
+            {!imgError && <ActionButton />}
+            {!imgError && (
+              <button className="terminal-action-btn" onClick={handleOpenLightbox} title="Maximize" aria-label="Maximize">⛶</button>
             )}
           </div>
         </div>
-
-        {/* Output area */}
-        <div className="terminal-body" ref={outputRef}>
-          {state === 'idle' ? (
-            <span className="terminal-idle-hint">Click ▶ Play to see this command in action</span>
-          ) : (
-            <pre className="terminal-pre">
-              <span className="terminal-prompt-line">
-                <span className="terminal-prompt-char">❯ </span>
-                <span className="terminal-prompt-text">{displayedPrompt.replace(/^\$\s*/, '')}</span>
-                {state !== 'done' && displayedLines.length === 0 && (
-                  <span className={`terminal-cursor${showCursor ? '' : ' terminal-cursor--hidden'}`}>█</span>
-                )}
-              </span>
-              {displayedLines.map((line, i) => (
-                <span key={i} className="terminal-output-line">
-                  {line}
-                  {state !== 'done' && i === displayedLines.length - 1 && (
-                    <span className={`terminal-cursor${showCursor ? '' : ' terminal-cursor--hidden'}`}>█</span>
-                  )}
-                </span>
-              ))}
-              {state === 'done' && (
-                <span className="terminal-prompt-line terminal-prompt-line--end">
-                  <span className="terminal-prompt-char">❯ </span>
-                  <span className={`terminal-cursor${showCursor ? '' : ' terminal-cursor--hidden'}`}>█</span>
-                </span>
-              )}
-            </pre>
-          )}
+        <div className="terminal-body terminal-body--gif">
+          <GifBody />
         </div>
       </div>
-      <p className="terminal-disclaimer">
-        <em>Demo output is illustrative. Your actual results will vary.</em>
-      </p>
+
+      <span className="terminal-disclaimer">Demo output is illustrative. Your actual results will vary.</span>
+
+      {lightboxOpen && createPortal(
+        <div
+          className="terminal-gif-overlay"
+          onClick={() => setLightboxOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${commandTitle} demo — fullscreen`}
+        >
+          <div className="terminal-gif-dialog" onClick={e => e.stopPropagation()}>
+            <div className="terminal-gif-dialog-header">
+              <div className="terminal-dots">
+                <span className="terminal-dot terminal-dot--red" />
+                <span className="terminal-dot terminal-dot--yellow" />
+                <span className="terminal-dot terminal-dot--green" />
+              </div>
+              <span className="terminal-title">{commandTitle}</span>
+              <div className="terminal-header-actions">
+                {!imgError && <ActionButton />}
+                <button className="terminal-action-btn" onClick={handleCloseLightbox} aria-label="Close">✕ Close</button>
+              </div>
+            </div>
+            <div className="terminal-body terminal-body--gif">
+              <GifBody fullscreen />
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
-}
-
-function sleep(ms: number) {
-  return new Promise<void>((resolve) => setTimeout(resolve, ms));
 }

@@ -1,6 +1,6 @@
 [
   {
-    "id": "mem-1",
+    "id": "compact",
     "title": "/compact",
     "syntax": "/compact",
     "description": "Summarize the conversation history to reduce context window usage while preserving key context.",
@@ -10,23 +10,10 @@
       "/compact  # summarize history and free up context window space"
     ],
     "category": "memory",
-    "terminalDemo": {
-      "prompt": "$ /compact",
-      "output": [
-        "",
-        "Summarising conversation history…",
-        "",
-        "  Before:  18,240 tokens used",
-        "  Summary: auth refactor, pagination, JWT validation",
-        "  After:    2,100 tokens used",
-        "",
-        "✓ Context compacted. Freed ~16,000 tokens.",
-        "Run /context to verify remaining capacity."
-      ]
-    }
+    "terminalDemo": "images/memory/compact.gif"
   },
   {
-    "id": "mem-2",
+    "id": "context",
     "title": "/context",
     "syntax": "/context",
     "description": "Show the current context window token usage and a visualization of how much space is remaining.",
@@ -36,23 +23,10 @@
       "/compact  # run this if context is nearly full"
     ],
     "category": "memory",
-    "terminalDemo": {
-      "prompt": "$ /context",
-      "output": [
-        "",
-        "Context Window Usage",
-        "─────────────────────────────────────",
-        "  Used:       18,240 tokens  ████████░░  72%",
-        "  Remaining:   7,000 tokens",
-        "  Limit:      25,600 tokens",
-        "─────────────────────────────────────",
-        "",
-        "Tip: Run /compact to free up space."
-      ]
-    }
+    "terminalDemo": "images/memory/context.gif"
   },
   {
-    "id": "mem-3",
+    "id": "rename",
     "title": "/rename",
     "syntax": "/rename [NAME]",
     "description": "Rename the current session. If no name is given, Copilot auto-generates a descriptive name based on the conversation.",
@@ -62,19 +36,10 @@
       "/rename payment-refactor-may  # give it a specific name"
     ],
     "category": "memory",
-    "terminalDemo": {
-      "prompt": "$ /rename payment-refactor-may",
-      "output": [
-        "",
-        "✓ Session renamed to: payment-refactor-may",
-        "",
-        "Resume this session later with:",
-        "  /resume payment-refactor-may"
-      ]
-    }
+    "terminalDemo": "images/memory/rename.gif"
   },
   {
-    "id": "mem-4",
+    "id": "resume",
     "title": "/resume",
     "syntax": "/resume [SESSION-ID]",
     "description": "Switch to a previous session chosen from an interactive list. Also available as /continue. Optionally pass a session ID or name to jump directly.",
@@ -85,23 +50,10 @@
       "/resume my-auth-refactor  # resume a session by name"
     ],
     "category": "memory",
-    "terminalDemo": {
-      "prompt": "$ /resume",
-      "output": [
-        "",
-        "Recent sessions:",
-        "",
-        "  ❯ payment-refactor-may      (2 hours ago)",
-        "    jwt-expiry-validation      (yesterday)",
-        "    users-pagination-api       (3 days ago)",
-        "    auth-module-cleanup        (last week)",
-        "",
-        "Use arrow keys to select, Enter to resume."
-      ]
-    }
+    "terminalDemo": "images/memory/resume.gif"
   },
   {
-    "id": "mem-5",
+    "id": "session",
     "title": "/session",
     "syntax": "/session [info|checkpoints|files|plan|rename|cleanup|prune|delete|delete-all]",
     "description": "Show session information and manage sessions. Subcommands: info, checkpoints, files, plan, rename, cleanup, prune, delete, delete-all. Also available as /sessions.",
@@ -113,24 +65,10 @@
       "/session cleanup  # remove old session data to free space"
     ],
     "category": "memory",
-    "terminalDemo": {
-      "prompt": "$ /session info",
-      "output": [
-        "",
-        "Session Information",
-        "────────────────────────────────",
-        "  ID:       sess_a8f3c291",
-        "  Name:     payment-refactor-may",
-        "  Started:  47 minutes ago",
-        "  Turns:    12",
-        "  Tokens:   18,240 used",
-        "  Files:    4 modified",
-        "────────────────────────────────"
-      ]
-    }
+    "terminalDemo": "images/memory/session.gif"
   },
   {
-    "id": "mem-6",
+    "id": "share",
     "title": "/share",
     "syntax": "/share [file|html|gist] [session|research] [PATH]",
     "description": "Export the current session to a Markdown file, interactive HTML file, or a secret GitHub Gist. Also available as /export.",
@@ -142,19 +80,6 @@
       "/export  # alias for /share"
     ],
     "category": "memory",
-    "terminalDemo": {
-      "prompt": "$ /share gist",
-      "output": [
-        "",
-        "Exporting session to GitHub Gist…",
-        "",
-        "  Format:     Markdown",
-        "  Visibility: Secret",
-        "  Turns:      12",
-        "",
-        "✓ Gist created:",
-        "  https://gist.github.com/prasadhonrao/a8f3c291"
-      ]
-    }
+    "terminalDemo": "images/memory/share.gif"
   }
 ]

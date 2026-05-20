@@ -9,7 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "create:tape": "node scripts/create-tape.js",
+    "create:gif": "node scripts/create-gif.js",
+    "verify:gif": "node scripts/verify-gif.js",
+    "generate:demos": "npm run create:tape && npm run create:gif && npm run verify:gif"
   },
   "dependencies": {
     "@primer/octicons-react": "^19.25.0",

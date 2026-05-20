@@ -1,6 +1,6 @@
 [
   {
-    "id": "code-1",
+    "id": "diff",
     "title": "/diff",
     "syntax": "/diff",
     "description": "Review the changes made in the current directory — Copilot summarizes and explains the git diff.",
@@ -9,25 +9,10 @@
       "/diff  # review and explain changes in the working directory"
     ],
     "category": "code",
-    "terminalDemo": {
-      "prompt": "$ /diff",
-      "output": [
-        "",
-        "Analysing changes in working directory…",
-        "",
-        "  Modified:  src/auth/token.ts        (+18, -4)",
-        "  Modified:  src/auth/middleware.ts   (+6,  -1)",
-        "  Added:     tests/auth/token.test.ts (+42)",
-        "",
-        "Summary:",
-        "  Added JWT expiry validation in verifyToken().",
-        "  Middleware now returns 401 on expired tokens.",
-        "  New tests cover expiry edge cases."
-      ]
-    }
+    "terminalDemo": "images/code/diff.gif"
   },
   {
-    "id": "code-2",
+    "id": "plan",
     "title": "/plan",
     "syntax": "/plan [PROMPT]",
     "description": "Create a step-by-step implementation plan before Copilot starts making changes. Copilot outlines the steps and waits for your approval.",
@@ -37,25 +22,10 @@
       "/plan refactor the authentication module to use JWT"
     ],
     "category": "code",
-    "terminalDemo": {
-      "prompt": "$ /plan add pagination to the users API",
-      "output": [
-        "",
-        "Planning: add pagination to the users API",
-        "──────────────────────────────────────────",
-        "",
-        "Step 1  Add page and limit query params to GET /users",
-        "Step 2  Update UserService.findAll() to accept offset/limit",
-        "Step 3  Return total count + page metadata in response",
-        "Step 4  Add input validation (max limit: 100)",
-        "Step 5  Write integration tests for paginated endpoint",
-        "",
-        "Proceed with this plan? (yes / edit / cancel)"
-      ]
-    }
+    "terminalDemo": "images/code/plan.gif"
   },
   {
-    "id": "code-3",
+    "id": "pr",
     "title": "/pr",
     "syntax": "/pr [view|create|fix|auto]",
     "description": "Manage pull requests for the current branch: view existing PRs, create one with an AI-generated description, auto-fix review comments, or use auto mode.",
@@ -67,24 +37,10 @@
       "/pr auto  # create PR and fix review comments automatically"
     ],
     "category": "code",
-    "terminalDemo": {
-      "prompt": "$ /pr create",
-      "output": [
-        "",
-        "Generating PR description from diff…",
-        "",
-        "  Branch:  feat/jwt-expiry-validation → main",
-        "  Commits: 3",
-        "",
-        "Title:   Add JWT expiry validation to auth middleware",
-        "",
-        "✓ Pull request #47 created.",
-        "  https://github.com/user/repo/pull/47"
-      ]
-    }
+    "terminalDemo": "images/code/pr.gif"
   },
   {
-    "id": "code-4",
+    "id": "review",
     "title": "/review",
     "syntax": "/review [PROMPT]",
     "description": "Run the built-in code review agent to analyze the current diff for bugs, security issues, and logic errors.",
@@ -94,22 +50,6 @@
       "/review focus on security issues only"
     ],
     "category": "code",
-    "terminalDemo": {
-      "prompt": "$ /review",
-      "output": [
-        "",
-        "Running code review on current diff…",
-        "",
-        "src/auth/token.ts",
-        "  ⚠  Line 34: Secret read from env at call time —",
-        "     consider caching at module load.",
-        "",
-        "src/auth/middleware.ts",
-        "  ✓  Error handling correct.",
-        "  ✓  401 includes WWW-Authenticate header.",
-        "",
-        "1 warning · 2 passed"
-      ]
-    }
+    "terminalDemo": "images/code/review.gif"
   }
 ]
