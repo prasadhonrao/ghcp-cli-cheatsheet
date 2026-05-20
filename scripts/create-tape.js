@@ -94,8 +94,7 @@ Sleep ${demo.responseWait}s
   }
 
   const footer = `
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep ${s.exitWait}s
 `;
 

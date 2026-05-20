@@ -1,4 +1,4 @@
-# Undo last turn
+# Ask copilot a quick question then rewind the last turn with /undo
 # Auto-generated from scripts/demos.json — edit that file, then re-run npm run create:tape
 
 Output public/images/chat/undo.gif
@@ -20,15 +20,14 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /undo
+Type "what is the latest LTS version of Node.js?"
+Sleep 3s
+Enter
+Sleep 12s
 Type "/undo"
 Sleep 3s
 Enter
-Sleep 0.8s
+Sleep 5s
 
-# Wait for the real response
-Sleep 8s
-
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s

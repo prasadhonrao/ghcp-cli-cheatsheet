@@ -221,9 +221,17 @@
     {
       "id": "undo",
       "category": "chat",
-      "description": "Undo last turn",
-      "command": "/undo",
-      "responseWait": 8
+      "description": "Ask copilot a quick question then rewind the last turn with /undo",
+      "steps": [
+        { "type": "what is the latest LTS version of Node.js?" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 12 },
+        { "type": "/undo" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 5 }
+      ]
     },
     {
       "id": "diff",
