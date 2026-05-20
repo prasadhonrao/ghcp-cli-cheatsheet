@@ -1,4 +1,4 @@
-name: Record Terminal Demos
+name: Generate GIFs
 
 on:
   push:
