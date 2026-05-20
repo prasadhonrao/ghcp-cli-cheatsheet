@@ -58,11 +58,6 @@ jobs:
           ffmpeg -version | head -1
           ttyd --version
 
-      - name: Install gh CLI Copilot extension
-        run: gh extension install github/gh-copilot
-        env:
-          GH_TOKEN: ${{ secrets.GH_COPILOT_TOKEN }}
-
       - name: Verify Copilot CLI auth
         run: gh copilot --version
         env:
