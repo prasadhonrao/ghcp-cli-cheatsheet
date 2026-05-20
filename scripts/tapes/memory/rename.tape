@@ -20,8 +20,8 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /rename payment-refactor-may
-Type "/rename payment-refactor-may"
+# Run: /rename add-gh-actions-workflow
+Type "/rename add-gh-actions-workflow"
 Sleep 3s
 Enter
 Sleep 0.8s
@@ -29,6 +29,5 @@ Sleep 0.8s
 # Wait for the real response
 Sleep 6s
 
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s

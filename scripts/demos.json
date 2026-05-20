@@ -465,9 +465,17 @@
     {
       "id": "compact",
       "category": "memory",
-      "description": "Compact conversation history",
-      "command": "/compact",
-      "responseWait": 10
+      "description": "Ask a question to build history, then compact it",
+      "steps": [
+        { "type": "what is the difference between git merge and git rebase?" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 20 },
+        { "type": "/compact" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 10 }
+      ]
     },
     {
       "id": "context",
@@ -480,7 +488,7 @@
       "id": "rename",
       "category": "memory",
       "description": "Rename current session",
-      "command": "/rename payment-refactor-may",
+      "command": "/rename add-gh-actions-workflow",
       "responseWait": 6
     },
     {

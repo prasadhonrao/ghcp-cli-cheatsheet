@@ -1,4 +1,4 @@
-# Compact conversation history
+# Ask a question to build history, then compact it
 # Auto-generated from scripts/demos.json — edit that file, then re-run npm run create:tape
 
 Output public/images/memory/compact.gif
@@ -20,15 +20,14 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Run: /compact
+Type "what is the difference between git merge and git rebase?"
+Sleep 3s
+Enter
+Sleep 20s
 Type "/compact"
 Sleep 3s
 Enter
-Sleep 0.8s
-
-# Wait for the real response
 Sleep 10s
 
-# Exit cleanly
-Ctrl+C
+# End of recording
 Sleep 2s
