@@ -112,6 +112,12 @@ npm run create:gif -- --category <category>
 
 Apply the label `needs-gifs` to the PR so the maintainer knows to record demos locally after merge.
 
+**Also update `README.md`** to keep it in sync with data changes:
+
+- **Categories table** — update the command count for any category that gained or lost commands
+- **Example command entry** — if the `Command` TypeScript interface in `src/types/index.ts` changes, update the matching `interface Command` block in the README
+- Do not change any other sections of the README unless directly relevant to the commands changed
+
 ## Step 5 — Open a pull request
 
 Create a pull request targeting `main`. The PR title should summarize what changed (e.g., "Add /newcommand to chat category"). The PR body should include:

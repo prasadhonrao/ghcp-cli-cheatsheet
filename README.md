@@ -51,11 +51,6 @@ The 64 commands are organized into 11 categories:
 Command data is split into per-category JSON files under `src/data/categories/`. They are merged in `src/data/index.ts` and imported by `App.tsx`. Categories and their metadata are defined in `src/types/index.ts`.
 
 ```ts
-interface TerminalDemo {
-  prompt: string;
-  output: string[];
-}
-
 interface Command {
   id: string;
   title: string;
@@ -65,7 +60,7 @@ interface Command {
   examples: string[];
   category: string;
   note?: string;
-  terminalDemo?: TerminalDemo;
+  terminalDemo?: string; // path to GIF e.g. "images/chat/ask.gif"
 }
 ```
 
@@ -87,20 +82,7 @@ Each `examples` entry is a plain string. Comments after `  #` are rendered separ
     "/release-notes  # alias for /changelog"
   ],
   "category": "getting-started",
-  "terminalDemo": {
-    "prompt": "$ /changelog last 2",
-    "output": [
-      "",
-      "## v1.4.0  (2025-04-28)",
-      "  • /fleet now supports parallel subagent execution",
-      "  • /delegate creates pull requests automatically",
-      "  • Improved context window visualization in /context",
-      "",
-      "## v1.3.2  (2025-04-10)",
-      "  • /mcp reload no longer requires session restart",
-      "  • Fixed /undo edge case with binary files"
-    ]
-  }
+  "terminalDemo": "images/getting-started/changelog.gif"
 }
 ```
 
