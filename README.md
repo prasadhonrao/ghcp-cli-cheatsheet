@@ -1,16 +1,21 @@
-# GHCP CLI Cheatsheet
+# GitHub Copilot CLI Cheatsheet
+
+[![Deploy to GitHub Pages](https://github.com/prasadhonrao/ghcp-cli-cheatsheet/actions/workflows/deploy-to-gh-pages.yml/badge.svg)](https://github.com/prasadhonrao/ghcp-cli-cheatsheet/actions/workflows/deploy-to-gh-pages.yml)
 
 A searchable reference site for GitHub Copilot CLI commands, workflows, and examples.
 
-Built with React, Vite, and TypeScript. Data-driven — all 64 commands are split into per-category JSON files so the UI stays easy to maintain, extend, and search.
+Built with React, Vite, and TypeScript. Data-driven — all commands are split into per-category JSON files so the UI stays easy to maintain, extend, and search.
 
 ## Features
 
 - Instant fuzzy search across titles, descriptions, syntax, and examples (powered by Fuse.js)
 - Category-based browsing with sticky top bar and horizontal category pills
-- Command cards with syntax, descriptions, analogies, examples with one-click copy buttons, and notes
+- Command cards with syntax, descriptions, analogies, examples, and one-click copy buttons
+- **Animated GIF demos** — real CLI recordings via VHS for each command's "See It In Action" section
+- **Lightbox viewer** — expand any demo GIF to full-screen for better visibility
 - Dark and light theme toggle
 - Responsive layout — works on desktop and mobile
+- **Agentic weekly update** — a Copilot coding agent checks the CLI changelog and opens PRs when commands change
 
 ## Categories
 
@@ -20,15 +25,15 @@ The 64 commands are organized into 11 categories:
 | ------------------ | -------- | ------------------------------------------------------- |
 | 🚀 Getting Started | 8        | Install, update, help, version, feedback                |
 | 🔐 Authentication  | 3        | Login, logout, account switching                        |
-| 💬 Chat            | 6        | Ask, clear, copy, search, undo                          |
+| 💬 Chat            | 5        | Ask, clear, search, undo, new                           |
 | 🧬 Models          | 3        | Model selection, experimental features, themes          |
-| ⚙️ Configuration   | 14       | Directories, permissions, environment, voice, streaming |
+| ⚙️ Configuration   | 13       | Directories, permissions, environment, voice, streaming |
 | 💻 Code            | 4        | Diff, plan, PR management, code review                  |
 | 🤖 Agents          | 8        | Agent picker, fleet, delegate, research, tasks          |
 | 🔌 MCP             | 2        | MCP and LSP server management                           |
 | 🧠 Memory          | 6        | Sessions, context, compaction, sharing                  |
 | 📝 Instructions    | 3        | Custom instructions, skills, plugins                    |
-| 🔧 Troubleshooting | 7        | Diagnostics, restart, downgrade, remote control         |
+| 🔧 Troubleshooting | 6        | Diagnostics, restart, remote control, exit              |
 
 ## Tech stack
 
@@ -177,43 +182,42 @@ npm run preview
 
 ## Available scripts
 
-| Script            | Description                                        |
-| ----------------- | -------------------------------------------------- |
-| `npm run dev`     | Start the Vite development server                  |
-| `npm run build`   | Type-check and create a production build           |
-| `npm run preview` | Preview the production build locally               |
-| `npm run lint`    | Run ESLint across the project                      |
-| `npm run deploy`  | Build and publish `dist/` to the `gh-pages` branch |
+| Script                    | Description                                               |
+| ------------------------- | --------------------------------------------------------- |
+| `npm run dev`             | Start the Vite development server                         |
+| `npm run build`           | Type-check and create a production build                  |
+| `npm run preview`         | Preview the production build locally                      |
+| `npm run lint`            | Run ESLint across the project                             |
+| `npm run create:tape`     | Generate VHS `.tape` files from `scripts/demos.json`      |
+| `npm run create:gif`      | Record GIFs from tape files (requires VHS + Copilot auth) |
+| `npm run verify:gif`      | Verify all expected GIFs are present                      |
+| `npm run generate:demos`  | Run all three demo steps above in sequence                |
 
 ## Deploy to GitHub Pages
 
-This project is configured for GitHub Pages deployment **without GitHub Actions**.
+Deployment is automated via GitHub Actions. Every push to `main` triggers the `deploy-to-gh-pages.yml` workflow which builds the app and publishes it using the GitHub Pages API (no `gh-pages` branch needed).
 
 ### One-time GitHub setup
 
 In your repository settings:
 
 - Go to **Settings** → **Pages**
-- Under **Build and deployment**, choose **Deploy from a branch**
-- Select the `gh-pages` branch
-- Select the `/ (root)` folder
-
-### Publish a new version
-
-Run:
-
-```bash
-npm install
-npm run deploy
-```
-
-The deploy script builds the app and publishes the contents of `dist/` to the `gh-pages` branch.
+- Under **Build and deployment**, choose **GitHub Actions**
 
 ### Site URL
 
-Once published, the site will be available at:
-
 `https://prasadhonrao.github.io/ghcp-cli-cheatsheet/`
+
+## Recording demo GIFs
+
+GIF demos are recorded locally using [VHS](https://github.com/charmbracelet/vhs) and committed to the repo. CI cannot generate them (requires a live authenticated Copilot CLI session).
+
+```bash
+# Prerequisites: VHS installed, `gh copilot` authenticated
+npm run generate:demos                          # regenerate all
+npm run create:gif -- --category chat           # single category
+npm run create:gif -- --id chat-ask             # single command
+```
 
 ## Contributing
 
