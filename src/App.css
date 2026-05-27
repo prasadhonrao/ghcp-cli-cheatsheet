@@ -787,8 +787,11 @@ html[data-color-mode='light'] .command-card--expanded {
 
 .site-footer-inner {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 8px;
   font-size: 12px;
+  flex-wrap: wrap;
 }
 
 .site-footer-inner a {
@@ -799,6 +802,18 @@ html[data-color-mode='light'] .command-card--expanded {
 
 .site-footer-inner a:hover {
   text-decoration: underline;
+}
+
+.site-footer-divider {
+  color: var(--color-fg-subtle);
+  user-select: none;
+}
+
+.site-footer-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-fg-muted);
 }
 
 @media (max-width: 768px) {
