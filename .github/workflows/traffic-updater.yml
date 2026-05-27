@@ -1,0 +1,103 @@
+name: Traffic Updater
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-traffic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TRAFFIC_TOKEN }}
+
+      - name: Fetch and accumulate traffic data
+        env:
+          TRAFFIC_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -e
+
+          # Fetch the last 14 days of traffic data from the GitHub API
+          RESPONSE=$(curl -s \
+            -H "Authorization: token ${TRAFFIC_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${REPO}/traffic/views")
+
+          # Validate response — exit early if the API returned an error object
+          if echo "${RESPONSE}" | jq -e '.message' > /dev/null 2>&1; then
+            echo "GitHub API error: $(echo "${RESPONSE}" | jq -r '.message')"
+            exit 1
+          fi
+
+          # Read existing cumulative totals (default to 0 if file is absent)
+          EXISTING_TOTAL_VIEWS=0
+          EXISTING_TOTAL_UNIQUES=0
+          LAST_RECORDED_DATE=""
+
+          if [ -f public/traffic.json ]; then
+            EXISTING_TOTAL_VIEWS=$(jq -r '.totalViews // 0' public/traffic.json)
+            EXISTING_TOTAL_UNIQUES=$(jq -r '.totalUniques // 0' public/traffic.json)
+            LAST_RECORDED_DATE=$(jq -r '.lastRecordedDate // ""' public/traffic.json)
+          fi
+
+          TODAY=$(date -u +%Y-%m-%d)
+
+          # Sum views and uniques for dates strictly after lastRecordedDate and before today
+          # (today is excluded because the day is not yet complete)
+          NEW_VIEWS=$(echo "${RESPONSE}" | jq \
+            --arg last "${LAST_RECORDED_DATE}" \
+            --arg today "${TODAY}" \
+            '[.views[] | select(.timestamp[:10] > $last and .timestamp[:10] < $today) | .count] | add // 0')
+
+          NEW_UNIQUES=$(echo "${RESPONSE}" | jq \
+            --arg last "${LAST_RECORDED_DATE}" \
+            --arg today "${TODAY}" \
+            '[.views[] | select(.timestamp[:10] > $last and .timestamp[:10] < $today) | .uniques] | add // 0')
+
+          NEW_LAST_DATE=$(echo "${RESPONSE}" | jq -r \
+            --arg last "${LAST_RECORDED_DATE}" \
+            --arg today "${TODAY}" \
+            '[.views[] | select(.timestamp[:10] > $last and .timestamp[:10] < $today) | .timestamp[:10]] | sort | last // ""')
+
+          TOTAL_VIEWS=$((EXISTING_TOTAL_VIEWS + NEW_VIEWS))
+          TOTAL_UNIQUES=$((EXISTING_TOTAL_UNIQUES + NEW_UNIQUES))
+
+          # Keep the previous lastRecordedDate if no new entries were found
+          if [ -z "${NEW_LAST_DATE}" ] || [ "${NEW_LAST_DATE}" = "null" ]; then
+            NEW_LAST_DATE="${LAST_RECORDED_DATE}"
+          fi
+
+          echo "New: ${NEW_VIEWS} views, ${NEW_UNIQUES} uniques"
+          echo "Cumulative: ${TOTAL_VIEWS} views, ${TOTAL_UNIQUES} uniques"
+          echo "Last recorded date: ${NEW_LAST_DATE}"
+
+          jq -n \
+            --arg updatedAt "$(date -u +%Y-%m-%d)" \
+            --arg lastRecordedDate "${NEW_LAST_DATE}" \
+            --argjson totalViews "${TOTAL_VIEWS}" \
+            --argjson totalUniques "${TOTAL_UNIQUES}" \
+            '{
+              updatedAt: $updatedAt,
+              lastRecordedDate: $lastRecordedDate,
+              totalViews: $totalViews,
+              totalUniques: $totalUniques
+            }' > public/traffic.json
+
+      - name: Commit updated traffic data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/traffic.json
+          if git diff --staged --quiet; then
+            echo "No new traffic data — nothing to commit."
+          else
+            git commit -m "chore: update traffic data $(date -u +%Y-%m-%d)"
+            git push
+          fi

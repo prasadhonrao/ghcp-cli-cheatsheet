@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import Fuse, { type FuseResult } from 'fuse.js';
+import { EyeIcon } from '@primer/octicons-react';
 import commandsData from './data/index';
 import { CATEGORIES, type Command, type Theme } from './types';
 import { TopBar } from './components/layout/TopBar';
@@ -75,6 +76,12 @@ const getCommandMatchPriority = (command: Command, rawQuery: string) => {
   return 6;
 };
 
+interface TrafficStats {
+  totalViews: number;
+  totalUniques: number;
+  updatedAt: string;
+}
+
 function App() {
   const [theme, setTheme] = useState<Theme>(
     () => (document.documentElement.getAttribute('data-color-mode') as Theme) ?? 'dark',
@@ -82,6 +89,7 @@ function App() {
   const [activeCategory, setActiveCategory] = useState('getting-started');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
+  const [trafficStats, setTrafficStats] = useState<TrafficStats | null>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const isClickScrolling = useRef(false);
@@ -103,6 +111,22 @@ function App() {
     document.documentElement.setAttribute('data-color-mode', theme);
     localStorage.setItem('ghcp-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    fetch('/ghcp-cli-cheatsheet/traffic.json')
+      .then((res) => {
+        if (!res.ok) return undefined;
+        return res.json() as Promise<TrafficStats>;
+      })
+      .then((data) => {
+        if (data && typeof data.totalViews === 'number' && typeof data.totalUniques === 'number') {
+          setTrafficStats(data);
+        }
+      })
+      .catch(() => {
+        // Stats are optional — silently ignore any fetch/parse error
+      });
+  }, []);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -281,6 +305,17 @@ function App() {
           >
             Official GitHub Copilot CLI Docs
           </a>
+          {trafficStats && trafficStats.totalViews > 0 && (
+            <>
+              <span className="site-footer-divider" aria-hidden="true">·</span>
+              <span className="site-footer-stats">
+                <EyeIcon size={12} />
+                {trafficStats.totalViews.toLocaleString()} views
+                <span className="site-footer-divider" aria-hidden="true">·</span>
+                {trafficStats.totalUniques.toLocaleString()} unique visitors
+              </span>
+            </>
+          )}
         </div>
       </footer>
     </div>
