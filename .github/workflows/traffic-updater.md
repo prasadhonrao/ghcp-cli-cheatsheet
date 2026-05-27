@@ -29,6 +29,7 @@ safe-outputs:
     protected-files: allowed
     allowed-files:
       - 'public/traffic.json'
+    github-token: ${{ secrets.GH_AW_GITHUB_TOKEN }}
 ---
 
 # Collect Weekly Repo Traffic
