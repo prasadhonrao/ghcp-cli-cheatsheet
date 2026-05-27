@@ -39,13 +39,29 @@ Look for:
 - Changes to command syntax, subcommands, or flags
 - New categories or groupings of commands
 
-## Step 2 — Check for existing open PRs to avoid duplicates
+## Step 2 — Verify commands are actually available in the CLI
+
+For every **new command** found in Step 1, verify it is actually available in the currently released CLI before including it in any cheatsheet update.
+
+Use `gh` CLI to fetch the latest release of `github/copilot-cli` and check its release notes or assets. Cross-reference the command against the official CLI help reference:
+
+- https://github.com/github/copilot-cli/blob/main/docs/commands.md — if it exists, use this as the authoritative list of available commands
+- Otherwise, check the release tag for the version that introduced the command and confirm that version is published (not just mentioned in changelog)
+
+For each new command, classify it as one of:
+- ✅ **Available** — confirmed present in a published release; include in cheatsheet update
+- ⏳ **Pending** — in changelog but not yet in a published release or the release is too recent to confirm; **exclude from this PR** and note it in the PR body under a "Pending availability" section
+- ❌ **Removed/Reverted** — mentioned in changelog but subsequently pulled; skip entirely
+
+Only proceed with commands classified as ✅ **Available**. Do not add commands to the cheatsheet that have not been confirmed in a published release.
+
+## Step 3 — Check for existing open PRs to avoid duplicates
 
 List all open pull requests in this repo that have the `automated-update` or `copilot-cli-updates` labels. Read their titles and descriptions to understand which commands or changes each PR already covers.
 
 Build a list of changes that are **already addressed** by open PRs and exclude them from anything you propose. If every change found in Step 1 is already covered, stop here and report that no new updates are needed.
 
-## Step 3 — Compare against current cheatsheet content
+## Step 4 — Compare against current cheatsheet content
 
 Read all JSON files in `src/data/categories/` — these are the source of truth for what commands are currently documented. Also read `src/types/index.ts` to understand the `Command` type shape and the `CATEGORIES` array.
 
@@ -57,7 +73,7 @@ Identify:
 
 If nothing is new or everything is already up to date, stop here and report that no updates are needed.
 
-## Step 4 — Update the cheatsheet data
+## Step 5 — Update the cheatsheet data
 
 For each change needed, edit the relevant file in `src/data/categories/`.
 
@@ -118,12 +134,13 @@ Apply the label `needs-gifs` to the PR so the maintainer knows to record demos l
 - **Example command entry** — if the `Command` TypeScript interface in `src/types/index.ts` changes, update the matching `interface Command` block in the README
 - Do not change any other sections of the README unless directly relevant to the commands changed
 
-## Step 5 — Open a pull request
+## Step 6 — Open a pull request
 
 Create a pull request targeting `main`. The PR title should summarize what changed (e.g., "Add /newcommand to chat category"). The PR body should include:
 
 1. What new features or changes were found (with links to changelog entries)
 2. Which JSON files were updated and what changed in each
 3. Any commands removed and why (deprecated / renamed)
+4. A **"Pending availability"** section listing any changelog commands that were excluded because they could not be confirmed in a published release
 
 Apply the labels `automated-update` and `copilot-cli-updates` to the PR.
