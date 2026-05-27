@@ -14,10 +14,10 @@ safe-outputs:
   allowed-domains:
     - github.com
     - docs.github.com
-create-pull-request:
-  labels: [automated-update, copilot-cli-updates]
-  title-prefix: "[bot] "
-  base-branch: main
+  create-pull-request:
+    labels: [automated-update, copilot-cli-updates]
+    title-prefix: "[bot] "
+    base-branch: main
 ---
 
 # Cheatsheet Updater
