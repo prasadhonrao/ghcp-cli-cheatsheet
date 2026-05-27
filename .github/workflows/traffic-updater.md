@@ -7,6 +7,8 @@ on:
 tools:
   bash: ['date']
   edit:
+  github:
+    toolsets: [repos]
 mcp-scripts:
   fetch-traffic:
     description: 'Fetch the last 14 days of traffic views for this repository from the GitHub API. Returns JSON with a views array containing timestamp, count, and uniques per day.'
