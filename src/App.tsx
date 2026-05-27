@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import Fuse, { type FuseResult } from 'fuse.js';
-import { EyeIcon } from '@primer/octicons-react';
+import { EyeIcon, PeopleIcon } from '@primer/octicons-react';
 import commandsData from './data/index';
 import { CATEGORIES, type Command, type Theme } from './types';
 import { TopBar } from './components/layout/TopBar';
@@ -298,24 +298,33 @@ function App() {
       </main>
       <footer className="site-footer">
         <div className="site-footer-inner">
-          <a
-            href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Official GitHub Copilot CLI Docs
-          </a>
-          {trafficStats && trafficStats.totalViews > 0 && (
-            <>
-              <span className="site-footer-divider" aria-hidden="true">·</span>
+          <div className="site-footer-left">
+            {trafficStats && trafficStats.totalViews > 0 && (
               <span className="site-footer-stats">
-                <EyeIcon size={12} />
-                {trafficStats.totalViews.toLocaleString()} views
-                <span className="site-footer-divider" aria-hidden="true">·</span>
-                {trafficStats.totalUniques.toLocaleString()} unique visitors
+                <span className="site-footer-stat">
+                  <EyeIcon size={12} />
+                  {trafficStats.totalViews.toLocaleString()} views
+                </span>
+                <span className="site-footer-divider" aria-hidden="true">
+                  ·
+                </span>
+                <span className="site-footer-stat">
+                  <PeopleIcon size={12} />
+                  {trafficStats.totalUniques.toLocaleString()} unique visitors
+                </span>
               </span>
-            </>
-          )}
+            )}
+          </div>
+          <div className="site-footer-center">
+            <a
+              href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Official GitHub Copilot CLI Docs
+            </a>
+          </div>
+          <div className="site-footer-right" aria-hidden="true" />
         </div>
       </footer>
     </div>
