@@ -2,12 +2,13 @@
   {
     "id": "compact",
     "title": "/compact",
-    "syntax": "/compact",
-    "description": "Summarize the conversation history to reduce context window usage while preserving key context.",
+    "syntax": "/compact [FOCUS]",
+    "description": "Summarize the conversation history to reduce context window usage while preserving key context. Pass an optional focus instruction to shape what the summary emphasizes.",
     "analogy": "Like condensing meeting notes into a summary — keep the key decisions without the full transcript, freeing space for more work.",
     "examples": [
       "/context  # check token usage before compacting",
-      "/compact  # summarize history and free up context window space"
+      "/compact  # summarize history and free up context window space",
+      "/compact focus on authentication changes  # compact with a custom focus"
     ],
     "category": "memory",
     "terminalDemo": "images/memory/compact.gif"

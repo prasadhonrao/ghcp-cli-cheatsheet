@@ -51,5 +51,17 @@
     ],
     "category": "code",
     "terminalDemo": "images/code/review.gif"
+  },
+  {
+    "id": "security-review",
+    "title": "/security-review",
+    "syntax": "/security-review [PROMPT]",
+    "description": "Run a dedicated security review agent to analyze the current code changes for vulnerabilities, insecure patterns, and potential exploits.",
+    "analogy": "Like having a security auditor scan your PR before merge — focused entirely on vulnerabilities, not style or logic.",
+    "examples": [
+      "/security-review  # scan current diff for security vulnerabilities",
+      "/security-review focus on injection and auth issues"
+    ],
+    "category": "code"
   }
 ]
