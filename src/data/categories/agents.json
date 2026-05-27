@@ -14,13 +14,15 @@
   {
     "id": "chronicle",
     "title": "/chronicle",
-    "syntax": "/chronicle <standup|tips|improve|reindex>",
-    "description": "Session history tools and insights. Subcommands: standup (generate a standup report), tips (get workflow tips), improve (suggestions to work more effectively), reindex (rebuild the history index). Only available in experimental mode.",
+    "syntax": "/chronicle <standup|tips|improve|reindex|search|cost-tips>",
+    "description": "Session history tools and insights. Subcommands: standup (generate a standup report), tips (get workflow tips), improve (suggestions to work more effectively), reindex (rebuild the history index), search (search all session content by keyword or topic), cost-tips (personalized token usage and cost reduction recommendations). Only available in experimental mode.",
     "analogy": "Like a smart journal for your coding sessions — chronicle turns your work history into actionable summaries and advice.",
     "examples": [
       "/chronicle standup  # generate a standup report from recent sessions",
       "/chronicle tips  # get workflow tips based on your usage patterns",
-      "/chronicle improve  # suggestions to work more effectively with Copilot"
+      "/chronicle improve  # suggestions to work more effectively with Copilot",
+      "/chronicle search JWT  # search all sessions for mentions of JWT",
+      "/chronicle cost-tips  # get personalized tips to reduce token usage"
     ],
     "category": "agents",
     "terminalDemo": "images/agents/chronicle.gif"

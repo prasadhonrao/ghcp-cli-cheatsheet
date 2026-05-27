@@ -262,6 +262,13 @@
       "responseWait": 20
     },
     {
+      "id": "security-review",
+      "category": "code",
+      "description": "Run security review agent on current diff",
+      "command": "/security-review",
+      "responseWait": 20
+    },
+    {
       "id": "review",
       "category": "code",
       "description": "Run code review agent",
