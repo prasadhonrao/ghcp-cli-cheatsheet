@@ -93,6 +93,19 @@
     "terminalDemo": "images/agents/sidekicks.gif"
   },
   {
+    "id": "autopilot",
+    "title": "/autopilot",
+    "syntax": "/autopilot <OBJECTIVE>",
+    "description": "Lock the agent onto a specific objective for the session. Copilot stays focused on that goal until it is complete or you change it. Use /goal as an alias.",
+    "analogy": "Like setting a GPS destination — Copilot navigates toward the goal and ignores distractions until it arrives.",
+    "examples": [
+      "/autopilot migrate all API calls to use fetch instead of axios",
+      "/autopilot add TypeScript strict mode and fix all resulting errors",
+      "/goal refactor the auth module to use JWTs  # /goal is an alias for /autopilot"
+    ],
+    "category": "agents"
+  },
+  {
     "id": "tasks",
     "title": "/tasks",
     "syntax": "/tasks",
