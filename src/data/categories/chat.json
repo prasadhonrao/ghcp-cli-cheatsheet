@@ -77,5 +77,31 @@
     ],
     "category": "chat",
     "terminalDemo": "images/chat/undo.gif"
+  },
+  {
+    "id": "every",
+    "title": "/every",
+    "syntax": "/every <INTERVAL> [PROMPT]",
+    "description": "Schedule a prompt to repeat automatically at a fixed interval (e.g., every 30m, every 1h). Only available in experimental mode.",
+    "analogy": "Like setting a recurring calendar reminder — Copilot re-runs the prompt on schedule without you having to type it again.",
+    "examples": [
+      "/every 30m summarize recent file changes  # repeat every 30 minutes",
+      "/every 1h run the test suite and report failures  # check tests hourly"
+    ],
+    "category": "chat",
+    "note": "Requires experimental mode. Run /experimental on to enable."
+  },
+  {
+    "id": "after",
+    "title": "/after",
+    "syntax": "/after <DELAY> [PROMPT]",
+    "description": "Schedule a prompt to run once after a specified delay (e.g., after 10m, after 2h). Only available in experimental mode.",
+    "analogy": "Like setting a one-off timer — Copilot runs the prompt automatically when the delay expires.",
+    "examples": [
+      "/after 10m check if the build finished  # run once after 10 minutes",
+      "/after 1h summarize what I worked on today  # delayed end-of-session summary"
+    ],
+    "category": "chat",
+    "note": "Requires experimental mode. Run /experimental on to enable."
   }
 ]
