@@ -23,12 +23,12 @@ The 65 commands are organized into 11 categories:
 
 | Category           | Commands | Description                                             |
 | ------------------ | -------- | ------------------------------------------------------- |
-| 🚀 Getting Started | 8        | Install, update, help, version, feedback                |
+| 🚀 Getting Started | 9        | Install, update, help, version, feedback                |
 | 🔐 Authentication  | 3        | Login, logout, account switching                        |
-| 💬 Chat            | 5        | Ask, clear, search, undo, new                           |
+| 💬 Chat            | 6        | Ask, clear, search, undo, new                           |
 | 🧬 Models          | 3        | Model selection, experimental features, themes          |
 | ⚙️ Configuration   | 13       | Directories, permissions, environment, voice, streaming |
-| 💻 Code            | 5        | Diff, plan, PR management, code review, security review |
+| 💻 Code            | 6        | Diff, plan, PR management, code review, security review |
 | 🤖 Agents          | 8        | Agent picker, fleet, delegate, research, tasks          |
 | 🔌 MCP             | 2        | MCP and LSP server management                           |
 | 🧠 Memory          | 6        | Sessions, context, compaction, sharing                  |

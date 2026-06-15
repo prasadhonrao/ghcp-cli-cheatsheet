@@ -63,5 +63,18 @@
       "/security-review focus on injection and auth issues"
     ],
     "category": "code"
+  },
+  {
+    "id": "worktree",
+    "title": "/worktree",
+    "syntax": "/worktree [BRANCH]",
+    "description": "Create a new git worktree and switch into it, moving any uncommitted changes along. Also available as /move.",
+    "analogy": "Like cloning your workspace into a parallel checkout — work on multiple branches simultaneously without stashing or losing context.",
+    "examples": [
+      "/worktree  # create a worktree for the current branch",
+      "/worktree feature/auth-fix  # create a named worktree and switch into it",
+      "/move  # alias for /worktree"
+    ],
+    "category": "code"
   }
 ]

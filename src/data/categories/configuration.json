@@ -110,6 +110,17 @@
     "terminalDemo": "images/configuration/reset-allowed-tools.gif"
   },
   {
+    "id": "settings",
+    "title": "/settings",
+    "syntax": "/settings",
+    "description": "Open an interactive dialog to browse and edit all Copilot CLI user settings in one place.",
+    "analogy": "Like the Preferences panel in your IDE — one screen to review and adjust every configurable option without editing JSON files manually.",
+    "examples": [
+      "/settings  # open the interactive settings editor"
+    ],
+    "category": "configuration"
+  },
+  {
     "id": "statusline",
     "title": "/statusline",
     "syntax": "/statusline",

@@ -1,5 +1,16 @@
 [
   {
+    "id": "app",
+    "title": "/app",
+    "syntax": "/app",
+    "description": "Open the GitHub app or a browser fallback directly from the CLI.",
+    "analogy": "Like a home button for GitHub — jump straight to the GitHub interface without leaving the terminal.",
+    "examples": [
+      "/app  # open the GitHub app or launch a browser if the app is not installed"
+    ],
+    "category": "getting-started"
+  },
+  {
     "id": "bug",
     "title": "/bug",
     "syntax": "/bug",
