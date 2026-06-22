@@ -1,5 +1,16 @@
 [
   {
+    "id": "app",
+    "title": "/app",
+    "syntax": "/app",
+    "description": "Open the GitHub app or a browser fallback. Quickly access the GitHub web interface from within an active session.",
+    "analogy": "Like a home button that takes you straight to GitHub — one command to open the app without leaving your terminal workflow.",
+    "examples": [
+      "/app  # open the GitHub app or browser"
+    ],
+    "category": "getting-started"
+  },
+  {
     "id": "bug",
     "title": "/bug",
     "syntax": "/bug",

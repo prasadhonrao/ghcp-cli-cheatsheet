@@ -69,11 +69,11 @@
     "id": "undo",
     "title": "/undo",
     "syntax": "/undo",
-    "description": "Rewind the last turn and revert any file changes Copilot made. Also available as /rewind.",
+    "description": "Rewind the last turn and revert any file changes Copilot made. Also available as /rewind. In experimental mode, /rewind has enhanced behavior: it no longer requires git and lets you choose between reverting just the conversation or both the conversation and files.",
     "analogy": "Like Ctrl+Z for a Copilot action — undo the last step if the result was not what you wanted.",
     "examples": [
       "/undo  # revert the last turn and its file changes",
-      "/rewind  # alias for /undo"
+      "/rewind  # in experimental mode, offers conversation-only or full revert"
     ],
     "category": "chat",
     "terminalDemo": "images/chat/undo.gif"

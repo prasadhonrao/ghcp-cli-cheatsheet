@@ -1,5 +1,17 @@
 [
   {
+    "id": "worktree",
+    "title": "/worktree",
+    "syntax": "/worktree [BRANCH]",
+    "description": "Create a new git worktree and switch into it, carrying any uncommitted changes along. Also available as /move.",
+    "analogy": "Like opening a parallel workspace for your project — work on two branches simultaneously without stashing or committing half-done work.",
+    "examples": [
+      "/worktree feature/my-branch  # create a worktree for an existing or new branch",
+      "/move  # alias for /worktree"
+    ],
+    "category": "code"
+  },
+  {
     "id": "diff",
     "title": "/diff",
     "syntax": "/diff",

@@ -1,5 +1,18 @@
 [
   {
+    "id": "after",
+    "title": "/after",
+    "syntax": "/after <DURATION|TIME> <PROMPT|SLASH-COMMAND>",
+    "description": "Schedule a prompt or slash command to run once after a delay or at a specific calendar time. Accepts natural language durations (30m, 2h) and times. Only available in experimental mode.",
+    "analogy": "Like setting a one-time reminder on your phone — Copilot picks up a task for you after you step away.",
+    "examples": [
+      "/after 30m remind me to commit and push my changes",
+      "/after 2h /chronicle standup  # run standup 2 hours from now"
+    ],
+    "note": "Requires /experimental mode. See also: /every — for recurring schedules.",
+    "category": "configuration"
+  },
+  {
     "id": "add-dir",
     "title": "/add-dir",
     "syntax": "/add-dir <PATH>",
@@ -108,6 +121,30 @@
     ],
     "category": "configuration",
     "terminalDemo": "images/configuration/reset-allowed-tools.gif"
+  },
+  {
+    "id": "every",
+    "title": "/every",
+    "syntax": "/every <DURATION|CRON> <PROMPT|SLASH-COMMAND>",
+    "description": "Schedule a prompt or slash command to run repeatedly on a given interval or cron expression. Supports natural language durations like 1h, 30m, or 1d. Only available in experimental mode.",
+    "analogy": "Like setting a recurring alarm for a task — Copilot runs it automatically at the interval you choose, even when you step away.",
+    "examples": [
+      "/every 1h check for new GitHub issues and summarize them",
+      "/every 1d /chronicle standup  # daily standup report"
+    ],
+    "note": "Requires /experimental mode. See also: /after — for one-time scheduled tasks.",
+    "category": "configuration"
+  },
+  {
+    "id": "settings",
+    "title": "/settings",
+    "syntax": "/settings",
+    "description": "Open an interactive dialog to browse and edit all user settings in one place without editing config files manually.",
+    "analogy": "Like opening the Preferences panel in an app — browse every configurable option and change it interactively.",
+    "examples": [
+      "/settings  # open the interactive settings browser"
+    ],
+    "category": "configuration"
   },
   {
     "id": "statusline",

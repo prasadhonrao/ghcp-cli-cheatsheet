@@ -235,6 +235,13 @@
       ]
     },
     {
+      "id": "worktree",
+      "category": "code",
+      "description": "Create a git worktree for a branch",
+      "command": "/worktree feature/my-branch",
+      "responseWait": 10
+    },
+    {
       "id": "diff",
       "category": "code",
       "description": "Review and explain git diff",
@@ -274,6 +281,13 @@
       "description": "Run code review agent",
       "command": "/review",
       "responseWait": 20
+    },
+    {
+      "id": "after",
+      "category": "configuration",
+      "description": "Schedule a one-time task after a delay",
+      "command": "/after 30m remind me to commit and push my changes",
+      "responseWait": 6
     },
     {
       "id": "add-dir",
@@ -348,6 +362,20 @@
       "responseWait": 6
     },
     {
+      "id": "every",
+      "category": "configuration",
+      "description": "Schedule a recurring task on an interval",
+      "command": "/every 1d /chronicle standup",
+      "responseWait": 6
+    },
+    {
+      "id": "settings",
+      "category": "configuration",
+      "description": "Open interactive settings browser",
+      "command": "/settings",
+      "responseWait": 6
+    },
+    {
       "id": "statusline",
       "category": "configuration",
       "description": "Configure status line items",
@@ -373,6 +401,13 @@
       "category": "configuration",
       "description": "Enable voice input",
       "command": "/voice on",
+      "responseWait": 6
+    },
+    {
+      "id": "app",
+      "category": "getting-started",
+      "description": "Open the GitHub app or browser",
+      "command": "/app",
       "responseWait": 6
     },
     {
