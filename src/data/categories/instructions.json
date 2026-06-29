@@ -30,14 +30,16 @@
     "id": "skills",
     "title": "/skills",
     "syntax": "/skills [list|info|add|remove|reload] [ARGS...]",
-    "description": "Manage custom skills — Markdown files that extend Copilot's capabilities. Skills live in .github/skills/, ~/.copilot/skills/, or plugin directories.",
+    "description": "Manage custom skills — Markdown files that extend Copilot's capabilities. Skills live in .github/skills/, ~/.copilot/skills/, or plugin directories. Also available as /skill.",
     "analogy": "Like a library of custom macros in your editor — each skill adds a reusable capability you can invoke by name.",
     "examples": [
       "/skills list  # show all loaded skills and their sources",
       "/skills info my-skill  # show details about a specific skill",
-      "/skills reload  # reload skills after adding or editing files"
+      "/skills reload  # reload skills after adding or editing files",
+      "/skill list  # alias for /skills list"
     ],
     "category": "instructions",
+    "note": "See also: /skill — a co-equal alias added in v1.0.65.",
     "terminalDemo": "images/instructions/skills.gif"
   }
 ]

@@ -235,6 +235,13 @@
       ]
     },
     {
+      "id": "branch",
+      "category": "code",
+      "description": "Create a GitHub fork of the current repository",
+      "command": "/branch",
+      "responseWait": 10
+    },
+    {
       "id": "diff",
       "category": "code",
       "description": "Review and explain git diff",
@@ -246,6 +253,13 @@
         { "key": "Escape" },
         { "wait": 2 }
       ]
+    },
+    {
+      "id": "fork",
+      "category": "code",
+      "description": "Create a GitHub fork of the current repository",
+      "command": "/fork",
+      "responseWait": 10
     },
     {
       "id": "plan",
@@ -338,6 +352,13 @@
       "category": "configuration",
       "description": "List allowed directories",
       "command": "/list-dirs",
+      "responseWait": 6
+    },
+    {
+      "id": "loop",
+      "category": "configuration",
+      "description": "Schedule a recurring prompt",
+      "command": "/loop 1h /usage",
       "responseWait": 6
     },
     {
@@ -558,6 +579,13 @@
       "category": "troubleshooting",
       "description": "Collect debug logs",
       "command": "/collect-debug-logs",
+      "responseWait": 10
+    },
+    {
+      "id": "diagnose",
+      "category": "troubleshooting",
+      "description": "Analyze session logs for errors and anomalies",
+      "command": "/diagnose",
       "responseWait": 10
     },
     {
