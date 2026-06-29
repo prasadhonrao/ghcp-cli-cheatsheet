@@ -1,5 +1,18 @@
 [
   {
+    "id": "branch",
+    "title": "/branch",
+    "syntax": "/branch",
+    "description": "Create a GitHub fork of the current repository. Alias for /fork, matching Claude Code command naming.",
+    "analogy": "Like clicking 'Fork' in the GitHub UI — creates your personal copy of the repo so you can make changes without affecting the original.",
+    "examples": [
+      "/branch  # create a GitHub fork of the current repository",
+      "/fork  # alias for /branch"
+    ],
+    "category": "code",
+    "note": "See also: /fork — a co-equal alias for the same command."
+  },
+  {
     "id": "diff",
     "title": "/diff",
     "syntax": "/diff",
@@ -10,6 +23,19 @@
     ],
     "category": "code",
     "terminalDemo": "images/code/diff.gif"
+  },
+  {
+    "id": "fork",
+    "title": "/fork",
+    "syntax": "/fork",
+    "description": "Create a GitHub fork of the current repository. Copilot shows a progress notification while the fork is being created.",
+    "analogy": "Like clicking 'Fork' in the GitHub UI — creates your personal copy of the repo so you can make changes without affecting the original.",
+    "examples": [
+      "/fork  # create a GitHub fork of the current repository",
+      "/branch  # alias for /fork"
+    ],
+    "category": "code",
+    "note": "See also: /branch — a co-equal alias added in v1.0.64."
   },
   {
     "id": "plan",
