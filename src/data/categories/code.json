@@ -27,14 +27,15 @@
   {
     "id": "pr",
     "title": "/pr",
-    "syntax": "/pr [view|create|fix|auto]",
-    "description": "Manage pull requests for the current branch: view existing PRs, create one with an AI-generated description, auto-fix review comments, or use auto mode.",
+    "syntax": "/pr [view|create|fix|auto|automerge]",
+    "description": "Manage pull requests for the current branch: view existing PRs, create one with an AI-generated description, auto-fix review comments, run a self-paced loop to drive the PR to green, or keep looping until the PR is merged.",
     "analogy": "Like a PR dashboard inside your terminal — create, inspect, and respond to review feedback without switching context.",
     "examples": [
       "/pr view  # show the open PR for the current branch",
       "/pr create  # create a PR with an AI-generated description",
       "/pr fix  # let Copilot automatically address review comments",
-      "/pr auto  # create PR and fix review comments automatically"
+      "/pr auto  # self-paced loop: fix one thing per run, pace around CI to reach green",
+      "/pr automerge  # keep looping until the PR passes CI and is merged"
     ],
     "category": "code",
     "terminalDemo": "images/code/pr.gif"
@@ -61,6 +62,19 @@
     "examples": [
       "/security-review  # scan current diff for security vulnerabilities",
       "/security-review focus on injection and auth issues"
+    ],
+    "category": "code"
+  },
+  {
+    "id": "worktree",
+    "title": "/worktree",
+    "syntax": "/worktree [TASK]",
+    "description": "Create a new git worktree for parallel development. Pass an optional task description to auto-name the branch and run the task as the first prompt in the new worktree. Without an argument, names the branch from your uncommitted changes and recent conversation.",
+    "analogy": "Like opening a parallel universe of your repo — work on a separate branch simultaneously without disturbing your current session.",
+    "examples": [
+      "/worktree  # create a worktree with a branch named from current changes",
+      "/worktree fix the login redirect  # create branch for this task and start it immediately",
+      "/worktree feature/JIRA-123  # create worktree with an exact branch name"
     ],
     "category": "code"
   }

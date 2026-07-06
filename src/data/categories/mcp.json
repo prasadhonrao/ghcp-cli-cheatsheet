@@ -2,13 +2,14 @@
   {
     "id": "lsp",
     "title": "/lsp",
-    "syntax": "/lsp [show|test|reload|help] [SERVER-NAME]",
+    "syntax": "/lsp [show|test|reload|logs|help] [SERVER-NAME]",
     "description": "Manage language server (LSP) configurations that give Copilot live diagnostics, type information, and symbol references from your codebase.",
     "analogy": "Like plugging a code-aware lens into Copilot — the LSP feeds it real-time type errors and definitions from your actual project.",
     "examples": [
       "/lsp show  # list all configured language servers",
       "/lsp test typescript  # test the TypeScript language server connection",
-      "/lsp reload  # reload LSP configs after making changes"
+      "/lsp reload  # reload LSP configs after making changes",
+      "/lsp logs  # view LSP server log output for debugging"
     ],
     "category": "mcp",
     "terminalDemo": "images/mcp/lsp.gif"
