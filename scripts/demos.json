@@ -297,6 +297,13 @@
       "responseWait": 20
     },
     {
+      "id": "worktree",
+      "category": "code",
+      "description": "Create a git worktree with a task-named branch",
+      "command": "/worktree fix the login redirect",
+      "responseWait": 10
+    },
+    {
       "id": "review",
       "category": "code",
       "description": "Run code review agent",
