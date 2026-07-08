@@ -21,7 +21,8 @@
     "examples": [
       "/diagnose  # analyze session logs for errors and anomalies"
     ],
-    "category": "troubleshooting"
+    "category": "troubleshooting",
+    "terminalDemo": "images/troubleshooting/diagnose.gif"
   },
   {
     "id": "diagnosis",

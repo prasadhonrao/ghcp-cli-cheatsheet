@@ -109,7 +109,8 @@
       "/every  # alias for /loop"
     ],
     "note": "Requires /experimental mode. See also: /every — a co-equal alias for the same command.",
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": "images/configuration/loop.gif"
   },
   {
     "id": "reset-allowed-tools",

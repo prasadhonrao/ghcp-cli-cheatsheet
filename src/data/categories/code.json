@@ -10,7 +10,8 @@
       "/fork  # alias for /branch"
     ],
     "category": "code",
-    "note": "See also: /fork — a co-equal alias for the same command."
+    "note": "See also: /fork — a co-equal alias for the same command.",
+    "terminalDemo": "images/code/branch.gif"
   },
   {
     "id": "diff",
@@ -35,7 +36,8 @@
       "/branch  # alias for /fork"
     ],
     "category": "code",
-    "note": "See also: /branch — a co-equal alias added in v1.0.64."
+    "note": "See also: /branch — a co-equal alias added in v1.0.64.",
+    "terminalDemo": "images/code/fork.gif"
   },
   {
     "id": "plan",
