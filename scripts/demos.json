@@ -591,6 +591,13 @@
     },
 
     {
+      "id": "autopilot",
+      "category": "agents",
+      "description": "Set a focused autopilot objective for the session",
+      "command": "/autopilot fix all TypeScript errors in src/",
+      "responseWait": 20
+    },
+    {
       "id": "exit",
       "category": "troubleshooting",
       "description": "Exit the session cleanly",

@@ -29,7 +29,7 @@ The 67 commands are organized into 11 categories:
 | 🧬 Models          | 3        | Model selection, experimental features, themes          |
 | ⚙️ Configuration   | 13       | Directories, permissions, environment, voice, streaming |
 | 💻 Code            | 5        | Diff, plan, PR management, code review, security review |
-| 🤖 Agents          | 8        | Agent picker, fleet, delegate, research, tasks          |
+| 🤖 Agents          | 9        | Agent picker, fleet, delegate, research, tasks          |
 | 🔌 MCP             | 2        | MCP and LSP server management                           |
 | 🧠 Memory          | 6        | Sessions, context, compaction, sharing                  |
 | 📝 Instructions    | 3        | Custom instructions, skills, plugins                    |
