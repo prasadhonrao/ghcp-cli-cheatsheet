@@ -3,11 +3,14 @@
     "id": "agent",
     "title": "/agent",
     "syntax": "/agent",
-    "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task.",
+    "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task. Also available as /agents or /subagents; the /subagents picker additionally lets you configure subagent model, reasoning effort, and context tier.",
     "analogy": "Like an app drawer for specialized AI workers — each agent is tuned for a specific type of job.",
     "examples": [
-      "/agent  # open the interactive agent picker"
+      "/agent  # open the interactive agent picker",
+      "/subagents  # alias with subagent model and effort configuration",
+      "/agents  # another alias for /agent"
     ],
+    "note": "Also available as /agents and /subagents. Use /subagents to configure model, reasoning effort, and context tier for background subagents.",
     "category": "agents",
     "terminalDemo": "images/agents/agent.gif"
   },
@@ -59,9 +62,7 @@
     "syntax": "/ide",
     "description": "Connect Copilot CLI to your IDE workspace so the model can see your open files, diagnostics, and editor state.",
     "analogy": "Like plugging two monitors into the same computer — Copilot and your IDE share the same view of your project.",
-    "examples": [
-      "/ide  # connect to the IDE workspace from an active session"
-    ],
+    "examples": ["/ide  # connect to the IDE workspace from an active session"],
     "category": "agents",
     "terminalDemo": "images/agents/ide.gif"
   },
@@ -93,14 +94,26 @@
     "terminalDemo": "images/agents/sidekicks.gif"
   },
   {
+    "id": "autopilot",
+    "title": "/autopilot",
+    "syntax": "/autopilot <OBJECTIVE>",
+    "description": "Lock the agent onto a specific objective for the session. Copilot stays focused on that goal until it is complete or you change it. Use /goal as an alias.",
+    "analogy": "Like setting a GPS destination — Copilot navigates toward the goal and ignores distractions until it arrives.",
+    "examples": [
+      "/autopilot migrate all API calls to use fetch instead of axios",
+      "/autopilot add TypeScript strict mode and fix all resulting errors",
+      "/goal refactor the auth module to use JWTs  # /goal is an alias for /autopilot"
+    ],
+    "category": "agents",
+    "terminalDemo": "images/agents/autopilot.gif"
+  },
+  {
     "id": "tasks",
     "title": "/tasks",
     "syntax": "/tasks",
     "description": "View and manage active background tasks — subagents and shell commands currently running in the session.",
     "analogy": "Like a task manager or the shell jobs command — see what is running in the background and manage it from one place.",
-    "examples": [
-      "/tasks  # list all active subagents and background shell commands"
-    ],
+    "examples": ["/tasks  # list all active subagents and background shell commands"],
     "category": "agents",
     "terminalDemo": "images/agents/tasks.gif"
   }
