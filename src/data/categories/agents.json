@@ -5,9 +5,7 @@
     "syntax": "/agent",
     "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task.",
     "analogy": "Like an app drawer for specialized AI workers — each agent is tuned for a specific type of job.",
-    "examples": [
-      "/agent  # open the interactive agent picker"
-    ],
+    "examples": ["/agent  # open the interactive agent picker"],
     "category": "agents",
     "terminalDemo": "images/agents/agent.gif"
   },
@@ -59,9 +57,7 @@
     "syntax": "/ide",
     "description": "Connect Copilot CLI to your IDE workspace so the model can see your open files, diagnostics, and editor state.",
     "analogy": "Like plugging two monitors into the same computer — Copilot and your IDE share the same view of your project.",
-    "examples": [
-      "/ide  # connect to the IDE workspace from an active session"
-    ],
+    "examples": ["/ide  # connect to the IDE workspace from an active session"],
     "category": "agents",
     "terminalDemo": "images/agents/ide.gif"
   },
@@ -103,7 +99,8 @@
       "/autopilot add TypeScript strict mode and fix all resulting errors",
       "/goal refactor the auth module to use JWTs  # /goal is an alias for /autopilot"
     ],
-    "category": "agents"
+    "category": "agents",
+    "terminalDemo": "images/agents/autopilot.gif"
   },
   {
     "id": "tasks",
@@ -111,9 +108,7 @@
     "syntax": "/tasks",
     "description": "View and manage active background tasks — subagents and shell commands currently running in the session.",
     "analogy": "Like a task manager or the shell jobs command — see what is running in the background and manage it from one place.",
-    "examples": [
-      "/tasks  # list all active subagents and background shell commands"
-    ],
+    "examples": ["/tasks  # list all active subagents and background shell commands"],
     "category": "agents",
     "terminalDemo": "images/agents/tasks.gif"
   }
