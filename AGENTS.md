@@ -107,4 +107,4 @@ Only generate GIFs for **newly added commands** — do not regenerate GIFs for e
 
 ### Merging
 
-10. Only after steps above are complete: mark the PR as ready for review (convert from draft), then merge using squash merge.
+10. Only after steps above are complete: mark the PR as ready for review (convert from draft), then merge using a **regular merge** (not squash) to preserve the "Merge pull request #X" entry in the git log.
