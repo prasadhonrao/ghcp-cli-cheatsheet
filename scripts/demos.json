@@ -290,6 +290,13 @@
       "responseWait": 20
     },
     {
+      "id": "worktree",
+      "category": "code",
+      "description": "Create a new git worktree and switch into it",
+      "command": "/worktree",
+      "responseWait": 10
+    },
+    {
       "id": "add-dir",
       "category": "configuration",
       "description": "Add src directory to the allowed list",
@@ -362,6 +369,13 @@
       "responseWait": 6
     },
     {
+      "id": "settings",
+      "category": "configuration",
+      "description": "Open interactive settings editor",
+      "command": "/settings",
+      "responseWait": 6
+    },
+    {
       "id": "statusline",
       "category": "configuration",
       "description": "Configure status line items",
@@ -387,6 +401,13 @@
       "category": "configuration",
       "description": "Enable voice input",
       "command": "/voice on",
+      "responseWait": 6
+    },
+    {
+      "id": "app",
+      "category": "getting-started",
+      "description": "Open the GitHub app or browser fallback",
+      "command": "/app",
       "responseWait": 6
     },
     {

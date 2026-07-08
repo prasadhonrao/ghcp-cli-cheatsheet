@@ -1,7 +1,7 @@
-# Set a focused autopilot objective for the session
+# Open the GitHub app or browser fallback
 # Auto-generated from scripts/demos.json — edit that file, then re-run npm run create:tape
 
-Output public/images/agents/autopilot.gif
+Output public/images/getting-started/app.gif
 
 Set FontSize 15
 Set Width 800
@@ -20,22 +20,14 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Enable experimental mode first (required for /autopilot)
-Type "/experimental on"
-Enter
-Sleep 5s
-# Run: /autopilot fix all TypeScript errors in src/
-Type "/autopilot fix all TypeScript errors in src/"
+# Run: /app
+Type "/app"
 Sleep 3s
 Enter
-Sleep 3s
-
-# Select "Enable all permissions (recommended)" from the dialog
-Enter
-Sleep 1s
+Sleep 0.8s
 
 # Wait for the real response
-Sleep 20s
+Sleep 6s
 
 # End of recording
 Sleep 2s

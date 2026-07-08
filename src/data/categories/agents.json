@@ -3,9 +3,14 @@
     "id": "agent",
     "title": "/agent",
     "syntax": "/agent",
-    "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task.",
+    "description": "Browse and select from available built-in and custom agents. Built-in agents include code-review, explore, general-purpose, research, rubber-duck, and task. Also available as /agents or /subagents; the /subagents picker additionally lets you configure subagent model, reasoning effort, and context tier.",
     "analogy": "Like an app drawer for specialized AI workers — each agent is tuned for a specific type of job.",
-    "examples": ["/agent  # open the interactive agent picker"],
+    "examples": [
+      "/agent  # open the interactive agent picker",
+      "/subagents  # alias with subagent model and effort configuration",
+      "/agents  # another alias for /agent"
+    ],
+    "note": "Also available as /agents and /subagents. Use /subagents to configure model, reasoning effort, and context tier for background subagents.",
     "category": "agents",
     "terminalDemo": "images/agents/agent.gif"
   },

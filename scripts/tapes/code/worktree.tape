@@ -1,7 +1,7 @@
-# Schedule a recurring prompt
+# Create a new git worktree and switch into it
 # Auto-generated from scripts/demos.json — edit that file, then re-run npm run create:tape
 
-Output public/images/chat/every.gif
+Output public/images/code/worktree.gif
 
 Set FontSize 15
 Set Width 800
@@ -20,18 +20,14 @@ Set TypingSpeed 150ms
 Type "copilot"
 Enter
 Sleep 5s
-# Enable experimental mode first (required for /every)
-Type "/experimental on"
-Enter
-Sleep 5s
-# Run: /every 30m summarize recent file changes
-Type "/every 30m summarize recent file changes"
+# Run: /worktree
+Type "/worktree"
 Sleep 3s
 Enter
 Sleep 0.8s
 
 # Wait for the real response
-Sleep 6s
+Sleep 10s
 
 # End of recording
 Sleep 2s
