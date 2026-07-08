@@ -89,7 +89,8 @@
       "/every 1h run the test suite and report failures  # check tests hourly"
     ],
     "category": "chat",
-    "note": "Requires experimental mode. Run /experimental on to enable."
+    "note": "Requires experimental mode. Run /experimental on to enable.",
+    "terminalDemo": "images/chat/every.gif"
   },
   {
     "id": "after",
@@ -102,6 +103,7 @@
       "/after 1h summarize what I worked on today  # delayed end-of-session summary"
     ],
     "category": "chat",
-    "note": "Requires experimental mode. Run /experimental on to enable."
+    "note": "Requires experimental mode. Run /experimental on to enable.",
+    "terminalDemo": "images/chat/after.gif"
   }
 ]
