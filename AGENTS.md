@@ -29,14 +29,14 @@ npm run deploy     # build + gh-pages publish to GitHub Pages
 
 Edit the matching `src/data/categories/<slug>.json`. Follow these conventions:
 
-| Field | Convention |
-|---|---|
-| `id` | `"{2-3-letter-prefix}-{n}"` — prefix abbreviates the category slug (e.g. `gs-5`, `chat-2`) |
-| `title` | The slash-command or command name alone (e.g. `"/bug"`) |
-| `syntax` | Full usage signature with args; may equal `title` for simple commands |
-| `examples` | Plain strings; use `"  #"` (two-space hash) to add an inline comment rendered as a styled annotation |
-| `note` | Omit entirely when not needed (only truly optional field alongside `terminalDemo`) |
-| `terminalDemo` | Optional `{ prompt: string; output: string[] }` for an animated terminal block |
+| Field          | Convention                                                                                           |
+| -------------- | ---------------------------------------------------------------------------------------------------- |
+| `id`           | `"{2-3-letter-prefix}-{n}"` — prefix abbreviates the category slug (e.g. `gs-5`, `chat-2`)           |
+| `title`        | The slash-command or command name alone (e.g. `"/bug"`)                                              |
+| `syntax`       | Full usage signature with args; may equal `title` for simple commands                                |
+| `examples`     | Plain strings; use `"  #"` (two-space hash) to add an inline comment rendered as a styled annotation |
+| `note`         | Omit entirely when not needed (only truly optional field alongside `terminalDemo`)                   |
+| `terminalDemo` | Optional `{ prompt: string; output: string[] }` for an animated terminal block                       |
 
 ## Component conventions
 
@@ -63,3 +63,42 @@ Edit the matching `src/data/categories/<slug>.json`. Follow these conventions:
 
 - Vite `base` is `/ghcp-cli-cheatsheet/` (GitHub Pages path) — do not change without also updating the gh-pages config.
 - `npm run deploy` runs `predeploy` (build) then publishes `dist/` via `gh-pages`.
+
+## PR merge process
+
+Follow these steps for every bot-generated PR before merging into `main`. **Never merge directly without completing this checklist.**
+
+### For all PRs
+
+1. Check out the feature branch locally and pull the latest changes.
+2. Run `npm run build` to confirm no TypeScript or build errors.
+3. Run `npm run dev` and visually verify the new/changed commands render correctly in the UI.
+
+### For PRs with the `needs-gifs` label
+
+Only generate GIFs for **newly added commands** — do not regenerate GIFs for existing commands in the same category.
+
+4. For each new command in the PR, generate only its GIF using the `--id` flag:
+
+   ```bash
+   npm run create:gif -- --id <command-id>
+   ```
+
+   The `<command-id>` matches the `"id"` field in `scripts/demos.json` (e.g. `autopilot`, `worktree`).
+
+5. If the tape file for the new command doesn't exist yet, run `npm run create:tape` first — this generates tape files from `scripts/demos.json`.
+
+6. Common tape issues to check and fix **before** committing:
+   - Commands that require experimental mode need `/experimental on` typed before the command, with at least `Sleep 5s` after `Enter` to let the terminal settle.
+   - Interactive dialogs (e.g. permission prompts) need an `Enter` keypress after a `Sleep 3s` to select the default option.
+   - If characters are dropped during typing, increase the `Sleep` duration before that `Type` line.
+
+7. Verify the generated GIF at `public/images/<category>/<id>.gif` plays correctly.
+
+8. Ensure the command's entry in `src/data/categories/<category>.json` has `"terminalDemo": "images/<category>/<id>.gif"` — without this field the "SEE IT IN ACTION" section won't appear in the UI even if the GIF exists.
+
+9. Commit the GIF file and any tape fixes to the **feature branch** (not `main`).
+
+### Merging
+
+10. Only after steps above are complete: mark the PR as ready for review (convert from draft), then merge using squash merge.
