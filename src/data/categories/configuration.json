@@ -98,6 +98,21 @@
     "terminalDemo": "images/configuration/list-dirs.gif"
   },
   {
+    "id": "loop",
+    "title": "/loop",
+    "syntax": "/loop <DURATION|CRON> <PROMPT|SLASH-COMMAND>",
+    "description": "Schedule a prompt or slash command to run repeatedly on a given interval or cron expression. Alias for /every. Only available in experimental mode.",
+    "analogy": "Like a recurring calendar event for AI tasks — set it and Copilot runs the prompt automatically on your chosen schedule.",
+    "examples": [
+      "/loop 1h check for new GitHub issues and summarize them",
+      "/loop 1d /chronicle standup  # daily standup report",
+      "/every  # alias for /loop"
+    ],
+    "note": "Requires /experimental mode. See also: /every — a co-equal alias for the same command.",
+    "category": "configuration",
+    "terminalDemo": "images/configuration/loop.gif"
+  },
+  {
     "id": "reset-allowed-tools",
     "title": "/reset-allowed-tools",
     "syntax": "/reset-allowed-tools",

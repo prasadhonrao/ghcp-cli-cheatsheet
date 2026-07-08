@@ -16,14 +16,15 @@
   {
     "id": "mcp",
     "title": "/mcp",
-    "syntax": "/mcp [show|add|edit|delete|disable|enable|auth|reload] [SERVER]",
-    "description": "Manage MCP (Model Context Protocol) server configurations — add, remove, enable, disable, or reload servers from within a session.",
+    "syntax": "/mcp [show|add|edit|delete|disable|enable|auth|reload|registry] [SERVER]",
+    "description": "Manage MCP (Model Context Protocol) server configurations — add, remove, enable, disable, reload servers, or browse the MCP registry to install new servers.",
     "analogy": "Like a plugin manager in an IDE — /mcp is the control panel for every external tool extension connected to Copilot.",
     "examples": [
       "/mcp show  # list all configured MCP servers and their status",
       "/mcp disable my-server  # temporarily disable a server without removing it",
       "/mcp reload  # reload all MCP server configs without restarting",
-      "/mcp auth my-server  # trigger a fresh OAuth flow for a remote server"
+      "/mcp auth my-server  # trigger a fresh OAuth flow for a remote server",
+      "/mcp registry  # browse and install MCP servers from the registry"
     ],
     "category": "mcp",
     "terminalDemo": "images/mcp/mcp.gif"

@@ -13,6 +13,18 @@
     "terminalDemo": "images/troubleshooting/collect-debug-logs.gif"
   },
   {
+    "id": "diagnose",
+    "title": "/diagnose",
+    "syntax": "/diagnose",
+    "description": "Analyze session logs to help identify errors, unexpected behavior, or performance issues from the current session.",
+    "analogy": "Like opening a black-box recorder after an incident — surfaces what the CLI actually did so you can pinpoint what went wrong.",
+    "examples": [
+      "/diagnose  # analyze session logs for errors and anomalies"
+    ],
+    "category": "troubleshooting",
+    "terminalDemo": "images/troubleshooting/diagnose.gif"
+  },
+  {
     "id": "diagnosis",
     "title": "/diagnosis",
     "syntax": "/diagnosis",
@@ -25,7 +37,6 @@
     "category": "troubleshooting",
     "terminalDemo": "images/troubleshooting/diagnosis.gif"
   },
-
   {
     "id": "exit",
     "title": "/exit",
