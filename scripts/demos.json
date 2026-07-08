@@ -220,6 +220,20 @@
       "responseWait": 8
     },
     {
+      "id": "every",
+      "category": "chat",
+      "description": "Schedule a recurring prompt",
+      "command": "/every 30m summarize recent file changes",
+      "responseWait": 6
+    },
+    {
+      "id": "after",
+      "category": "chat",
+      "description": "Schedule a one-off delayed prompt",
+      "command": "/after 10m check if the build finished",
+      "responseWait": 6
+    },
+    {
       "id": "undo",
       "category": "chat",
       "description": "Ask copilot a quick question then rewind the last turn with /undo",
@@ -576,6 +590,13 @@
       ]
     },
 
+    {
+      "id": "autopilot",
+      "category": "agents",
+      "description": "Set a focused autopilot objective for the session",
+      "command": "/autopilot fix all TypeScript errors in src/",
+      "responseWait": 20
+    },
     {
       "id": "exit",
       "category": "troubleshooting",
