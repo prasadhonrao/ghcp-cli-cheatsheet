@@ -8,7 +8,8 @@
     "examples": [
       "/app  # open the GitHub app or launch a browser if the app is not installed"
     ],
-    "category": "getting-started"
+    "category": "getting-started",
+    "terminalDemo": "images/getting-started/app.gif"
   },
   {
     "id": "bug",

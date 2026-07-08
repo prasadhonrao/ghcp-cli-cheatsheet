@@ -118,7 +118,8 @@
     "examples": [
       "/settings  # open the interactive settings editor"
     ],
-    "category": "configuration"
+    "category": "configuration",
+    "terminalDemo": "images/configuration/settings.gif"
   },
   {
     "id": "statusline",

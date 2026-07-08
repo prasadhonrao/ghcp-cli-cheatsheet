@@ -75,6 +75,7 @@
       "/worktree feature/auth-fix  # create a named worktree and switch into it",
       "/move  # alias for /worktree"
     ],
-    "category": "code"
+    "category": "code",
+    "terminalDemo": "images/code/worktree.gif"
   }
 ]
