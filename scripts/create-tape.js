@@ -7,7 +7,9 @@
  * public/demos/{category}/images/{id}.gif from the project root.
  *
  * Usage:
- *   npm run create:tapes
+ *   npm run create:tape                            # all demos
+ *   npm run create:tape -- --category agents       # only the agents category
+ *   npm run create:tape -- --id autopilot          # single demo by ID
  */
 
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'fs';
@@ -103,9 +105,25 @@ Sleep ${s.exitWait}s
 
 console.log('📝 Creating tape files from scripts/demos.json…\n');
 
+// ── CLI arg parsing ──────────────────────────────────────────────────────────
+const args = process.argv.slice(2);
+const filterCategories = [];
+const filterIds = [];
+
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--category' && args[i + 1]) filterCategories.push(args[++i]);
+  else if (args[i] === '--id' && args[i + 1]) filterIds.push(args[++i]);
+}
+
+const demos = config.demos.filter(demo => {
+  if (filterIds.length && !filterIds.includes(demo.id)) return false;
+  if (filterCategories.length && !filterCategories.includes(demo.category)) return false;
+  return true;
+});
+
 let created = 0;
 
-for (const demo of config.demos) {
+for (const demo of demos) {
   const tapesDir = join(__dirname, 'tapes', demo.category);
   const tapePath = join(tapesDir, `${demo.id}.tape`);
 

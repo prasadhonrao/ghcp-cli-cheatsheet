@@ -88,6 +88,12 @@ Only generate GIFs for **newly added commands** — do not regenerate GIFs for e
 
 5. If the tape file for the new command doesn't exist yet, run `npm run create:tape` first — this generates tape files from `scripts/demos.json`.
 
+   To generate only the tape for a specific command, use the `--id` flag:
+   ```bash
+   npm run create:tape -- --id <command-id>
+   ```
+   This avoids creating tape files for unrelated commands.
+
 6. Common tape issues to check and fix **before** committing:
    - Commands that require experimental mode need `/experimental on` typed before the command, with at least `Sleep 5s` after `Enter` to let the terminal settle.
    - Interactive dialogs (e.g. permission prompts) need an `Enter` keypress after a `Sleep 3s` to select the default option.
