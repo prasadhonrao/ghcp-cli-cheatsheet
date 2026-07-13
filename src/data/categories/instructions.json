@@ -12,6 +12,17 @@
     "terminalDemo": "images/instructions/instructions.gif"
   },
   {
+    "id": "plugins",
+    "title": "/plugins",
+    "syntax": "/plugins",
+    "description": "Open the interactive plugins dashboard to browse, enable, disable, and manage installed Copilot CLI plugins.",
+    "analogy": "Like an extension manager in your IDE — one screen to view and control every installed plugin without using subcommands.",
+    "examples": [
+      "/plugins  # open the interactive plugins dashboard"
+    ],
+    "category": "instructions"
+  },
+  {
     "id": "plugin",
     "title": "/plugin",
     "syntax": "/plugin [marketplace|install|uninstall|update|list] [ARGS...]",
