@@ -93,6 +93,18 @@
     "terminalDemo": "images/chat/every.gif"
   },
   {
+    "id": "refine",
+    "title": "/refine",
+    "syntax": "/refine [PROMPT]",
+    "description": "Rewrite a rough, stream-of-consciousness prompt into a clear, well-structured one before sending it.",
+    "analogy": "Like having an editor polish a draft before it goes out — Copilot cleans up your rambling idea into a precise request.",
+    "examples": [
+      "/refine so basically i want like a button that does the thing with the files maybe sort them",
+      "/refine  # prompts you to type your rough idea interactively"
+    ],
+    "category": "chat"
+  },
+  {
     "id": "after",
     "title": "/after",
     "syntax": "/after <DELAY> [PROMPT]",
