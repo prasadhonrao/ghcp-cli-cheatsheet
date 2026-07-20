@@ -178,12 +178,13 @@
   {
     "id": "voice",
     "title": "/voice",
-    "syntax": "/voice [on|off]",
-    "description": "Enable or disable voice input for the Copilot CLI session. When on, you can speak prompts instead of typing them.",
+    "syntax": "/voice [on|off|devices]",
+    "description": "Enable or disable voice input for the Copilot CLI session, or list and select a microphone with /voice devices. When on, you can speak prompts instead of typing them.",
     "analogy": "Like switching from keyboard to microphone in a voice assistant — talk to Copilot hands-free.",
     "examples": [
       "/voice on  # enable microphone input",
       "/voice off  # switch back to keyboard input",
+      "/voice devices  # list available microphones and choose which one to use",
       "/voice  # check current voice input status"
     ],
     "category": "configuration",
