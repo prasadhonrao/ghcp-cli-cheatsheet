@@ -313,8 +313,15 @@
     {
       "id": "worktree",
       "category": "code",
-      "description": "Create a new git worktree and switch into it",
+      "description": "Create a new git worktree, leaving uncommitted changes in the current session",
       "command": "/worktree",
+      "responseWait": 10
+    },
+    {
+      "id": "move",
+      "category": "code",
+      "description": "Create a new git worktree and carry uncommitted changes into it",
+      "command": "/move fix the login redirect",
       "responseWait": 10
     },
     {

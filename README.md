@@ -28,7 +28,7 @@ The 72 commands are organized into 11 categories:
 | 💬 Chat            | 8        | Ask, clear, search, undo, new, schedule prompts         |
 | 🧬 Models          | 3        | Model selection, experimental features, themes          |
 | ⚙️ Configuration   | 14       | Directories, permissions, environment, voice, streaming |
-| 💻 Code            | 8        | Diff, plan, PR management, code review, fork, branch    |
+| 💻 Code            | 9        | Diff, plan, PR management, code review, fork, branch    |
 | 🤖 Agents          | 9        | Agent picker, fleet, delegate, research, tasks          |
 | 🔌 MCP             | 2        | MCP and LSP server management                           |
 | 🧠 Memory          | 6        | Sessions, context, compaction, sharing                  |

@@ -97,14 +97,27 @@
     "id": "worktree",
     "title": "/worktree",
     "syntax": "/worktree [TASK]",
-    "description": "Create a new git worktree for parallel development. Pass an optional task description to auto-name the branch and run the task as the first prompt in the new worktree. Without an argument, names the branch from your uncommitted changes and recent conversation.",
-    "analogy": "Like opening a parallel universe of your repo — work on a separate branch simultaneously without disturbing your current session.",
+    "description": "Create a new git worktree for parallel development, leaving your uncommitted changes behind in the current session. Pass an optional task description to auto-name the branch and run the task as the first prompt in the new worktree. Use /move instead if you want to carry uncommitted changes into the new worktree.",
+    "analogy": "Like opening a parallel universe of your repo — start a fresh branch simultaneously while keeping your in-progress work exactly where it is.",
     "examples": [
-      "/worktree  # create a worktree with a branch named from current changes",
+      "/worktree  # create a worktree, leaving uncommitted changes in current session",
       "/worktree fix the login redirect  # create branch for this task and start it immediately",
       "/worktree feature/JIRA-123  # create worktree with an exact branch name"
     ],
     "category": "code",
     "terminalDemo": "images/code/worktree.gif"
+  },
+  {
+    "id": "move",
+    "title": "/move",
+    "syntax": "/move [TASK]",
+    "description": "Create a new git worktree and carry your uncommitted changes into it. Unlike /worktree (which leaves changes behind), /move transfers your in-progress work to the new branch so you can continue without stashing.",
+    "analogy": "Like picking up your desk and moving it to a new room — your work comes with you to the new branch.",
+    "examples": [
+      "/move  # create a worktree and bring uncommitted changes along",
+      "/move fix the login redirect  # move changes to a new branch named for the task",
+      "/move feature/JIRA-123  # move changes to a worktree with an exact branch name"
+    ],
+    "category": "code"
   }
 ]
