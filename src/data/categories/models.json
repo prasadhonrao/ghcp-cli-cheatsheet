@@ -16,13 +16,16 @@
   {
     "id": "model",
     "title": "/model",
-    "syntax": "/model [MODEL]",
-    "description": "Select or switch the AI model mid-session. Run without arguments for an interactive picker. Also available as /models.",
+    "syntax": "/model [MODEL | plan [MODEL|off]]",
+    "description": "Select or switch the AI model mid-session. Run without arguments for an interactive picker. Use `/model plan` (or `/model --plan`) to set a separate model for plan mode — pass a model id, `off` to clear, or no id to open the picker. The plan-mode model reverts to the session model when you leave plan mode. Also available as /models.",
     "analogy": "Like switching between AI tiers in a chat app — pick the right power level for the task at hand.",
     "examples": [
       "/model  # open interactive model picker",
       "/models  # alias for /model",
-      "/model claude-sonnet-4-5  # switch to a specific model by name"
+      "/model claude-sonnet-4-5  # switch to a specific model by name",
+      "/model plan  # open picker to set a model specifically for plan mode",
+      "/model plan claude-opus-4-5  # use claude-opus-4-5 while in plan mode",
+      "/model plan off  # clear the plan-mode model override"
     ],
     "category": "models",
     "terminalDemo": "images/models/model.gif"
