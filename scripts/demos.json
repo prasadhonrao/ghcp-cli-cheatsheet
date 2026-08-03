@@ -485,6 +485,13 @@
       "responseWait": 10
     },
     {
+      "id": "limits",
+      "category": "getting-started",
+      "description": "Show AI-credit limits and predict session usage",
+      "command": "/limits predict",
+      "responseWait": 10
+    },
+    {
       "id": "usage",
       "category": "getting-started",
       "description": "Show session usage metrics",

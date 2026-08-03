@@ -23,7 +23,7 @@ The 72 commands are organized into 11 categories:
 
 | Category           | Commands | Description                                             |
 | ------------------ | -------- | ------------------------------------------------------- |
-| 🚀 Getting Started | 9        | Install, update, help, version, feedback                |
+| 🚀 Getting Started | 10       | Install, update, help, version, feedback, limits        |
 | 🔐 Authentication  | 3        | Login, logout, account switching                        |
 | 💬 Chat            | 8        | Ask, clear, search, undo, new, schedule prompts         |
 | 🧬 Models          | 3        | Model selection, experimental features, themes          |

@@ -14,14 +14,16 @@
   {
     "id": "plugin",
     "title": "/plugin",
-    "syntax": "/plugin [marketplace|install|uninstall|update|list] [ARGS...]",
-    "description": "Manage Copilot CLI plugins — packages that bundle agents, skills, and MCP servers in a single install.",
-    "analogy": "Like an extension marketplace for your IDE — browse, install, and manage add-ons that extend what Copilot can do.",
+    "syntax": "/plugin [marketplace|install|uninstall|update|list|enable|disable] [ARGS...]",
+    "description": "Manage Copilot CLI plugins — packages that bundle agents, skills, and MCP servers in a single install. Enable or disable individual plugins, MCP servers, and skills without removing them.",
+    "analogy": "Like an extension marketplace for your IDE — browse, install, manage, and toggle add-ons that extend what Copilot can do.",
     "examples": [
       "/plugin list  # show all installed plugins",
       "/plugin marketplace  # browse available plugins",
       "/plugin install my-org/my-plugin  # install a plugin",
-      "/plugin update  # update all installed plugins"
+      "/plugin update  # update all installed plugins",
+      "/plugin enable my-plugin  # re-enable a disabled plugin",
+      "/plugin disable my-plugin  # disable a plugin without uninstalling it"
     ],
     "category": "instructions",
     "terminalDemo": "images/instructions/plugin.gif"
