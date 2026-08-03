@@ -91,6 +91,18 @@
     "terminalDemo": "images/getting-started/update.gif"
   },
   {
+    "id": "limits",
+    "title": "/limits",
+    "syntax": "/limits [predict]",
+    "description": "Show your AI-credit limits and usage. Use \"predict\" to get a suggested session limit based on similar past sessions.",
+    "analogy": "Like checking your bank balance before a big purchase — see how much AI quota you have and plan accordingly.",
+    "examples": [
+      "/limits  # show current AI-credit limits",
+      "/limits predict  # suggest a session limit from similar sessions"
+    ],
+    "category": "getting-started"
+  },
+  {
     "id": "usage",
     "title": "/usage",
     "syntax": "/usage",
