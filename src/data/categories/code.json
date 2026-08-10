@@ -94,6 +94,19 @@
     "category": "code"
   },
   {
+    "id": "new-worktree",
+    "title": "/new-worktree",
+    "syntax": "/new-worktree [TASK]",
+    "description": "Create a new git worktree and immediately start a fresh Copilot conversation in it, leaving your current session and uncommitted changes behind. Only available in experimental mode.",
+    "analogy": "Like opening a brand-new branch in a separate window — start a parallel task with a clean slate while your current work stays untouched.",
+    "examples": [
+      "/new-worktree  # create a new worktree and open a fresh session in it",
+      "/new-worktree add dark-mode support  # create worktree and start this task immediately"
+    ],
+    "note": "Requires /experimental mode. See also: /worktree — carries uncommitted changes into the new worktree instead of leaving them behind.",
+    "category": "code"
+  },
+  {
     "id": "worktree",
     "title": "/worktree",
     "syntax": "/worktree [TASK]",
