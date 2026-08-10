@@ -27,8 +27,8 @@ The 72 commands are organized into 11 categories:
 | 🔐 Authentication  | 3        | Login, logout, account switching                        |
 | 💬 Chat            | 8        | Ask, clear, search, undo, new, schedule prompts         |
 | 🧬 Models          | 3        | Model selection, experimental features, themes          |
-| ⚙️ Configuration   | 14       | Directories, permissions, environment, voice, streaming |
-| 💻 Code            | 8        | Diff, plan, PR management, code review, fork, branch    |
+| ⚙️ Configuration   | 15       | Directories, permissions, environment, voice, streaming |
+| 💻 Code            | 9        | Diff, plan, PR management, code review, fork, branch    |
 | 🤖 Agents          | 9        | Agent picker, fleet, delegate, research, tasks          |
 | 🔌 MCP             | 2        | MCP and LSP server management                           |
 | 🧠 Memory          | 6        | Sessions, context, compaction, sharing                  |

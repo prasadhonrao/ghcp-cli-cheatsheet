@@ -113,6 +113,17 @@
     "terminalDemo": "images/configuration/loop.gif"
   },
   {
+    "id": "permissions",
+    "title": "/permissions",
+    "syntax": "/permissions",
+    "description": "Open an interactive dialog to switch between approval modes — controlling how Copilot prompts for tool and command approvals.",
+    "analogy": "Like the permissions settings panel in your OS — choose how strictly Copilot asks before running commands or touching files.",
+    "examples": [
+      "/permissions  # open the approval-mode picker"
+    ],
+    "category": "configuration"
+  },
+  {
     "id": "reset-allowed-tools",
     "title": "/reset-allowed-tools",
     "syntax": "/reset-allowed-tools",

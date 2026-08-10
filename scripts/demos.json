@@ -304,6 +304,13 @@
       "responseWait": 10
     },
     {
+      "id": "new-worktree",
+      "category": "code",
+      "description": "Create a new worktree and start a fresh session in it",
+      "command": "/new-worktree add dark-mode support",
+      "responseWait": 10
+    },
+    {
       "id": "review",
       "category": "code",
       "description": "Run code review agent",
@@ -394,6 +401,13 @@
       "category": "configuration",
       "description": "Reset all tool permissions",
       "command": "/reset-allowed-tools",
+      "responseWait": 6
+    },
+    {
+      "id": "permissions",
+      "category": "configuration",
+      "description": "Open the approval-mode picker",
+      "command": "/permissions",
       "responseWait": 6
     },
     {
