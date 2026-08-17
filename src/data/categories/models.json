@@ -17,13 +17,14 @@
     "id": "model",
     "title": "/model",
     "syntax": "/model [MODEL]",
-    "description": "Select or switch the AI model mid-session. Run without arguments for an interactive picker. Also available as /models.",
+    "description": "Select or switch the AI model for the current session. Run without arguments for an interactive picker. Changes apply to the current session only — use /config model to set a default for future sessions. Also available as /models.",
     "analogy": "Like switching between AI tiers in a chat app — pick the right power level for the task at hand.",
     "examples": [
       "/model  # open interactive model picker",
       "/models  # alias for /model",
       "/model claude-sonnet-4-5  # switch to a specific model by name"
     ],
+    "note": "/model is session-scoped. To set a persistent default, use /config model.",
     "category": "models",
     "terminalDemo": "images/models/model.gif"
   },
