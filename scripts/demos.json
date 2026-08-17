@@ -425,6 +425,13 @@
       "responseWait": 6
     },
     {
+      "id": "sandbox",
+      "category": "configuration",
+      "description": "View sandbox configuration and effective policy",
+      "command": "/sandbox policy",
+      "responseWait": 6
+    },
+    {
       "id": "voice",
       "category": "configuration",
       "description": "Enable voice input",

@@ -176,6 +176,18 @@
     "terminalDemo": "images/configuration/terminal-setup.gif"
   },
   {
+    "id": "sandbox",
+    "title": "/sandbox",
+    "syntax": "/sandbox [policy]",
+    "description": "View and configure the sandbox that isolates Copilot's file and network access. Use 'policy' to display the effective paths, denials, and network access rules for the current session.",
+    "analogy": "Like viewing your firewall rules — see exactly which files and network destinations Copilot is allowed to reach, and why some settings are locked.",
+    "examples": [
+      "/sandbox  # open the sandbox configuration dialog",
+      "/sandbox policy  # show effective sandbox paths, denials, and network access rules"
+    ],
+    "category": "configuration"
+  },
+  {
     "id": "voice",
     "title": "/voice",
     "syntax": "/voice [on|off]",
