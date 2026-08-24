@@ -150,6 +150,30 @@
     "terminalDemo": "images/configuration/statusline.gif"
   },
   {
+    "id": "config",
+    "title": "/config",
+    "syntax": "/config [model] [VALUE]",
+    "description": "Manage persistent CLI configuration defaults. Use `/config model` to set the default AI model for all future sessions, independent of the session-scoped `/model` selection.",
+    "analogy": "Like the default app settings on your phone — changes here stick across every new session, unlike in-session overrides.",
+    "examples": [
+      "/config model  # view or change the default model for future sessions",
+      "/model  # override the model for just the current session"
+    ],
+    "category": "configuration"
+  },
+  {
+    "id": "sandbox",
+    "title": "/sandbox",
+    "syntax": "/sandbox [policy]",
+    "description": "Open the sandbox configuration dialog to manage shell command restrictions. Use the `policy` subcommand to view effective sandbox paths, network access rules, and denied operations.",
+    "analogy": "Like an app's privacy settings screen — see exactly what the sandbox allows or blocks, and adjust the restrictions.",
+    "examples": [
+      "/sandbox  # open the interactive sandbox configuration dialog",
+      "/sandbox policy  # show effective sandbox paths, network access, and denials"
+    ],
+    "category": "configuration"
+  },
+  {
     "id": "streamer-mode",
     "title": "/streamer-mode",
     "syntax": "/streamer-mode [on|off]",
