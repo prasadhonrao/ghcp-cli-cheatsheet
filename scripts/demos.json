@@ -404,6 +404,20 @@
       "responseWait": 6
     },
     {
+      "id": "config",
+      "category": "configuration",
+      "description": "View or change persistent CLI defaults, e.g. default model",
+      "command": "/config model",
+      "responseWait": 6
+    },
+    {
+      "id": "sandbox",
+      "category": "configuration",
+      "description": "Open sandbox configuration dialog",
+      "command": "/sandbox",
+      "responseWait": 6
+    },
+    {
       "id": "statusline",
       "category": "configuration",
       "description": "Configure status line items",
