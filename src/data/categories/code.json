@@ -91,7 +91,8 @@
       "/security-review  # scan current diff for security vulnerabilities",
       "/security-review focus on injection and auth issues"
     ],
-    "category": "code"
+    "category": "code",
+    "terminalDemo": "images/code/security-review.gif"
   },
   {
     "id": "worktree",
