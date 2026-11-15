@@ -11,6 +11,11 @@ tools:
   edit:
   github:
     toolsets: [repos]
+    github-token: ${{ secrets.GITHUB_TOKEN }}
+network:
+  allowed:
+    - defaults
+    - github
 safe-outputs:
   allowed-domains:
     - github.com
@@ -31,7 +36,7 @@ Use `curl` to read the following pages and extract the latest entries from the p
 
 - https://github.com/github/copilot-cli/blob/main/changelog.md — CLI changelog
 
-Also use `gh` CLI to check the latest releases and commits in the `github/copilot-cli` repo.
+Also use the GitHub repository tools (the `gh` CLI is not authenticated in this workflow) to check the latest releases and commits in the `github/copilot-cli` repo.
 
 Look for:
 
@@ -44,7 +49,7 @@ Look for:
 
 For every **new command** found in Step 1, verify it is actually available in the currently released CLI before including it in any cheatsheet update.
 
-Use `gh` CLI to fetch the latest release of `github/copilot-cli` and check its release notes or assets. Cross-reference the command against the official CLI help reference:
+Use the GitHub repository tools to fetch the latest release of `github/copilot-cli` and check its release notes or assets. Cross-reference the command against the official CLI help reference:
 
 - https://github.com/github/copilot-cli/blob/main/docs/commands.md — if it exists, use this as the authoritative list of available commands
 - Otherwise, check the release tag for the version that introduced the command and confirm that version is published (not just mentioned in changelog)
