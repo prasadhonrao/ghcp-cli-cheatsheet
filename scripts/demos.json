@@ -446,6 +446,13 @@
       "responseWait": 6
     },
     {
+      "id": "sandbox",
+      "category": "configuration",
+      "description": "Open the sandbox configuration dialog",
+      "command": "/sandbox",
+      "responseWait": 6
+    },
+    {
       "id": "voice",
       "category": "configuration",
       "description": "Enable voice input",

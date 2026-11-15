@@ -96,11 +96,12 @@
   {
     "id": "worktree",
     "title": "/worktree",
-    "syntax": "/worktree [TASK]",
-    "description": "Create a new git worktree for parallel development, leaving your uncommitted changes behind in the current session. Pass an optional task description to auto-name the branch and run the task as the first prompt in the new worktree. Use /move instead if you want to carry uncommitted changes into the new worktree.",
+    "syntax": "/worktree [new|TASK]",
+    "description": "Create a new git worktree for parallel development, leaving your uncommitted changes behind in the current session. Use 'new' to start a fresh session in a new worktree. Pass an optional task description to auto-name the branch and run the task as the first prompt in the new worktree. Use /move instead if you want to carry uncommitted changes into the new worktree.",
     "analogy": "Like opening a parallel universe of your repo — start a fresh branch simultaneously while keeping your in-progress work exactly where it is.",
     "examples": [
       "/worktree  # create a worktree, leaving uncommitted changes in current session",
+      "/worktree new  # start a new session in a fresh worktree",
       "/worktree fix the login redirect  # create branch for this task and start it immediately",
       "/worktree feature/JIRA-123  # create worktree with an exact branch name"
     ],
