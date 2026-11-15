@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.259
+First, open Copilot CLI.
+
+00:00:06.400 --> 00:00:10.327
+Type /context to see how full the context window is.
+
+00:00:11.300 --> 00:00:16.216
+A grid shows token use: system, messages, free space, and buffer.
+
+00:00:16.700 --> 00:00:18.570
+Like a fuel gauge.

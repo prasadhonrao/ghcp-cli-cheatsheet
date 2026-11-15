@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.100 --> 00:00:10.039
+Type /research followed by the topic you want investigated.
+
+00:00:17.900 --> 00:00:22.259
+Copilot starts a deep research run and begins thinking about the question.
+
+00:00:26.400 --> 00:00:32.077
+It drafts a plan with key areas, then dispatches parallel subagents to research each.
+
+00:00:34.100 --> 00:00:38.209
+Subagents keep researching while the status line shows progress.
+
+00:00:40.100 --> 00:00:43.743
+When it finishes you get a structured report with citations.

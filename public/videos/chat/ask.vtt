@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.900 --> 00:00:12.384
+Type /ask followed by a quick side question, like what no-ff means in git merge.
+
+00:00:16.100 --> 00:00:20.061
+Copilot thinks, then answers in a temporary side panel.
+
+00:00:21.400 --> 00:00:26.339
+It explains that no-ff forces a merge commit, and sketches the branch history.
+
+00:00:28.600 --> 00:00:30.807
+Press escape to dismiss it.
+
+00:00:30.807 --> 00:00:34.545
+Like a private aside, it never joins the main history.

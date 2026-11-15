@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.475
+First, fire up Copilot CLI.
+
+00:00:05.900 --> 00:00:10.748
+Type /pr create to open a pull request with an AI-written description.
+
+00:00:11.700 --> 00:00:14.957
+Copilot starts thinking about your pull request.
+
+00:00:18.400 --> 00:00:21.691
+It checks your branch, changes, and commits.
+
+00:00:22.108 --> 00:00:26.047
+Copilot asks permission first; pick Yes to let it run.
+
+00:00:29.600 --> 00:00:32.357
+Like a PR dashboard in your terminal.

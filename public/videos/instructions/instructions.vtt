@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:05.900 --> 00:00:09.975
+Type /instructions to see which instruction files are loaded.
+
+00:00:11.300 --> 00:00:16.057
+It lists loaded files like AGENTS.md, each with a checkbox.
+
+00:00:16.500 --> 00:00:19.280
+See which rules are shaping Copilot.

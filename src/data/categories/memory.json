@@ -11,7 +11,9 @@
       "/compact focus on authentication changes  # compact with a custom focus"
     ],
     "category": "memory",
-    "terminalDemo": "images/memory/compact.gif"
+    "terminalDemo": "images/memory/compact.gif",
+    "terminalVideo": "videos/memory/compact.mp4",
+    "terminalCaptions": "videos/memory/compact.vtt"
   },
   {
     "id": "context",
@@ -24,7 +26,9 @@
       "/compact  # run this if context is nearly full"
     ],
     "category": "memory",
-    "terminalDemo": "images/memory/context.gif"
+    "terminalDemo": "images/memory/context.gif",
+    "terminalVideo": "videos/memory/context.mp4",
+    "terminalCaptions": "videos/memory/context.vtt"
   },
   {
     "id": "rename",
@@ -37,7 +41,9 @@
       "/rename payment-refactor-may  # give it a specific name"
     ],
     "category": "memory",
-    "terminalDemo": "images/memory/rename.gif"
+    "terminalDemo": "images/memory/rename.gif",
+    "terminalVideo": "videos/memory/rename.mp4",
+    "terminalCaptions": "videos/memory/rename.vtt"
   },
   {
     "id": "resume",
@@ -51,7 +57,9 @@
       "/resume my-auth-refactor  # resume a session by name"
     ],
     "category": "memory",
-    "terminalDemo": "images/memory/resume.gif"
+    "terminalDemo": "images/memory/resume.gif",
+    "terminalVideo": "videos/memory/resume.mp4",
+    "terminalCaptions": "videos/memory/resume.vtt"
   },
   {
     "id": "session",
@@ -66,7 +74,9 @@
       "/session cleanup  # remove old session data to free space"
     ],
     "category": "memory",
-    "terminalDemo": "images/memory/session.gif"
+    "terminalDemo": "images/memory/session.gif",
+    "terminalVideo": "videos/memory/session.mp4",
+    "terminalCaptions": "videos/memory/session.vtt"
   },
   {
     "id": "share",
@@ -81,6 +91,8 @@
       "/export  # alias for /share"
     ],
     "category": "memory",
-    "terminalDemo": "images/memory/share.gif"
+    "terminalDemo": "images/memory/share.gif",
+    "terminalVideo": "videos/memory/share.mp4",
+    "terminalCaptions": "videos/memory/share.vtt"
   }
 ]

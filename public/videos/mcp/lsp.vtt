@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:05.900 --> 00:00:09.509
+Type /lsp show to check your language servers.
+
+00:00:10.900 --> 00:00:14.725
+It shows the LSP server status and your config file.
+
+00:00:15.400 --> 00:00:18.520
+LSP gives Copilot code intelligence.

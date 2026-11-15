@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.200 --> 00:00:10.650
+Type /streamer-mode to toggle hiding of secrets like API keys.
+
+00:00:12.600 --> 00:00:15.607
+Copilot confirms the streamer mode state.
+
+00:00:16.300 --> 00:00:19.170
+Use it when streaming or sharing your screen.

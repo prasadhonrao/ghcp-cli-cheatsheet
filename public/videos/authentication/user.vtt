@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.259
+First, open Copilot CLI.
+
+00:00:06.100 --> 00:00:09.527
+Type /user show to see which account is active.
+
+00:00:11.300 --> 00:00:14.148
+Copilot greets you with your signed-in account.
+
+00:00:16.100 --> 00:00:20.118
+Now type /user list to see every authenticated account.
+
+00:00:21.100 --> 00:00:23.073
+Your accounts are listed.
+
+00:00:23.700 --> 00:00:25.945
+Handy for switching accounts.

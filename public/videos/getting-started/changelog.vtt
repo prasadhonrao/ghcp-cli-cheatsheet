@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.259
+First, open Copilot CLI.
+
+00:00:08.400 --> 00:00:12.725
+Type /changelog last 2 to see the two most recent releases.
+
+00:00:13.400 --> 00:00:17.827
+Copilot prints the latest release notes with recent features and fixes.
+
+00:00:19.300 --> 00:00:21.386
+Catch up on what is new.

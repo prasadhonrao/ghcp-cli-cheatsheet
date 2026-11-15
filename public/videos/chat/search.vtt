@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.282
+First, start Copilot CLI.
+
+00:00:06.900 --> 00:00:10.668
+Type /search and a keyword, such as JWT.
+
+00:00:11.300 --> 00:00:13.325
+The search bar opens.
+
+00:00:13.325 --> 00:00:18.041
+It says no results, since this fresh chat never mentioned JWT.
+
+00:00:18.512 --> 00:00:21.098
+Like Ctrl+F for a chat.

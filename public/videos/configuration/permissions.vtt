@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:02.986
+Let's launch Copilot CLI.
+
+00:00:06.200 --> 00:00:10.593
+Type /permissions to choose how strictly Copilot asks for approval.
+
+00:00:11.800 --> 00:00:15.761
+A picker opens: manual, assisted, or allow all.
+
+00:00:16.180 --> 00:00:18.653
+Choose how strict approvals should be.

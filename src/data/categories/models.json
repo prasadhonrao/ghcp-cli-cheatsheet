@@ -11,7 +11,9 @@
       "/experimental off  # disable experimental features"
     ],
     "category": "models",
-    "terminalDemo": "images/models/experimental.gif"
+    "terminalDemo": "images/models/experimental.gif",
+    "terminalVideo": "videos/models/experimental.mp4",
+    "terminalCaptions": "videos/models/experimental.vtt"
   },
   {
     "id": "model",
@@ -29,7 +31,9 @@
     ],
     "note": "/model is session-scoped. To set a persistent default, use /config model.",
     "category": "models",
-    "terminalDemo": "images/models/model.gif"
+    "terminalDemo": "images/models/model.gif",
+    "terminalVideo": "videos/models/model.mp4",
+    "terminalCaptions": "videos/models/model.vtt"
   },
   {
     "id": "theme",
@@ -43,6 +47,8 @@
       "/theme high-contrast  # maximum accessibility contrast"
     ],
     "category": "models",
-    "terminalDemo": "images/models/theme.gif"
+    "terminalDemo": "images/models/theme.gif",
+    "terminalVideo": "videos/models/theme.mp4",
+    "terminalCaptions": "videos/models/theme.vtt"
   }
 ]

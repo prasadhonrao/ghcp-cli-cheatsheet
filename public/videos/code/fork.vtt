@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.327
+Begin by launching Copilot CLI.
+
+00:00:05.900 --> 00:00:09.634
+Now type /fork to make a copy of the current session.
+
+00:00:10.400 --> 00:00:15.452
+Copilot reports the new forked session, and you are now working inside that copy.
+
+00:00:17.300 --> 00:00:21.216
+Like clicking Fork: your own copy, original untouched.

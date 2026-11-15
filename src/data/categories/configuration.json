@@ -11,7 +11,9 @@
       "/list-dirs  # see all currently allowed directories"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/add-dir.gif"
+    "terminalDemo": "images/configuration/add-dir.gif",
+    "terminalVideo": "videos/configuration/add-dir.mp4",
+    "terminalCaptions": "videos/configuration/add-dir.vtt"
   },
   {
     "id": "allow-all",
@@ -25,7 +27,9 @@
       "/yolo  # alias for /allow-all on"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/allow-all.gif"
+    "terminalDemo": "images/configuration/allow-all.gif",
+    "terminalVideo": "videos/configuration/allow-all.mp4",
+    "terminalCaptions": "videos/configuration/allow-all.vtt"
   },
   {
     "id": "cd",
@@ -40,7 +44,9 @@
     ],
     "category": "configuration",
     "note": "See also: /cwd — co-equal alias for the same command.",
-    "terminalDemo": "images/configuration/cd.gif"
+    "terminalDemo": "images/configuration/cd.gif",
+    "terminalVideo": "videos/configuration/cd.mp4",
+    "terminalCaptions": "videos/configuration/cd.vtt"
   },
 
   {
@@ -55,7 +61,9 @@
     ],
     "category": "configuration",
     "note": "See also: /cd — co-equal alias for the same command.",
-    "terminalDemo": "images/configuration/cwd.gif"
+    "terminalDemo": "images/configuration/cwd.gif",
+    "terminalVideo": "videos/configuration/cwd.mp4",
+    "terminalCaptions": "videos/configuration/cwd.vtt"
   },
   {
     "id": "env",
@@ -67,7 +75,9 @@
       "/env  # inspect the full Copilot runtime environment"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/env.gif"
+    "terminalDemo": "images/configuration/env.gif",
+    "terminalVideo": "videos/configuration/env.mp4",
+    "terminalCaptions": "videos/configuration/env.vtt"
   },
   {
     "id": "keep-alive",
@@ -82,7 +92,9 @@
       "/caffeinate  # alias for /keep-alive on"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/keep-alive.gif"
+    "terminalDemo": "images/configuration/keep-alive.gif",
+    "terminalVideo": "videos/configuration/keep-alive.mp4",
+    "terminalCaptions": "videos/configuration/keep-alive.vtt"
   },
   {
     "id": "list-dirs",
@@ -95,7 +107,9 @@
       "/add-dir ./src  # add a directory to the list"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/list-dirs.gif"
+    "terminalDemo": "images/configuration/list-dirs.gif",
+    "terminalVideo": "videos/configuration/list-dirs.mp4",
+    "terminalCaptions": "videos/configuration/list-dirs.vtt"
   },
   {
     "id": "loop",
@@ -110,7 +124,9 @@
     ],
     "note": "Requires /experimental mode. See also: /every — a co-equal alias for the same command.",
     "category": "configuration",
-    "terminalDemo": "images/configuration/loop.gif"
+    "terminalDemo": "images/configuration/loop.gif",
+    "terminalVideo": "videos/configuration/loop.mp4",
+    "terminalCaptions": "videos/configuration/loop.vtt"
   },
   {
     "id": "permissions",
@@ -122,7 +138,9 @@
       "/permissions  # open the approval-mode picker"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/permissions.gif"
+    "terminalDemo": "images/configuration/permissions.gif",
+    "terminalVideo": "videos/configuration/permissions.mp4",
+    "terminalCaptions": "videos/configuration/permissions.vtt"
   },
   {
     "id": "config",
@@ -135,7 +153,9 @@
       "/model  # override the model for just the current session"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/config.gif"
+    "terminalDemo": "images/configuration/config.gif",
+    "terminalVideo": "videos/configuration/config.mp4",
+    "terminalCaptions": "videos/configuration/config.vtt"
   },
   {
     "id": "reset-allowed-tools",
@@ -147,7 +167,9 @@
       "/reset-allowed-tools  # revoke all approved tools and permissions"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/reset-allowed-tools.gif"
+    "terminalDemo": "images/configuration/reset-allowed-tools.gif",
+    "terminalVideo": "videos/configuration/reset-allowed-tools.mp4",
+    "terminalCaptions": "videos/configuration/reset-allowed-tools.vtt"
   },
   {
     "id": "settings",
@@ -159,7 +181,9 @@
       "/settings  # open the interactive settings editor"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/settings.gif"
+    "terminalDemo": "images/configuration/settings.gif",
+    "terminalVideo": "videos/configuration/settings.mp4",
+    "terminalCaptions": "videos/configuration/settings.vtt"
   },
   {
     "id": "statusline",
@@ -172,7 +196,9 @@
       "/footer  # alias for /statusline"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/statusline.gif"
+    "terminalDemo": "images/configuration/statusline.gif",
+    "terminalVideo": "videos/configuration/statusline.mp4",
+    "terminalCaptions": "videos/configuration/statusline.vtt"
   },
   {
     "id": "streamer-mode",
@@ -186,7 +212,9 @@
       "/streamer-mode  # check current status"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/streamer-mode.gif"
+    "terminalDemo": "images/configuration/streamer-mode.gif",
+    "terminalVideo": "videos/configuration/streamer-mode.mp4",
+    "terminalCaptions": "videos/configuration/streamer-mode.vtt"
   },
   {
     "id": "terminal-setup",
@@ -198,7 +226,9 @@
       "/terminal-setup  # launch the interactive setup wizard"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/terminal-setup.gif"
+    "terminalDemo": "images/configuration/terminal-setup.gif",
+    "terminalVideo": "videos/configuration/terminal-setup.mp4",
+    "terminalCaptions": "videos/configuration/terminal-setup.vtt"
   },
   {
     "id": "sandbox",
@@ -211,7 +241,9 @@
       "/sandbox policy  # show effective sandbox paths, denials, and network access rules"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/sandbox.gif"
+    "terminalDemo": "images/configuration/sandbox.gif",
+    "terminalVideo": "videos/configuration/sandbox.mp4",
+    "terminalCaptions": "videos/configuration/sandbox.vtt"
   },
   {
     "id": "voice",
@@ -226,6 +258,8 @@
       "/voice  # check current voice input status"
     ],
     "category": "configuration",
-    "terminalDemo": "images/configuration/voice.gif"
+    "terminalDemo": "images/configuration/voice.gif",
+    "terminalVideo": "videos/configuration/voice.mp4",
+    "terminalCaptions": "videos/configuration/voice.vtt"
   }
 ]

@@ -11,7 +11,9 @@
     ],
     "category": "code",
     "note": "See also: /fork — a co-equal alias for the same command.",
-    "terminalDemo": "images/code/branch.gif"
+    "terminalDemo": "images/code/branch.gif",
+    "terminalVideo": "videos/code/branch.mp4",
+    "terminalCaptions": "videos/code/branch.vtt"
   },
   {
     "id": "diff",
@@ -23,7 +25,9 @@
       "/diff  # review and explain changes in the working directory"
     ],
     "category": "code",
-    "terminalDemo": "images/code/diff.gif"
+    "terminalDemo": "images/code/diff.gif",
+    "terminalVideo": "videos/code/diff.mp4",
+    "terminalCaptions": "videos/code/diff.vtt"
   },
   {
     "id": "fork",
@@ -37,7 +41,9 @@
     ],
     "category": "code",
     "note": "See also: /branch — a co-equal alias added in v1.0.64.",
-    "terminalDemo": "images/code/fork.gif"
+    "terminalDemo": "images/code/fork.gif",
+    "terminalVideo": "videos/code/fork.mp4",
+    "terminalCaptions": "videos/code/fork.vtt"
   },
   {
     "id": "plan",
@@ -50,7 +56,9 @@
       "/plan refactor the authentication module to use JWT"
     ],
     "category": "code",
-    "terminalDemo": "images/code/plan.gif"
+    "terminalDemo": "images/code/plan.gif",
+    "terminalVideo": "videos/code/plan.mp4",
+    "terminalCaptions": "videos/code/plan.vtt"
   },
   {
     "id": "pr",
@@ -66,7 +74,9 @@
       "/pr automerge  # keep looping until the PR passes CI and is merged"
     ],
     "category": "code",
-    "terminalDemo": "images/code/pr.gif"
+    "terminalDemo": "images/code/pr.gif",
+    "terminalVideo": "videos/code/pr.mp4",
+    "terminalCaptions": "videos/code/pr.vtt"
   },
   {
     "id": "review",
@@ -79,7 +89,9 @@
       "/review focus on security issues only"
     ],
     "category": "code",
-    "terminalDemo": "images/code/review.gif"
+    "terminalDemo": "images/code/review.gif",
+    "terminalVideo": "videos/code/review.mp4",
+    "terminalCaptions": "videos/code/review.vtt"
   },
   {
     "id": "security-review",
@@ -92,7 +104,9 @@
       "/security-review focus on injection and auth issues"
     ],
     "category": "code",
-    "terminalDemo": "images/code/security-review.gif"
+    "terminalDemo": "images/code/security-review.gif",
+    "terminalVideo": "videos/code/security-review.mp4",
+    "terminalCaptions": "videos/code/security-review.vtt"
   },
   {
     "id": "worktree",
@@ -107,7 +121,9 @@
       "/worktree feature/JIRA-123  # create worktree with an exact branch name"
     ],
     "category": "code",
-    "terminalDemo": "images/code/worktree.gif"
+    "terminalDemo": "images/code/worktree.gif",
+    "terminalVideo": "videos/code/worktree.mp4",
+    "terminalCaptions": "videos/code/worktree.vtt"
   },
   {
     "id": "move",
@@ -121,7 +137,9 @@
       "/move feature/JIRA-123  # move changes to a worktree with an exact branch name"
     ],
     "category": "code",
-    "terminalDemo": "images/code/move.gif"
+    "terminalDemo": "images/code/move.gif",
+    "terminalVideo": "videos/code/move.mp4",
+    "terminalCaptions": "videos/code/move.vtt"
   },
   {
     "id": "code",
@@ -133,6 +151,8 @@
       "/code  # open the current session in VS Code"
     ],
     "category": "code",
-    "terminalDemo": "images/code/code.gif"
+    "terminalDemo": "images/code/code.gif",
+    "terminalVideo": "videos/code/code.mp4",
+    "terminalCaptions": "videos/code/code.vtt"
   }
 ]

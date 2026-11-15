@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.243
+First, launch Copilot CLI.
+
+00:00:03.243 --> 00:00:06.107
+This command needs experimental mode.
+
+00:00:06.900 --> 00:00:12.475
+Type /after with a delay, then a prompt: after 10 minutes, check if the build finished.
+
+00:00:16.100 --> 00:00:19.584
+Copilot confirms it will run once after that delay.
+
+00:00:21.100 --> 00:00:23.050
+Like a one-off timer.

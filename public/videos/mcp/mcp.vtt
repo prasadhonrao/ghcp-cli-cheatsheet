@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:05.900 --> 00:00:09.555
+Type /mcp show to see your MCP servers.
+
+00:00:10.900 --> 00:00:14.645
+It lists built-in servers like GitHub and your config file.
+
+00:00:15.900 --> 00:00:18.680
+MCP adds tools to Copilot.

@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.282
+Start by launching Copilot CLI.
+
+00:00:06.200 --> 00:00:10.400
+Type /reset-allowed-tools to clear every approval you've granted.
+
+00:00:13.000 --> 00:00:17.064
+Copilot confirms session approvals and allow-all were reset.
+
+00:00:18.100 --> 00:00:20.255
+Copilot will ask again.

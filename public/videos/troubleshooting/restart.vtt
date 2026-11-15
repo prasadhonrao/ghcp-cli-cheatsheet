@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:05.900 --> 00:00:10.566
+Type /restart to reload the CLI process while keeping your session.
+
+00:00:11.500 --> 00:00:16.473
+Like restarting a browser without losing tabs: the process reloads fresh.
+
+00:00:17.600 --> 00:00:21.505
+Here it printed resume hints, as no saved session matched.

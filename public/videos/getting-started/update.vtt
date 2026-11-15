@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.282
+First, start Copilot CLI.
+
+00:00:08.000 --> 00:00:10.495
+Type /update to upgrade.
+
+00:00:11.000 --> 00:00:14.075
+Copilot checks GitHub for the latest release.
+
+00:00:14.600 --> 00:00:17.527
+It then shows the changelog for that version.
+
+00:00:19.700 --> 00:00:22.093
+One command keeps you current.

@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.316
+To start, open Copilot CLI.
+
+00:00:07.600 --> 00:00:11.505
+Type /allow-all on to turn on every permission at once.
+
+00:00:13.700 --> 00:00:18.207
+Tool, path, and URL requests are now approved automatically.
+
+00:00:19.400 --> 00:00:22.566
+Let's verify by running /allow-all show.
+
+00:00:25.100 --> 00:00:28.380
+Copilot reports that all permissions are enabled.
+
+00:00:29.300 --> 00:00:31.830
+Use it only in trusted setups.

@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.930
+First, launch Copilot CLI in your project.
+
+00:00:05.900 --> 00:00:10.770
+Type /branch, an alias of /fork, to fork the current session.
+
+00:00:11.300 --> 00:00:16.489
+Copilot confirms the fork, and the new copy of the session opens, ready to use.
+
+00:00:18.300 --> 00:00:21.364
+Think of it as a safe copy to experiment in.

@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.282
+Start by launching Copilot CLI.
+
+00:00:06.100 --> 00:00:09.584
+Type /tasks to see what is running in the background.
+
+00:00:10.700 --> 00:00:15.741
+A Tasks panel lists background subagents and shell commands, both empty here.
+
+00:00:17.400 --> 00:00:19.907
+Use it to manage background work.

@@ -12,7 +12,9 @@
     ],
     "note": "Also available as /agents and /subagents. Use /subagents to configure model, reasoning effort, and context tier for background subagents.",
     "category": "agents",
-    "terminalDemo": "images/agents/agent.gif"
+    "terminalDemo": "images/agents/agent.gif",
+    "terminalVideo": "videos/agents/agent.mp4",
+    "terminalCaptions": "videos/agents/agent.vtt"
   },
   {
     "id": "chronicle",
@@ -29,7 +31,9 @@
       "/chronicle skills review  # review proposed draft skill changes (accept, reject, or defer)"
     ],
     "category": "agents",
-    "terminalDemo": "images/agents/chronicle.gif"
+    "terminalDemo": "images/agents/chronicle.gif",
+    "terminalVideo": "videos/agents/chronicle.mp4",
+    "terminalCaptions": "videos/agents/chronicle.vtt"
   },
   {
     "id": "delegate",
@@ -42,7 +46,9 @@
       "/delegate write unit tests for the payment service"
     ],
     "category": "agents",
-    "terminalDemo": "images/agents/delegate.gif"
+    "terminalDemo": "images/agents/delegate.gif",
+    "terminalVideo": "videos/agents/delegate.mp4",
+    "terminalCaptions": "videos/agents/delegate.vtt"
   },
   {
     "id": "fleet",
@@ -55,7 +61,9 @@
       "/fleet analyze all files in src/ for security issues simultaneously"
     ],
     "category": "agents",
-    "terminalDemo": "images/agents/fleet.gif"
+    "terminalDemo": "images/agents/fleet.gif",
+    "terminalVideo": "videos/agents/fleet.mp4",
+    "terminalCaptions": "videos/agents/fleet.vtt"
   },
   {
     "id": "ide",
@@ -65,7 +73,9 @@
     "analogy": "Like plugging two monitors into the same computer — Copilot and your IDE share the same view of your project.",
     "examples": ["/ide  # connect to the IDE workspace from an active session"],
     "category": "agents",
-    "terminalDemo": "images/agents/ide.gif"
+    "terminalDemo": "images/agents/ide.gif",
+    "terminalVideo": "videos/agents/ide.mp4",
+    "terminalCaptions": "videos/agents/ide.vtt"
   },
   {
     "id": "research",
@@ -78,7 +88,9 @@
       "/research how does the GitHub Actions cache action work?"
     ],
     "category": "agents",
-    "terminalDemo": "images/agents/research.gif"
+    "terminalDemo": "images/agents/research.gif",
+    "terminalVideo": "videos/agents/research.mp4",
+    "terminalCaptions": "videos/agents/research.vtt"
   },
   {
     "id": "sidekicks",
@@ -92,7 +104,9 @@
       "/sidekicks info linter  # show details about a specific sidekick"
     ],
     "category": "agents",
-    "terminalDemo": "images/agents/sidekicks.gif"
+    "terminalDemo": "images/agents/sidekicks.gif",
+    "terminalVideo": "videos/agents/sidekicks.mp4",
+    "terminalCaptions": "videos/agents/sidekicks.vtt"
   },
   {
     "id": "autopilot",
@@ -118,6 +132,8 @@
     "analogy": "Like a task manager or the shell jobs command — see what is running in the background and manage it from one place.",
     "examples": ["/tasks  # list all active subagents and background shell commands"],
     "category": "agents",
-    "terminalDemo": "images/agents/tasks.gif"
+    "terminalDemo": "images/agents/tasks.gif",
+    "terminalVideo": "videos/agents/tasks.mp4",
+    "terminalCaptions": "videos/agents/tasks.vtt"
   }
 ]

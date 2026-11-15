@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.200 --> 00:00:10.025
+Type /config model to change your default AI model.
+
+00:00:11.700 --> 00:00:14.627
+Choose the default model for future sessions.
+
+00:00:15.700 --> 00:00:18.491
+These defaults stick across sessions.

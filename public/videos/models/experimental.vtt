@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.900 --> 00:00:11.032
+Type /experimental show to list the experimental features.
+
+00:00:13.100 --> 00:00:16.550
+It lists the features and warns they may be unstable.
+
+00:00:18.100 --> 00:00:20.073
+Like beta features.

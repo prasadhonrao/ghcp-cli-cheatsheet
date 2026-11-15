@@ -14,7 +14,8 @@
     "create:gif": "node scripts/create-gif.js",
     "verify:gif": "node scripts/verify-gif.js",
     "create:video": "node scripts/create-video.js",
-    "generate:demos": "npm run create:tape && npm run create:gif && npm run verify:gif && npm run create:video"
+    "verify:video": "node scripts/verify-video.js",
+    "generate:demos": "npm run create:tape && npm run create:gif && npm run verify:gif && npm run create:video && npm run verify:video"
   },
   "dependencies": {
     "@primer/octicons-react": "^19.25.0",

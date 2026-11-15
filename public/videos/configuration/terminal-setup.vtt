@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:02.986
+Let's launch Copilot CLI.
+
+00:00:06.200 --> 00:00:10.389
+Type /terminal-setup to configure multiline input keys.
+
+00:00:12.100 --> 00:00:15.732
+Here, Copilot reports the terminal is unsupported.
+
+00:00:16.400 --> 00:00:19.282
+Run it in VS Code or Windows Terminal.

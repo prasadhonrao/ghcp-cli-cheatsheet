@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.500 --> 00:00:10.007
+Type /model with no arguments to open the picker.
+
+00:00:10.600 --> 00:00:12.750
+A list of models appears.
+
+00:00:12.750 --> 00:00:15.750
+Arrow down to pick one, then press enter.
+
+00:00:16.204 --> 00:00:18.711
+Now the session uses the new model.

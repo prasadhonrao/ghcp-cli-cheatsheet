@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.243
+First, launch Copilot CLI.
+
+00:00:03.243 --> 00:00:06.152
+Experimental mode is needed for this one.
+
+00:00:06.900 --> 00:00:12.986
+Type /every, an interval, then a prompt: every 30 minutes, summarize recent file changes.
+
+00:00:16.100 --> 00:00:19.652
+Copilot confirms it will repeat every 30 minutes.
+
+00:00:20.500 --> 00:00:23.064
+Like a recurring calendar reminder.

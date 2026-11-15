@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.475
+Let's start by launching Copilot CLI.
+
+00:00:06.200 --> 00:00:09.582
+Type /cd and a path to change directory.
+
+00:00:09.980 --> 00:00:13.294
+Copilot suggests folders as you type the path.
+
+00:00:13.712 --> 00:00:16.605
+It works just like the shell cd command.

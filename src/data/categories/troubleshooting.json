@@ -10,7 +10,9 @@
       "/feedback  # then attach the log file when filing a bug"
     ],
     "category": "troubleshooting",
-    "terminalDemo": "images/troubleshooting/collect-debug-logs.gif"
+    "terminalDemo": "images/troubleshooting/collect-debug-logs.gif",
+    "terminalVideo": "videos/troubleshooting/collect-debug-logs.mp4",
+    "terminalCaptions": "videos/troubleshooting/collect-debug-logs.vtt"
   },
   {
     "id": "diagnose",
@@ -22,7 +24,9 @@
       "/diagnose  # analyze session logs for errors and anomalies"
     ],
     "category": "troubleshooting",
-    "terminalDemo": "images/troubleshooting/diagnose.gif"
+    "terminalDemo": "images/troubleshooting/diagnose.gif",
+    "terminalVideo": "videos/troubleshooting/diagnose.mp4",
+    "terminalCaptions": "videos/troubleshooting/diagnose.vtt"
   },
   {
     "id": "diagnosis",
@@ -35,7 +39,9 @@
       "/restart  # try this first if /diagnosis reports issues"
     ],
     "category": "troubleshooting",
-    "terminalDemo": "images/troubleshooting/diagnosis.gif"
+    "terminalDemo": "images/troubleshooting/diagnosis.gif",
+    "terminalVideo": "videos/troubleshooting/diagnosis.mp4",
+    "terminalCaptions": "videos/troubleshooting/diagnosis.vtt"
   },
   {
     "id": "exit",
@@ -48,7 +54,9 @@
     ],
     "category": "troubleshooting",
     "note": "See also: /quit — a separate alias command that does the same thing.",
-    "terminalDemo": "images/troubleshooting/exit.gif"
+    "terminalDemo": "images/troubleshooting/exit.gif",
+    "terminalVideo": "videos/troubleshooting/exit.mp4",
+    "terminalCaptions": "videos/troubleshooting/exit.vtt"
   },
   {
     "id": "quit",
@@ -61,7 +69,9 @@
     ],
     "category": "troubleshooting",
     "note": "See also: /exit — a separate alias command that does the same thing.",
-    "terminalDemo": "images/troubleshooting/quit.gif"
+    "terminalDemo": "images/troubleshooting/quit.gif",
+    "terminalVideo": "videos/troubleshooting/quit.mp4",
+    "terminalCaptions": "videos/troubleshooting/quit.vtt"
   },
   {
     "id": "remote",
@@ -75,7 +85,9 @@
       "/remote off  # end the remote connection"
     ],
     "category": "troubleshooting",
-    "terminalDemo": "images/troubleshooting/remote.gif"
+    "terminalDemo": "images/troubleshooting/remote.gif",
+    "terminalVideo": "videos/troubleshooting/remote.mp4",
+    "terminalCaptions": "videos/troubleshooting/remote.vtt"
   },
   {
     "id": "restart",
@@ -87,6 +99,8 @@
       "/restart  # restart the CLI, preserving the current session"
     ],
     "category": "troubleshooting",
-    "terminalDemo": "images/troubleshooting/restart.gif"
+    "terminalDemo": "images/troubleshooting/restart.gif",
+    "terminalVideo": "videos/troubleshooting/restart.mp4",
+    "terminalCaptions": "videos/troubleshooting/restart.vtt"
   }
 ]

@@ -9,7 +9,9 @@
       "/instructions  # show loaded instruction files and their status"
     ],
     "category": "instructions",
-    "terminalDemo": "images/instructions/instructions.gif"
+    "terminalDemo": "images/instructions/instructions.gif",
+    "terminalVideo": "videos/instructions/instructions.mp4",
+    "terminalCaptions": "videos/instructions/instructions.vtt"
   },
   {
     "id": "plugins",
@@ -21,7 +23,9 @@
       "/plugins  # open the interactive plugins dashboard"
     ],
     "category": "instructions",
-    "terminalDemo": "images/instructions/plugins.gif"
+    "terminalDemo": "images/instructions/plugins.gif",
+    "terminalVideo": "videos/instructions/plugins.mp4",
+    "terminalCaptions": "videos/instructions/plugins.vtt"
   },
   {
     "id": "plugin",
@@ -40,7 +44,9 @@
       "/plugin help  # show all plugin subcommands"
     ],
     "category": "instructions",
-    "terminalDemo": "images/instructions/plugin.gif"
+    "terminalDemo": "images/instructions/plugin.gif",
+    "terminalVideo": "videos/instructions/plugin.mp4",
+    "terminalCaptions": "videos/instructions/plugin.vtt"
   },
   {
     "id": "skills",
@@ -56,6 +62,8 @@
     ],
     "category": "instructions",
     "note": "See also: /skill — a co-equal alias added in v1.0.65.",
-    "terminalDemo": "images/instructions/skills.gif"
+    "terminalDemo": "images/instructions/skills.gif",
+    "terminalVideo": "videos/instructions/skills.mp4",
+    "terminalCaptions": "videos/instructions/skills.vtt"
   }
 ]

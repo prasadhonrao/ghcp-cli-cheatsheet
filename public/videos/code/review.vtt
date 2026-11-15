@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.259
+First, open Copilot CLI.
+
+00:00:05.900 --> 00:00:09.418
+Type /review to run the built-in code review agent.
+
+00:00:11.300 --> 00:00:13.875
+Copilot thinks about your request.
+
+00:00:16.100 --> 00:00:18.959
+It decides to launch a code review agent.
+
+00:00:19.800 --> 00:00:22.989
+The agent starts in the background on your changes.
+
+00:00:23.700 --> 00:00:26.543
+Copilot waits for the agent to finish.
+
+00:00:26.543 --> 00:00:29.282
+Like an expert review before you push.

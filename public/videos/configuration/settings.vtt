@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.200 --> 00:00:09.309
+Type /settings to open the settings editor.
+
+00:00:11.100 --> 00:00:14.323
+One screen lists every setting and its value.
+
+00:00:15.100 --> 00:00:18.164
+Edit them here, no JSON files needed.

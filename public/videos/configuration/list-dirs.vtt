@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.407
+To begin, open Copilot CLI.
+
+00:00:06.200 --> 00:00:10.411
+Type /list-dirs to see which folders Copilot may access.
+
+00:00:11.300 --> 00:00:14.534
+It prints a numbered list of the allowed directories.
+
+00:00:15.800 --> 00:00:19.000
+Use /add-dir to allow more folders.

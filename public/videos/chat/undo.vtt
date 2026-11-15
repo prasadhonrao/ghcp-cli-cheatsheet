@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:02.986
+Launch Copilot CLI first.
+
+00:00:06.900 --> 00:00:09.277
+Ask Copilot something first.
+
+00:00:09.277 --> 00:00:13.709
+Here, we ask for the latest LTS version of Node.js.
+
+00:00:19.600 --> 00:00:23.277
+Copilot thinks, then runs a web search for the answer.
+
+00:00:28.100 --> 00:00:32.130
+While it works, type /undo to rewind the last turn.
+
+00:00:32.528 --> 00:00:36.296
+It is queued; once done, a rewind picker appears.

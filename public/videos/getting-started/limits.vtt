@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.339
+Launch Copilot CLI to get started.
+
+00:00:06.400 --> 00:00:10.918
+Type /limits predict to see a suggested spending cap for this session.
+
+00:00:12.300 --> 00:00:16.557
+Limits are opt-in: a soft cap on AI credits for this session.
+
+00:00:17.400 --> 00:00:20.770
+It suggests a limit from similar past sessions.
+
+00:00:21.400 --> 00:00:23.577
+Keeps credit use in check.

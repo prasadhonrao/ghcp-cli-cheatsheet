@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.100 --> 00:00:10.652
+Type /collect-debug-logs to bundle diagnostics for a bug report.
+
+00:00:12.400 --> 00:00:16.964
+A session picker appears, listing local and remote sessions to choose from.
+
+00:00:18.900 --> 00:00:23.214
+It is like Export logs in a crashed app: one bundle for support.

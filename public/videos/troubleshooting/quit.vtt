@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:02.986
+Launch Copilot CLI first.
+
+00:00:05.900 --> 00:00:09.770
+Type /quit, which does the same thing as /exit.
+
+00:00:10.600 --> 00:00:13.618
+Copilot closes and you are back at the shell.
+
+00:00:14.700 --> 00:00:17.923
+Both work, so use whichever feels natural.

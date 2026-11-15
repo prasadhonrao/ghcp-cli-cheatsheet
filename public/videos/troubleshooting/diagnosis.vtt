@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.100 --> 00:00:09.936
+To have something to analyze, first ask a normal question.
+
+00:00:18.100 --> 00:00:22.130
+Copilot thinks, then decides to search the web for the answer.
+
+00:00:27.900 --> 00:00:31.475
+Now type /diagnosis to analyze this session.
+
+00:00:33.100 --> 00:00:36.880
+It finishes the answer first, then reads the session log.
+
+00:00:41.600 --> 00:00:44.777
+The report says Healthy: no errors found.
+
+00:00:45.400 --> 00:00:47.907
+Like a health check in one command.

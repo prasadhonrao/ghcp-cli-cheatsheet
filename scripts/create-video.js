@@ -27,6 +27,7 @@
  *   npm run create:video -- --category agents       # one category
  *   npm run create:video -- --id autopilot          # single demo
  *   npm run create:video -- --voice en-GB-RyanNeural
+ *   npm run create:video -- --rate +0%              # speech rate (default +10%, or "speechRate" in demos.json settings)
  *
  * Requirements: ffmpeg + ffprobe in PATH, and a GIF at public/images/{category}/{id}.gif
  * (run npm run create:gif first).
@@ -44,6 +45,7 @@ const rootDir = join(__dirname, '..');
 const config = JSON.parse(readFileSync(new URL('./demos.json', import.meta.url), 'utf8'));
 
 const DEFAULT_VOICE = 'en-US-AriaNeural';
+const DEFAULT_RATE = '+10%'; // slightly brisk so narration keeps pace with short recordings
 const TAIL_PADDING_S = 1; // silence/hold after the narration ends
 const SEGMENT_GAP_S = 0.3; // minimum pause between consecutive segments
 const TICKS_PER_SECOND = 10_000_000; // TTS offsets are in 100-ns units
@@ -53,11 +55,13 @@ const args = process.argv.slice(2);
 const filterCategories = [];
 const filterIds = [];
 let voice = config.settings?.voice ?? DEFAULT_VOICE;
+let rate = config.settings?.speechRate ?? DEFAULT_RATE;
 
 for (let i = 0; i < args.length; i++) {
   if (args[i] === '--category' && args[i + 1]) filterCategories.push(args[++i]);
   else if (args[i] === '--id' && args[i + 1]) filterIds.push(args[++i]);
   else if (args[i] === '--voice' && args[i + 1]) voice = args[++i];
+  else if (args[i] === '--rate' && args[i + 1]) rate = args[++i];
 }
 
 // ── Verify ffmpeg is installed ───────────────────────────────────────────────
@@ -93,15 +97,27 @@ function formatVttTime(seconds) {
   return `${h}:${m}:${s}.${r}`;
 }
 
-function buildCues(metadataFile, offset) {
+function buildCues(metadataFile, offset, original) {
   const { Metadata } = JSON.parse(readFileSync(metadataFile, 'utf8'));
   return Metadata
     .filter((m) => m.Type === 'SentenceBoundary')
     .map((m) => ({
       start: offset + m.Data.Offset / TICKS_PER_SECOND,
       end: offset + (m.Data.Offset + m.Data.Duration) / TICKS_PER_SECOND,
-      text: m.Data.text.Text.trim(),
+      text: restoreSlashes(m.Data.text.Text.trim(), original),
     }));
+}
+
+// "/help" is read aloud as "slash help", but captions should keep the real command text.
+const COMMAND_TOKEN = /(^|[\s(])\/(?=[A-Za-z])/g;
+const toSpeech = (text) => text.replace(COMMAND_TOKEN, '$1slash ');
+
+function restoreSlashes(captionText, original) {
+  let result = captionText;
+  for (const [, , name] of original.matchAll(/(^|[\s(])\/([A-Za-z][\w-]*)/g)) {
+    result = result.split(`slash ${name}`).join(`/${name}`);
+  }
+  return result;
 }
 
 function buildVtt(cues) {
@@ -113,14 +129,29 @@ function buildVtt(cues) {
   return `WEBVTT\n\n${body.join('\n\n')}\n`;
 }
 
-async function synthesize(text, workDir) {
+async function synthesizeOnce(text, workDir) {
   const tts = new MsEdgeTTS();
-  await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3, {
-    sentenceBoundaryEnabled: true,
-  });
-  const { audioFilePath, metadataFilePath } = await tts.toFile(workDir, escapeXml(text));
-  tts.close();
-  return { audioFilePath, metadataFilePath };
+  try {
+    await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3, {
+      sentenceBoundaryEnabled: true,
+    });
+    const { audioFilePath, metadataFilePath } = await tts.toFile(workDir, escapeXml(toSpeech(text)), { rate });
+    return { audioFilePath, metadataFilePath };
+  } finally {
+    tts.close();
+  }
+}
+
+// The Read Aloud endpoint occasionally drops a connection; retry before giving up.
+async function synthesize(text, workDir) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await synthesizeOnce(text, workDir);
+    } catch (e) {
+      if (attempt >= 3) throw e;
+      await new Promise((resolve) => setTimeout(resolve, 1000 * attempt));
+    }
+  }
 }
 
 const toSegments = (narration) =>
@@ -143,7 +174,7 @@ async function buildTrack(narration, workDir) {
       console.log(`    ! segment ${i + 1} delayed ${(start - segment.at).toFixed(1)}s (previous segment still speaking) — shorten it or move "at" later`);
     }
     clips.push({ file: audioFilePath, start });
-    cues.push(...buildCues(metadataFilePath, start));
+    cues.push(...buildCues(metadataFilePath, start, segment.text));
     cursor = start + duration + SEGMENT_GAP_S;
   }
 
@@ -202,6 +233,38 @@ function muxVideo(gifFile, clips, outFile, sourceDuration, narrationEnd, speedUp
   ], { stdio: 'inherit' });
 }
 
+/**
+ * Point the command's JSON entry at the generated video + captions. Matches the entry by its
+ * terminalDemo GIF path and edits the text in place so the file's formatting is untouched.
+ */
+function linkCommandEntry(demo) {
+  const file = join(rootDir, 'src', 'data', 'categories', `${demo.category}.json`);
+  const gif = `images/${demo.category}/${demo.id}.gif`;
+  const video = `videos/${demo.category}/${demo.id}.mp4`;
+  const captions = `videos/${demo.category}/${demo.id}.vtt`;
+  const source = readFileSync(file, 'utf8');
+
+  const line = new RegExp(
+    `^([ \\t]*)"terminalDemo": "${gif.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"(,?)[ \\t]*(\\r?\\n)` +
+    `(?:[ \\t]*"terminalVideo": "[^"]*"(,?)[ \\t]*\\r?\\n)?` +
+    `(?:[ \\t]*"terminalCaptions": "[^"]*"(,?)[ \\t]*\\r?\\n)?`,
+    'm'
+  );
+  const match = source.match(line);
+  if (!match) throw new Error(`no entry with terminalDemo "${gif}" in ${file}`);
+
+  const [, indent, demoComma, eol, videoComma, captionsComma] = match;
+  // The last original property line says whether another property follows this block.
+  const comma = captionsComma ?? videoComma ?? demoComma;
+  const replacement =
+    `${indent}"terminalDemo": "${gif}",${eol}` +
+    `${indent}"terminalVideo": "${video}",${eol}` +
+    `${indent}"terminalCaptions": "${captions}"${comma}${eol}`;
+
+  const updated = source.replace(line, replacement);
+  if (updated !== source) writeFileSync(file, updated);
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
   const demos = config.demos.filter((demo) => {
@@ -238,6 +301,7 @@ async function main() {
       writeFileSync(join(outDir, `${demo.id}.vtt`), buildVtt(cues));
       muxVideo(gifFile, clips, join(outDir, `${demo.id}.mp4`), probeDuration(gifFile), end, demo.speedUp);
       console.log(`  ✓ public/videos/${label}.mp4 (+ .vtt)`);
+      linkCommandEntry(demo);
       created++;
     } catch (e) {
       console.log(`  ✗ ${label} — ${e.message}`);

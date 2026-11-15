@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:05.900 --> 00:00:08.759
+Type /exit when you are ready to leave.
+
+00:00:10.600 --> 00:00:13.618
+Copilot closes and you are back at the shell.
+
+00:00:14.700 --> 00:00:17.605
+A graceful exit, not a force kill.

@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:07.600 --> 00:00:12.016
+Now type /add-dir, followed by the folder you want to allow.
+
+00:00:12.700 --> 00:00:16.457
+Copilot suggests matching folders as you type the path.
+
+00:00:17.400 --> 00:00:21.418
+Allowing a folder lets Copilot read and modify files in it.

@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.543
+Let's start by opening Copilot CLI.
+
+00:00:05.900 --> 00:00:09.657
+Now type /diff to review your uncommitted changes.
+
+00:00:10.300 --> 00:00:14.420
+Diff Mode opens and Copilot looks for your unstaged changes.
+
+00:00:15.300 --> 00:00:18.011
+Fast orientation before a review.

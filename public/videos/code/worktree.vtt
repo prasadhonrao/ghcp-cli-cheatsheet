@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:05.900 --> 00:00:10.180
+Type /worktree to start a parallel branch in a fresh git worktree.
+
+00:00:11.500 --> 00:00:14.848
+Copilot starts creating a name for the new worktree.
+
+00:00:18.100 --> 00:00:21.311
+Your uncommitted work stays put in the old session.

@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.100 --> 00:00:09.970
+Type /fleet followed by a task you want run in parallel.
+
+00:00:15.200 --> 00:00:19.570
+Fleet mode is deployed, and Copilot thinks about how to split the work.
+
+00:00:21.400 --> 00:00:25.486
+It first runs a shell command to check which test scripts exist.
+
+00:00:26.900 --> 00:00:32.816
+The result: this project has no test suites, so it suggests running type-check and lint instead.
+
+00:00:36.600 --> 00:00:40.675
+Fleet shines when a job can be split into parallel subagents.

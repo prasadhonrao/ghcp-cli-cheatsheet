@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.418
+To begin, launch Copilot CLI.
+
+00:00:05.900 --> 00:00:10.509
+Now type /security-review to scan your changes for vulnerabilities.
+
+00:00:12.300 --> 00:00:16.727
+Copilot starts a security review that analyzes for vulnerabilities.
+
+00:00:18.700 --> 00:00:23.036
+A dedicated security agent starts inspecting your local changes.
+
+00:00:24.100 --> 00:00:28.368
+It runs git commands to see what changed and read repo instructions.
+
+00:00:29.900 --> 00:00:32.691
+Like a security auditor for your PR.

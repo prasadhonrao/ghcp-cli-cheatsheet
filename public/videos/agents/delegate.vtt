@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.259
+First, open Copilot CLI.
+
+00:00:08.100 --> 00:00:11.891
+Type /delegate followed by the task you want handed off.
+
+00:00:17.400 --> 00:00:20.918
+Copilot checks your repo for uncommitted changes.
+
+00:00:23.200 --> 00:00:25.661
+It asks to send this to GitHub.
+
+00:00:26.400 --> 00:00:29.020
+Hand work off to a remote agent.

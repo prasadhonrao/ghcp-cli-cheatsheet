@@ -9,7 +9,9 @@
       "/app  # open the current session in the GitHub Copilot app (requires app 1.1.3+)"
     ],
     "category": "getting-started",
-    "terminalDemo": "images/getting-started/app.gif"
+    "terminalDemo": "images/getting-started/app.gif",
+    "terminalVideo": "videos/getting-started/app.mp4",
+    "terminalCaptions": "videos/getting-started/app.vtt"
   },
   {
     "id": "bug",
@@ -22,7 +24,9 @@
     ],
     "category": "getting-started",
     "note": "See also: /feedback — a separate alias command that does the same thing.",
-    "terminalDemo": "images/getting-started/bug.gif"
+    "terminalDemo": "images/getting-started/bug.gif",
+    "terminalVideo": "videos/getting-started/bug.mp4",
+    "terminalCaptions": "videos/getting-started/bug.vtt"
   },
   {
     "id": "changelog",
@@ -37,7 +41,9 @@
       "/release-notes  # alias for /changelog"
     ],
     "category": "getting-started",
-    "terminalDemo": "images/getting-started/changelog.gif"
+    "terminalDemo": "images/getting-started/changelog.gif",
+    "terminalVideo": "videos/getting-started/changelog.mp4",
+    "terminalCaptions": "videos/getting-started/changelog.vtt"
   },
   {
     "id": "feedback",
@@ -50,7 +56,9 @@
     ],
     "category": "getting-started",
     "note": "See also: /bug — a separate alias command that does the same thing.",
-    "terminalDemo": "images/getting-started/feedback.gif"
+    "terminalDemo": "images/getting-started/feedback.gif",
+    "terminalVideo": "videos/getting-started/feedback.mp4",
+    "terminalCaptions": "videos/getting-started/feedback.vtt"
   },
   {
     "id": "help",
@@ -62,7 +70,9 @@
       "/help  # list all slash commands"
     ],
     "category": "getting-started",
-    "terminalDemo": "images/getting-started/help.gif"
+    "terminalDemo": "images/getting-started/help.gif",
+    "terminalVideo": "videos/getting-started/help.mp4",
+    "terminalCaptions": "videos/getting-started/help.vtt"
   },
   {
     "id": "init",
@@ -75,7 +85,9 @@
       "/init suppress  # hide the startup warning without creating the file"
     ],
     "category": "getting-started",
-    "terminalDemo": "images/getting-started/init.gif"
+    "terminalDemo": "images/getting-started/init.gif",
+    "terminalVideo": "videos/getting-started/init.mp4",
+    "terminalCaptions": "videos/getting-started/init.vtt"
   },
   {
     "id": "update",
@@ -88,7 +100,9 @@
       "/upgrade  # alias for /update"
     ],
     "category": "getting-started",
-    "terminalDemo": "images/getting-started/update.gif"
+    "terminalDemo": "images/getting-started/update.gif",
+    "terminalVideo": "videos/getting-started/update.mp4",
+    "terminalCaptions": "videos/getting-started/update.vtt"
   },
   {
     "id": "limits",
@@ -101,7 +115,9 @@
       "/limits predict  # suggest a session limit from similar sessions"
     ],
     "category": "getting-started",
-    "terminalDemo": "images/getting-started/limits.gif"
+    "terminalDemo": "images/getting-started/limits.gif",
+    "terminalVideo": "videos/getting-started/limits.mp4",
+    "terminalCaptions": "videos/getting-started/limits.vtt"
   },
   {
     "id": "usage",
@@ -113,7 +129,9 @@
       "/usage  # show full stats for the current session"
     ],
     "category": "getting-started",
-    "terminalDemo": "images/getting-started/usage.gif"
+    "terminalDemo": "images/getting-started/usage.gif",
+    "terminalVideo": "videos/getting-started/usage.mp4",
+    "terminalCaptions": "videos/getting-started/usage.vtt"
   },
   {
     "id": "version",
@@ -126,6 +144,8 @@
       "/update  # update if an upgrade is available"
     ],
     "category": "getting-started",
-    "terminalDemo": "images/getting-started/version.gif"
+    "terminalDemo": "images/getting-started/version.gif",
+    "terminalVideo": "videos/getting-started/version.mp4",
+    "terminalCaptions": "videos/getting-started/version.vtt"
   }
 ]

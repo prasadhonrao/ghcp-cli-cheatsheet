@@ -10,7 +10,9 @@
       "/ask what is the difference between CMD and ENTRYPOINT in Docker?"
     ],
     "category": "chat",
-    "terminalDemo": "images/chat/ask.gif"
+    "terminalDemo": "images/chat/ask.gif",
+    "terminalVideo": "videos/chat/ask.mp4",
+    "terminalCaptions": "videos/chat/ask.vtt"
   },
   {
     "id": "clear",
@@ -24,7 +26,9 @@
       "/reset \"help me refactor the auth module\"  # clear and immediately prompt"
     ],
     "category": "chat",
-    "terminalDemo": "images/chat/clear.gif"
+    "terminalDemo": "images/chat/clear.gif",
+    "terminalVideo": "videos/chat/clear.mp4",
+    "terminalCaptions": "videos/chat/clear.vtt"
   },
   {
     "id": "copy",
@@ -50,7 +54,9 @@
     ],
     "category": "chat",
     "note": "See also: /clear and /reset — all three do the same thing.",
-    "terminalDemo": "images/chat/new.gif"
+    "terminalDemo": "images/chat/new.gif",
+    "terminalVideo": "videos/chat/new.mp4",
+    "terminalCaptions": "videos/chat/new.vtt"
   },
   {
     "id": "search",
@@ -63,7 +69,9 @@
       "/find JWT  # alias for /search"
     ],
     "category": "chat",
-    "terminalDemo": "images/chat/search.gif"
+    "terminalDemo": "images/chat/search.gif",
+    "terminalVideo": "videos/chat/search.mp4",
+    "terminalCaptions": "videos/chat/search.vtt"
   },
   {
     "id": "undo",
@@ -76,7 +84,9 @@
       "/rewind  # in experimental mode, offers conversation-only or full revert"
     ],
     "category": "chat",
-    "terminalDemo": "images/chat/undo.gif"
+    "terminalDemo": "images/chat/undo.gif",
+    "terminalVideo": "videos/chat/undo.mp4",
+    "terminalCaptions": "videos/chat/undo.vtt"
   },
   {
     "id": "every",
@@ -90,7 +100,9 @@
     ],
     "category": "chat",
     "note": "Requires experimental mode. Run /experimental on to enable.",
-    "terminalDemo": "images/chat/every.gif"
+    "terminalDemo": "images/chat/every.gif",
+    "terminalVideo": "videos/chat/every.mp4",
+    "terminalCaptions": "videos/chat/every.vtt"
   },
   {
     "id": "refine",
@@ -103,7 +115,9 @@
       "/refine  # prompts you to type your rough idea interactively"
     ],
     "category": "chat",
-    "terminalDemo": "images/chat/refine.gif"
+    "terminalDemo": "images/chat/refine.gif",
+    "terminalVideo": "videos/chat/refine.mp4",
+    "terminalCaptions": "videos/chat/refine.vtt"
   },
   {
     "id": "after",
@@ -117,6 +131,8 @@
     ],
     "category": "chat",
     "note": "Requires experimental mode. Run /experimental on to enable.",
-    "terminalDemo": "images/chat/after.gif"
+    "terminalDemo": "images/chat/after.gif",
+    "terminalVideo": "videos/chat/after.mp4",
+    "terminalCaptions": "videos/chat/after.vtt"
   }
 ]

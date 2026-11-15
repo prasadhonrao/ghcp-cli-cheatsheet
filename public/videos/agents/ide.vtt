@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.282
+First, start Copilot CLI.
+
+00:00:06.100 --> 00:00:09.345
+Type /ide to connect Copilot to your editor.
+
+00:00:10.400 --> 00:00:15.259
+It can auto-connect to VS Code, but no IDE workspace is open here.
+
+00:00:16.000 --> 00:00:19.155
+Link your editor so the CLI sees your code.

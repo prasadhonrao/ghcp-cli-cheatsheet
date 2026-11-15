@@ -11,7 +11,9 @@
       "/login --device-code  # force device-code flow (for headless or remote terminals)"
     ],
     "category": "authentication",
-    "terminalDemo": "images/authentication/login.gif"
+    "terminalDemo": "images/authentication/login.gif",
+    "terminalVideo": "videos/authentication/login.mp4",
+    "terminalCaptions": "videos/authentication/login.vtt"
   },
   {
     "id": "logout",
@@ -23,7 +25,9 @@
       "/logout  # clear credentials from the current session"
     ],
     "category": "authentication",
-    "terminalDemo": "images/authentication/logout.gif"
+    "terminalDemo": "images/authentication/logout.gif",
+    "terminalVideo": "videos/authentication/logout.mp4",
+    "terminalCaptions": "videos/authentication/logout.vtt"
   },
   {
     "id": "user",
@@ -37,6 +41,8 @@
       "/user switch  # interactively switch to a different account"
     ],
     "category": "authentication",
-    "terminalDemo": "images/authentication/user.gif"
+    "terminalDemo": "images/authentication/user.gif",
+    "terminalVideo": "videos/authentication/user.mp4",
+    "terminalCaptions": "videos/authentication/user.vtt"
   }
 ]

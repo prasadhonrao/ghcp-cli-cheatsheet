@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:04.770
+Open Copilot CLI inside the repository you want to set up.
+
+00:00:07.100 --> 00:00:10.618
+Type /init to have Copilot learn your project.
+
+00:00:11.100 --> 00:00:15.470
+Copilot starts thinking, then explores the repository structure.
+
+00:00:18.600 --> 00:00:24.277
+It lists folders, searches for existing instruction files, and reads files like the readme.
+
+00:00:27.300 --> 00:00:31.591
+Now it starts creating a copilot-instructions file from what it learned.
+
+00:00:32.700 --> 00:00:36.911
+Run /init once per repo to teach Copilot your project.

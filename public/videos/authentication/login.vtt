@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.100 --> 00:00:09.175
+Type /login to sign in to Copilot.
+
+00:00:10.300 --> 00:00:13.716
+Pick GitHub.com or GitHub Enterprise Cloud.
+
+00:00:14.400 --> 00:00:18.282
+It shows a one-time code to enter on GitHub's device page.
+
+00:00:19.300 --> 00:00:21.705
+Enter it in your browser to finish.

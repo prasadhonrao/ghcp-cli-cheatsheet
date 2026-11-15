@@ -17,54 +17,29 @@
       "category": "agents",
       "description": "Agent picker — browse and activate a built-in agent",
       "steps": [
-        {
-          "type": "/agent"
-        },
-        {
-          "wait": 3
-        },
-        {
-          "key": "Enter"
-        },
-        {
-          "wait": 3
-        },
-        {
-          "key": "Down"
-        },
-        {
-          "wait": 0.5
-        },
-        {
-          "key": "Down"
-        },
-        {
-          "wait": 0.5
-        },
-        {
-          "key": "Down"
-        },
-        {
-          "wait": 0.5
-        },
-        {
-          "key": "Up"
-        },
-        {
-          "wait": 0.5
-        },
-        {
-          "key": "Up"
-        },
-        {
-          "wait": 0.5
-        },
-        {
-          "key": "Enter"
-        },
-        {
-          "wait": 8
-        }
+        { "type": "/agent" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 3 },
+        { "key": "Down" },
+        { "wait": 0.5 },
+        { "key": "Down" },
+        { "wait": 0.5 },
+        { "key": "Down" },
+        { "wait": 0.5 },
+        { "key": "Up" },
+        { "wait": 0.5 },
+        { "key": "Up" },
+        { "wait": 0.5 },
+        { "key": "Enter" },
+        { "wait": 8 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6, "text": "Now type /agent to browse your custom agents." },
+        { "at": 10.3, "text": "A picker opens. Create a new agent or learn more about custom agents." },
+        { "at": 16.5, "text": "Use the arrow keys to move, Enter to select, Escape to cancel." },
+        { "at": 21.8, "text": "Think of it as a roster of specialist helpers." }
       ]
     },
     {
@@ -72,7 +47,15 @@
       "category": "agents",
       "description": "Chronicle standup",
       "command": "/chronicle standup",
-      "responseWait": 25
+      "responseWait": 25,
+      "narration": [
+        { "at": 0.3, "text": "Let's start by opening Copilot CLI." },
+        { "at": 6, "text": "Type /chronicle standup to summarize your recent work." },
+        { "at": 12, "text": "Copilot now builds a standup update from your recent session history." },
+        { "at": 19.6, "text": "It proposes checking recent git commits, and asks your permission before running." },
+        { "at": 27, "text": "You can approve once, approve for the repo, or tell it to do something else." },
+        { "at": 34, "text": "Chronicle turns your history into a ready-made standup." }
+      ]
     },
     {
       "id": "delegate",
@@ -86,6 +69,13 @@
         { "wait": 8 },
         { "key": "Escape" },
         { "wait": 3 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, open Copilot CLI." },
+        { "at": 8, "text": "Type /delegate followed by the task you want handed off." },
+        { "at": 17.3, "text": "Copilot checks your repo for uncommitted changes." },
+        { "at": 23.1, "text": "It asks to send this to GitHub." },
+        { "at": 26.3, "text": "Hand work off to a remote agent." }
       ]
     },
     {
@@ -93,35 +83,69 @@
       "category": "agents",
       "description": "Fleet parallel subagents",
       "command": "/fleet run all test suites in parallel",
-      "responseWait": 30
+      "responseWait": 30,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6, "text": "Type /fleet followed by a task you want run in parallel." },
+        { "at": 15.1, "text": "Fleet mode is deployed, and Copilot thinks about how to split the work." },
+        { "at": 21.3, "text": "It first runs a shell command to check which test scripts exist." },
+        { "at": 26.8, "text": "The result: this project has no test suites, so it suggests running type-check and lint instead." },
+        { "at": 36.5, "text": "Fleet shines when a job can be split into parallel subagents." }
+      ]
     },
     {
       "id": "ide",
       "category": "agents",
       "description": "Connect IDE workspace",
       "command": "/ide",
-      "responseWait": 8
+      "responseWait": 8,
+      "narration": [
+        { "at": 0.3, "text": "First, start Copilot CLI." },
+        { "at": 6, "text": "Type /ide to connect Copilot to your editor." },
+        { "at": 10.3, "text": "It can auto-connect to VS Code, but no IDE workspace is open here." },
+        { "at": 15.9, "text": "Link your editor so the CLI sees your code." }
+      ]
     },
     {
       "id": "research",
       "category": "agents",
       "description": "Deep research with citations",
       "command": "/research NEXTJS app deployment option pros and cons",
-      "responseWait": 30
+      "responseWait": 30,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6, "text": "Type /research followed by the topic you want investigated." },
+        { "at": 17.8, "text": "Copilot starts a deep research run and begins thinking about the question." },
+        { "at": 26.3, "text": "It drafts a plan with key areas, then dispatches parallel subagents to research each." },
+        { "at": 34, "text": "Subagents keep researching while the status line shows progress." },
+        { "at": 40, "text": "When it finishes you get a structured report with citations." }
+      ]
     },
     {
       "id": "sidekicks",
       "category": "agents",
       "description": "List available sidekicks",
       "command": "/sidekicks list",
-      "responseWait": 8
+      "responseWait": 8,
+      "narration": [
+        { "at": 0.3, "text": "First, open Copilot CLI." },
+        { "at": 6, "text": "Type /sidekicks list to see your running sidekick agents." },
+        { "at": 12.2, "text": "A panel lists your sidekicks. Right now it says no sidekicks." },
+        { "at": 17.9, "text": "Sidekicks are helper agents beside you." }
+      ]
     },
     {
       "id": "tasks",
       "category": "agents",
       "description": "View active background tasks",
       "command": "/tasks",
-      "responseWait": 8
+      "responseWait": 8,
+      "narration": [
+        { "at": 0.3, "text": "Start by launching Copilot CLI." },
+        { "at": 6, "text": "Type /tasks to see what is running in the background." },
+        { "at": 10.6, "text": "A Tasks panel lists background subagents and shell commands, both empty here." },
+        { "at": 17.3, "text": "Use it to manage background work." }
+      ]
     },
     {
       "id": "login",
@@ -134,6 +158,13 @@
         { "wait": 3 },
         { "key": "Enter" },
         { "wait": 8 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6, "text": "Type /login to sign in to Copilot." },
+        { "at": 10.2, "text": "Pick GitHub.com or GitHub Enterprise Cloud." },
+        { "at": 14.3, "text": "It shows a one-time code to enter on GitHub's device page." },
+        { "at": 19.2, "text": "Enter it in your browser to finish." }
       ]
     },
     {
@@ -141,24 +172,19 @@
       "category": "authentication",
       "description": "Show current user, then preview /logout (cancelled safely)",
       "steps": [
-        {
-          "type": "/user show"
-        },
-        {
-          "wait": 3
-        },
-        {
-          "key": "Enter"
-        },
-        {
-          "wait": 5
-        },
-        {
-          "type": "/logout"
-        },
-        {
-          "wait": 3
-        }
+        { "type": "/user show" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 5 },
+        { "type": "/logout" },
+        { "wait": 3 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, start Copilot CLI." },
+        { "at": 6, "text": "Before logging out, check who you are with /user show." },
+        { "at": 11.3, "text": "It greets you by the account you are signed in as." },
+        { "at": 15.8, "text": "Now type /logout to sign out." },
+        { "at": 19.4, "text": "Press Enter to sign out." }
       ]
     },
     {
@@ -166,30 +192,22 @@
       "category": "authentication",
       "description": "Show current user then list all authenticated accounts",
       "steps": [
-        {
-          "type": "/user show"
-        },
-        {
-          "wait": 3
-        },
-        {
-          "key": "Enter"
-        },
-        {
-          "wait": 5
-        },
-        {
-          "type": "/user list"
-        },
-        {
-          "wait": 3
-        },
-        {
-          "key": "Enter"
-        },
-        {
-          "wait": 5
-        }
+        { "type": "/user show" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 5 },
+        { "type": "/user list" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 5 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, open Copilot CLI." },
+        { "at": 6, "text": "Type /user show to see which account is active." },
+        { "at": 11.2, "text": "Copilot greets you with your signed-in account." },
+        { "at": 16, "text": "Now type /user list to see every authenticated account." },
+        { "at": 21, "text": "Your accounts are listed." },
+        { "at": 23.6, "text": "Handy for switching accounts." }
       ]
     },
     {
@@ -197,50 +215,95 @@
       "category": "chat",
       "description": "Ask a side question",
       "command": "/ask what does --no-ff mean in git merge?",
-      "responseWait": 20
+      "responseWait": 20,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.8, "text": "Type /ask followed by a quick side question, like what no-ff means in git merge." },
+        { "at": 16, "text": "Copilot thinks, then answers in a temporary side panel." },
+        { "at": 21.3, "text": "It explains that no-ff forces a merge commit, and sketches the branch history." },
+        { "at": 28.5, "text": "Press escape to dismiss it. Like a private aside, it never joins the main history." }
+      ]
     },
     {
       "id": "clear",
       "category": "chat",
       "description": "Clear conversation history",
       "command": "/clear",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Let's start by launching Copilot CLI." },
+        { "at": 6.8, "text": "Now type /clear to start fresh." },
+        { "at": 10.3, "text": "The screen resets to a clean slate." },
+        { "at": 15.4, "text": "Like a new browser tab." }
+      ]
     },
-
     {
       "id": "new",
       "category": "chat",
       "description": "Start new session with prompt",
       "command": "/new help me refactor the auth module",
-      "responseWait": 20
+      "responseWait": 20,
+      "narration": [
+        { "at": 0.3, "text": "Launch Copilot CLI to get started." },
+        { "at": 6.8, "text": "Type /new followed by an opening prompt, like help me refactor the auth module." },
+        { "at": 15.5, "text": "Like a fresh browser tab: old history is cleared and your prompt starts a new chat." },
+        { "at": 23, "text": "Copilot thinks, then searches the repo for anything auth related." },
+        { "at": 30.2, "text": "It answers there is no auth module here, and asks what you meant." }
+      ]
     },
     {
       "id": "search",
       "category": "chat",
       "description": "Search conversation history",
       "command": "/search JWT",
-      "responseWait": 8
+      "responseWait": 8,
+      "narration": [
+        { "at": 0.3, "text": "First, start Copilot CLI." },
+        { "at": 6.8, "text": "Type /search and a keyword, such as JWT." },
+        { "at": 11.2, "text": "The search bar opens. It says no results, since this fresh chat never mentioned JWT." },
+        { "at": 18.4, "text": "Like Ctrl+F for a chat." }
+      ]
     },
     {
       "id": "every",
       "category": "chat",
       "description": "Schedule a recurring prompt",
       "command": "/every 30m summarize recent file changes",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI. Experimental mode is needed for this one." },
+        { "at": 6.8, "text": "Type /every, an interval, then a prompt: every 30 minutes, summarize recent file changes." },
+        { "at": 16, "text": "Copilot confirms it will repeat every 30 minutes." },
+        { "at": 20.4, "text": "Like a recurring calendar reminder." }
+      ]
     },
     {
       "id": "refine",
       "category": "chat",
       "description": "Refine a rough prompt into a clear, well-structured one",
       "command": "/refine so basically i want like a button that does the thing with the files maybe sort them",
-      "responseWait": 20
+      "responseWait": 20,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 7, "text": "Type /refine followed by a rough, stream of consciousness idea, full of filler words and maybes." },
+        { "at": 14.8, "text": "Don't worry about the wording. Just dump your thought, then press enter." },
+        { "at": 24, "text": "Copilot refines it into a clear, concise request, now sitting in the input box." },
+        { "at": 31, "text": "You can review or edit it before sending, so the final prompt is precise." },
+        { "at": 38, "text": "Like an editor polishing your draft before it goes out." }
+      ]
     },
     {
       "id": "after",
       "category": "chat",
       "description": "Schedule a one-off delayed prompt",
       "command": "/after 10m check if the build finished",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI. This command needs experimental mode." },
+        { "at": 6.8, "text": "Type /after with a delay, then a prompt: after 10 minutes, check if the build finished." },
+        { "at": 16, "text": "Copilot confirms it will run once after that delay." },
+        { "at": 21, "text": "Like a one-off timer." }
+      ]
     },
     {
       "id": "undo",
@@ -255,6 +318,13 @@
         { "wait": 3 },
         { "key": "Enter" },
         { "wait": 5 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "Launch Copilot CLI first." },
+        { "at": 6.8, "text": "Ask Copilot something first. Here, we ask for the latest LTS version of Node.js." },
+        { "at": 19.5, "text": "Copilot thinks, then runs a web search for the answer." },
+        { "at": 28, "text": "While it works, type /undo to rewind the last turn." },
+        { "at": 32.4, "text": "It is queued; once done, a rewind picker appears." }
       ]
     },
     {
@@ -262,7 +332,13 @@
       "category": "code",
       "description": "Create a GitHub fork of the current repository",
       "command": "/branch",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI in your project." },
+        { "at": 5.8, "text": "Type /branch, an alias of /fork, to fork the current session." },
+        { "at": 11.2, "text": "Copilot confirms the fork, and the new copy of the session opens, ready to use." },
+        { "at": 18.2, "text": "Think of it as a safe copy to experiment in." }
+      ]
     },
     {
       "id": "diff",
@@ -275,6 +351,12 @@
         { "wait": 5 },
         { "key": "Escape" },
         { "wait": 2 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "Let's start by opening Copilot CLI." },
+        { "at": 5.8, "text": "Now type /diff to review your uncommitted changes." },
+        { "at": 10.2, "text": "Diff Mode opens and Copilot looks for your unstaged changes." },
+        { "at": 15.2, "text": "Fast orientation before a review." }
       ]
     },
     {
@@ -282,56 +364,114 @@
       "category": "code",
       "description": "Create a GitHub fork of the current repository",
       "command": "/fork",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "Begin by launching Copilot CLI." },
+        { "at": 5.8, "text": "Now type /fork to make a copy of the current session." },
+        { "at": 10.3, "text": "Copilot reports the new forked session, and you are now working inside that copy." },
+        { "at": 17.2, "text": "Like clicking Fork: your own copy, original untouched." }
+      ]
     },
     {
       "id": "plan",
       "category": "code",
       "description": "Create step-by-step plan",
       "command": "/plan add a favorites feature to bookmark commands in the cheatsheet app",
-      "responseWait": 20
+      "responseWait": 20,
+      "narration": [
+        { "at": 0.3, "text": "First, start Copilot CLI." },
+        { "at": 5.8, "text": "Type /plan, then describe what to build, like adding a favorites feature." },
+        { "at": 12.2, "text": "Copilot will outline a plan first, and wait for your approval before changing any files." },
+        { "at": 19.5, "text": "After you press Enter, Copilot thinks about the request." },
+        { "at": 26.8, "text": "It explores the project, listing folders and reading key files." },
+        { "at": 32.5, "text": "This research comes first, so the plan fits your actual code." },
+        { "at": 38, "text": "Like asking a contractor for a quote first." }
+      ]
     },
     {
       "id": "pr",
       "category": "code",
       "description": "Create pull request",
       "command": "/pr create",
-      "responseWait": 20
+      "responseWait": 20,
+      "narration": [
+        { "at": 0.3, "text": "First, fire up Copilot CLI." },
+        { "at": 5.8, "text": "Type /pr create to open a pull request with an AI-written description." },
+        { "at": 11.6, "text": "Copilot starts thinking about your pull request." },
+        { "at": 18.3, "text": "It checks your branch, changes, and commits." },
+        { "at": 21.7, "text": "Copilot asks permission first; pick Yes to let it run." },
+        { "at": 29.5, "text": "Like a PR dashboard in your terminal." }
+      ]
     },
     {
       "id": "security-review",
       "category": "code",
       "description": "Run security review agent on current diff",
       "command": "/security-review",
-      "responseWait": 20
+      "responseWait": 20,
+      "narration": [
+        { "at": 0.3, "text": "To begin, launch Copilot CLI." },
+        { "at": 5.8, "text": "Now type /security-review to scan your changes for vulnerabilities." },
+        { "at": 12.2, "text": "Copilot starts a security review that analyzes for vulnerabilities." },
+        { "at": 18.6, "text": "A dedicated security agent starts inspecting your local changes." },
+        { "at": 24, "text": "It runs git commands to see what changed and read repo instructions." },
+        { "at": 29.8, "text": "Like a security auditor for your PR." }
+      ]
     },
     {
       "id": "review",
       "category": "code",
       "description": "Run code review agent",
       "command": "/review",
-      "responseWait": 20
+      "responseWait": 20,
+      "narration": [
+        { "at": 0.3, "text": "First, open Copilot CLI." },
+        { "at": 5.8, "text": "Type /review to run the built-in code review agent." },
+        { "at": 11.2, "text": "Copilot thinks about your request." },
+        { "at": 16, "text": "It decides to launch a code review agent." },
+        { "at": 19.7, "text": "The agent starts in the background on your changes." },
+        { "at": 23.6, "text": "Copilot waits for the agent to finish. Like an expert review before you push." }
+      ]
     },
     {
       "id": "worktree",
       "category": "code",
       "description": "Create a new git worktree, leaving uncommitted changes in the current session",
       "command": "/worktree",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /worktree to start a parallel branch in a fresh git worktree." },
+        { "at": 11.4, "text": "Copilot starts creating a name for the new worktree." },
+        { "at": 18, "text": "Your uncommitted work stays put in the old session." }
+      ]
     },
     {
       "id": "move",
       "category": "code",
       "description": "Create a new git worktree and carry uncommitted changes into it",
       "command": "/move fix the login redirect",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "Start by opening Copilot CLI." },
+        { "at": 5.8, "text": "Type /move followed by a task, like fix the login redirect." },
+        { "at": 10.9, "text": "It also carries your uncommitted changes." },
+        { "at": 14.1, "text": "Copilot names the branch from your task and prepares a new worktree." },
+        { "at": 22.2, "text": "Like moving your desk to a new room." }
+      ]
     },
     {
       "id": "code",
       "category": "code",
       "description": "Open the current session in VS Code",
       "command": "/code",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /code to hand this session over to VS Code." },
+        { "at": 10.3, "text": "Copilot closes and prints a summary with a resume command." },
+        { "at": 15.2, "text": "Same session, now in VS Code." }
+      ]
     },
     {
       "id": "add-dir",
@@ -343,6 +483,12 @@
         { "wait": 3 },
         { "key": "Enter" },
         { "wait": 8 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 7.5, "text": "Now type /add-dir, followed by the folder you want to allow." },
+        { "at": 12.6, "text": "Copilot suggests matching folders as you type the path." },
+        { "at": 17.3, "text": "Allowing a folder lets Copilot read and modify files in it." }
       ]
     },
     {
@@ -359,6 +505,14 @@
         { "wait": 3 },
         { "key": "Enter" },
         { "wait": 6 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "To start, open Copilot CLI." },
+        { "at": 7.5, "text": "Type /allow-all on to turn on every permission at once." },
+        { "at": 13.6, "text": "Tool, path, and URL requests are now approved automatically." },
+        { "at": 19.3, "text": "Let's verify by running /allow-all show." },
+        { "at": 25, "text": "Copilot reports that all permissions are enabled." },
+        { "at": 29.2, "text": "Use it only in trusted setups." }
       ]
     },
     {
@@ -366,114 +520,210 @@
       "category": "configuration",
       "description": "Change working directory",
       "command": "/cd /mnt/c/gh",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Let's start by launching Copilot CLI." },
+        { "at": 6.1, "text": "Type /cd and a path to change directory." },
+        { "at": 9.6, "text": "Copilot suggests folders as you type the path." },
+        { "at": 13.6, "text": "It works just like the shell cd command." }
+      ]
     },
-
     {
       "id": "cwd",
       "category": "configuration",
       "description": "Show current working directory",
       "command": "/cwd",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, start Copilot CLI." },
+        { "at": 6.1, "text": "Type /cwd to see which directory you are working in." },
+        { "at": 10.6, "text": "Copilot prints the current working directory." },
+        { "at": 14.6, "text": "Give it a path and it moves there too." }
+      ]
     },
     {
       "id": "env",
       "category": "configuration",
       "description": "Show runtime environment",
       "command": "/env",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Begin by launching Copilot CLI." },
+        { "at": 6.1, "text": "Type /env to inspect everything Copilot loaded." },
+        { "at": 10.2, "text": "It lists MCP servers, skills, and plugins." },
+        { "at": 14.2, "text": "Like printenv for Copilot." }
+      ]
     },
-
     {
       "id": "keep-alive",
       "category": "configuration",
       "description": "Prevent machine sleep while busy",
       "command": "/keep-alive busy",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.1, "text": "Type /keep-alive busy to stop your machine sleeping while Copilot works." },
+        { "at": 12.2, "text": "Copilot confirms sleep is blocked while the agent works." },
+        { "at": 17, "text": "Great for long-running tasks." }
+      ]
     },
     {
       "id": "list-dirs",
       "category": "configuration",
       "description": "List allowed directories",
       "command": "/list-dirs",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "To begin, open Copilot CLI." },
+        { "at": 6.1, "text": "Type /list-dirs to see which folders Copilot may access." },
+        { "at": 11.2, "text": "It prints a numbered list of the allowed directories." },
+        { "at": 15.7, "text": "Use /add-dir to allow more folders." }
+      ]
     },
     {
       "id": "loop",
       "category": "configuration",
       "description": "Schedule a recurring prompt",
       "command": "/loop 1h /usage",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.1, "text": "Loop is experimental, so enable that mode first." },
+        { "at": 10.2, "text": "Copilot restarts with it enabled." },
+        { "at": 13.1, "text": "Now type /loop, an interval, and the command to repeat." },
+        { "at": 19.4, "text": "Copilot confirms the schedule, running every hour." },
+        { "at": 23.8, "text": "Like a calendar event for AI tasks." }
+      ]
     },
     {
       "id": "reset-allowed-tools",
       "category": "configuration",
       "description": "Reset all tool permissions",
       "command": "/reset-allowed-tools",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Start by launching Copilot CLI." },
+        { "at": 6.1, "text": "Type /reset-allowed-tools to clear every approval you've granted." },
+        { "at": 12.9, "text": "Copilot confirms session approvals and allow-all were reset." },
+        { "at": 18, "text": "Copilot will ask again." }
+      ]
     },
     {
       "id": "permissions",
       "category": "configuration",
       "description": "Open the approval-mode picker",
       "command": "/permissions",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Let's launch Copilot CLI." },
+        { "at": 6.1, "text": "Type /permissions to choose how strictly Copilot asks for approval." },
+        { "at": 11.7, "text": "A picker opens: manual, assisted, or allow all." },
+        { "at": 15.8, "text": "Choose how strict approvals should be." }
+      ]
     },
     {
       "id": "settings",
       "category": "configuration",
       "description": "Open interactive settings editor",
       "command": "/settings",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.1, "text": "Type /settings to open the settings editor." },
+        { "at": 11, "text": "One screen lists every setting and its value." },
+        { "at": 15, "text": "Edit them here, no JSON files needed." }
+      ]
     },
     {
       "id": "statusline",
       "category": "configuration",
       "description": "Configure status line items",
       "command": "/statusline",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "To begin, open Copilot CLI." },
+        { "at": 6.1, "text": "Type /statusline to customize the bar at the bottom." },
+        { "at": 11.5, "text": "Toggle items like branch, context used, and agent." },
+        { "at": 15.8, "text": "A preview shows your footer." }
+      ]
     },
     {
       "id": "streamer-mode",
       "category": "configuration",
       "description": "Enable streamer mode",
       "command": "/streamer-mode on",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.1, "text": "Type /streamer-mode to toggle hiding of secrets like API keys." },
+        { "at": 12.5, "text": "Copilot confirms the streamer mode state." },
+        { "at": 16.2, "text": "Use it when streaming or sharing your screen." }
+      ]
     },
     {
       "id": "terminal-setup",
       "category": "configuration",
       "description": "Run terminal setup wizard",
       "command": "/terminal-setup",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Let's launch Copilot CLI." },
+        { "at": 6.1, "text": "Type /terminal-setup to configure multiline input keys." },
+        { "at": 12, "text": "Here, Copilot reports the terminal is unsupported." },
+        { "at": 16.3, "text": "Run it in VS Code or Windows Terminal." }
+      ]
     },
     {
       "id": "sandbox",
       "category": "configuration",
       "description": "Open the sandbox configuration dialog",
       "command": "/sandbox",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.1, "text": "Type /sandbox to see how Copilot is isolated." },
+        { "at": 10.8, "text": "Tabs cover credentials, filesystem, and network access." },
+        { "at": 15.4, "text": "See exactly what Copilot can reach." }
+      ]
     },
     {
       "id": "config",
       "category": "configuration",
       "description": "View or change persistent CLI defaults, e.g. default model",
       "command": "/config model",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.1, "text": "Type /config model to change your default AI model." },
+        { "at": 11.6, "text": "Choose the default model for future sessions." },
+        { "at": 15.6, "text": "These defaults stick across sessions." }
+      ]
     },
     {
       "id": "voice",
       "category": "configuration",
       "description": "Enable voice input",
       "command": "/voice on",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Let's start Copilot CLI." },
+        { "at": 6.1, "text": "Type /voice on to dictate prompts instead of typing them." },
+        { "at": 11, "text": "The first time, Copilot asks to download a voice runtime." },
+        { "at": 15.8, "text": "Then talk to Copilot hands-free." }
+      ]
     },
     {
       "id": "app",
       "category": "getting-started",
       "description": "Open the GitHub app or browser fallback",
       "command": "/app",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI in your terminal." },
+        { "at": 6, "text": "Type /app to open this session in the GitHub app." },
+        { "at": 11.2, "text": "It shows a link to download the GitHub app." },
+        { "at": 15, "text": "A doorway to a visual workspace." }
+      ]
     },
     {
       "id": "bug",
@@ -484,6 +734,12 @@
         { "wait": 3 },
         { "key": "Enter" },
         { "wait": 8 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "Let's start by launching Copilot CLI." },
+        { "at": 8.1, "text": "Type /bug to report a problem." },
+        { "at": 10.7, "text": "Choose a survey, a bug report, or a feature request." },
+        { "at": 16.8, "text": "Same as /feedback." }
       ]
     },
     {
@@ -491,98 +747,186 @@
       "category": "getting-started",
       "description": "Show last 2 changelog entries",
       "command": "/changelog last 2",
-      "responseWait": 8
+      "responseWait": 8,
+      "narration": [
+        { "at": 0.3, "text": "First, open Copilot CLI." },
+        { "at": 8.3, "text": "Type /changelog last 2 to see the two most recent releases." },
+        { "at": 13.3, "text": "Copilot prints the latest release notes with recent features and fixes." },
+        { "at": 19.2, "text": "Catch up on what is new." }
+      ]
     },
     {
       "id": "feedback",
       "category": "getting-started",
       "description": "Submit feedback",
       "command": "/feedback",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Launch Copilot CLI to begin." },
+        { "at": 7.2, "text": "Type /feedback to share thoughts on the CLI." },
+        { "at": 11.2, "text": "Choose a private survey, a bug report, or a feature request." },
+        { "at": 16.3, "text": "Only the survey is private." }
+      ]
     },
     {
       "id": "help",
       "category": "getting-started",
       "description": "Show help for all slash commands",
       "command": "/help",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 8.4, "text": "Type /help." },
+        { "at": 10.5, "text": "It lists shortcuts, like @ for files." },
+        { "at": 15.2, "text": "Your quick reference card." }
+      ]
     },
     {
       "id": "init",
       "category": "getting-started",
       "description": "Initialize Copilot for the repo",
       "command": "/init",
-      "responseWait": 25
+      "responseWait": 25,
+      "narration": [
+        { "at": 0.3, "text": "Open Copilot CLI inside the repository you want to set up." },
+        { "at": 7, "text": "Type /init to have Copilot learn your project." },
+        { "at": 11, "text": "Copilot starts thinking, then explores the repository structure." },
+        { "at": 18.5, "text": "It lists folders, searches for existing instruction files, and reads files like the readme." },
+        { "at": 27.2, "text": "Now it starts creating a copilot-instructions file from what it learned." },
+        { "at": 32.6, "text": "Run /init once per repo to teach Copilot your project." }
+      ]
     },
     {
       "id": "update",
       "category": "getting-started",
       "description": "Update to latest version",
       "command": "/update",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "First, start Copilot CLI." },
+        { "at": 7.9, "text": "Type /update to upgrade." },
+        { "at": 10.9, "text": "Copilot checks GitHub for the latest release." },
+        { "at": 14.5, "text": "It then shows the changelog for that version." },
+        { "at": 19.6, "text": "One command keeps you current." }
+      ]
     },
     {
       "id": "limits",
       "category": "getting-started",
       "description": "Show AI-credit limits and predict session usage",
       "command": "/limits predict",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "Launch Copilot CLI to get started." },
+        { "at": 6.3, "text": "Type /limits predict to see a suggested spending cap for this session." },
+        { "at": 12.2, "text": "Limits are opt-in: a soft cap on AI credits for this session." },
+        { "at": 17.3, "text": "It suggests a limit from similar past sessions." },
+        { "at": 21.3, "text": "Keeps credit use in check." }
+      ]
     },
     {
       "id": "usage",
       "category": "getting-started",
       "description": "Show session usage metrics",
       "command": "/usage",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, fire up Copilot CLI." },
+        { "at": 7.8, "text": "Type /usage to see your session usage." },
+        { "at": 11.3, "text": "You get an activity chart plus changes and AI units used." },
+        { "at": 16.1, "text": "Your session dashboard." }
+      ]
     },
     {
       "id": "version",
       "category": "getting-started",
       "description": "Show installed version",
       "command": "/version",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Start by launching Copilot CLI." },
+        { "at": 7, "text": "Type /version to see which version you have." },
+        { "at": 11.5, "text": "It shows your installed version and update status." },
+        { "at": 16.2, "text": "A quick health check." }
+      ]
     },
     {
       "id": "instructions",
       "category": "instructions",
       "description": "Show loaded instruction files",
       "command": "/instructions",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /instructions to see which instruction files are loaded." },
+        { "at": 11.2, "text": "It lists loaded files like AGENTS.md, each with a checkbox." },
+        { "at": 16.4, "text": "See which rules are shaping Copilot." }
+      ]
     },
     {
       "id": "plugins",
       "category": "instructions",
       "description": "Open the plugins dashboard",
       "command": "/plugins",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /plugins to open the interactive plugins dashboard." },
+        { "at": 10.6, "text": "Tabs for Installed, Online and Marketplace." },
+        { "at": 15.3, "text": "Like an IDE extension manager." }
+      ]
     },
     {
       "id": "plugin",
       "category": "instructions",
       "description": "List installed plugins",
       "command": "/plugin list",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /plugin list to see which plugins are installed." },
+        { "at": 11, "text": "No plugins yet, plus steps to add a marketplace and install one." },
+        { "at": 16.4, "text": "Like an extension marketplace." }
+      ]
     },
     {
       "id": "skills",
       "category": "instructions",
       "description": "List loaded skills",
       "command": "/skills list",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /skills list to see the custom skills available." },
+        { "at": 11, "text": "Skills found are listed, here one built-in skill with a description." },
+        { "at": 16.7, "text": "A library of reusable macros." }
+      ]
     },
     {
       "id": "lsp",
       "category": "mcp",
       "description": "Show configured LSP servers",
       "command": "/lsp show",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /lsp show to check your language servers." },
+        { "at": 10.8, "text": "It shows the LSP server status and your config file." },
+        { "at": 15.3, "text": "LSP gives Copilot code intelligence." }
+      ]
     },
     {
       "id": "mcp",
       "category": "mcp",
       "description": "Show configured MCP servers",
       "command": "/mcp show",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /mcp show to see your MCP servers." },
+        { "at": 10.8, "text": "It lists built-in servers like GitHub and your config file." },
+        { "at": 15.8, "text": "MCP adds tools to Copilot." }
+      ]
     },
     {
       "id": "compact",
@@ -597,6 +941,14 @@
         { "wait": 3 },
         { "key": "Enter" },
         { "wait": 10 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.5, "text": "Let's build some history by asking about git merge versus rebase." },
+        { "at": 19, "text": "Copilot thinks, then writes its answer, which now takes up context space." },
+        { "at": 36.5, "text": "Long chats fill the context window, so type /compact to summarize it." },
+        { "at": 42.3, "text": "Copilot starts condensing the conversation into a short summary, keeping key context." },
+        { "at": 49.3, "text": "Use it when a long chat fills your context window." }
       ]
     },
     {
@@ -604,42 +956,79 @@
       "category": "memory",
       "description": "Show context window usage",
       "command": "/context",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, open Copilot CLI." },
+        { "at": 6.3, "text": "Type /context to see how full the context window is." },
+        { "at": 11.2, "text": "A grid shows token use: system, messages, free space, and buffer." },
+        { "at": 16.6, "text": "Like a fuel gauge." }
+      ]
     },
     {
       "id": "rename",
       "category": "memory",
       "description": "Rename current session",
       "command": "/rename add-gh-actions-workflow",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Let's launch Copilot CLI first." },
+        { "at": 6.3, "text": "Type /rename followed by a new name for this session." },
+        { "at": 10.9, "text": "Here the name describes a GitHub Actions task." },
+        { "at": 15.2, "text": "Copilot confirms the session was renamed." },
+        { "at": 18.9, "text": "Clear names make sessions easy to find." }
+      ]
     },
     {
       "id": "resume",
       "category": "memory",
       "description": "Resume a previous session",
       "command": "/resume",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.3, "text": "Type /resume to jump back into an earlier session." },
+        { "at": 11.2, "text": "A list of past sessions shows each summary, type, status, and last modified time." },
+        { "at": 17.9, "text": "Choose one to continue where you left off." }
+      ]
     },
     {
       "id": "session",
       "category": "memory",
       "description": "Show session information",
       "command": "/session info",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.3, "text": "Type /session info to see details about the current session." },
+        { "at": 12, "text": "It shows the session ID, duration, and directory." },
+        { "at": 16.4, "text": "A session snapshot." }
+      ]
     },
     {
       "id": "share",
       "category": "memory",
       "description": "Export session to GitHub Gist",
       "command": "/share gist",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "Let's open Copilot CLI first." },
+        { "at": 6.3, "text": "Type /share gist to export this session to a secret GitHub gist." },
+        { "at": 13.2, "text": "Copilot uploads it and prints a link to the new gist." },
+        { "at": 17.8, "text": "Handy for sharing a session with a teammate." }
+      ]
     },
     {
       "id": "experimental",
       "category": "models",
       "description": "Show experimental feature status",
       "command": "/experimental show",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.8, "text": "Type /experimental show to list the experimental features." },
+        { "at": 13, "text": "It lists the features and warns they may be unstable." },
+        { "at": 18, "text": "Like beta features." }
+      ]
     },
     {
       "id": "model",
@@ -658,6 +1047,12 @@
         { "wait": 0.5 },
         { "key": "Enter" },
         { "wait": 5 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.4, "text": "Type /model with no arguments to open the picker." },
+        { "at": 10.5, "text": "A list of models appears. Arrow down to pick one, then press enter." },
+        { "at": 16.1, "text": "Now the session uses the new model." }
       ]
     },
     {
@@ -665,21 +1060,39 @@
       "category": "models",
       "description": "Switch to dim theme",
       "command": "/theme dim",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6.6, "text": "Type /theme and pick a mode. Here we choose dim." },
+        { "at": 11.2, "text": "The color mode is now dim, applied right away." },
+        { "at": 15.4, "text": "Like an editor's dark mode switch." }
+      ]
     },
     {
       "id": "collect-debug-logs",
       "category": "troubleshooting",
       "description": "Collect debug logs",
       "command": "/collect-debug-logs",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6, "text": "Type /collect-debug-logs to bundle diagnostics for a bug report." },
+        { "at": 12.3, "text": "A session picker appears, listing local and remote sessions to choose from." },
+        { "at": 18.8, "text": "It is like Export logs in a crashed app: one bundle for support." }
+      ]
     },
     {
       "id": "diagnose",
       "category": "troubleshooting",
       "description": "Analyze session logs for errors and anomalies",
       "command": "/diagnose",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "Let's start by launching Copilot CLI." },
+        { "at": 5.8, "text": "Type /diagnose, which analyzes your session logs for problems." },
+        { "at": 11.5, "text": "Right now it refuses: it needs at least one prompt sent first." },
+        { "at": 17, "text": "Chat first, then it opens the black-box recorder for what happened." }
+      ]
     },
     {
       "id": "diagnosis",
@@ -694,9 +1107,17 @@
         { "wait": 3 },
         { "key": "Enter" },
         { "wait": 15 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 6, "text": "To have something to analyze, first ask a normal question." },
+        { "at": 18, "text": "Copilot thinks, then decides to search the web for the answer." },
+        { "at": 27.8, "text": "Now type /diagnosis to analyze this session." },
+        { "at": 33, "text": "It finishes the answer first, then reads the session log." },
+        { "at": 41.5, "text": "The report says Healthy: no errors found." },
+        { "at": 45.3, "text": "Like a health check in one command." }
       ]
     },
-
     {
       "id": "autopilot",
       "category": "agents",
@@ -713,12 +1134,12 @@
       ],
       "narration": [
         { "at": 0.3, "text": "First, launch Copilot. Loading is sped up." },
-        { "at": 7, "text": "Type slash autopilot, followed by your goal. Here: fix all TypeScript errors in the source folder." },
-        { "at": 17.3, "text": "Copilot first asks which permission mode to use." },
-        { "at": 21.5, "text": "We choose Allow All, so it can work uninterrupted." },
-        { "at": 26, "text": "Copilot is now locked onto the goal." },
-        { "at": 30.3, "text": "It defines what success looks like: zero TypeScript errors, with the build and lint passing." },
-        { "at": 37, "text": "Then it inspects the project: the git status, the TypeScript config, and the source files." },
+        { "at": 7, "text": "Type /autopilot, followed by your goal. Here: fix all TypeScript errors in the source folder." },
+        { "at": 16.3, "text": "It first asks which permission mode to use." },
+        { "at": 19.9, "text": "We choose Allow All, so it can work uninterrupted." },
+        { "at": 24, "text": "Copilot is now locked onto the goal." },
+        { "at": 27.2, "text": "It defines success: zero TypeScript errors, with the build and lint passing." },
+        { "at": 33.5, "text": "Then it inspects the project: the git status, the TypeScript config, and the source files." },
         { "at": 44.8, "text": "And it keeps going until the objective is met. Think of it like setting a GPS destination." }
       ]
     },
@@ -727,28 +1148,52 @@
       "category": "troubleshooting",
       "description": "Exit the session cleanly",
       "command": "/exit",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /exit when you are ready to leave." },
+        { "at": 10.5, "text": "Copilot closes and you are back at the shell." },
+        { "at": 14.6, "text": "A graceful exit, not a force kill." }
+      ]
     },
     {
       "id": "quit",
       "category": "troubleshooting",
       "description": "Quit the session cleanly",
       "command": "/quit",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "Launch Copilot CLI first." },
+        { "at": 5.8, "text": "Type /quit, which does the same thing as /exit." },
+        { "at": 10.5, "text": "Copilot closes and you are back at the shell." },
+        { "at": 14.6, "text": "Both work, so use whichever feels natural." }
+      ]
     },
     {
       "id": "remote",
       "category": "troubleshooting",
       "description": "Enable remote steering",
       "command": "/remote on",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /remote on to let another device steer this session." },
+        { "at": 11.2, "text": "Remote steering is on, with a link to connect." },
+        { "at": 15.2, "text": "Like a screenshare, perfect for pair programming." }
+      ]
     },
     {
       "id": "restart",
       "category": "troubleshooting",
       "description": "Restart the CLI process",
       "command": "/restart",
-      "responseWait": 10
+      "responseWait": 10,
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot CLI." },
+        { "at": 5.8, "text": "Type /restart to reload the CLI process while keeping your session." },
+        { "at": 11.4, "text": "Like restarting a browser without losing tabs: the process reloads fresh." },
+        { "at": 17.5, "text": "Here it printed resume hints, as no saved session matched." }
+      ]
     }
   ]
 }

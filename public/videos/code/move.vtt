@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.384
+Start by opening Copilot CLI.
+
+00:00:05.900 --> 00:00:10.350
+Type /move followed by a task, like fix the login redirect.
+
+00:00:11.000 --> 00:00:14.018
+It also carries your uncommitted changes.
+
+00:00:14.420 --> 00:00:18.450
+Copilot names the branch from your task and prepares a new worktree.
+
+00:00:22.300 --> 00:00:24.920
+Like moving your desk to a new room.

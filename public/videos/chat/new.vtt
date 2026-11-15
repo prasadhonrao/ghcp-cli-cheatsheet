@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.339
+Launch Copilot CLI to get started.
+
+00:00:06.900 --> 00:00:12.043
+Type /new followed by an opening prompt, like help me refactor the auth module.
+
+00:00:15.600 --> 00:00:20.664
+Like a fresh browser tab: old history is cleared and your prompt starts a new chat.
+
+00:00:23.100 --> 00:00:27.482
+Copilot thinks, then searches the repo for anything auth related.
+
+00:00:30.300 --> 00:00:34.307
+It answers there is no auth module here, and asks what you meant.

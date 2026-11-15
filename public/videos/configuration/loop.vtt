@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.200 --> 00:00:09.730
+Loop is experimental, so enable that mode first.
+
+00:00:10.300 --> 00:00:13.000
+Copilot restarts with it enabled.
+
+00:00:13.408 --> 00:00:17.494
+Now type /loop, an interval, and the command to repeat.
+
+00:00:19.500 --> 00:00:23.018
+Copilot confirms the schedule, running every hour.
+
+00:00:23.900 --> 00:00:26.918
+Like a calendar event for AI tasks.

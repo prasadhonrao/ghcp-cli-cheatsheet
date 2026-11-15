@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.407
+To begin, open Copilot CLI.
+
+00:00:06.200 --> 00:00:09.832
+Type /statusline to customize the bar at the bottom.
+
+00:00:11.600 --> 00:00:15.607
+Toggle items like branch, context used, and agent.
+
+00:00:16.028 --> 00:00:18.183
+A preview shows your footer.

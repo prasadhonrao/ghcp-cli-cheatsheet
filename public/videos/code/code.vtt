@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:05.900 --> 00:00:09.520
+Type /code to hand this session over to VS Code.
+
+00:00:10.400 --> 00:00:14.214
+Copilot closes and prints a summary with a resume command.
+
+00:00:15.300 --> 00:00:18.136
+Same session, now in VS Code.

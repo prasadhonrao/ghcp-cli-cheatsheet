@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.475
+Let's start by launching Copilot CLI.
+
+00:00:05.900 --> 00:00:10.520
+Type /diagnose, which analyzes your session logs for problems.
+
+00:00:11.600 --> 00:00:15.845
+Right now it refuses: it needs at least one prompt sent first.
+
+00:00:17.100 --> 00:00:21.368
+Chat first, then it opens the black-box recorder for what happened.

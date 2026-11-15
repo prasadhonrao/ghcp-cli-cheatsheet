@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.200 --> 00:00:10.855
+Type /keep-alive busy to stop your machine sleeping while Copilot works.
+
+00:00:12.300 --> 00:00:15.977
+Copilot confirms sleep is blocked while the agent works.
+
+00:00:17.100 --> 00:00:19.505
+Great for long-running tasks.

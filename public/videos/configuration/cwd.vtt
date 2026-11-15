@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.282
+First, start Copilot CLI.
+
+00:00:06.200 --> 00:00:10.309
+Type /cwd to see which directory you are working in.
+
+00:00:10.724 --> 00:00:13.742
+Copilot prints the current working directory.
+
+00:00:14.700 --> 00:00:17.241
+Give it a path and it moves there too.

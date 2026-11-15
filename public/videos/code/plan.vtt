@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.282
+First, start Copilot CLI.
+
+00:00:05.900 --> 00:00:10.714
+Type /plan, then describe what to build, like adding a favorites feature.
+
+00:00:12.300 --> 00:00:17.761
+Copilot will outline a plan first, and wait for your approval before changing any files.
+
+00:00:19.600 --> 00:00:23.391
+After you press Enter, Copilot thinks about the request.
+
+00:00:26.900 --> 00:00:31.350
+It explores the project, listing folders and reading key files.
+
+00:00:32.600 --> 00:00:36.675
+This research comes first, so the plan fits your actual code.
+
+00:00:38.100 --> 00:00:41.243
+Like asking a contractor for a quote first.

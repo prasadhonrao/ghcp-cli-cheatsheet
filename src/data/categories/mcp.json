@@ -12,7 +12,9 @@
       "/lsp logs  # view LSP server log output for debugging"
     ],
     "category": "mcp",
-    "terminalDemo": "images/mcp/lsp.gif"
+    "terminalDemo": "images/mcp/lsp.gif",
+    "terminalVideo": "videos/mcp/lsp.mp4",
+    "terminalCaptions": "videos/mcp/lsp.vtt"
   },
   {
     "id": "mcp",
@@ -29,6 +31,8 @@
       "/mcp registry  # browse and install MCP servers from the registry"
     ],
     "category": "mcp",
-    "terminalDemo": "images/mcp/mcp.gif"
+    "terminalDemo": "images/mcp/mcp.gif",
+    "terminalVideo": "videos/mcp/mcp.mp4",
+    "terminalCaptions": "videos/mcp/mcp.vtt"
   }
 ]

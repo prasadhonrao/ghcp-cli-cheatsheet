@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.543
+Let's start by opening Copilot CLI.
+
+00:00:06.100 --> 00:00:10.027
+Type /chronicle standup to summarize your recent work.
+
+00:00:12.100 --> 00:00:16.380
+Copilot now builds a standup update from your recent session history.
+
+00:00:19.700 --> 00:00:24.616
+It proposes checking recent git commits, and asks your permission before running.
+
+00:00:27.100 --> 00:00:31.630
+You can approve once, approve for the repo, or tell it to do something else.
+
+00:00:34.100 --> 00:00:37.709
+Chronicle turns your history into a ready-made standup.

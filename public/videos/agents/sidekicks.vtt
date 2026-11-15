@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.259
+First, open Copilot CLI.
+
+00:00:06.100 --> 00:00:10.141
+Type /sidekicks list to see your running sidekick agents.
+
+00:00:12.300 --> 00:00:14.723
+A panel lists your sidekicks.
+
+00:00:14.723 --> 00:00:17.325
+Right now it says no sidekicks.
+
+00:00:18.000 --> 00:00:20.927
+Sidekicks are helper agents beside you.

@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.293
+First, launch Copilot CLI.
+
+00:00:06.200 --> 00:00:09.991
+Type /sandbox to see how Copilot is isolated.
+
+00:00:10.900 --> 00:00:15.066
+Tabs cover credentials, filesystem, and network access.
+
+00:00:15.500 --> 00:00:18.280
+See exactly what Copilot can reach.

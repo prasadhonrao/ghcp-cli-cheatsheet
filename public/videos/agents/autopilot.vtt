@@ -1,34 +1,34 @@
 WEBVTT
 
-00:00:00.400 --> 00:00:02.950
+00:00:00.400 --> 00:00:02.709
 First, launch Copilot.
 
-00:00:02.950 --> 00:00:05.050
+00:00:02.709 --> 00:00:04.618
 Loading is sped up.
 
-00:00:07.100 --> 00:00:10.625
-Type slash autopilot, followed by your goal.
+00:00:07.100 --> 00:00:10.295
+Type /autopilot, followed by your goal.
 
-00:00:10.625 --> 00:00:14.613
+00:00:10.295 --> 00:00:13.920
 Here: fix all TypeScript errors in the source folder.
 
-00:00:17.400 --> 00:00:21.200
-Copilot first asks which permission mode to use.
+00:00:16.400 --> 00:00:19.475
+It first asks which permission mode to use.
 
-00:00:21.612 --> 00:00:25.362
+00:00:20.000 --> 00:00:23.405
 We choose Allow All, so it can work uninterrupted.
 
-00:00:26.100 --> 00:00:29.013
+00:00:24.100 --> 00:00:26.743
 Copilot is now locked onto the goal.
 
-00:00:30.400 --> 00:00:36.400
-It defines what success looks like: zero TypeScript errors, with the build and lint passing.
+00:00:27.300 --> 00:00:32.182
+It defines success: zero TypeScript errors, with the build and lint passing.
 
-00:00:37.100 --> 00:00:43.313
+00:00:33.600 --> 00:00:39.243
 Then it inspects the project: the git status, the TypeScript config, and the source files.
 
-00:00:44.900 --> 00:00:48.150
+00:00:44.900 --> 00:00:47.845
 And it keeps going until the objective is met.
 
-00:00:48.150 --> 00:00:51.512
+00:00:47.845 --> 00:00:50.902
 Think of it like setting a GPS destination.

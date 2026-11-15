@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.214
+Let's launch Copilot CLI first.
+
+00:00:06.400 --> 00:00:10.043
+Type /rename followed by a new name for this session.
+
+00:00:11.000 --> 00:00:14.166
+Here the name describes a GitHub Actions task.
+
+00:00:15.300 --> 00:00:18.273
+Copilot confirms the session was renamed.
+
+00:00:19.000 --> 00:00:21.882
+Clear names make sessions easy to find.

@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.282
+First, start Copilot CLI.
+
+00:00:06.100 --> 00:00:09.914
+Before logging out, check who you are with /user show.
+
+00:00:11.400 --> 00:00:14.452
+It greets you by the account you are signed in as.
+
+00:00:15.900 --> 00:00:18.725
+Now type /logout to sign out.
+
+00:00:19.500 --> 00:00:21.598
+Press Enter to sign out.
