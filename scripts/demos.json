@@ -411,6 +411,13 @@
       "responseWait": 6
     },
     {
+      "id": "permissions",
+      "category": "configuration",
+      "description": "Open the approval-mode picker",
+      "command": "/permissions",
+      "responseWait": 6
+    },
+    {
       "id": "settings",
       "category": "configuration",
       "description": "Open interactive settings editor",
