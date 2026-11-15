@@ -7,6 +7,57 @@ interface Props {
   commandTitle: string;
 }
 
+interface ActionButtonProps {
+  playing: boolean;
+  onPlay: (e: MouseEvent) => void;
+  onStop: (e: MouseEvent) => void;
+}
+
+function ActionButton({ playing, onPlay, onStop }: ActionButtonProps) {
+  return playing
+    ? <button className="terminal-action-btn" onClick={onStop}>■ Stop</button>
+    : <button className="terminal-action-btn" onClick={onPlay}>▶ Play</button>;
+}
+
+interface GifBodyProps {
+  imgError: boolean;
+  playing: boolean;
+  playKey: number;
+  gifSrc: string;
+  commandTitle: string;
+  fullscreen?: boolean;
+  onOpenLightbox: (e: MouseEvent) => void;
+  onError: () => void;
+}
+
+function GifBody({ imgError, playing, playKey, gifSrc, commandTitle, fullscreen = false, onOpenLightbox, onError }: GifBodyProps) {
+  if (imgError) {
+    return (
+      <span className="terminal-play-hint">
+        Recording not yet available — run <code>npm run generate:demos</code> to produce GIFs.
+      </span>
+    );
+  }
+  if (!playing) {
+    return (
+      <span className="terminal-play-hint">
+        <strong>▶ Play</strong> to see this command in action
+      </span>
+    );
+  }
+  return (
+    <img
+      key={playKey}
+      src={gifSrc}
+      alt={`${commandTitle} terminal demo`}
+      className={fullscreen ? 'terminal-gif-fullscreen' : 'terminal-gif'}
+      loading="lazy"
+      onClick={fullscreen ? undefined : onOpenLightbox}
+      onError={onError}
+    />
+  );
+}
+
 export function TerminalPlayer({ demo, commandTitle }: Props) {
   const [imgError, setImgError] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -27,40 +78,17 @@ export function TerminalPlayer({ demo, commandTitle }: Props) {
   const handleStop = (e: MouseEvent) => { e.stopPropagation(); setPlaying(false); };
   const handleOpenLightbox = (e: MouseEvent) => { e.stopPropagation(); setLightboxOpen(true); };
   const handleCloseLightbox = (e: MouseEvent) => { e.stopPropagation(); setLightboxOpen(false); };
+  const handleImgError = () => setImgError(true);
 
-  function ActionButton() {
-    return playing
-      ? <button className="terminal-action-btn" onClick={handleStop}>■ Stop</button>
-      : <button className="terminal-action-btn" onClick={handlePlay}>▶ Play</button>;
-  }
-
-  function GifBody({ fullscreen = false }: { fullscreen?: boolean }) {
-    if (imgError) {
-      return (
-        <span className="terminal-play-hint">
-          Recording not yet available — run <code>npm run generate:demos</code> to produce GIFs.
-        </span>
-      );
-    }
-    if (!playing) {
-      return (
-        <span className="terminal-play-hint">
-          <strong>▶ Play</strong> to see this command in action
-        </span>
-      );
-    }
-    return (
-      <img
-        key={playKey}
-        src={gifSrc}
-        alt={`${commandTitle} terminal demo`}
-        className={fullscreen ? 'terminal-gif-fullscreen' : 'terminal-gif'}
-        loading="lazy"
-        onClick={fullscreen ? undefined : handleOpenLightbox}
-        onError={() => setImgError(true)}
-      />
-    );
-  }
+  const gifBodyProps = {
+    imgError,
+    playing,
+    playKey,
+    gifSrc,
+    commandTitle,
+    onOpenLightbox: handleOpenLightbox,
+    onError: handleImgError,
+  };
 
   return (
     <div className="terminal-section">
@@ -77,14 +105,14 @@ export function TerminalPlayer({ demo, commandTitle }: Props) {
           </div>
           <span className="terminal-title">{commandTitle}</span>
           <div className="terminal-header-actions">
-            {!imgError && <ActionButton />}
+            {!imgError && <ActionButton playing={playing} onPlay={handlePlay} onStop={handleStop} />}
             {!imgError && (
               <button className="terminal-action-btn" onClick={handleOpenLightbox} title="Maximize" aria-label="Maximize">⛶</button>
             )}
           </div>
         </div>
         <div className="terminal-body terminal-body--gif">
-          <GifBody />
+          <GifBody {...gifBodyProps} />
         </div>
       </div>
 
@@ -107,12 +135,12 @@ export function TerminalPlayer({ demo, commandTitle }: Props) {
               </div>
               <span className="terminal-title">{commandTitle}</span>
               <div className="terminal-header-actions">
-                {!imgError && <ActionButton />}
+                {!imgError && <ActionButton playing={playing} onPlay={handlePlay} onStop={handleStop} />}
                 <button className="terminal-action-btn" onClick={handleCloseLightbox} aria-label="Close">✕ Close</button>
               </div>
             </div>
             <div className="terminal-body terminal-body--gif">
-              <GifBody fullscreen />
+              <GifBody {...gifBodyProps} fullscreen />
             </div>
           </div>
         </div>,

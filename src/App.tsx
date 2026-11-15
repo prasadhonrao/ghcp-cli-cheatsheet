@@ -88,6 +88,7 @@ function App() {
   );
   const [activeCategory, setActiveCategory] = useState('getting-started');
   const [searchQuery, setSearchQuery] = useState('');
+  const [syncedQuery, setSyncedQuery] = useState('');
   const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
   const [trafficStats, setTrafficStats] = useState<TrafficStats | null>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
@@ -244,13 +245,15 @@ function App() {
     return CATEGORIES.filter((cat) => (commandsByCategory[cat.id]?.length ?? 0) > 0);
   }, [searchQuery, commandsByCategory]);
 
-  useEffect(() => {
+  // Re-point the active pill when the query changes; adjusting state during render avoids an extra effect-driven render.
+  if (syncedQuery !== searchQuery) {
+    setSyncedQuery(searchQuery);
     if (!searchQuery.trim()) {
       setActiveCategory('getting-started');
     } else if (visibleCategories.length > 0) {
       setActiveCategory(visibleCategories[0].id);
     }
-  }, [searchQuery, visibleCategories]);
+  }
 
   const handleCategorySelect = (id: string) => {
     setActiveCategory(id);
