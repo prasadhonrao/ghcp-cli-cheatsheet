@@ -2,11 +2,13 @@
   {
     "id": "login",
     "title": "/login",
-    "syntax": "/login",
-    "description": "Authenticate with GitHub Copilot from within an active session.",
+    "syntax": "/login [--web-flow | --device-code]",
+    "description": "Authenticate with GitHub Copilot from within an active session. Defaults to browser-based OAuth on local interactive terminals; use flags to force a specific flow.",
     "analogy": "Like showing your badge at the office entrance — without it nothing works, but you only do it once.",
     "examples": [
-      "/login  # start OAuth flow inside the session"
+      "/login  # start OAuth flow (browser by default on local terminals)",
+      "/login --web-flow  # force browser-based OAuth login",
+      "/login --device-code  # force device-code flow (for headless or remote terminals)"
     ],
     "category": "authentication",
     "terminalDemo": "images/authentication/login.gif"

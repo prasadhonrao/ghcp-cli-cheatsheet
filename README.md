@@ -19,11 +19,11 @@ Built with React, Vite, and TypeScript. Data-driven — all commands are split i
 
 ## Categories
 
-The 75 commands are organized into 11 categories:
+The 76 commands are organized into 11 categories:
 
 | Category           | Commands | Description                                             |
 | ------------------ | -------- | ------------------------------------------------------- |
-| 🚀 Getting Started | 9        | Install, update, help, version, feedback                |
+| 🚀 Getting Started | 10       | Install, update, help, version, feedback, limits        |
 | 🔐 Authentication  | 3        | Login, logout, account switching                        |
 | 💬 Chat            | 9        | Ask, clear, search, undo, new, refine, schedule prompts |
 | 🧬 Models          | 3        | Model selection, experimental features, themes          |
