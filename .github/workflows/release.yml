@@ -65,7 +65,7 @@ jobs:
           git add package.json
           git commit -m "chore: bump version to $NEW_VERSION [skip ci]"
           git tag "v$NEW_VERSION"
-          git push origin main --follow-tags
+          git push --atomic origin main "v$NEW_VERSION"
 
       - name: Create GitHub Release
         if: steps.check-label.outputs.should_release == 'true'
