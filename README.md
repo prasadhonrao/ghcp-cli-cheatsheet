@@ -19,7 +19,7 @@ Built with React, Vite, and TypeScript. Data-driven — all commands are split i
 
 ## Categories
 
-The 74 commands are organized into 11 categories:
+The 75 commands are organized into 11 categories:
 
 | Category           | Commands | Description                                             |
 | ------------------ | -------- | ------------------------------------------------------- |
@@ -28,7 +28,7 @@ The 74 commands are organized into 11 categories:
 | 💬 Chat            | 9        | Ask, clear, search, undo, new, refine, schedule prompts |
 | 🧬 Models          | 3        | Model selection, experimental features, themes          |
 | ⚙️ Configuration   | 14       | Directories, permissions, environment, voice, streaming |
-| 💻 Code            | 8        | Diff, plan, PR management, code review, fork, branch    |
+| 💻 Code            | 9        | Diff, plan, PR management, code review, fork, branch    |
 | 🤖 Agents          | 9        | Agent picker, fleet, delegate, research, tasks          |
 | 🔌 MCP             | 2        | MCP and LSP server management                           |
 | 🧠 Memory          | 6        | Sessions, context, compaction, sharing                  |
