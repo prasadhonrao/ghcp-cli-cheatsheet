@@ -1,4 +1,6 @@
 ---
+permissions:
+  contents: read
 name: 'Traffic Updater'
 description: 'Weekly collection of repo traffic data (views and unique visitors). Accumulates totals in public/traffic.json and opens a PR.'
 on:

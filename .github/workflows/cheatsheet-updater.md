@@ -1,4 +1,6 @@
 ---
+permissions:
+  contents: read
 name: "Cheatsheet Updater"
 description: "Weekly check (Mondays) for new GitHub Copilot CLI features and updates. Opens a PR if the cheatsheet content needs updating."
 on:
@@ -7,7 +9,6 @@ on:
 tools:
   bash: ["curl", "gh"]
   edit:
-  web-fetch:
   github:
     toolsets: [repos]
 safe-outputs:
@@ -26,7 +27,7 @@ You are a maintainer for the **GitHub Copilot CLI Cheatsheet** repository — a 
 
 ## Step 1 — Gather recent Copilot CLI updates
 
-Use `web-fetch` to read the following pages and extract the latest entries from the past 7 days:
+Use `curl` to read the following pages and extract the latest entries from the past 7 days (for example `curl --fail --location --silent --show-error https://raw.githubusercontent.com/github/copilot-cli/main/changelog.md`):
 
 - https://github.com/github/copilot-cli/blob/main/changelog.md — CLI changelog
 
