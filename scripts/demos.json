@@ -453,6 +453,13 @@
       "responseWait": 6
     },
     {
+      "id": "config",
+      "category": "configuration",
+      "description": "View or change persistent CLI defaults, e.g. default model",
+      "command": "/config model",
+      "responseWait": 6
+    },
+    {
       "id": "voice",
       "category": "configuration",
       "description": "Enable voice input",

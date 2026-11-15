@@ -125,6 +125,19 @@
     "terminalDemo": "images/configuration/permissions.gif"
   },
   {
+    "id": "config",
+    "title": "/config",
+    "syntax": "/config [model] [VALUE]",
+    "description": "Manage persistent CLI configuration defaults. Use `/config model` to set the default AI model for all future sessions, independent of the session-scoped `/model` selection.",
+    "analogy": "Like the default app settings on your phone — changes here stick across every new session, unlike in-session overrides.",
+    "examples": [
+      "/config model  # view or change the default model for future sessions",
+      "/model  # override the model for just the current session"
+    ],
+    "category": "configuration",
+    "terminalDemo": "images/configuration/config.gif"
+  },
+  {
     "id": "reset-allowed-tools",
     "title": "/reset-allowed-tools",
     "syntax": "/reset-allowed-tools",
