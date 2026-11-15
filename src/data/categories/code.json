@@ -118,6 +118,7 @@
       "/move fix the login redirect  # move changes to a new branch named for the task",
       "/move feature/JIRA-123  # move changes to a worktree with an exact branch name"
     ],
-    "category": "code"
+    "category": "code",
+    "terminalDemo": "images/code/move.gif"
   }
 ]
