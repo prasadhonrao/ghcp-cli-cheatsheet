@@ -13,6 +13,7 @@ Built with React, Vite, and TypeScript. Data-driven — all commands are split i
 - Command cards with syntax, descriptions, analogies, examples, and one-click copy buttons
 - **Animated GIF demos** — real CLI recordings via VHS for each command's "See It In Action" section
 - **Lightbox viewer** — expand any demo GIF to full-screen for better visibility
+- **Per-command feedback** — every expanded card has "Report an issue" and "Suggest an edit" links that open a GitHub issue pre-filled with the command, syntax, category and source file
 - Dark and light theme toggle
 - Responsive layout — works on desktop and mobile
 - **Agentic weekly update** — a Copilot coding agent checks the CLI changelog and opens PRs when commands change

@@ -618,6 +618,37 @@ html[data-color-mode='light'] .command-card--expanded {
   border-color: var(--color-success-fg, #3fb950);
 }
 
+.command-feedback {
+  display: flex;
+  align-items: center;
+  gap: 6px 14px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Only very narrow screens may wrap the feedback row */
+@media (max-width: 400px) {
+  .command-feedback {
+    flex-wrap: wrap;
+  }
+}
+
+.command-feedback-prompt {
+  color: var(--color-fg-muted);
+}
+
+.feedback-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-accent-fg);
+  text-decoration: none;
+}
+
+.feedback-link:hover {
+  text-decoration: underline;
+}
+
 .command-example-cmd {
   font-family: var(--font-mono);
   font-size: 12.5px;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CopyIcon, CheckIcon } from '@primer/octicons-react';
+import { CopyIcon, CheckIcon, IssueOpenedIcon, LightBulbIcon } from '@primer/octicons-react';
 import type { Command } from '../../types';
 import { TerminalPlayer } from './TerminalPlayer';
 
@@ -7,6 +7,49 @@ interface Props {
   cmd: Command;
   isExpanded: boolean;
   onToggle: () => void;
+}
+
+const REPO_URL = 'https://github.com/prasadhonrao/ghcp-cli-cheatsheet';
+
+type FeedbackKind = 'issue' | 'suggestion';
+
+function buildFeedbackUrl(cmd: Command, kind: FeedbackKind): string {
+  const context = [
+    `**Command:** \`${cmd.title}\``,
+    `**Syntax:** \`${cmd.syntax}\``,
+    `**Category:** ${cmd.category}`,
+    `**Entry:** \`${cmd.id}\` in \`src/data/categories/${cmd.category}.json\``,
+  ].join('\n');
+
+  const body = kind === 'issue'
+    ? `${context}\n**Copilot CLI version:** <!-- output of \`copilot --version\` -->\n\n### What is wrong or missing?\n<!-- e.g. outdated syntax, incorrect description, broken example or demo -->\n\n### What did you expect?\n`
+    : `${context}\n\n### What would make this entry better?\n<!-- e.g. a clearer analogy, more examples, a demo video -->\n`;
+
+  const params = new URLSearchParams({
+    title: kind === 'issue' ? `[${cmd.title}] ` : `[${cmd.title}] Suggestion: `,
+    body,
+    labels: kind === 'issue' ? 'documentation' : 'enhancement',
+  });
+  return `${REPO_URL}/issues/new?${params.toString()}`;
+}
+
+// Links sit inside a clickable card, so stop clicks and Enter/Space from toggling it.
+function FeedbackLink({ cmd, kind }: { cmd: Command; kind: FeedbackKind }) {
+  const isIssue = kind === 'issue';
+  return (
+    <a
+      className="feedback-link"
+      href={buildFeedbackUrl(cmd, kind)}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={e => e.stopPropagation()}
+      onKeyDown={e => e.stopPropagation()}
+      aria-label={`${isIssue ? 'Report an issue with' : 'Suggest an edit for'} ${cmd.title} (opens GitHub in a new tab)`}
+    >
+      {isIssue ? <IssueOpenedIcon size={14} /> : <LightBulbIcon size={14} />}
+      {isIssue ? 'Report an issue' : 'Suggest an edit'}
+    </a>
+  );
 }
 
 function CopyButton({ text }: { text: string }) {
@@ -122,6 +165,11 @@ export function CommandCard({ cmd, isExpanded, onToggle }: Props) {
               />
             </div>
           )}
+          <div className="command-section command-feedback">
+            <span className="command-feedback-prompt">Feedback:</span>
+            <FeedbackLink cmd={cmd} kind="issue" />
+            <FeedbackLink cmd={cmd} kind="suggestion" />
+          </div>
         </div>
       )}
     </div>
