@@ -74,7 +74,11 @@ Set TypingSpeed ${s.typingSpeed}
 #   copilot   (pick option 2 to remember)
 Type "copilot"
 Enter
-Sleep ${s.startupWait}s
+${s.waitForReady
+    ? `# Wait until Copilot is ready, however long loading takes (see "speedUp" in demos.json).
+Wait+Screen@${s.readyTimeout}s /${s.readyPattern}/
+Sleep 1s`
+    : `Sleep ${s.startupWait}s`}
 `;
 
   let body;

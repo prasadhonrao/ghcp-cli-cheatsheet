@@ -19,15 +19,15 @@ Set TypingSpeed 150ms
 #   copilot   (pick option 2 to remember)
 Type "copilot"
 Enter
-Sleep 5s
-# Run: /autopilot fix all TypeScript errors in src/
+# Wait until Copilot is ready, however long loading takes (see "speedUp" in demos.json).
+Wait+Screen@120s /Interactive/
+Sleep 1s
 Type "/autopilot fix all TypeScript errors in src/"
 Sleep 3s
 Enter
-Sleep 0.8s
-
-# Wait for the real response
-Sleep 20s
+Sleep 4s
+Enter
+Sleep 30s
 
 # End of recording
 Sleep 2s

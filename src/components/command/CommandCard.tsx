@@ -114,7 +114,12 @@ export function CommandCard({ cmd, isExpanded, onToggle }: Props) {
           )}
           {cmd.terminalDemo && (
             <div className="command-section">
-              <TerminalPlayer demo={cmd.terminalDemo} commandTitle={cmd.title} />
+              <TerminalPlayer
+                demo={cmd.terminalDemo}
+                video={cmd.terminalVideo}
+                captions={cmd.terminalCaptions}
+                commandTitle={cmd.title}
+              />
             </div>
           )}
         </div>

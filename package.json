@@ -13,7 +13,8 @@
     "create:tape": "node scripts/create-tape.js",
     "create:gif": "node scripts/create-gif.js",
     "verify:gif": "node scripts/verify-gif.js",
-    "generate:demos": "npm run create:tape && npm run create:gif && npm run verify:gif"
+    "create:video": "node scripts/create-video.js",
+    "generate:demos": "npm run create:tape && npm run create:gif && npm run verify:gif && npm run create:video"
   },
   "dependencies": {
     "@primer/octicons-react": "^19.25.0",
@@ -32,6 +33,7 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "gh-pages": "^6.3.0",
     "globals": "^17.6.0",
+    "msedge-tts": "^2.1.1",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.16"

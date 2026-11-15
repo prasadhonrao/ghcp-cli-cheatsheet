@@ -61,6 +61,8 @@ interface Command {
   category: string;
   note?: string;
   terminalDemo?: string; // path to GIF e.g. "images/chat/ask.gif"
+  terminalVideo?: string; // optional narrated MP4, e.g. "videos/chat/ask.mp4" (played instead of the GIF)
+  terminalCaptions?: string; // WebVTT captions for terminalVideo, e.g. "videos/chat/ask.vtt"
 }
 ```
 
@@ -173,7 +175,8 @@ npm run preview
 | `npm run create:tape`     | Generate VHS `.tape` files from `scripts/demos.json`      |
 | `npm run create:gif`      | Record GIFs from tape files (requires VHS + Copilot auth) |
 | `npm run verify:gif`      | Verify all expected GIFs are present                      |
-| `npm run generate:demos`  | Run all three demo steps above in sequence                |
+| `npm run create:video`    | Build narrated MP4 + captions from GIFs (requires ffmpeg) |
+| `npm run generate:demos`  | Run all four demo steps above in sequence                 |
 
 ## Deploy to GitHub Pages
 
@@ -200,6 +203,30 @@ npm run generate:demos                          # regenerate all
 npm run create:gif -- --category chat           # single category
 npm run create:gif -- --id chat-ask             # single command
 ```
+
+### Narrated videos
+
+A demo can optionally have spoken narration with captions. Add a `"narration"` to the demo in `scripts/demos.json`, then:
+
+```bash
+npm run create:video -- --id autopilot          # needs ffmpeg + internet (Edge Read Aloud TTS voices)
+npm run create:video -- --voice en-GB-RyanNeural  # pick another voice
+```
+
+`narration` is either a string (spoken from 0s) or a list of timed segments so the voice matches what is on screen:
+
+```json
+"narration": [
+  { "at": 0.5, "text": "Type slash autopilot, followed by your goal." },
+  { "at": 11, "text": "Copilot first asks which permission mode to use." }
+]
+```
+
+`at` is the second in the recording. Read it off the GIF (for example `ffmpeg -ss 11 -i demo.gif -frames:v 1 f.png`). If a segment is still speaking when the next one is due, the next is delayed and the script warns you to shorten it.
+
+To record the whole flow rather than just the first screen, give the demo `steps` (see existing demos) and, for a slow-starting CLI, `"waitForReady": true`. The tape then waits (visibly) until Copilot is ready instead of guessing a `startupWait`, so typed input is never lost. To skip the dead time in the final video, add `"speedUp": { "from": 1.5, "to": 39.5, "factor": 8 }` (source GIF seconds) and `create:video` plays that stretch 8x faster; `at` times in `narration` refer to the final, sped-up video. VHS on Windows also needs `ttyd` (`winget install tsl0922.ttyd`).
+
+This synthesizes the speech, writes `public/videos/<category>/<id>.vtt` captions, and muxes the audio onto the existing GIF into `public/videos/<category>/<id>.mp4` (run `create:gif` first). Then set `terminalVideo` and `terminalCaptions` on the command's JSON entry. The player uses the video when present and falls back to the GIF if it fails to load.
 
 ## Contributing
 

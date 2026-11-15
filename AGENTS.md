@@ -36,7 +36,8 @@ Edit the matching `src/data/categories/<slug>.json`. Follow these conventions:
 | `syntax`       | Full usage signature with args; may equal `title` for simple commands                                |
 | `examples`     | Plain strings; use `"  #"` (two-space hash) to add an inline comment rendered as a styled annotation |
 | `note`         | Omit entirely when not needed (only truly optional field alongside `terminalDemo`)                   |
-| `terminalDemo` | Optional `{ prompt: string; output: string[] }` for an animated terminal block                       |
+| `terminalDemo` | Optional path to a GIF (e.g. `"images/agents/autopilot.gif"`)                                        |
+| `terminalVideo` / `terminalCaptions` | Optional narrated MP4 + WebVTT captions (e.g. `"videos/agents/autopilot.mp4"` / `.vtt`); the player prefers the video and falls back to the GIF. Generate with `npm run create:video -- --id <id>` after adding a `narration` to `scripts/demos.json` |
 
 ## Component conventions
 

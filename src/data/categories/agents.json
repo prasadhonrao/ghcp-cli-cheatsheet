@@ -106,7 +106,9 @@
       "/goal refactor the auth module to use JWTs  # /goal is an alias for /autopilot"
     ],
     "category": "agents",
-    "terminalDemo": "images/agents/autopilot.gif"
+    "terminalDemo": "images/agents/autopilot.gif",
+    "terminalVideo": "videos/agents/autopilot.mp4",
+    "terminalCaptions": "videos/agents/autopilot.vtt"
   },
   {
     "id": "tasks",

@@ -11,6 +11,10 @@ export interface Command {
   note?: string;
   /** Path relative to the Vite public/ base, e.g. "images/agents/agent.gif" */
   terminalDemo?: string;
+  /** Narrated MP4 (played instead of the GIF), e.g. "videos/agents/autopilot.mp4" */
+  terminalVideo?: string;
+  /** WebVTT captions for terminalVideo, e.g. "videos/agents/autopilot.vtt" */
+  terminalCaptions?: string;
 }
 
 export interface Category {

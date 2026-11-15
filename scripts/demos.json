@@ -7,6 +7,8 @@
     "typingSpeed": "150ms",
     "framerate": 15,
     "startupWait": 5,
+    "readyTimeout": 120,
+    "readyPattern": "Interactive",
     "exitWait": 2
   },
   "demos": [
@@ -699,8 +701,26 @@
       "id": "autopilot",
       "category": "agents",
       "description": "Set a focused autopilot objective for the session",
-      "command": "/autopilot fix all TypeScript errors in src/",
-      "responseWait": 20
+      "waitForReady": true,
+      "speedUp": { "from": 1.5, "to": 39.5, "factor": 8 },
+      "steps": [
+        { "type": "/autopilot fix all TypeScript errors in src/" },
+        { "wait": 3 },
+        { "key": "Enter" },
+        { "wait": 4 },
+        { "key": "Enter" },
+        { "wait": 30 }
+      ],
+      "narration": [
+        { "at": 0.3, "text": "First, launch Copilot. Loading is sped up." },
+        { "at": 7, "text": "Type slash autopilot, followed by your goal. Here: fix all TypeScript errors in the source folder." },
+        { "at": 17.3, "text": "Copilot first asks which permission mode to use." },
+        { "at": 21.5, "text": "We choose Allow All, so it can work uninterrupted." },
+        { "at": 26, "text": "Copilot is now locked onto the goal." },
+        { "at": 30.3, "text": "It defines what success looks like: zero TypeScript errors, with the build and lint passing." },
+        { "at": 37, "text": "Then it inspects the project: the git status, the TypeScript config, and the source files." },
+        { "at": 44.8, "text": "And it keeps going until the objective is met. Think of it like setting a GPS destination." }
+      ]
     },
     {
       "id": "exit",
