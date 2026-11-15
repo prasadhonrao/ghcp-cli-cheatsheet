@@ -121,5 +121,17 @@
     ],
     "category": "code",
     "terminalDemo": "images/code/move.gif"
+  },
+  {
+    "id": "code",
+    "title": "/code",
+    "syntax": "/code",
+    "description": "Open the current session in VS Code so you can continue working in your editor.",
+    "analogy": "Like handing your open notebook to a colleague at another desk — the same session continues in VS Code.",
+    "examples": [
+      "/code  # open the current session in VS Code"
+    ],
+    "category": "code",
+    "terminalDemo": "images/code/code.gif"
   }
 ]
