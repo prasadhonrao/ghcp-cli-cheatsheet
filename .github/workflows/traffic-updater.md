@@ -15,9 +15,10 @@ mcp-scripts:
   fetch-traffic:
     description: 'Fetch the last 14 days of traffic views for this repository from the GitHub API. Returns JSON with a views array containing timestamp, count, and uniques per day.'
     run: |
-      gh api repos/$GITHUB_REPOSITORY/traffic/views
+      gh api "repos/${TRAFFIC_REPO}/traffic/views"
     env:
       GH_TOKEN: '${{ secrets.GH_AW_GITHUB_TOKEN }}'
+      TRAFFIC_REPO: '${{ github.repository }}'
 safe-outputs:
   allowed-domains:
     - github.com
