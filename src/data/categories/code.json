@@ -131,6 +131,7 @@
     "examples": [
       "/code  # open the current session in VS Code"
     ],
-    "category": "code"
+    "category": "code",
+    "terminalDemo": "images/code/code.gif"
   }
 ]
