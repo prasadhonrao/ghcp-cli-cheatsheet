@@ -100,7 +100,8 @@
       "/limits  # show current AI-credit limits",
       "/limits predict  # suggest a session limit from similar sessions"
     ],
-    "category": "getting-started"
+    "category": "getting-started",
+    "terminalDemo": "images/getting-started/limits.gif"
   },
   {
     "id": "usage",
