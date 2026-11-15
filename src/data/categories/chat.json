@@ -102,7 +102,8 @@
       "/refine so basically i want like a button that does the thing with the files maybe sort them",
       "/refine  # prompts you to type your rough idea interactively"
     ],
-    "category": "chat"
+    "category": "chat",
+    "terminalDemo": "images/chat/refine.gif"
   },
   {
     "id": "after",

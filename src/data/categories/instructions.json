@@ -20,7 +20,8 @@
     "examples": [
       "/plugins  # open the interactive plugins dashboard"
     ],
-    "category": "instructions"
+    "category": "instructions",
+    "terminalDemo": "images/instructions/plugins.gif"
   },
   {
     "id": "plugin",
