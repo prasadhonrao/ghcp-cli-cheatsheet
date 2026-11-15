@@ -227,6 +227,13 @@
       "responseWait": 6
     },
     {
+      "id": "refine",
+      "category": "chat",
+      "description": "Refine a rough prompt into a clear, well-structured one",
+      "command": "/refine so basically i want like a button that does the thing with the files maybe sort them",
+      "responseWait": 20
+    },
+    {
       "id": "after",
       "category": "chat",
       "description": "Schedule a one-off delayed prompt",
@@ -503,6 +510,13 @@
       "category": "instructions",
       "description": "Show loaded instruction files",
       "command": "/instructions",
+      "responseWait": 6
+    },
+    {
+      "id": "plugins",
+      "category": "instructions",
+      "description": "Open the plugins dashboard",
+      "command": "/plugins",
       "responseWait": 6
     },
     {
