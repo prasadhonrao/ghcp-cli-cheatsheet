@@ -113,6 +113,31 @@
     "terminalDemo": "images/configuration/loop.gif"
   },
   {
+    "id": "permissions",
+    "title": "/permissions",
+    "syntax": "/permissions",
+    "description": "Open an interactive dialog to switch between approval modes — controlling how Copilot prompts for tool and command approvals.",
+    "analogy": "Like the permissions settings panel in your OS — choose how strictly Copilot asks before running commands or touching files.",
+    "examples": [
+      "/permissions  # open the approval-mode picker"
+    ],
+    "category": "configuration",
+    "terminalDemo": "images/configuration/permissions.gif"
+  },
+  {
+    "id": "config",
+    "title": "/config",
+    "syntax": "/config [model] [VALUE]",
+    "description": "Manage persistent CLI configuration defaults. Use `/config model` to set the default AI model for all future sessions, independent of the session-scoped `/model` selection.",
+    "analogy": "Like the default app settings on your phone — changes here stick across every new session, unlike in-session overrides.",
+    "examples": [
+      "/config model  # view or change the default model for future sessions",
+      "/model  # override the model for just the current session"
+    ],
+    "category": "configuration",
+    "terminalDemo": "images/configuration/config.gif"
+  },
+  {
     "id": "reset-allowed-tools",
     "title": "/reset-allowed-tools",
     "syntax": "/reset-allowed-tools",
@@ -150,30 +175,6 @@
     "terminalDemo": "images/configuration/statusline.gif"
   },
   {
-    "id": "config",
-    "title": "/config",
-    "syntax": "/config [model] [VALUE]",
-    "description": "Manage persistent CLI configuration defaults. Use `/config model` to set the default AI model for all future sessions, independent of the session-scoped `/model` selection.",
-    "analogy": "Like the default app settings on your phone — changes here stick across every new session, unlike in-session overrides.",
-    "examples": [
-      "/config model  # view or change the default model for future sessions",
-      "/model  # override the model for just the current session"
-    ],
-    "category": "configuration"
-  },
-  {
-    "id": "sandbox",
-    "title": "/sandbox",
-    "syntax": "/sandbox [policy]",
-    "description": "Open the sandbox configuration dialog to manage shell command restrictions. Use the `policy` subcommand to view effective sandbox paths, network access rules, and denied operations.",
-    "analogy": "Like an app's privacy settings screen — see exactly what the sandbox allows or blocks, and adjust the restrictions.",
-    "examples": [
-      "/sandbox  # open the interactive sandbox configuration dialog",
-      "/sandbox policy  # show effective sandbox paths, network access, and denials"
-    ],
-    "category": "configuration"
-  },
-  {
     "id": "streamer-mode",
     "title": "/streamer-mode",
     "syntax": "/streamer-mode [on|off]",
@@ -200,14 +201,28 @@
     "terminalDemo": "images/configuration/terminal-setup.gif"
   },
   {
+    "id": "sandbox",
+    "title": "/sandbox",
+    "syntax": "/sandbox [policy]",
+    "description": "View and configure the sandbox that isolates Copilot's file and network access. Use 'policy' to display the effective paths, denials, and network access rules for the current session.",
+    "analogy": "Like viewing your firewall rules — see exactly which files and network destinations Copilot is allowed to reach, and why some settings are locked.",
+    "examples": [
+      "/sandbox  # open the sandbox configuration dialog",
+      "/sandbox policy  # show effective sandbox paths, denials, and network access rules"
+    ],
+    "category": "configuration",
+    "terminalDemo": "images/configuration/sandbox.gif"
+  },
+  {
     "id": "voice",
     "title": "/voice",
-    "syntax": "/voice [on|off]",
-    "description": "Enable or disable voice input for the Copilot CLI session. When on, you can speak prompts instead of typing them.",
+    "syntax": "/voice [on|off|devices]",
+    "description": "Enable or disable voice input for the Copilot CLI session, or list and select a microphone with /voice devices. When on, you can speak prompts instead of typing them.",
     "analogy": "Like switching from keyboard to microphone in a voice assistant — talk to Copilot hands-free.",
     "examples": [
       "/voice on  # enable microphone input",
       "/voice off  # switch back to keyboard input",
+      "/voice devices  # list available microphones and choose which one to use",
       "/voice  # check current voice input status"
     ],
     "category": "configuration",
