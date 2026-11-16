@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:03.418
+To begin, launch Copilot CLI.
+
+00:00:06.100 --> 00:00:09.936
+Now type /index to manage the code search index.
+
+00:00:11.100 --> 00:00:15.175
+Copilot reports the status of the index for this repository.
+
+00:00:16.100 --> 00:00:18.834
+Like a book's index for your codebase.
