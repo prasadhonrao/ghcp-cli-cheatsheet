@@ -478,7 +478,13 @@
       "category": "code",
       "description": "Manage the code search index",
       "command": "/index",
-      "responseWait": 6
+      "responseWait": 6,
+      "narration": [
+        { "at": 0.3, "text": "To begin, launch Copilot CLI." },
+        { "at": 6, "text": "Now type /index to manage the code search index." },
+        { "at": 11, "text": "Copilot reports the status of the index for this repository." },
+        { "at": 16, "text": "Like a book's index for your codebase." }
+      ]
     },
     {
       "id": "add-dir",

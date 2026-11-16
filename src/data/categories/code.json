@@ -164,6 +164,9 @@
     "examples": [
       "/index  # manage the code search index for this repository"
     ],
-    "category": "code"
+    "category": "code",
+    "terminalDemo": "images/code/index.gif",
+    "terminalVideo": "videos/code/index.mp4",
+    "terminalCaptions": "videos/code/index.vtt"
   }
 ]
