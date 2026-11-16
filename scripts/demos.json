@@ -474,6 +474,13 @@
       ]
     },
     {
+      "id": "index",
+      "category": "code",
+      "description": "Manage the code search index",
+      "command": "/index",
+      "responseWait": 6
+    },
+    {
       "id": "add-dir",
       "category": "configuration",
       "description": "Add src directory to the allowed list",

@@ -154,5 +154,16 @@
     "terminalDemo": "images/code/code.gif",
     "terminalVideo": "videos/code/code.mp4",
     "terminalCaptions": "videos/code/code.vtt"
+  },
+  {
+    "id": "index",
+    "title": "/index",
+    "syntax": "/index [SUBCOMMAND]",
+    "description": "Manage the code search index (tgrep) that Copilot uses for fast regex search in large repositories. Managed shared indexing is on by default for eligible repositories.",
+    "analogy": "Like a book's index — Copilot jumps straight to the right pages instead of reading the whole codebase.",
+    "examples": [
+      "/index  # manage the code search index for this repository"
+    ],
+    "category": "code"
   }
 ]
